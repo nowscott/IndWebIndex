@@ -22,4 +22,12 @@ jobs:
         run: npm install
 
       - name: Run scraping script
-        run: node src/scrape.js
+        run: node src/scrape.js > data.json
+
+      - name: Commit data.json
+        run: |
+          git config --global user.name "NowScott"
+          git config --global user.email "nowscott@qq.com"
+          git add data.json
+          git commit -m "Update data.json"
+          git push
