@@ -11,7 +11,6 @@ axios.get('https://web.nowscott.top/.netlify/functions/notion')
         try {
             // 将数据保存为 JSON 文件
             fs.writeFileSync('data.json', formattedJson);
-            console.log('Data saved as JSON file');
         } catch (err) {
             console.error('Error writing JSON file:', err);
         }
