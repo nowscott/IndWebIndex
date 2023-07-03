@@ -22,12 +22,25 @@ jobs:
         run: npm install
 
       - name: Run scraping script
-        run: node src/scrape.js > data.json
-
-      - name: Commit data.json
         run: |
-          git config --global user.name "NowScott"
-          git config --global user.email "nowscott@qq.com"
-          git add data.json
-          git commit -m "Update data.json"
-          git push
+          output=$(node src/scrape.js)
+          if echo "$output" | grep -q -i "error"; then
+            echo "存在错误。"
+            exit 1
+          else
+            echo "没有错误。"
+            git config --global user.name "NowScott"
+            git config --global user.email "nowscott@qq.com"
+            git add data.json
+            git commit -m "Update data.json"
+            git push
+          fi
+        # run: node src/scrape.js > data.json
+
+      # - name: Commit data.json
+      #   run: |
+      #     git config --global user.name "NowScott"
+      #     git config --global user.email "nowscott@qq.com"
+      #     git add data.json
+      #     git commit -m "Update data.json"
+      #     git push
