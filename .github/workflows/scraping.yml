@@ -25,10 +25,10 @@ jobs:
         run: |
           node src/scrape.js > data.json
           cat data.json
-          if grep -q -i "error" data.json; then
-            echo "存在错误。"
+          if diff -q <(echo "error") data.json > /dev/null; then
+            echo "只包含 error 字符串。"
           else
-            echo "没有错误。"
+            echo "包含其他内容或出现错误。"
           fi
 
       # - name: Commit data.json
