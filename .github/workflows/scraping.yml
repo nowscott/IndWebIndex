@@ -32,10 +32,10 @@ jobs:
             echo "存在错误。"
           else
             echo "没有错误。"
-          git config --global user.name "NowScott"
-          git config --global user.email "nowscott@qq.com"
-          git add data.json
-          git commit -m "Update data.json"
-          git push
+            git config --global user.name "NowScott"
+            git config --global user.email "nowscott@qq.com"
+            git add data.json
+            git commit -m "Update data.json"
+            git push
           fi
 
