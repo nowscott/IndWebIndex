@@ -7,14 +7,14 @@ axios.get('https://web.nowscott.top/.netlify/functions/notion')
         const data = response.data;
         // 格式化 JSON 数据
         const formattedJson = JSON.stringify(data, null, 4);
-        // 将数据保存为 JSON 文件
-        fs.writeFile('data.json', formattedJson, (err) => {
-            if (err) {
-                console.error('Error writing JSON file:', err);
-            } else {
-                console.log('Data saved as JSON file');
-            }
-        });
+        
+        try {
+            // 将数据保存为 JSON 文件
+            fs.writeFileSync('data.json', formattedJson);
+            console.log('Data saved as JSON file');
+        } catch (err) {
+            console.error('Error writing JSON file:', err);
+        }
     }).catch(error => {
         console.error('Error fetching data:', error);
     });
