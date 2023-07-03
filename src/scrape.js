@@ -11,8 +11,8 @@ axios.get('https://web.nowscott.top/.netlify/functions/notio')
       // 将数据保存为 JSON 文件
       fs.writeFileSync('data.json', formattedJson);
     } catch (err) {
-      console.error('error');
+      console.log('error');
     }
   }).catch(error => {
-    console.error('error');
+    console.log('error');
   });

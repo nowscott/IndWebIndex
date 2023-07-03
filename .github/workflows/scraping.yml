@@ -24,18 +24,18 @@ jobs:
       - name: Run scraping script
         run: |
           node src/scrape.js > data.json
-          cat data.json
+
+      - name: Commit data.json
+        run: |
           filename="data.json"
-          if grep -q "error" "$filename"; then
-            echo "文件中包含字符串 error。"
+          if grep -q -i "error" data.json; then
+            echo "存在错误。"
           else
-            echo "文件中不包含字符串 error。"
+            echo "没有错误。"
+          git config --global user.name "NowScott"
+          git config --global user.email "nowscott@qq.com"
+          git add data.json
+          git commit -m "Update data.json"
+          git push
           fi
 
-      # - name: Commit data.json
-      #   run: |
-      #     git config --global user.name "NowScott"
-      #     git config --global user.email "nowscott@qq.com"
-      #     git add data.json
-      #     git commit -m "Update data.json"
-      #     git push
