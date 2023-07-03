@@ -25,14 +25,14 @@ jobs:
         run: |
           node src/scrape.js > data.json
           cat data.json
-
-      - name: Commit data.json
-        run: |
           if grep -q -i "error" data.json; then
             echo "存在错误。"
           else
             echo "没有错误。"
           fi
+
+      # - name: Commit data.json
+      #   run: |
       #     git config --global user.name "NowScott"
       #     git config --global user.email "nowscott@qq.com"
       #     git add data.json
