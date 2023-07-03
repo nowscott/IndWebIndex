@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 // 发起 HTTP 请求并获取数据
-axios.get('https://web.nowscott.top/.netlify/functions/notio')
+axios.get('https://web.nowscott.top/.netlify/functions/notion')
   .then(response => {
     // 处理并解析返回的数据
     const data = response.data;
