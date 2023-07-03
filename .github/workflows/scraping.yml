@@ -21,10 +21,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run scraping script
-        run: node src/scrape.js > data.json
+      - name: Run scraping script and save as temp.json
+        run: node src/scrape.js > temp.json
 
-      - name: Commit data.json
+      - name: Check previous step result
+        id: check_result
+        run: echo ::set-output name=result::failure
+
+      - name: Commit data.json (only if previous step succeeded)
+        if: steps.check_result.outputs.result != 'failure'
         run: |
           git config --global user.name "NowScott"
           git config --global user.email "nowscott@qq.com"
