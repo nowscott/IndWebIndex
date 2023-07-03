@@ -1,13 +1,4 @@
-Data saved as JSON file
-"微信读书",
-        "web": "https://weread.qq.com/",
-        "tags": [
-            "🧠学习",
-            "📚书籍"
-        ],
-        "brief": "一个看书的网站",
-        "state": "正常"
-    },
+[
     {
         "name": "Word代码高亮",
         "web": "http://word.wd1x.com/",
