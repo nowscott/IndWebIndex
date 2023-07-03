@@ -25,10 +25,13 @@ jobs:
         run: |
           node src/scrape.js > data.json
           cat data.json
-          if diff -q <(echo "error") data.json > /dev/null; then
-            echo "只包含 error 字符串。"
+          filename="data.json"
+          content=$(< "$filename")
+          
+          if [[ "$content" == "error" ]]; then
+            echo "文件只包含 error 字符串。"
           else
-            echo "包含其他内容或出现错误。"
+            echo "文件包含其他内容或出现错误。"
           fi
 
       # - name: Commit data.json
