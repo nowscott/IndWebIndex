@@ -21,16 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-- name: Run scraping script
-        run: node src/scrape.js
-        id: scrape
-
-      - name: Check if output is error
-        id: check-error
-        run: echo "::set-output name=is_error::$(grep -q 'error' data.json && echo true || echo false)"
+      - name: Run scraping script
+        run: node src/scrape.js > data.json
 
       - name: Commit data.json
-        if: steps.check-error.outputs.is_error != 'true'
         run: |
           git config --global user.name "NowScott"
           git config --global user.email "nowscott@qq.com"
