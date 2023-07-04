@@ -1,4 +1,4 @@
-name: Web Scraping and Save as JSON
+name: update data.json
 
 on:
   workflow_dispatch:
