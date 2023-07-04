@@ -37,6 +37,7 @@ jobs:
             git config --global user.email "nowscott@qq.com"
             if ! git diff --quiet --exit-code; then
               git add $filename
+              git restore package-lock.json
               git commit -m "Update data.json"
               git push
             else
