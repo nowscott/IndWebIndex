@@ -42,7 +42,6 @@ jobs:
               git push
             else
               echo "没有变化。"
-              cat $filename
             fi
           fi
 
