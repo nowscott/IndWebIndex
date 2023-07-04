@@ -22,8 +22,7 @@ jobs:
         run: npm install
 
       - name: Run scraping script
-        run: |
-          node src/scrape.js > data.json
+        run: node src/scrape.js > data.json
 
       - name: Commit data.json
         run: |
