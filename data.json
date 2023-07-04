@@ -1,5 +1,15 @@
 [
     {
+        "name": "谷歌学术",
+        "web": "https://scholar.google.com.hk/?hl=zh-CN",
+        "tags": [
+            "🧠学习",
+            "🔍搜索"
+        ],
+        "brief": "轻松地大范围搜索学术文献",
+        "state": "正常"
+    },
+    {
         "name": "微信读书",
         "web": "https://weread.qq.com/",
         "tags": [
