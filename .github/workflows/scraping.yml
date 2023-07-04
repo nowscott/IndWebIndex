@@ -24,18 +24,17 @@ jobs:
       - name: Run scraping script
         run: |
           node src/scrape.js > data.json
-          cat data.json
 
       - name: Commit data.json
         run: |
           filename="data.json"
+          cat $filename
           if grep -q -i "error" $filename; then
             echo "存在错误。"
           else
             echo "没有错误。"
             git config --global user.name "NowScott"
             git config --global user.email "nowscott@qq.com"
-            git stash
             if ! git diff --quiet --exit-code; then
               git add $filename
               git commit -m "Update data.json"
@@ -43,6 +42,5 @@ jobs:
             else
               echo "没有变化。"
             fi
-            git stash apply
           fi
 
