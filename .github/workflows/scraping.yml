@@ -35,9 +35,13 @@ jobs:
             git config --global user.name "NowScott"
             git config --global user.email "nowscott@qq.com"
             git stash
-            git add data.json
-            git commit -m "Update data.json"
-            git push
+            if ! git diff --quiet --exit-code; then
+              git add data.json
+              git commit -m "Update data.json"
+              git push
+            else
+              echo "没有变化。"
+            fi
             git stash apply
           fi
 
