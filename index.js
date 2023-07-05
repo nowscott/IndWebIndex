@@ -43,7 +43,7 @@ window.onload = function () {
             document.getElementById('webs-container').appendChild(a)
         }
     }
-    fetch("/data.json")//从服务器上获取数据
+    fetch("https://web.nowscott.top/data.json")//从服务器上获取数据
         .then(response => response.json()).then(data => {
             sources = data.filter(s => s.name !== '' && s.state === '正常');
             renderWebs(randomSort(unique(sources)))
