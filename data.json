@@ -1,5 +1,15 @@
 [
     {
+        "name": "Steam",
+        "web": "https://store.steampowered.com/",
+        "tags": [
+            "🕹️游戏",
+            "🏠主页"
+        ],
+        "brief": "一个游戏集合的官网",
+        "state": "正常"
+    },
+    {
         "name": "Discord",
         "web": "https://discord.com/app/",
         "tags": [
