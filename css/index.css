@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Smiley Sans;
+    src: url(/font/SmileySans-Oblique.ttf.woff2);
+}
+
+body {
+    width: 98vw;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: Smiley Sans;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#darkbtn {
+    border: none;
+    background-color: transparent;
+    margin-left: 80vw;
+    margin-top: 2vh;
+}
+
+.html-container {
+    width: 92vw;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title-1,
+.title-2 {
+    text-align: center;
+    font-family: Smiley Sans;
+    font-weight: bolder;
+}
+
+.title-1 {
+    margin: 3vh 0;
+}
+
+.title-2 {
+    margin: 1vh 0;
+}
+
+.search-box {
+    text-align: center;
+    margin: 2vh;
+    display: inline-block;
+    padding: 2px;
+}
+
+.search-in {
+    border: 2px solid #909090;
+    border-radius: 10px;
+    width: 9rem;
+    padding: 5px;
+    font-family: Smiley Sans;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.search-btn {
+    border: 2px solid #909090;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.title-tags,
+.title-webs {
+    text-align: center;
+    font-family: Smiley Sans;
+    font-size: 1em;
+    margin: 1vh 0;
+    z-index: 1;
+}
+
+a:link,
+:hover {
+    text-decoration: none;
+}
+
+#tags-container,
+#webs-container {
+    margin: 0 8vw;
+    padding: 1vh 0 3vh;
+    font-family: Smiley Sans;
+    text-align: center;
+}
+
+.tag,
+#web {
+    display: inline-block;
+    margin: 5px;
+    padding: 1px 5px;
+    line-height: 24px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    font-family: Smiley Sans;
+    font-weight: light;
+    font-size: 0.9em;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 2px;
+    padding-bottom: 3vh;
+}
