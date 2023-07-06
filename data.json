@@ -313,15 +313,6 @@
         "state": "正常"
     },
     {
-        "name": "全球付",
-        "web": "https://www.globalcash.hk/",
-        "tags": [
-            "💰外汇"
-        ],
-        "brief": "使用$交易",
-        "state": "隐藏"
-    },
-    {
         "name": "Youtube",
         "web": "https://www.youtube.com/",
         "tags": [
@@ -561,15 +552,6 @@
         ],
         "brief": "Kindle传文件用这个",
         "state": "正常"
-    },
-    {
-        "name": "Z-library复活",
-        "web": "https://singlelogin.me/",
-        "tags": [
-            "📚书籍"
-        ],
-        "brief": "在图书馆搜索书籍 Z-Library",
-        "state": "断开连接"
     },
     {
         "name": "星际核心：地平线",
