@@ -45,7 +45,7 @@ window.onload = function () {
     }
     fetch("https://web.nowscott.top/data.json")//从服务器上获取数据
         .then(response => response.json()).then(data => {
-            sources = data.filter(s => s.name !== '' && s.state === '正常');
+            sources = data//将筛选工作放在了上层服务器上，这里就不筛选了
             renderWebs(randomSort(unique(sources)))
             sources.forEach(s => { for (let i = 0; i < s.tags.length; i++) { taglist.push(s.tags[i]) } })
             taglist = randomSort(unique(taglist))
