@@ -1,5 +1,14 @@
 [
     {
+        "name": "INS",
+        "web": "https://www.instagram.com/",
+        "tags": [
+            "👁️‍🗨️媒体"
+        ],
+        "brief": "一款流行的社交媒体平台",
+        "state": "正常"
+    },
+    {
         "name": "PH风格生成",
         "web": "https://logoly.pro/",
         "tags": [
