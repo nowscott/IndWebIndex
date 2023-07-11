@@ -1,5 +1,26 @@
 [
     {
+        "name": "PH风格生成",
+        "web": "https://logoly.pro/",
+        "tags": [
+            "🔧工具",
+            "⛹️‍♀️娱乐"
+        ],
+        "brief": "在线的 PornHub 风格 Logo 生成工具",
+        "state": "正常"
+    },
+    {
+        "name": "HomeBrew",
+        "web": "https://brew.sh/index_zh-cn",
+        "tags": [
+            "🍎apple",
+            "💻Mac",
+            "🐈‍⬛Code"
+        ],
+        "brief": "macOS（或 Linux）缺失的软件包的管理器",
+        "state": "正常"
+    },
+    {
         "name": "MongoDB",
         "web": "https://cloud.mongodb.com/",
         "tags": [
@@ -103,8 +124,9 @@
         "name": "Mac应用",
         "web": "https://decrypt.day/",
         "tags": [
-            "💻软件",
-            "🍎apple"
+            "🧰软件",
+            "🍎apple",
+            "💻Mac"
         ],
         "brief": "查找并下载最新解密的IPA应用程序",
         "state": "正常"
@@ -235,7 +257,7 @@
         "name": "Potplayer官网",
         "web": "https://potplayer.daum.net/",
         "tags": [
-            "💻软件",
+            "🧰软件",
             "🔧工具"
         ],
         "brief": "贼好用的播放器",
@@ -934,7 +956,7 @@
         "name": "软件目录",
         "web": "https://www.yuque.com/books/share/ec226b31-5272-4792-811b-c22334cf0a9a?#%20%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95%E3%80%8B",
         "tags": [
-            "💻软件",
+            "🧰软件",
             "🔧工具"
         ],
         "brief": "一些付费软件的免费安装包",
