@@ -72,7 +72,7 @@ window.onload = function () {
                     renderWebs(randomSort(unique(reslist)))
                 }
             }
-            document.getElementById('s-btn').onclick = function () {
+            document.getElementById('s-btn').onclick = function () {//定义搜索按钮功能
                 var keyword = document.getElementById('s-in').value
                 keyword = keyword.toLowerCase();
                 reslist = []
