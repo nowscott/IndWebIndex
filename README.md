@@ -1,8 +1,8 @@
 # Individual Web Index
 
 [![update data.json](https://github.com/NowScott/web_database/actions/workflows/scraping.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/NowScott/web_database/actions/workflows/scraping.yml)
-![GitHub Repo stars](https://img.shields.io/github/stars/NowScott/IndWebIndex)
-![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/NowScott/IndWebIndex?color=%23f0c9cf)
+[![GitHub Repo stars](https://img.shields.io/github/stars/NowScott/IndWebIndex)
+[![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/NowScott/IndWebIndex?color=%23f0c9cf)
 
 
 ## 1.Purpose of creation
