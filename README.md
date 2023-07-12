@@ -11,11 +11,11 @@
 [data-update-url]:https://github.com/NowScott/web_database/actions/workflows/scraping.yml
 [data-update-image]:https://img.shields.io/github/actions/workflow/status/NowScott/IndWebIndex/scraping.yml?logo=github&label=data%20update
 [stars-url]:https://github.com/NowScott/IndWebIndex/stargazers "星标"
-[stars-image]: https://img.shields.io/github/stars/NowScott/IndWebIndex?style=flat-square&logo=github&label=Star
+[stars-image]: https://img.shields.io/github/stars/NowScott/IndWebIndex?style=flat&logo=github&label=Star
 [forks-url]: https://github.com/NowScott/IndWebIndex/forks "复刻"
-[forks-image]: https://img.shields.io/github/forks/NowScott/IndWebIndex?style=flat-square&logo=github&label=Fork
+[forks-image]: https://img.shields.io/github/forks/NowScott/IndWebIndex?style=flat&logo=github&label=Fork
 [license-url]: https://opensource.org/license/mit/  "许可证"
-[license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex?style=flat-square&logo=github&label=License
+[license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex?style=flat&logo=github&label=License
 [web-url]:https://www.nowscott.top "中文网页"
 [web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue?logo=github
 [web-en-url]:https://www.nowscott.top/en "English Web"
