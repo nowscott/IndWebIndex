@@ -78,8 +78,12 @@ window.onload = function () {
                 reslist = []
                 sources.forEach(s => {//遍历资源搜索
                     n = s.name.toLowerCase()
+                    ne = s.name_en.toLowerCase()
                     b = s.brief.toLowerCase()
-                    if (n.indexOf(keyword) !== -1 || b.indexOf(keyword) !== -1) { reslist.push(s) }
+                    be = s.brief_en.toLowerCase()
+                    if (
+                        n.indexOf(keyword) !== -1 || ne.indexOf(keyword) !== -1 || b.indexOf(keyword) !== -1 || be.indexOf(keyword) !== -1
+                    ) { reslist.push(s) }
                     for (t in s.tags) {
                         tag = s.tags[t].toLowerCase()
                         if (tag.indexOf(keyword) !== -1) { reslist.push(s) }
