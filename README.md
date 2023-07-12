@@ -2,6 +2,8 @@
 
 [![update data.json](https://github.com/NowScott/web_database/actions/workflows/scraping.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/NowScott/web_database/actions/workflows/scraping.yml)
 ![GitHub Repo stars](https://img.shields.io/github/stars/NowScott/IndWebIndex)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/NowScott/IndWebIndex?color=%23f0c9cf)
+
 
 ## 1.Purpose of creation
 Long ago, there was a website in the early days of the internet called Yellow Pages, which contained an index of many other websites. Over time, it gradually evolved into search engines.
