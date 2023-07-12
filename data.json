@@ -1120,15 +1120,6 @@
         "state": "正常"
     },
     {
-        "name": "BaiGPT",
-        "web": "https://chatbot.theb.ai/",
-        "tags": [
-            "🤖AI"
-        ],
-        "brief": "BAI Chat是一个基于GPT-3.5/ChatGPT API的聊天机器人，免费、方便且反应迅速",
-        "state": "正常"
-    },
-    {
         "name": "在线剪辑视频",
         "web": "https://online-video-cutter.com/cn/",
         "tags": [
