@@ -1,5 +1,23 @@
 [
     {
+        "name": "Gmail",
+        "web": "https://mail.google.com/mail/",
+        "tags": [
+            "📧邮箱"
+        ],
+        "brief": "谷歌邮箱",
+        "state": "正常"
+    },
+    {
+        "name": "Outlook",
+        "web": "https://outlook.live.com/mail/",
+        "tags": [
+            "📧邮箱"
+        ],
+        "brief": "微软邮箱",
+        "state": "正常"
+    },
+    {
         "name": "INS",
         "web": "https://www.instagram.com/",
         "tags": [
