@@ -59,4 +59,4 @@ When the data is modified, the aforementioned convenient data copy will not be u
 ## 5.Final Notes
 In summary, this project is a web-based personal website index that addresses the issue of slow access speed and ensures timely data updates. These optimizations make modifications easier and provide a more efficient and seamless user experience. Thank you for your interest in this project.
 
-If you have any questions or inquiries regarding this project, you can contact me via email at: [<i class="fa fa-envelope-o"></i> 现在scott@qq.com](mailto:nowscott@qq.com)
+If you have any questions or inquiries regarding this project, you can contact me via email at: [<i class="fa fa-envelope-o"></i> nowscott@qq.com](mailto:nowscott@qq.com)
