@@ -5,10 +5,13 @@
 [![GitHub forks][forks-image]][forks-url]
 [![license GPL-3.0][license-image]][license-url]
 
-[![Web][web-image]][web-url]
-[![Web-EN][web-en-image]][web-en-url]
+[![commit-count-permonth][commit-image]][commit-url]
+[![contributors-count][contributors-image]][contributors-url]
 
-[data-update-url]:https://github.com/NowScott/web_database/actions/workflows/scraping.yml
+[![web][web-image]][web-url]
+[![web-en][web-en-image]][web-en-url]
+
+[data-update-url]:https://github.com/NowScott/web_database/actions/workflows/scraping.yml "数据更新"
 [data-update-image]:https://img.shields.io/github/actions/workflow/status/NowScott/IndWebIndex/scraping.yml?logo=github&label=data%20update
 [stars-url]:https://github.com/NowScott/IndWebIndex/stargazers "星标"
 [stars-image]: https://img.shields.io/github/stars/NowScott/IndWebIndex?style=flat&logo=github&label=Star
@@ -16,6 +19,12 @@
 [forks-image]: https://img.shields.io/github/forks/NowScott/IndWebIndex?style=flat&logo=github&label=Fork
 [license-url]: https://opensource.org/license/mit/  "许可证"
 [license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex?style=flat&logo=github&label=License
+
+[commit-url]:https://github.com/NowScott/IndWebIndex/commits/main "提交"
+[commit-image]:https://img.shields.io/github/commit-activity/m/NowScott/IndWebIndex?logo=github
+[contributors-url]:https://github.com/NowScott/IndWebIndex/graphs/contributors "贡献者"
+[contributors-image]:https://img.shields.io/github/contributors/NowScott/IndWebIndex?logo=github
+
 [web-url]:https://www.nowscott.top "中文网页"
 [web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue?logo=github
 [web-en-url]:https://www.nowscott.top/en "English Web"
