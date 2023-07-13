@@ -22,7 +22,7 @@
 [forks-url]: https://github.com/NowScott/IndWebIndex/forks "复刻"
 [forks-image]: https://img.shields.io/github/forks/NowScott/IndWebIndex?label=Fork
 [license-url]: https://opensource.org/license/gpl-3-0/  "许可证"
-[license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex?label=License
+[license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex
 
 [commit-url]:https://github.com/NowScott/IndWebIndex/commits/main "提交"
 [commit-image]:https://img.shields.io/github/commit-activity/m/NowScott/IndWebIndex
