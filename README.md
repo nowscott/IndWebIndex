@@ -25,14 +25,14 @@
 [license-image]: https://img.shields.io/github/license/NowScott/IndWebIndex?label=License
 
 [commit-url]:https://github.com/NowScott/IndWebIndex/commits/main "提交"
-[commit-image]:https://img.shields.io/github/commit-activity/m/NowScott/IndWebIndex?logo=github
+[commit-image]:https://img.shields.io/github/commit-activity/m/NowScott/IndWebIndex
 [contributors-url]:https://github.com/NowScott/IndWebIndex/graphs/contributors "贡献者"
-[contributors-image]:https://img.shields.io/github/contributors/NowScott/IndWebIndex?logo=github
+[contributors-image]:https://img.shields.io/github/contributors/NowScott/IndWebIndex
 
 [web-url]:https://www.nowscott.top "中文网页"
-[web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue?logo=github
+[web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue
 [web-en-url]:https://www.nowscott.top/en "English Web"
-[web-en-image]:https://img.shields.io/badge/Preview-EN-blue?logo=github
+[web-en-image]:https://img.shields.io/badge/Preview-EN-blue
 [stars-history-image]:https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date
 
 ## 1.Purpose of creation
