@@ -30,6 +30,10 @@
 [web-en-url]:https://www.nowscott.top/en "English Web"
 [web-en-image]:https://img.shields.io/badge/Preview-EN-blue?logo=github
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date)](https://star-history.com/#NowScott/IndWebIndex&Date)
+
 
 ## 1.Purpose of creation
 Long ago, there was a website in the early days of the internet called Yellow Pages, which contained an index of many other websites. Over time, it gradually evolved into search engines.
