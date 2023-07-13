@@ -1,5 +1,41 @@
 [
     {
+        "name": "Figma",
+        "name_en": "Figma",
+        "web": "https://www.figma.com/",
+        "tags": [
+            "✏️协作",
+            "✒️设计",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "✏️Cooperation",
+            "✒️Design",
+            "🔧Tools"
+        ],
+        "brief": "Figma是一款协作设计工具，用于创建用户界面和原型。",
+        "brief_en": "A collaborative design tool for creating user interfaces and prototypes",
+        "state": "正常"
+    },
+    {
+        "name": "手写板",
+        "name_en": "Handraw",
+        "web": "https://handraw.top/",
+        "tags": [
+            "📊作图",
+            "🧠学习",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "📊Charting",
+            "🧠Learn",
+            "🔧Tools"
+        ],
+        "brief": "Handraw | 中文友好的手写效果白板工具",
+        "brief_en": "Chinese-friendly Handwriting Whiteboard Tool",
+        "state": "正常"
+    },
+    {
         "name": "Adobe Color",
         "name_en": "Adobe Color",
         "web": "https://color.adobe.com/",
