@@ -64,7 +64,7 @@ In this video, I learned how to use the Notion API to fetch data from Notion and
 
 To summarize, I utilized a website called Netlify to deploy a service. This service runs every time someone visits the domain I deployed, retrieves data from Notion, and returns it to the frontend. Once the frontend receives the data, it can be displayed on the webpage.
 
-This sounds great, right? However, this simple process takes around 7 to 8 秒之前 at most, which does not align with the vision of a fast-loading personal website. Therefore, I made further improvements in this area.
+This sounds great, right? However, this simple process takes around 7 to 8 seconds at most, which does not align with the vision of a fast-loading personal website. Therefore, I made further improvements in this area.
 
 ## 4.Some optimizations
 
