@@ -1,5 +1,23 @@
 [
     {
+        "name": "中文手写板",
+        "name_en": "Handraw",
+        "web": "https://handraw.top/",
+        "tags": [
+            "📊作图",
+            "🧠学习",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "📊Charting",
+            "🧠Learn",
+            "🔧Tools"
+        ],
+        "brief": "中文友好的手写白板工具",
+        "brief_en": "Chinese-friendly Handwritten Whiteboard Tool",
+        "state": "正常"
+    },
+    {
         "name": "星标历史图",
         "name_en": "Star History",
         "web": "https://star-history.com/",
