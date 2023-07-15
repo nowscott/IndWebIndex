@@ -1,5 +1,21 @@
 [
     {
+        "name": "硬件测试仪",
+        "name_en": "HardwareTester",
+        "web": "https://hardwaretester.com/",
+        "tags": [
+            "🕹️游戏",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🕹️Games",
+            "🔧Tools"
+        ],
+        "brief": "提供手柄、GPU、麦克风以及midi功能的测试",
+        "brief_en": "useful tools for checking your computer's hardware",
+        "state": "正常"
+    },
+    {
         "name": "中文手写板",
         "name_en": "Handraw",
         "web": "https://handraw.top/",
