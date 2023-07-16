@@ -1,5 +1,19 @@
 [
     {
+        "name": "Theb.AI",
+        "name_en": "Theb.AI",
+        "web": "https://beta.theb.ai/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "一个基于GPT API的聊天机器人 可选择多种模型",
+        "brief_en": "A Chatbot Based on GPT API Supporting Multiple Models",
+        "state": "正常"
+    },
+    {
         "name": "硬件测试仪",
         "name_en": "HardwareTester",
         "web": "https://hardwaretester.com/",
