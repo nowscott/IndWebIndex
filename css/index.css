@@ -25,10 +25,10 @@ body {
 }
 
 .html-container {
-    width: 100vw;
+    width: 98vw;
     text-align: center;
     margin: 0 auto;
-    padding: 0 0 3vh;
+    padding: 0 0 5vh;
     position: relative;
     min-height: 88vh;
 }
