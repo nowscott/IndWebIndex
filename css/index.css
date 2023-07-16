@@ -90,7 +90,9 @@ a:link,
     font-family: Smiley Sans;
     text-align: center;
 }
-
+p{
+    height: 4vh;
+}
 .tag,
 #web {
     display: inline-block;
