@@ -1,5 +1,33 @@
 [
     {
+        "name": "Bard",
+        "name_en": "Bard",
+        "web": "https://bard.google.com/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "谷歌人工智能的一个大型语言模型",
+        "brief_en": "A",
+        "state": "正常"
+    },
+    {
+        "name": "Claude",
+        "name_en": "Claude",
+        "web": "https://claude.ai/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "Anthropic公司开发的一个人工智能助手",
+        "brief_en": "An AI assistant created by Anthropic",
+        "state": "正常"
+    },
+    {
         "name": "Theb.AI",
         "name_en": "Theb.AI",
         "web": "https://beta.theb.ai/",
