@@ -28,7 +28,7 @@ body {
     width: 98vw;
     text-align: center;
     margin: 0 auto;
-    padding: 0 0 5vh;
+    padding: 0 0 3vh;
     position: relative;
     min-height: 88vh;
 }
@@ -67,6 +67,7 @@ body {
 
 p {
     position: absolute;
+    white-space: nowrap;
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
