@@ -29,6 +29,8 @@ body {
     text-align: center;
     margin: 0 auto;
     padding: 0 0 3vh;
+    position: relative;
+    min-height: 100%;
 }
 
 .title-1,
@@ -61,6 +63,13 @@ body {
     font-family: Smiley Sans;
     font-size: 16px;
     line-height: 20px;
+}
+
+p {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .search-btn {
