@@ -28,6 +28,7 @@ body {
     width: 92vw;
     text-align: center;
     margin: 0 auto;
+    padding: 0 0 3vh;
 }
 
 .title-1,
@@ -90,9 +91,7 @@ a:link,
     font-family: Smiley Sans;
     text-align: center;
 }
-p{
-    height: 4vh;
-}
+
 .tag,
 #web {
     display: inline-block;
