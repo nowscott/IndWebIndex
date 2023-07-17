@@ -67,10 +67,12 @@ body {
 
 p {
     position: absolute;
+    font-size: xx-small;
     white-space: nowrap;
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
+    color: lightpink;
 }
 
 .search-btn {

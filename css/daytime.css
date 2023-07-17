@@ -1,37 +1,50 @@
-body{
+body {
     background-color: #f7f7f7;
 }
-.title-1{
+
+.title-1 {
     color: darkorange;
 }
-.title-2{
+
+.title-2 {
     color: darkslateblue;
 }
-.title-tags,.title-webs{
+
+.title-tags,
+.title-webs {
     color: darkblue;
 }
-a:link,:hover {
+
+a:link,
+:hover {
     color: black;
 }
-.search-in{
+
+.search-in {
     color: navy;
     background-color: lemonchiffon;
 }
-.search-btn{
+
+.search-btn {
     background-color: lemonchiffon;
 }
-.tag,#web{
-    border:#909090 1.5px solid;
+
+.tag,
+#web {
+    border: #909090 1.5px solid;
 }
-#web{
+
+#web {
     color: navy;
     background-color: lemonchiffon;
 }
-.on{
+
+.on {
     background-color: darkslategray;
     color: #eee;
 }
-.off{
+
+.off {
     background-color: #eee;
     color: darkslategray;
 }
