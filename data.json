@@ -144,7 +144,7 @@
         "state": "正常"
     },
     {
-        "name": "徽标制作",
+        "name": "徽章制作",
         "name_en": "Badge Design",
         "web": "https://shields.io/",
         "tags": [
@@ -155,7 +155,7 @@
             "🐈‍⬛Code",
             "🔧Tools"
         ],
-        "brief": "提供各种服务的简洁、一致的易读徽章",
+        "brief": "提供各种服务的简洁、一致的易读徽章（badge、徽标）",
         "brief_en": "Sleek, Consistent, and Readable Badges for Various Services",
         "state": "正常"
     },
