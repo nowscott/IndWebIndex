@@ -1,5 +1,21 @@
 [
     {
+        "name": "LaTeX公式编辑器",
+        "name_en": "latexlive",
+        "web": " https://www.latexlive.com/",
+        "tags": [
+            "🧠学习",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🧠Learn",
+            "🔧Tools"
+        ],
+        "brief": "在线编辑LaTeX公式的工具",
+        "brief_en": "Online LaTeX formula editor tools",
+        "state": "正常"
+    },
+    {
         "name": "Notion头像",
         "name_en": "notion-avatar",
         "web": "https://notion-avatar.vercel.app/zh",
