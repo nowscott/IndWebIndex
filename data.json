@@ -1,5 +1,23 @@
 [
     {
+        "name": "Notion头像",
+        "name_en": "notion-avatar",
+        "web": "https://notion-avatar.vercel.app/zh",
+        "tags": [
+            "✒️设计",
+            "🖼️图片",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "✒️Design",
+            "🖼️Image",
+            "🔧Tools"
+        ],
+        "brief": "制作notion风格的头像",
+        "brief_en": "NotionAvatar Maker",
+        "state": "正常"
+    },
+    {
         "name": "Bard",
         "name_en": "Bard",
         "web": "https://bard.google.com/",
