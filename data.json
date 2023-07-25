@@ -1,5 +1,21 @@
 [
     {
+        "name": "B站封面",
+        "name_en": "BiliCover",
+        "web": "https://bilicover.magecorn.com/",
+        "tags": [
+            "🖼️图片",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🖼️Image",
+            "🔧Tools"
+        ],
+        "brief": "提取B站视频封面",
+        "brief_en": "Extract the video cover of Bilibili",
+        "state": "正常"
+    },
+    {
         "name": "LaTeX公式编辑器",
         "name_en": "latexlive",
         "web": " https://www.latexlive.com/",
