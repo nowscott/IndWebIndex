@@ -1,5 +1,23 @@
 [
     {
+        "name": "图形计算器",
+        "name_en": "Desmos",
+        "web": "https://www.desmos.com/calculator?lang=zh-CN",
+        "tags": [
+            "📊作图",
+            "🧠学习",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "📊Charting",
+            "🧠Learn",
+            "🔧Tools"
+        ],
+        "brief": "绘制函数图形并进行可视化",
+        "brief_en": "Graph functions and visualize them",
+        "state": "正常"
+    },
+    {
         "name": "B站封面",
         "name_en": "BiliCover",
         "web": "https://bilicover.magecorn.com/",
