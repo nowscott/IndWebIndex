@@ -1,5 +1,21 @@
 [
     {
+        "name": "深言达意",
+        "name_en": "ShenYan",
+        "web": "https://shenyandayi.com/",
+        "tags": [
+            "🤖AI",
+            "🧠学习"
+        ],
+        "tags_en": [
+            "🤖AI",
+            "🧠Learn"
+        ],
+        "brief": "清华开发的根据句子找词的工具，基于AI模型",
+        "brief_en": "Finds words based on sentences, built on AI models",
+        "state": "正常"
+    },
+    {
         "name": "图形计算器",
         "name_en": "Desmos",
         "web": "https://www.desmos.com/calculator?lang=zh-CN",
