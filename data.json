@@ -1896,20 +1896,6 @@
         "state": "正常"
     },
     {
-        "name": "BaiGPT",
-        "name_en": "BaiGPT",
-        "web": "https://chatbot.theb.ai/",
-        "tags": [
-            "🤖AI"
-        ],
-        "tags_en": [
-            "🤖AI"
-        ],
-        "brief": "一个基于GPT API的聊天机器人，免费、方便且反应迅速",
-        "brief_en": "A chatbot powered by the GPT API that is free, convenient, and responsive",
-        "state": "正常"
-    },
-    {
         "name": "在线剪辑视频",
         "name_en": "OLVideoCut",
         "web": "https://online-video-cutter.com/cn/",
