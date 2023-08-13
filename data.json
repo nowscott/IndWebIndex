@@ -1,5 +1,21 @@
 [
     {
+        "name": "SOC-PK",
+        "name_en": "SOC-PK",
+        "web": "https://www.socpk.com/",
+        "tags": [
+            "↗️排序",
+            "🚀芯片"
+        ],
+        "tags_en": [
+            "↗️Rank",
+            "🚀SOC"
+        ],
+        "brief": "极客湾做的移动芯片排行",
+        "brief_en": "Mobile chip ranking",
+        "state": "正常"
+    },
+    {
         "name": "BibiGPT",
         "name_en": "BibiGPT",
         "web": "https://b.jimmylv.cn/",
