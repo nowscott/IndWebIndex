@@ -1,5 +1,19 @@
 [
     {
+        "name": "开源程序书籍",
+        "name_en": "🆓👨🏻‍💻📖",
+        "web": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md",
+        "tags": [
+            "📚书籍"
+        ],
+        "tags_en": [
+            "📚Books"
+        ],
+        "brief": "一些开源的程序书籍",
+        "brief_en": "Some open source program books",
+        "state": "正常"
+    },
+    {
         "name": "SOC-PK",
         "name_en": "SOC-PK",
         "web": "https://www.socpk.com/",
