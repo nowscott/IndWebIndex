@@ -1,5 +1,19 @@
 [
     {
+        "name": "在线测试",
+        "name_en": "Online Test",
+        "web": "https://www.onlinemictest.com/",
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
+        "brief": "提供各种测试工具",
+        "brief_en": "Provide various testing tools",
+        "state": "正常"
+    },
+    {
         "name": "开源程序书籍",
         "name_en": "🆓👨🏻‍💻📖",
         "web": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md",
@@ -69,11 +83,13 @@
         "web": "https://www.desmos.com/calculator?lang=zh-CN",
         "tags": [
             "📊作图",
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
             "📊Charting",
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "绘制函数图形并进行可视化",
         "brief_en": "Graph functions and visualize them",
@@ -84,10 +100,12 @@
         "name_en": "BiliCover",
         "web": "https://bilicover.magecorn.com/",
         "tags": [
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "提取B站视频封面",
         "brief_en": "Extract the video cover of Bilibili",
@@ -98,10 +116,12 @@
         "name_en": "latexlive",
         "web": " https://www.latexlive.com/",
         "tags": [
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "在线编辑LaTeX公式的工具",
         "brief_en": "Online LaTeX formula editor tools",
@@ -113,19 +133,21 @@
         "web": "https://notion-avatar.vercel.app/zh",
         "tags": [
             "✒️设计",
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
             "✒️Design",
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "制作notion风格的头像",
         "brief_en": "NotionAvatar Maker",
         "state": "正常"
     },
     {
-        "name": "Bard",
-        "name_en": "Bard",
+        "name": "Gemini",
+        "name_en": "Gemini",
         "web": "https://bard.google.com/",
         "tags": [
             "🤖AI"
@@ -170,10 +192,12 @@
         "name_en": "HardwareTester",
         "web": "https://hardwaretester.com/",
         "tags": [
-            "🕹️游戏"
+            "🕹️游戏",
+            "🔧工具"
         ],
         "tags_en": [
-            "🕹️Games"
+            "🕹️Games",
+            "🔧Tools"
         ],
         "brief": "提供手柄、GPU、麦克风以及midi功能的测试",
         "brief_en": "useful tools for checking your computer's hardware",
@@ -185,11 +209,13 @@
         "web": "https://handraw.top/",
         "tags": [
             "📊作图",
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
             "📊Charting",
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "中文友好的手写白板工具",
         "brief_en": "Chinese-friendly Handwritten Whiteboard Tool",
@@ -201,11 +227,13 @@
         "web": "https://star-history.com/",
         "tags": [
             "📊作图",
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧工具"
         ],
         "tags_en": [
             "📊Charting",
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧Tools"
         ],
         "brief": "GitHub上缺失的星标历史图",
         "brief_en": " The missing GitHub star history graph of GitHub repos",
@@ -217,11 +245,13 @@
         "web": "https://www.figma.com/",
         "tags": [
             "✏️协作",
-            "✒️设计"
+            "✒️设计",
+            "🔧工具"
         ],
         "tags_en": [
             "✏️Cooperation",
-            "✒️Design"
+            "✒️Design",
+            "🔧Tools"
         ],
         "brief": "Figma是一款协作设计工具，用于创建用户界面和原型。",
         "brief_en": "A collaborative design tool for creating user interfaces and prototypes",
@@ -233,11 +263,13 @@
         "web": "https://excalidraw.com/",
         "tags": [
             "📊作图",
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
             "📊Charting",
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "手写效果白板工具",
         "brief_en": "Handwriting Whiteboard Tool",
@@ -262,10 +294,12 @@
         "name_en": "Badge Design",
         "web": "https://shields.io/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧工具"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧Tools"
         ],
         "brief": "提供各种服务的简洁、一致的易读徽章（badge、徽标）",
         "brief_en": "Sleek, Consistent, and Readable Badges for Various Services",
@@ -334,10 +368,12 @@
         "name_en": "LogolyPro",
         "web": "https://logoly.pro/",
         "tags": [
+            "🔧工具",
             "⛹️‍♀️娱乐"
         ],
         "tags_en": [
-            "⛹️‍♀️Fun"
+            "⛹️‍♀️Fun",
+            "🔧Tools"
         ],
         "brief": "在线的 PornHub 风格 Logo 生成工具",
         "brief_en": "An online PornHub-style logo generator",
@@ -400,10 +436,12 @@
         "name_en": "Archive",
         "web": "https://archive.ph/",
         "tags": [
-            "📒笔记"
+            "📒笔记",
+            "🔧工具"
         ],
         "tags_en": [
-            "📒Notes"
+            "📒Notes",
+            "🔧Tools"
         ],
         "brief": "将网页永久保存，即使原来的消失了，仍然可以通过存档查看网页内容",
         "brief_en": "Permanently save web pages",
@@ -647,8 +685,12 @@
         "name": "字幕库",
         "name_en": "ZMK",
         "web": "https://zmk.pw/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "字幕下载网站",
         "brief_en": "A subtitle download website",
         "state": "正常"
@@ -658,10 +700,12 @@
         "name_en": "Yu Xiang",
         "web": "http://yuzhuyi.ysepan.com/",
         "tags": [
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "各种资源的网页",
         "brief_en": "A webpage for various resources",
@@ -685,8 +729,12 @@
         "name": "油管封面",
         "name_en": "YouTube Cover",
         "web": "https://www.strerr.com/index.html",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "提供油管封面预览和下载功能",
         "brief_en": "Provide YouTube thumbnail preview and download functionality",
         "state": "正常"
@@ -709,8 +757,12 @@
         "name": "推文图制作",
         "name_en": "Poet",
         "web": "https://poet.so/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "创造漂亮的推文图片",
         "brief_en": "Create stunning tweet graphics",
         "state": "正常"
@@ -720,10 +772,12 @@
         "name_en": "PotPlayer",
         "web": "https://potplayer.daum.net/",
         "tags": [
-            "🧰软件"
+            "🧰软件",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧰Software"
+            "🧰Software",
+            "🔧Tools"
         ],
         "brief": "贼好用的win播放器",
         "brief_en": "A ridiculously good Win media player",
@@ -734,10 +788,12 @@
         "name_en": "MagicEraser",
         "web": "https://www.magiceraser.io/",
         "tags": [
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "可以去背景",
         "brief_en": "Background removal tool",
@@ -761,8 +817,12 @@
         "name": "花生壳",
         "name_en": "HuaShengKe",
         "web": "https://hsk.oray.com/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "提供内网穿透和动态域名解析服务，支持外网访问内网服务器",
         "brief_en": "External access to intranet servers with tunneling and dynamic DNS services",
         "state": "正常"
@@ -814,10 +874,12 @@
         "name_en": "HomeRecipe",
         "web": "https://cook.yunyoujun.cn/",
         "tags": [
-            "🍛食谱"
+            "🍛食谱",
+            "🔧工具"
         ],
         "tags_en": [
-            "🍛Recipe"
+            "🍛Recipe",
+            "🔧Tools"
         ],
         "brief": "多种多样的菜谱任你选择",
         "brief_en": "A variety of recipes for you to choose from",
@@ -841,8 +903,12 @@
         "name": "你的密码安全吗？",
         "name_en": "PasswordMonster",
         "web": "https://www.passwordmonster.com/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "测试密码安全程度",
         "brief_en": "Test password security level",
         "state": "正常"
@@ -879,8 +945,12 @@
         "name": "Logo制作",
         "name_en": "Logo Design",
         "web": "https://www.designevo.com/cn",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "一款专业制作Logo的免费软件",
         "brief_en": "A free software for professional logo design",
         "state": "正常"
@@ -904,10 +974,12 @@
         "name_en": "Chinese Color",
         "web": "http://zhongguose.com/",
         "tags": [
-            "🪣色彩"
+            "🪣色彩",
+            "🔧工具"
         ],
         "tags_en": [
-            "🪣Color"
+            "🪣Color",
+            "🔧Tools"
         ],
         "brief": "提供各种中国的传统颜色的名称，CMYK值，RGB值，16进制表示",
         "brief_en": "Traditional Chinese color names, CMYK, RGB, and Hex codes",
@@ -918,10 +990,12 @@
         "name_en": "Win32 Disk Imager",
         "web": "https://win32diskimager.org/",
         "tags": [
-            "🧰软件"
+            "🧰软件",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧰Software"
+            "🧰Software",
+            "🔧Tools"
         ],
         "brief": "一个将原始磁盘映像写入可移动设备的程序",
         "brief_en": "A program that writes raw disk images to removable devices",
@@ -988,7 +1062,8 @@
         "name_en": "EastChuan",
         "web": "https://easychuan.cn/",
         "tags": [
-            "📁文件"
+            "📁文件",
+            "🔧工具"
         ],
         "tags_en": [
             "📁File"
@@ -1002,10 +1077,12 @@
         "name_en": "OlLatex",
         "web": "https://cn.overleaf.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧工具"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐈‍⬛Code",
+            "🔧Tools"
         ],
         "brief": "在线 LaTeX 编辑器，无需安装，实时共享，版本控制，数百免费模板",
         "brief_en": "Online LaTeX editor",
@@ -1044,27 +1121,15 @@
         "name_en": "ChatGPT",
         "web": "https://chat.openai.com/",
         "tags": [
-            "🤖AI"
+            "🤖AI",
+            "🔧工具"
         ],
         "tags_en": [
-            "🤖AI"
+            "🤖AI",
+            "🔧Tools"
         ],
         "brief": "AI帮你解决问题(需要魔法)",
         "brief_en": "AI helps you solve problems",
-        "state": "正常"
-    },
-    {
-        "name": "全渠道搜索",
-        "name_en": "Scmor",
-        "web": "http://dir.scmor.com/",
-        "tags": [
-            "🔍搜索"
-        ],
-        "tags_en": [
-            "🔍Search"
-        ],
-        "brief": "各种搜索渠道",
-        "brief_en": "Various search channels",
         "state": "正常"
     },
     {
@@ -1114,10 +1179,12 @@
         "name_en": "Phind",
         "web": "https://phind.com/",
         "tags": [
-            "🔍搜索"
+            "🔍搜索",
+            "🔧工具"
         ],
         "tags_en": [
-            "🔍Search"
+            "🔍Search",
+            "🔧Tools"
         ],
         "brief": "面向程序员的搜索引擎",
         "brief_en": "Search engine for programmers",
@@ -1198,10 +1265,12 @@
         "name_en": "EasyChuan(Kindle)",
         "web": "https://easychuan.cn/light/",
         "tags": [
-            "📁文件"
+            "📁文件",
+            "🔧工具"
         ],
         "tags_en": [
-            "📁File"
+            "📁File",
+            "🔧Tools"
         ],
         "brief": "Kindle传文件用这个",
         "brief_en": "Transfer files to Kindle using this",
@@ -1226,10 +1295,12 @@
         "name_en": "Google",
         "web": "https://www.google.com/",
         "tags": [
-            "🔍搜索"
+            "🔍搜索",
+            "🔧工具"
         ],
         "tags_en": [
-            "🔍Search"
+            "🔍Search",
+            "🔧Tools"
         ],
         "brief": "需要魔法才能用的检索工具",
         "brief_en": "Search tool",
@@ -1255,8 +1326,12 @@
         "name": "全球logo",
         "name_en": "Logonews",
         "web": "https://www.logonews.cn/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "logo情报网站",
         "brief_en": "Logo intelligence website",
         "state": "正常"
@@ -1281,11 +1356,13 @@
         "web": "https://www.aconvert.com/cn/",
         "tags": [
             "🦷常用",
-            "⚙️转换"
+            "⚙️转换",
+            "🔧工具"
         ],
         "tags_en": [
             "🦷Common",
-            "⚙️Convert"
+            "⚙️Convert",
+            "🔧Tools"
         ],
         "brief": "内含多种格式转换",
         "brief_en": "Contains multiple format conversions",
@@ -1310,10 +1387,12 @@
         "name_en": "AiGei",
         "web": "https://www.aigei.com/",
         "tags": [
-            "🎵音乐"
+            "🎵音乐",
+            "🔧工具"
         ],
         "tags_en": [
-            "🎵Music"
+            "🎵Music",
+            "🔧Tools"
         ],
         "brief": "中国最大的数字娱乐免费素材下载网站",
         "brief_en": "China's largest website for free digital entertainment material downloads",
@@ -1337,8 +1416,12 @@
         "name": "比特虫ico图标制作",
         "name_en": "BitBug",
         "web": "https://www.bitbug.net/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "制作网站图标的网站",
         "brief_en": "Website for creating website icons",
         "state": "正常"
@@ -1389,8 +1472,12 @@
         "name": "猫啃网",
         "name_en": "MaoKen",
         "web": "https://www.maoken.com/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "最新最全的可免费商用中文字体下载网站",
         "brief_en": "Free commercial Chinese font download site: Latest & comprehensive",
         "state": "正常"
@@ -1429,11 +1516,13 @@
         "web": "https://www.speedtest.cn/",
         "tags": [
             "🦷常用",
-            "🕸️网络"
+            "🕸️网络",
+            "🔧工具"
         ],
         "tags_en": [
             "🦷Common",
-            "🕸️Network"
+            "🕸️Network",
+            "🔧Tools"
         ],
         "brief": "你的网速怎么样？",
         "brief_en": "How is your internet speed?",
@@ -1547,8 +1636,12 @@
         "name": "油管解析",
         "name_en": "YouTube Parsing",
         "web": "https://fotoun.com/?p=161",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "YouTube视频在线解析网站",
         "brief_en": "Online YouTube video downloader",
         "state": "正常"
@@ -1587,11 +1680,13 @@
         "web": "https://www.mgidshop.com/",
         "tags": [
             "🍎Apple",
-            "🛒购物"
+            "🛒购物",
+            "🔧工具"
         ],
         "tags_en": [
             "🍎Apple",
-            "🛒Shopping"
+            "🛒Shopping",
+            "🔧Tools"
         ],
         "brief": "购买日区美区小火箭、美区苹果ID",
         "brief_en": "Purchase Japanese and American region Shadowsocks, American region Apple ID",
@@ -1602,10 +1697,12 @@
         "name_en": "WantQuotes",
         "web": "https://wantquotes.net/",
         "tags": [
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "根据意思来查找名人名言",
         "brief_en": "Search for famous quotes by meaning",
@@ -1672,10 +1769,12 @@
         "name_en": "Nbfox",
         "web": "https://www.nbfox.com/",
         "tags": [
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "高清著名画作",
         "brief_en": "High-definition famous artworks",
@@ -1732,10 +1831,12 @@
         "name_en": "SoftwareMenu",
         "web": "https://www.yuque.com/books/share/ec226b31-5272-4792-811b-c22334cf0a9a?#%20%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95%E3%80%8B",
         "tags": [
-            "🧰软件"
+            "🧰软件",
+            "🔧工具"
         ],
         "tags_en": [
-            "🧰Software"
+            "🧰Software",
+            "🔧Tools"
         ],
         "brief": "一些付费软件的免费安装包",
         "brief_en": "Free installation packages for paid software",
@@ -1745,8 +1846,12 @@
         "name": "MSDN",
         "name_en": "MSDN",
         "web": "https://msdn.itellyou.cn/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "操作系统镜像",
         "brief_en": "Operating system image",
         "state": "正常"
@@ -1784,10 +1889,12 @@
         "name_en": "IconFont",
         "web": "https://www.iconfont.cn/",
         "tags": [
-            "♻︎图标"
+            "♻︎图标",
+            "🔧工具"
         ],
         "tags_en": [
-            "♻︎Icon"
+            "♻︎Icon",
+            "🔧Tools"
         ],
         "brief": "可以找到很多官方图标",
         "brief_en": "You can find a wide variety of official icons",
@@ -1798,10 +1905,12 @@
         "name_en": "IpSkk",
         "web": "https://ip.skk.moe/",
         "tags": [
-            "🕸️网络"
+            "🕸️网络",
+            "🔧工具"
         ],
         "tags_en": [
-            "🕸️Network"
+            "🕸️Network",
+            "🔧Tools"
         ],
         "brief": "检测你的电脑是否能连接一些节点",
         "brief_en": "Check if your computer can connect to certain nodes",
@@ -1811,8 +1920,12 @@
         "name": "UU在线工具",
         "name_en": "UUTool",
         "web": "https://uutool.cn/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "很多的工具",
         "brief_en": "Many tools",
         "state": "正常"
@@ -1865,8 +1978,12 @@
         "name": "油猴脚本",
         "name_en": "Greasy Fork",
         "web": "https://greasyfork.org/zh-CN",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "这里是一个提供用户脚本的网站",
         "brief_en": "Here is a website that provides user scripts.",
         "state": "正常"
@@ -1877,11 +1994,13 @@
         "web": "https://www.deepl.com/translator",
         "tags": [
             "🦷常用",
-            "🧠学习"
+            "🧠学习",
+            "🔧工具"
         ],
         "tags_en": [
             "🦷Common",
-            "🧠Learn"
+            "🧠Learn",
+            "🔧Tools"
         ],
         "brief": "一个很好用的翻译网站",
         "brief_en": "A highly useful translation website",
@@ -1891,8 +2010,12 @@
         "name": "国外手机号",
         "name_en": "SMS",
         "web": "https://sms-activate.org",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "虚拟号码来在线接受短信",
         "brief_en": "Virtual phone numbers for receiving SMS messages online",
         "state": "正常"
@@ -1926,13 +2049,29 @@
         "state": "正常"
     },
     {
+        "name": "BaiGPT",
+        "name_en": "BaiGPT",
+        "web": "https://beta.theb.ai/home",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "一个基于GPT API的聊天机器人，免费、方便且反应迅速",
+        "brief_en": "A chatbot powered by the GPT API that is free, convenient, and responsive",
+        "state": "正常"
+    },
+    {
         "name": "在线剪辑视频",
         "name_en": "OLVideoCut",
         "web": "https://online-video-cutter.com/cn/",
         "tags": [
+            "🔧工具",
             "📺视频"
         ],
         "tags_en": [
+            "🔧Tools",
             "📺Video"
         ],
         "brief": "从任何在线视频中剪切片段",
@@ -1943,8 +2082,12 @@
         "name": "拼接音视频",
         "name_en": "MergeMp4",
         "web": "https://maple3142.github.io/mergemp4/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "将音频和视频拼到一起（不负责对齐）",
         "brief_en": "Merge audio and video together (without aligning)",
         "state": "正常"
@@ -1967,8 +2110,12 @@
         "name": "即时工具",
         "name_en": "67Tool",
         "web": "https://www.67tool.com/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "一些工具",
         "brief_en": "Some tools",
         "state": "正常"
@@ -1978,10 +2125,12 @@
         "name_en": "MD Format",
         "web": "https://md.guozh.net/",
         "tags": [
-            "🦷常用"
+            "🦷常用",
+            "🔧工具"
         ],
         "tags_en": [
-            "🦷Common"
+            "🦷Common",
+            "🔧Tools"
         ],
         "brief": "让markdown可以很好的发在公众号上",
         "brief_en": "Make Markdown compatible for publishing on public accounts",
@@ -2020,10 +2169,12 @@
         "name_en": "WooDenEars",
         "web": "https://www.woodenears.com/",
         "tags": [
-            "📱数码"
+            "📱数码",
+            "🔧工具"
         ],
         "tags_en": [
-            "📱Digital"
+            "📱Digital",
+            "🔧Tools"
         ],
         "brief": "耳机测评网站",
         "brief_en": "Headphone review website",
@@ -2049,11 +2200,13 @@
         "web": "https://www.tusij.com/",
         "tags": [
             "🦷常用",
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
             "🦷Common",
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "简单修图网页",
         "brief_en": "Simple photo editing webpage",
@@ -2063,8 +2216,12 @@
         "name": "OfficeToolPlus",
         "name_en": "OfficeToolPlus",
         "web": "https://otp.landian.vip/zh-cn/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "office软件的工具网页",
         "brief_en": "Tool webpage for office software",
         "state": "正常"
@@ -2088,10 +2245,12 @@
         "name_en": "Wallhaven",
         "web": "https://wallhaven.cc/",
         "tags": [
-            "🖼️图片"
+            "🖼️图片",
+            "🔧工具"
         ],
         "tags_en": [
-            "🖼️Image"
+            "🖼️Image",
+            "🔧Tools"
         ],
         "brief": "好看高清壁纸",
         "brief_en": "Beautiful high-definition wallpapers",
@@ -2158,9 +2317,11 @@
         "name_en": "YWYJ",
         "web": "https://ywyj.cn/",
         "tags": [
+            "🔧工具",
             "🕊️up主"
         ],
         "tags_en": [
+            "🔧Tools",
             "🕊️YouTuber"
         ],
         "brief": "一个up主叫一网一匠做的主页",
@@ -2186,10 +2347,12 @@
         "name_en": "ProcessOn",
         "web": "https://www.processon.com/",
         "tags": [
-            "📊作图"
+            "📊作图",
+            "🔧工具"
         ],
         "tags_en": [
-            "📊Charting"
+            "📊Charting",
+            "🔧Tools"
         ],
         "brief": "流程清晰可见",
         "brief_en": "Clear and visible workflow",
@@ -2299,8 +2462,12 @@
         "name": "播客搜索引擎",
         "name_en": "Pod",
         "web": "https://pod.link/",
-        "tags": [],
-        "tags_en": [],
+        "tags": [
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔧Tools"
+        ],
         "brief": "搜索播客的网站",
         "brief_en": "A website for searching podcasts",
         "state": "正常"
@@ -2310,10 +2477,12 @@
         "name_en": "AirPortal",
         "web": "https://airportal.cn/",
         "tags": [
-            "📁文件"
+            "📁文件",
+            "🔧工具"
         ],
         "tags_en": [
-            "📁File"
+            "📁File",
+            "🔧Tools"
         ],
         "brief": "快速传文件",
         "brief_en": "Fast file transfer",
