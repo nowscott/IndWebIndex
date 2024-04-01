@@ -1,5 +1,23 @@
 [
     {
+        "name": "秒搜",
+        "name_en": "MiaoSou",
+        "web": "https://miaosou.fun/",
+        "tags": [
+            "🔧工具",
+            "💾网盘",
+            "🔍搜索"
+        ],
+        "tags_en": [
+            "🔧Tools",
+            "💾OnlineStorage",
+            "🔍Search"
+        ],
+        "brief": "一个很好用的网盘资源搜索引擎",
+        "brief_en": "\"A very useful cloud storage resource search engine”",
+        "state": "正常"
+    },
+    {
         "name": "在线测试",
         "name_en": "Online Test",
         "web": "https://www.onlinemictest.com/",
