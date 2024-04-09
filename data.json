@@ -1,5 +1,21 @@
 [
     {
+        "name": "牛客网",
+        "name_en": "nowcoder",
+        "web": "https://www.nowcoder.com/",
+        "tags": [
+            "🐈‍⬛Code",
+            "🧠学习"
+        ],
+        "tags_en": [
+            "🐈‍⬛Code",
+            "🧠Learn"
+        ],
+        "brief": "找工作神器|笔试题库|面试经验|实习招聘内推，求职就业一站解决",
+        "brief_en": "Job search tool | Written test question bank | Interview experience | Internship recruitment internal recommendation, one-stop solution for job seeking and employment",
+        "state": "正常"
+    },
+    {
         "name": "秒搜",
         "name_en": "MiaoSou",
         "web": "https://miaosou.fun/",
