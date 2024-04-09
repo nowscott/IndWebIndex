@@ -35,7 +35,26 @@
 [web-en-image]:https://img.shields.io/badge/Preview-EN-blue
 [stars-history-image]:https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date
 
-## 1.Purpose of creation
+[notion-url]:https://nowscott.notion.site/0c3540063c0245a3947494527e83ba7a?v=8757a2fec25246fcb24574ba60542f00
+
+[access-url]:https://www.notion.so/my-integrations
+
+## Switch to Chinese
+
+[![readme-cn][readme-cn-image]][readme-cn-url]
+
+[readme-cn-url]:https://github.com/NowScott/IndWebIndex/blob/main/README_CN.md "Chinese Version"
+[readme-cn-image]:https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC-red
+
+## 1.How to deploy
+
+After the update on April 9, 2024, deploying this project has become even simpler. You only need to copy this [Notion page](notion-url) as your own database, add your website data as required, and then fork this repository.
+
+Next, go to the repository settings and find Secrets and variables under Actions. Add two Repository secrets there: ACCESS_TOKEN and DATABASE_ID. These are the key obtained from the [My Integrations](access-url) website and the id of your Notion database, respectively.
+
+Note that after obtaining the key, you need to connect your integration to your database and manually run the update data.json in GitHub Actions. This completes the deployment.
+
+## 2.Purpose of creation
 
 Long ago, there was a website in the early days of the internet called Yellow Pages, which contained an index of many other websites. Over time, it gradually evolved into search engines.
 
@@ -45,7 +64,7 @@ This personal Yellow Pages would include a collection of frequently used website
 
 In the end, I decided to name this personal Yellow Pages as "Individual Web Index."
 
-## 2.Website iteration
+## 3.Website iteration
 
 From the time I had this idea until now, this website has gone through many iterations, and the URL has also changed several times. The current and final website is [nowscott.top](https://nowscott.top)。
 
@@ -53,7 +72,7 @@ In the beginning, the data file was manually entered directly, and every time I 
 
 Therefore, in the latest version, I utilized the Notion API to store the data in Notion's database. I will explain the specific implementation details in the next section.
 
-## 3.How to use the Notion API
+## 4.How to use the Notion API
 (The code for fetching data from Notion is not included in this project.)
 
 This idea originated from a video by an uploader on Bilibili, and the link is provided below:
@@ -66,14 +85,14 @@ To summarize, I utilized a website called Netlify to deploy a service. This serv
 
 This sounds great, right? However, this simple process takes around 7 to 8 seconds at most, which does not align with the vision of a fast-loading personal website. Therefore, I made further improvements in this area.
 
-## 4.Some optimizations
+## 5.Some optimizations
 
 I cannot change the access speed of the Notion API, but what I can change is the way data is fetched. If we want to make modifications more convenient, we can store a copy of the data in a convenient location. When accessing the website, we can fetch this stored data, effectively resolving the issue of slow access speed.
 
 When the data is modified, the aforementioned convenient data copy will not be updated immediately because it cannot communicate directly with Notion. To address this, I leverage GitHub Actions to regularly update the stored data. This ensures that the data remains up-to-date.
 
-## 5.Final Notes
+## 6.Final Notes
 
 In summary, this project is a web-based personal website index that addresses the issue of slow access speed and ensures timely data updates. These optimizations make modifications easier and provide a more efficient and seamless user experience. Thank you for your interest in this project.
 
-If you have any questions or inquiries regarding this project, you can contact me via email at: [<i class="fa fa-envelope-o"></i> nowscott@qq.com](mailto:nowscott@qq.com)
+If you have any questions or inquiries regarding this project, you can contact me via email at: [nowscott@qq.com](mailto:nowscott@qq.com)
