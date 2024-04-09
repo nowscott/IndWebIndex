@@ -48,7 +48,7 @@
 
 ## 1.How to deploy
 
-After the update on April 9, 2024, deploying this project has become even simpler. You only need to copy this [Notion page][notion-url]as your own database, add your website data as required, and then fork this repository.
+After the update on April 9, 2024, deploying this project has become even simpler. You only need to copy this [Notion page][notion-url] as your own database, add your website data as required, and then fork this repository.
 
 Next, go to the repository settings and find Secrets and variables under Actions. Add two Repository secrets there: ACCESS_TOKEN and DATABASE_ID. These are the key obtained from the [My Integrations][access-url] website and the id of your Notion database, respectively.
 
