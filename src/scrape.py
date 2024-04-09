@@ -1,15 +1,16 @@
 import os
 import json
+from notion_client import Client
+'''如下部分为本地调试时引入环境变量的代码'''
 # from dotenv import load_dotenv
 # # 指定.env文件的路径
 # dotenv_path = '.env'
 # # 加载.env文件中的环境变量
 # load_dotenv(dotenv_path)
-from notion_client import Client
-# 初始化Notion客户端
+
 notion = Client(auth=os.environ["ACCESS_TOKEN"])
 database_id = os.environ["DATABASE_ID"]
-response = notion.databases.query(database_id=database_id)
+
 def process_data(pages):
     processed_data = []
     for item in pages['results']:
@@ -38,8 +39,8 @@ def fetch_database(database_id):
         data.extend(process_data(response))
         has_more = response['has_more'] # type: ignore
         start_cursor = response.get('next_cursor') # type: ignore
-
     return data
+
 def main():
     """主函数，获取数据并保存到文件"""
     try:
@@ -51,5 +52,6 @@ def main():
             json.dump(filtered_data, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"An error occurred: {e}")
+
 if __name__ == "__main__":
     main()
