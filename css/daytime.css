@@ -2,12 +2,16 @@ body {
     background-color: #f7f7f7;
 }
 
-.title-1 {
+h1 a{
     color: darkorange;
 }
 
-.title-2 {
+h2 a{
     color: darkslateblue;
+}
+
+p{
+    color: purple;
 }
 
 .title-tags,

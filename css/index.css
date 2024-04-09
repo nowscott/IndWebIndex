@@ -33,21 +33,21 @@ body {
     min-height: 88vh;
 }
 
-.title-1,
-.title-2 {
+h1,h2{
     text-align: center;
     font-family: Smiley Sans;
     font-weight: bolder;
 }
 
-.title-1 {
-    margin: 3vh 0;
+/* 为标题设置样式 */
+h1 {
+    margin: 3vh 0; /* 标题1的上下边距 */
 }
 
-.title-2 {
-    margin: 1vh 0;
+h2 {
+    margin: 1vh 0; /* 标题2的上下边距 */
+    font-size: 1.1em; /* 标题2的字体大小 */
 }
-
 .search-box {
     text-align: center;
     margin: 2vh;
@@ -72,7 +72,6 @@ p {
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    color: lightpink;
 }
 
 .search-btn {

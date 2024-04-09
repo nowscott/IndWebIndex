@@ -4,21 +4,21 @@ window.onload = function () {
     var currentHour = currentTime.getHours();// 获取当前时间（小时）
     // 自动切换夜间模式，如果当前时间在晚上 23 点到早上 8 点之间，则进入夜间模式
     if (currentHour >= 22 || currentHour < 8) {// 更改页面的背景颜色为深色
-        document.getElementById('darkcss').href = "https://nowscott.top/css/dark.css"
-        document.getElementById('icon').src = 'https://nowscott.top/svg/moon.svg'
+        document.getElementById('darkcss').href = "/css/dark.css"
+        document.getElementById('icon').src = '/svg/moon.svg'
     } else {
-        document.getElementById('darkcss').href = "https://nowscott.top/css/daytime.css"
-        document.getElementById('icon').src = 'https://nowscott.top/svg/sun.svg'
+        document.getElementById('darkcss').href = "/css/daytime.css"
+        document.getElementById('icon').src = '/svg/sun.svg'
     }
     document.getElementById('darkbtn').onclick = function () {//夜间模式按钮功能
         if (document.getElementById('darkbtn').className == 'daytime') {
             document.getElementById('darkbtn').className = 'dark'
-            document.getElementById('darkcss').href = "https://nowscott.top/css/dark.css"
-            document.getElementById('icon').src = 'https://nowscott.top/svg/moon.svg'
+            document.getElementById('darkcss').href = "/css/dark.css"
+            document.getElementById('icon').src = '/svg/moon.svg'
         } else {
             document.getElementById('darkbtn').className = 'daytime'
-            document.getElementById('darkcss').href = "https://nowscott.top/css/daytime.css"
-            document.getElementById('icon').src = 'https://nowscott.top/svg/sun.svg'
+            document.getElementById('darkcss').href = "/css/daytime.css"
+            document.getElementById('icon').src = '/svg/sun.svg'
         }
     }
     function randomSort(arr) {//创建随机函数
