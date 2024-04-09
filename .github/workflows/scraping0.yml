@@ -8,28 +8,21 @@ on:
 jobs:
   scrape_and_save:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: "3.12" # 或您所需的任何Python版本
+          node-version: "16"
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests # 或其他您的Python脚本所需的库
+        run: npm install
 
       - name: Run scraping script
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          DATABASE_ID: ${{ secrets.DATABASE_ID }}
-        run: |
-          python src/scrape.py
-          # 确保您的Python脚本能够从环境变量中读取 ACCESS_TOKEN 和 DATABASE_ID
+        run: node src/scrape.js > data.json
 
       - name: Commit data.json
         run: |
@@ -48,3 +41,5 @@ jobs:
             else
               echo "没有变化。"
             fi
+          fi
+
