@@ -1,10 +1,10 @@
 import os
 import json
-from dotenv import load_dotenv
-# 指定.env文件的路径
-dotenv_path = '.env'
-# 加载.env文件中的环境变量
-load_dotenv(dotenv_path)
+# from dotenv import load_dotenv
+# # 指定.env文件的路径
+# dotenv_path = '.env'
+# # 加载.env文件中的环境变量
+# load_dotenv(dotenv_path)
 from notion_client import Client
 # 初始化Notion客户端
 notion = Client(auth=os.environ["ACCESS_TOKEN"])
