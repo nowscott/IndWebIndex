@@ -48,9 +48,9 @@
 
 ## 1.如何部署
 
-在2024年4月9日的更新之后，部署这个项目变得更加简单。您只需要复制这个[Notion页面](notion-url)作为您自己的数据库，根据需要添加网站数据，然后fork这个仓库。
+在2024年4月9日的更新之后，部署这个项目变得更加简单。您只需要复制这个[Notion页面][notion-url]作为您自己的数据库，根据需要添加网站数据，然后fork这个仓库。
 
-接下来，进入仓库设置，找到Actions下的Secrets and variables。在那里添加两个Repository secrets：ACCESS_TOKEN和DATABASE_ID。这些分别是从[我的集成](access-url)网站获得的密钥，以及您的Notion数据库的ID。
+接下来，进入仓库设置，找到Actions下的Secrets and variables。在那里添加两个Repository secrets：ACCESS_TOKEN和DATABASE_ID。这些分别是从[我的集成][access-url]网站获得的密钥，以及您的Notion数据库的ID。
 
 请注意，在获取密钥之后，您需要将您的集成连接到您的数据库，并手动运行GitHub Actions中的update data.json。这样就完成了部署。
 
