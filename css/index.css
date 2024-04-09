@@ -17,6 +17,9 @@ body {
     text-align: center;
 }
 
+/* 需要黑白时专用 */
+/* body { filter: grayscale(100%); } */
+
 #darkbtn {
     border: none;
     background-color: transparent;
@@ -33,7 +36,8 @@ body {
     min-height: 88vh;
 }
 
-h1,h2{
+h1,
+h2 {
     text-align: center;
     font-family: Smiley Sans;
     font-weight: bolder;
@@ -41,13 +45,17 @@ h1,h2{
 
 /* 为标题设置样式 */
 h1 {
-    margin: 3vh 0; /* 标题1的上下边距 */
+    margin: 3vh 0;
+    /* 标题1的上下边距 */
 }
 
 h2 {
-    margin: 1vh 0; /* 标题2的上下边距 */
-    font-size: 1.1em; /* 标题2的字体大小 */
+    margin: 1vh 0;
+    /* 标题2的上下边距 */
+    font-size: 1.1em;
+    /* 标题2的字体大小 */
 }
+
 .search-box {
     text-align: center;
     margin: 2vh;
