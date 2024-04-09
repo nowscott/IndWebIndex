@@ -8,45 +8,37 @@ on:
 jobs:
   scrape_and_save:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
           python-version: "3.12" # 或您所需的任何Python版本
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt # 使用 requirements.txt 安装依赖
-
+          pip install -r requirements.txt
       - name: Run scraping script
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
         run: |
           python src/scrape.py
-          # 确保您的Python脚本能够从环境变量中读取 ACCESS_TOKEN 和 DATABASE_ID
-
       - name: Commit data.json
         run: |
-              filename="data.json"
-              if grep -q -i "error" "$filename"; then
-                echo "存在错误。"
-                cat "$filename"
-              else
-                echo "没有错误。"
-                git config --global user.name "NowScott"
-                git config --global user.email "nowscott@qq.com"
-                if ! git diff --quiet --exit-code; then
-                  git add $filename
-                  git commit -m "Update data.json"
-                  git push
-                else
-                  echo "没有变化。"
-                fi
-              fi
-            shell: bash 
+          filename="data.json"
+          if grep -q -i "error" $filename; then
+            echo "存在错误。"
+            cat $filename
+          else
+            echo "没有错误。"
+            git config --global user.name "NowScott"
+            git config --global user.email "nowscott@qq.com"
+            if ! git diff --quiet --exit-code; then
+              git add $filename
+              git commit -m "Update data.json"
+              git push
+            else
+              echo "没有变化。"
+            fi
