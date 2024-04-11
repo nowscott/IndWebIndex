@@ -1,5 +1,47 @@
 [
     {
+        "name": "豆包AI",
+        "name_en": "DouBao",
+        "web": "https://www.doubao.com/chat/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "抖音旗下的AI助手",
+        "brief_en": "AI from Douyin",
+        "state": "正常"
+    },
+    {
+        "name": "敲字背单词",
+        "name_en": "Qwerty Learner",
+        "web": "https://qwerty.kaiyi.cool/",
+        "tags": [
+            "🧠学习"
+        ],
+        "tags_en": [
+            "🧠Learn"
+        ],
+        "brief": "为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件",
+        "brief_en": "Words learning and English muscle memory training software designed for keyboard workers",
+        "state": "正常"
+    },
+    {
+        "name": "免费歌曲",
+        "name_en": "MyFreeMP3",
+        "web": "https://tool.liumingye.cn/music/#/",
+        "tags": [
+            "🎵音乐"
+        ],
+        "tags_en": [
+            "🎵Music"
+        ],
+        "brief": "免费下载歌曲",
+        "brief_en": "Download MP3 Free",
+        "state": "正常"
+    },
+    {
         "name": "牛客网",
         "name_en": "nowcoder",
         "web": "https://www.nowcoder.com/",
@@ -49,7 +91,7 @@
     },
     {
         "name": "开源程序书籍",
-        "name_en": "🆓👨🏻‍💻📖",
+        "name_en": "free-pro-book",
         "web": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md",
         "tags": [
             "📚书籍"
@@ -1189,16 +1231,16 @@
         "state": "正常"
     },
     {
-        "name": "MSDN",
-        "name_en": "MSDN",
-        "web": "https://msdn.itellyou.cn/",
+        "name": "itellyou",
+        "name_en": "itellyou",
+        "web": "https://next.itellyou.cn/",
         "tags": [
             "🔧工具"
         ],
         "tags_en": [
             "🔧Tools"
         ],
-        "brief": "操作系统镜像",
+        "brief": "操作系统镜像|windows|linux",
         "brief_en": "Operating system image",
         "state": "正常"
     },
