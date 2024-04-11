@@ -2,15 +2,25 @@ body {
     background-color: #222;
 }
 
-h1 a{
+.title-1  {
+    text-decoration: underline;
+    text-decoration-color: khaki;
+}
+
+h1 a {
     color: khaki;
 }
 
-h2 a{
+.title-2 {
+    text-decoration: underline;
+    text-decoration-color: #eee;
+}
+
+h2 a {
     color: #eee;
 }
 
-p{
+p {
     color: lightpink;
 }
 

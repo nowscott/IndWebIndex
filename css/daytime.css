@@ -2,8 +2,18 @@ body {
     background-color: #f7f7f7;
 }
 
+.title-1 {
+    text-decoration: underline;
+    text-decoration-color: darkorange;
+}
+
 h1 a {
     color: darkorange;
+}
+
+.title-2 {
+    text-decoration: underline;
+    text-decoration-color: darkslateblue;
 }
 
 h2 a {
