@@ -3,22 +3,25 @@ window.onload = function () {
     var currentTime = new Date();// 创建一个 Date 对象
     var currentHour = currentTime.getHours();// 获取当前时间（小时）
     // 自动切换夜间模式，如果当前时间在晚上 23 点到早上 8 点之间，则进入夜间模式
+    dark_mode = document.getElementById('darkcss')
+    dark_mode_icon = document.getElementById('icon')
+    dark_mode_btn = document.getElementById('darkbtn')
     if (currentHour >= 22 || currentHour < 8) {// 更改页面的背景颜色为深色
-        document.getElementById('darkcss').href = "/css/dark.css"
-        document.getElementById('icon').src = '/svg/moon.svg'
+        dark_mode.href = "/css/dark.css"
+        dark_mode_icon.src = '/svg/moon.svg'
     } else {
-        document.getElementById('darkcss').href = "/css/daytime.css"
-        document.getElementById('icon').src = '/svg/sun.svg'
+        dark_mode.href = "/css/daytime.css"
+        dark_mode_icon.src = '/svg/sun.svg'
     }
-    document.getElementById('darkbtn').onclick = function () {//夜间模式按钮功能
-        if (document.getElementById('darkbtn').className == 'daytime') {
-            document.getElementById('darkbtn').className = 'dark'
-            document.getElementById('darkcss').href = "/css/dark.css"
-            document.getElementById('icon').src = '/svg/moon.svg'
+    dark_mode_btn.onclick = function () {//夜间模式按钮功能
+        if (dark_mode_btn.className == 'daytime') {
+            dark_mode_btn.className = 'dark'
+            dark_mode.href = "/css/dark.css"
+            dark_mode_icon.src = '/svg/moon.svg'
         } else {
-            document.getElementById('darkbtn').className = 'daytime'
-            document.getElementById('darkcss').href = "/css/daytime.css"
-            document.getElementById('icon').src = '/svg/sun.svg'
+            dark_mode_btn.className = 'daytime'
+            dark_mode.href = "/css/daytime.css"
+            dark_mode_icon.src = '/svg/sun.svg'
         }
     }
     function randomSort(arr) {//创建随机函数
