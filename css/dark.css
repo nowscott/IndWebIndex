@@ -19,11 +19,6 @@ p{
     color: #eee;
 }
 
-a:link,
-:hover {
-    color: lightslategray;
-}
-
 .search-in {
     color: lightgrey;
     background-color: rgb(0, 0, 49);

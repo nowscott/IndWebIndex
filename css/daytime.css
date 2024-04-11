@@ -2,26 +2,21 @@ body {
     background-color: #f7f7f7;
 }
 
-h1 a{
+h1 a {
     color: darkorange;
 }
 
-h2 a{
+h2 a {
     color: darkslateblue;
 }
 
-p{
+p {
     color: purple;
 }
 
 .title-tags,
 .title-webs {
     color: darkblue;
-}
-
-a:link,
-:hover {
-    color: black;
 }
 
 .search-in {
