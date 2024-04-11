@@ -4,11 +4,11 @@
         "name_en": "nowcoder",
         "web": "https://www.nowcoder.com/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠学习"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠Learn"
         ],
         "brief": "找工作神器|笔试题库|面试经验|实习招聘内推，求职就业一站解决",
@@ -261,12 +261,12 @@
         "web": "https://star-history.com/",
         "tags": [
             "📊作图",
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧工具"
         ],
         "tags_en": [
             "📊Charting",
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧Tools"
         ],
         "brief": "GitHub上缺失的星标历史图",
@@ -328,11 +328,11 @@
         "name_en": "Badge Design",
         "web": "https://shields.io/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧工具"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧Tools"
         ],
         "brief": "提供各种服务的简洁、一致的易读徽章（badge、徽标）",
@@ -344,11 +344,11 @@
         "name_en": "Simple Icons",
         "web": "https://simpleicons.org/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "♻︎图标"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "♻︎Icon"
         ],
         "brief": "包含 2516 种流行品牌的免费 SVG 图标库",
@@ -419,12 +419,12 @@
         "web": "https://brew.sh/index_zh-cn",
         "tags": [
             "🍎Apple",
-            "🐈‍⬛Code",
+            "🐱Code",
             "💻Mac"
         ],
         "tags_en": [
             "🍎Apple",
-            "🐈‍⬛Code",
+            "🐱Code",
             "💻Mac"
         ],
         "brief": "macOS（或 Linux）缺失的软件包的管理器",
@@ -436,11 +436,11 @@
         "name_en": "MongoDB",
         "web": "https://cloud.mongodb.com/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔢数据"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔢Data"
         ],
         "brief": "一种高性能、可扩展和灵活的开源文档数据库管理系统",
@@ -452,12 +452,12 @@
         "name_en": "Developer Search",
         "web": "https://kaifa.baidu.com/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠学习",
             "🔍搜索"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔍Search",
             "🧠Learn"
         ],
@@ -582,10 +582,10 @@
         "name_en": "Code2Word",
         "web": "http://word.wd1x.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "在线生成可以在word/PPT中高亮的代码，支持各类主流语言在线着色",
         "brief_en": "Generate code snippets with highlighting for use in Word/PPT",
@@ -614,10 +614,10 @@
         "name_en": "Netlify",
         "web": "https://app.netlify.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "一个免服务器构建网页的网站",
         "brief_en": "A website for serverless web page construction",
@@ -660,10 +660,10 @@
         "name_en": "FireBoom",
         "web": "https://www.fireboom.io/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "可视化API开发平台",
         "brief_en": "Visual API development platform",
@@ -690,11 +690,11 @@
         "name_en": "VisualGo",
         "web": "https://visualgo.net/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠学习"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠Learn"
         ],
         "brief": "数据结构和算法动态可视化",
@@ -706,10 +706,10 @@
         "name_en": "CodeForces",
         "web": "https://codeforces.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "一个俄罗斯的刷题网站，有模拟竞赛",
         "brief_en": "A Russian problem-solving website with simulated contests",
@@ -867,11 +867,11 @@
         "name_en": "OlLatex",
         "web": "https://cn.overleaf.com/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧工具"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔧Tools"
         ],
         "brief": "在线 LaTeX 编辑器，无需安装，实时共享，版本控制，数百免费模板",
@@ -897,10 +897,10 @@
         "name_en": "Lightly",
         "web": "https://lightly.teamcode.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "在线编译工具，免费用户500Mb内存",
         "brief_en": "Online compilation tool with 500MB of free user memory",
@@ -1013,11 +1013,11 @@
         "name_en": "Github",
         "web": "https://github.com/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🦷常用"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🦷Common"
         ],
         "brief": "存代码的地方",
@@ -1237,10 +1237,10 @@
         "name_en": "Vercel",
         "web": "https://vercel.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "搭建网站",
         "brief_en": "Website building",
@@ -1479,10 +1479,10 @@
         "name_en": "Paddle",
         "web": "https://aistudio.baidu.com/aistudio/index",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "一个强大且易用的开源深度学习平台",
         "brief_en": "A powerful and user-friendly open-source deep learning platform",
@@ -1507,11 +1507,11 @@
         "name_en": "GitDoc",
         "web": "https://gitee.com/progit/index.html",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠学习"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠Learn"
         ],
         "brief": "快来学习Git！",
@@ -2189,10 +2189,10 @@
         "name_en": "Jetbrains",
         "web": "https://www.jetbrains.com/zh-cn/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "为专业人士和团队制作开发者工具",
         "brief_en": "Creating developer tools for professionals and teams",
@@ -2323,10 +2323,10 @@
         "name_en": "Gitee",
         "web": "https://gitee.com/",
         "tags": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "tags_en": [
-            "🐈‍⬛Code"
+            "🐱Code"
         ],
         "brief": "存代码用的，国内访问很快",
         "brief_en": "A code hosting platform with fast access within China",
@@ -2411,11 +2411,11 @@
         "name_en": "Py3Lib",
         "web": "https://docs.python.org/zh-cn/3/library/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠学习"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🧠Learn"
         ],
         "brief": "语言参考手册描述了Python的语法和语义，库参考则介绍了Python标准库",
@@ -2555,11 +2555,11 @@
         "name_en": "CSDN",
         "web": "https://www.csdn.net/",
         "tags": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔍搜索"
         ],
         "tags_en": [
-            "🐈‍⬛Code",
+            "🐱Code",
             "🔍Search"
         ],
         "brief": "代码有关的问题来问我",
