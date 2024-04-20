@@ -1,5 +1,21 @@
 [
     {
+        "name": "站长之家",
+        "name_en": "ChinaZ",
+        "web": "https://tool.chinaz.com/",
+        "tags": [
+            "🔧工具",
+            "🕸️网络"
+        ],
+        "tags_en": [
+            "🔧Tools",
+            "🕸️Network"
+        ],
+        "brief": "提供各种查询工具",
+        "brief_en": "Provide various query tools",
+        "state": "正常"
+    },
+    {
         "name": "豆包AI",
         "name_en": "DouBao",
         "web": "https://www.doubao.com/chat/",
