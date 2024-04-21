@@ -1,5 +1,65 @@
 [
     {
+        "name": "抖音网页版",
+        "name_en": "Douyin",
+        "web": "https://www.douyin.com/",
+        "tags": [
+            "⛹️‍♀️娱乐",
+            "👁️‍🗨️媒体"
+        ],
+        "tags_en": [
+            "⛹️‍♀️Fun",
+            "👁️‍🗨️Media"
+        ],
+        "brief": "抖音 - 记录美好生活",
+        "brief_en": "Douyin - Recording a Beautiful Life",
+        "state": "正常"
+    },
+    {
+        "name": "小红书网页版",
+        "name_en": "Xiaohongshu",
+        "web": "https://www.xiaohongshu.com/explore",
+        "tags": [
+            "👁️‍🗨️媒体",
+            "⛹️‍♀️娱乐"
+        ],
+        "tags_en": [
+            "👁️‍🗨️Media",
+            "⛹️‍♀️Fun"
+        ],
+        "brief": "小红书 - 你的生活指南",
+        "brief_en": "Little Red Book - Your Life Guide",
+        "state": "正常"
+    },
+    {
+        "name": "Grop AI",
+        "name_en": "Grop AI",
+        "web": "https://groq.com/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "人工智能接口系统",
+        "brief_en": "A GroqLabs AI Language Interface",
+        "state": "正常"
+    },
+    {
+        "name": "拥抱AI",
+        "name_en": "HuggingChat",
+        "web": "https://huggingface.co/chat/",
+        "tags": [
+            "🤖AI"
+        ],
+        "tags_en": [
+            "🤖AI"
+        ],
+        "brief": "让社区最好的AI聊天模型面向所有人开放。",
+        "brief_en": "Making the community's best AI chat models available to everyone.",
+        "state": "正常"
+    },
+    {
         "name": "站长之家",
         "name_en": "ChinaZ",
         "web": "https://tool.chinaz.com/",
@@ -1330,6 +1390,22 @@
         ],
         "brief": "一款专业制作Logo的免费软件",
         "brief_en": "A free software for professional logo design",
+        "state": "正常"
+    },
+    {
+        "name": "全渠道搜索",
+        "name_en": "Scmor",
+        "web": "http://dir.scmor.com/",
+        "tags": [
+            "🔍搜索",
+            "🔧工具"
+        ],
+        "tags_en": [
+            "🔍Search",
+            "🔧Tools"
+        ],
+        "brief": "各种搜索渠道",
+        "brief_en": "Various search channels",
         "state": "正常"
     },
     {
