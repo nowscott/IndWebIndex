@@ -8,9 +8,6 @@
 [![commit-count-permonth][commit-image]][commit-url]
 [![contributors-count][contributors-image]][contributors-url]
 
-[![web][web-image]][web-url]
-[![web-en][web-en-image]][web-en-url]
-
 ## Star History
 
 [![Star History Chart][stars-history-image]][stars-url]
@@ -31,8 +28,6 @@
 
 [web-url]:https://www.nowscott.top "中文网页"
 [web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue
-[web-en-url]:https://www.nowscott.top/en "English Web"
-[web-en-image]:https://img.shields.io/badge/Preview-EN-blue
 [stars-history-image]:https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date
 
 [notion-url]:https://nowscott.notion.site/0c3540063c0245a3947494527e83ba7a?v=8757a2fec25246fcb24574ba60542f00
