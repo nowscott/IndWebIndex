@@ -24,7 +24,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
         run: |
-          python src/scrape.py
+          python public/src/scrape.py
       - name: Commit data.json
         run: |
           filename="public/data.json"
