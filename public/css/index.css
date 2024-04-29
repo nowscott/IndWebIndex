@@ -7,8 +7,8 @@
     font-family: 'SmileySans';
     src: url('/font/SmileySans-Oblique.ttf.woff2') format('woff2');
     font-display: swap;
-  }
-  
+}
+
 
 body {
     backdrop-filter: blur(15px);
@@ -42,7 +42,6 @@ body {
 h1,
 h2 {
     text-align: center;
-    font-family: Smiley Sans;
     font-weight: bolder;
 }
 
@@ -71,7 +70,6 @@ h2 {
     border-radius: 10px;
     width: 9rem;
     padding: 5px;
-    font-family: Smiley Sans;
     font-size: 16px;
     line-height: 20px;
 }
@@ -95,7 +93,6 @@ p {
 .title-tags,
 .title-webs {
     text-align: center;
-    font-family: Smiley Sans;
     font-size: 1em;
     margin: 1vh 0;
     z-index: 1;
@@ -110,7 +107,6 @@ a:link,
 #webs-container {
     margin: 0 8vw;
     padding: 1vh 0 3vh;
-    font-family: Smiley Sans;
     text-align: center;
 }
 
@@ -122,7 +118,6 @@ a:link,
     line-height: 24px;
     border-radius: 5px;
     letter-spacing: 0.5px;
-    font-family: Smiley Sans;
     font-weight: light;
     font-size: 0.9em;
 }
