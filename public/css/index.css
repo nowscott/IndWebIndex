@@ -4,16 +4,18 @@
 }
 
 @font-face {
-    font-family: Smiley Sans;
-    src: url(/font/SmileySans-Oblique.ttf.woff2);
-}
+    font-family: 'SmileySans';
+    src: url('/font/SmileySans-Oblique.ttf.woff2') format('woff2');
+    font-display: swap;
+  }
+  
 
 body {
     backdrop-filter: blur(15px);
     width: 98vw;
     height: 100vh;
     margin: 0 auto;
-    font-family: Smiley Sans;
+    font-family: SmileySans;
     letter-spacing: 1px;
     text-align: center;
 }
