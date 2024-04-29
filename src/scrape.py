@@ -1,12 +1,12 @@
 import os
 import json
 from notion_client import Client
-from dotenv import load_dotenv
 import traceback  # 引入 traceback 用于打印详细的错误信息
 
-# 加载环境变量
-dotenv_path = '.env'
-load_dotenv(dotenv_path)
+# 本地调试时候取消注释来加载本地环境变量
+# from dotenv import load_dotenv
+# dotenv_path = '.env'
+# load_dotenv(dotenv_path)
 
 notion = Client(auth=os.getenv("ACCESS_TOKEN"))
 database_id = os.getenv("DATABASE_ID")
