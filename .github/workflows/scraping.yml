@@ -27,7 +27,7 @@ jobs:
           python src/scrape.py
       - name: Commit data.json
         run: |
-          filename="data.json"
+          filename="public/data.json"
           git config --global user.name "NowScott"
           git config --global user.email "nowscott@qq.com"
           if ! git diff --quiet --exit-code; then

@@ -46,7 +46,7 @@ window.onload = function () {
             document.getElementById('webs-container').appendChild(a)
         }
     }
-    fetch("https://www.nowscott.top/data.json")//从服务器上获取数据
+    fetch("data.json")//从服务器上获取数据
         .then(response => response.json()).then(data => {
             sources = data//将筛选工作放在了上层服务器上，这里就不筛选了
             renderWebs(randomSort(unique(sources)))
