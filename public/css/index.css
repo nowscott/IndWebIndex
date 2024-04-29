@@ -9,6 +9,7 @@
 }
 
 body {
+    backdrop-filter: blur(15px);
     width: 98vw;
     height: 100vh;
     margin: 0 auto;
