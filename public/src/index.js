@@ -8,20 +8,20 @@ window.onload = function () {
     dark_mode_btn = document.getElementById('darkbtn')
     if (currentHour >= 22 || currentHour < 8) {// 更改页面的背景颜色为深色
         dark_mode.href = "/css/dark.css"
-        dark_mode_icon.src = '/svg/moon.svg'
+        dark_mode_icon.src = '/svg/sun.svg'
     } else {
         dark_mode.href = "/css/daytime.css"
-        dark_mode_icon.src = '/svg/sun.svg'
+        dark_mode_icon.src = '/svg/moon.svg'
     }
     dark_mode_btn.onclick = function () {//夜间模式按钮功能
         if (dark_mode_btn.className == 'daytime') {
             dark_mode_btn.className = 'dark'
             dark_mode.href = "/css/dark.css"
-            dark_mode_icon.src = '/svg/moon.svg'
+            dark_mode_icon.src = '/svg/sun.svg'
         } else {
             dark_mode_btn.className = 'daytime'
             dark_mode.href = "/css/daytime.css"
-            dark_mode_icon.src = '/svg/sun.svg'
+            dark_mode_icon.src = '/svg/moon.svg'
         }
     }
     function randomSort(arr) {//创建随机函数
