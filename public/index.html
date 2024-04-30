@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站索引</title>
     <script src="/src/index.js"></script>
+    <script src="/src/context-menu.js"></script>
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" id="darkcss" href="/css/daytime.css">
 </head>
 
 <body>
+    <div id="customContextMenu">
+        <ul>
+            <li onclick="toggleFont()">切换字体</li>
+        </ul>
+    </div>    
     <button id="darkbtn" class="daytime" title="切换模式">
         <img id="icon" src="/svg/moon.svg" />
     </button>

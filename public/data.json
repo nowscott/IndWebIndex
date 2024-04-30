@@ -20,7 +20,7 @@
         "state": "正常"
     },
     {
-        "name": "Grop AI",
+        "name": "GropAI",
         "web": "https://groq.com/",
         "tags": [
             "🤖AI"
@@ -268,7 +268,7 @@
         "state": "正常"
     },
     {
-        "name": "Adobe Color",
+        "name": "AdobeColor",
         "web": "https://color.adobe.com/",
         "tags": [
             "🪣色彩"
@@ -287,7 +287,7 @@
         "state": "正常"
     },
     {
-        "name": "Simple Icons",
+        "name": "SimpleIcons",
         "web": "https://simpleicons.org/",
         "tags": [
             "🐱Code",
@@ -588,7 +588,7 @@
         "state": "正常"
     },
     {
-        "name": "Win32 Disk Imager",
+        "name": "Win32DiskImager",
         "web": "https://win32diskimager.org/",
         "tags": [
             "🧰软件",
@@ -786,15 +786,6 @@
         "state": "正常"
     },
     {
-        "name": "Reactle",
-        "web": "https://reactle.vercel.app/",
-        "tags": [
-            "🕹️游戏"
-        ],
-        "brief": "wordle国内镜像",
-        "state": "正常"
-    },
-    {
         "name": "Wordle",
         "web": "https://www.nytimes.com/games/wordle/index.html",
         "tags": [
@@ -917,7 +908,7 @@
         "state": "正常"
     },
     {
-        "name": "轻松传（Kindle）",
+        "name": "轻松传(Kindle)",
         "web": "https://easychuan.cn/light/",
         "tags": [
             "📁文件",
@@ -1043,7 +1034,7 @@
         "state": "正常"
     },
     {
-        "name": "Spelling Bee",
+        "name": "SpellingBee",
         "web": "https://www.nytimes.com/puzzles/spelling-bee",
         "tags": [
             "🕹️游戏"
@@ -1090,7 +1081,7 @@
         "state": "正常"
     },
     {
-        "name": "Apple Store",
+        "name": "AppleStore",
         "web": "https://www.apple.com.cn/retail/storelist/",
         "tags": [
             "🍎Apple"
