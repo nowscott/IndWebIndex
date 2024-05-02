@@ -8,9 +8,32 @@ function toggleFont() {
     // 更新根元素的CSS变量
     document.documentElement.style.setProperty('--main-font-family', newFont);
 
-    // 存储新字体到Cookie，确保用户下次访问时应用相同的字体
-    setCookie('userFont', newFont, 7);
+    // 存储新字体到localStorage，确保用户下次访问时应用相同的字体
+    localStorage.setItem('userFont', newFont);
 }
+
+function loadFont() {
+    var userFont = localStorage.getItem('userFont');
+    if (userFont) {
+        document.documentElement.style.setProperty('--main-font-family', userFont);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadFont);
+
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    var contextMenu = document.getElementById('customContextMenu');
+    contextMenu.style.display = 'block';
+    contextMenu.style.left = event.pageX + 'px';
+    contextMenu.style.top = event.pageY + 'px';
+});
+document.addEventListener('click', function(event) {
+    var contextMenu = document.getElementById('customContextMenu');
+    if (event.target.offsetParent !== contextMenu) {
+        contextMenu.style.display = 'none';
+    }
+});
 
 
 function setCookie(name, value, days) {
@@ -32,13 +55,6 @@ function getCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
     return null;
-}
-
-function loadFont() {
-    var userFont = getCookie('userFont');
-    if (userFont) {
-        document.documentElement.style.setProperty('--main-font-family', userFont);
-    }
 }
 
 document.addEventListener('DOMContentLoaded', loadFont);
