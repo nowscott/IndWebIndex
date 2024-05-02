@@ -1,5 +1,15 @@
 [
     {
+        "name": "SpeedTest",
+        "web": "https://speed.cloudflare.com/",
+        "tags": [
+            "🕸️网络",
+            "🔧工具"
+        ],
+        "brief": "Cloudflare的测速工具",
+        "state": "正常"
+    },
+    {
         "name": "网站图标",
         "web": "https://fontawesome.com/",
         "tags": [
@@ -18,7 +28,7 @@
         "state": "正常"
     },
     {
-        "name": "抖音网页版",
+        "name": "抖音",
         "web": "https://www.douyin.com/",
         "tags": [
             "⛹️‍♀️娱乐",
@@ -28,7 +38,7 @@
         "state": "正常"
     },
     {
-        "name": "小红书网页版",
+        "name": "小红书",
         "web": "https://www.xiaohongshu.com/explore",
         "tags": [
             "👁️‍🗨️媒体",
