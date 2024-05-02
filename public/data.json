@@ -1,5 +1,14 @@
 [
     {
+        "name": "网站图标",
+        "web": "https://fontawesome.com/",
+        "tags": [
+            "♻︎图标"
+        ],
+        "brief": "一些图标",
+        "state": "正常"
+    },
+    {
         "name": "在线工具",
         "web": "https://tool.lu/",
         "tags": [
