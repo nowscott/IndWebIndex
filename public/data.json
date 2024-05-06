@@ -1,5 +1,14 @@
 [
     {
+        "name": "通义千问",
+        "web": "https://tongyi.aliyun.com/qianwen/",
+        "tags": [
+            "🤖AI"
+        ],
+        "brief": "阿里做的大语言模型助手",
+        "state": "正常"
+    },
+    {
         "name": "国外新闻聚合",
         "web": "https://www.buzzing.cc/",
         "tags": [
