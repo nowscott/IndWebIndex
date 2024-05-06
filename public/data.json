@@ -1,5 +1,14 @@
 [
     {
+        "name": "文心一言",
+        "web": "https://yiyan.baidu.com/",
+        "tags": [
+            "🤖AI"
+        ],
+        "brief": "百度的大语言模型",
+        "state": "正常"
+    },
+    {
         "name": "通义千问",
         "web": "https://tongyi.aliyun.com/qianwen/",
         "tags": [
