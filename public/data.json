@@ -1449,15 +1449,6 @@
         "state": "正常"
     },
     {
-        "name": "BaiGPT",
-        "web": "https://beta.theb.ai/home",
-        "tags": [
-            "🤖AI"
-        ],
-        "brief": "一个基于GPT API的聊天机器人，免费、方便且反应迅速",
-        "state": "正常"
-    },
-    {
         "name": "在线剪辑视频",
         "web": "https://online-video-cutter.com/cn/",
         "tags": [
