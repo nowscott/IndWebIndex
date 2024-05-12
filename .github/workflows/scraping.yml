@@ -27,13 +27,13 @@ jobs:
           python public/src/scrape.py
       - name: Commit data.json
         run: |
-          filename="public/data.json"
-          git config --global user.name "NowScott"
-          git config --global user.email "nowscott@qq.com"
-          if ! git diff --quiet --exit-code; then
-            git add $filename
-            git commit -m "Update data.json by GitHub Action"
+          git diff --quiet --exit-code public/data.json || (
+            git config --global user.name "NowScott"
+            git config --global user.email "nowscott@qq.com"
+            git add public/data.json
+            DATE=$(TZ="Asia/Shanghai" date "+%Y-%m-%d %H:%M:%S")
+            git commit -m "Update data.json at $DATE"
             git push origin main
-          else
-            echo "没有变化。"
-          fi
+          )
+
+
