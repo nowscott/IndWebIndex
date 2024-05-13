@@ -1,18 +1,21 @@
-/**
- * 切换字体并保存到cookie
- */
-function toggleFont() {
-    // 获取根元素当前的字体设置
-    var rootStyle = getComputedStyle(document.documentElement);
-    var currentFont = rootStyle.getPropertyValue('--main-font-family').trim();
+// 字体列表
+const fonts = ['Smiley Sans Oblique', 'LXGW WenKai'];
 
-    // 根据当前字体决定切换到哪种字体
-    var newFont = currentFont === 'Smiley Sans Oblique' ? 'LXGW WenKai' : 'Smiley Sans Oblique';
+
+// 切换字体的函数
+function toggleFont() {
+    var currentFont = getCookie('userFont') || fonts[0]; // 从Cookie获取或使用列表中的第一个字体
+    if (!fonts.includes(currentFont)) {
+        currentFont = fonts[0]; // 如果Cookie中的字体不在列表中，使用列表的第一个字体
+    }
+    var currentIndex = fonts.indexOf(currentFont);
+    var nextIndex = (currentIndex + 1) % fonts.length; // 循环到列表的下一个字体
+    var newFont = fonts[nextIndex];
 
     // 更新根元素的CSS变量
     document.documentElement.style.setProperty('--main-font-family', newFont);
 
-    // 存储新字体到Cookie，确保用户下次访问时应用相同的字体
+    // 更新Cookie
     setCookie('userFont', newFont, 7);
 }
 
