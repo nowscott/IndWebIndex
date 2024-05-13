@@ -7,7 +7,7 @@ function toggleFont() {
     var currentFont = rootStyle.getPropertyValue('--main-font-family').trim();
 
     // 根据当前字体决定切换到哪种字体
-    var newFont = currentFont === 'SmileySans' ? 'LXGW' : 'SmileySans';
+    var newFont = currentFont === 'Smiley Sans Oblique' ? 'LXGW WenKai' : 'Smiley Sans Oblique';
 
     // 更新根元素的CSS变量
     document.documentElement.style.setProperty('--main-font-family', newFont);
