@@ -1,6 +1,6 @@
 // 字体列表
 const fonts = ['Smiley Sans Oblique', 'LXGW WenKai', 'Zhuque Fangsong', 'KingHwa_OldSong'];
-const fontnames = ['得意黑', '霞鹜文楷', '朱雀仿宋', '京华老宋体'];
+const fontnames = ['得意黑', '霞鹜文楷', '朱雀仿宋', '京華老宋体'];
 
 function populateContextMenu() {
     const menu = document.getElementById('customContextMenu').querySelector('ul');
