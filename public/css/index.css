@@ -1,9 +1,10 @@
+@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-smiley-sans-oblique-regular@1.0.1/font.min.css');
+@import url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css');
+
 * {
     margin: 0;
     padding: 0;
 }
-@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-smiley-sans-oblique-regular@1.0.1/font.min.css');
-@import url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css');
 /* 右键菜单 */
 #customContextMenu {
     display: none;
