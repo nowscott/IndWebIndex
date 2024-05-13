@@ -41,18 +41,6 @@
     --main-font-family: 'Smiley Sans Oblique';
 }
 
-/* @font-face {
-    font-family: 'SmileySans';
-    src: url('/font/SmileySans-Oblique.ttf.woff2') format('woff2');
-    font-display: swap;
-} */
-
-/* @font-face {
-    font-family: 'LXGW';
-    src: url('/font/LXGWWenKaiMonoLite-Bold.ttf') format('truetype');
-    font-display: swap;
-} */
-
 body {
     backdrop-filter: blur(15px);
     width: 98vw;
