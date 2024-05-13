@@ -18,7 +18,7 @@
         "state": "正常"
     },
     {
-        "name": "中文网字计划",
+        "name": "中文网字",
         "web": "https://chinese-font.netlify.app/",
         "tags": [
             "📦资源",
@@ -377,12 +377,12 @@
         "state": "正常"
     },
     {
-        "name": "AdobeColor",
+        "name": "AColor",
         "web": "https://color.adobe.com/",
         "tags": [
             "🪣色彩"
         ],
-        "brief": "Adobe 旗下的一个配色网站",
+        "brief": "Adobe的一个配色网站",
         "state": "正常"
     },
     {
@@ -433,7 +433,7 @@
         "state": "正常"
     },
     {
-        "name": "PH风格生成",
+        "name": "PH风格",
         "web": "https://logoly.pro/",
         "tags": [
             "⛹️‍♀️娱乐",
@@ -1020,15 +1020,6 @@
             "🐱Code"
         ],
         "brief": "面向程序员的搜索引擎",
-        "state": "正常"
-    },
-    {
-        "name": "轻松传(Kindle)",
-        "web": "https://easychuan.cn/light/",
-        "tags": [
-            "📁文件"
-        ],
-        "brief": "Kindle传文件用这个",
         "state": "正常"
     },
     {
@@ -1797,7 +1788,7 @@
         "state": "正常"
     },
     {
-        "name": "播客搜索引擎",
+        "name": "播客搜索",
         "web": "https://pod.link/",
         "tags": [
             "🔧工具",
