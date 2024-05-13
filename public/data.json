@@ -202,8 +202,7 @@
         "name": "SOC-PK",
         "web": "https://www.socpk.com/",
         "tags": [
-            "↗️排序",
-            "🚀芯片"
+            "📱数码"
         ],
         "brief": "极客湾做的移动芯片排行",
         "state": "正常"
@@ -1691,7 +1690,7 @@
         "name": "卡路里计算器",
         "web": "https://www.calculator.net/calorie-calculator.html",
         "tags": [
-            "👟减肥"
+            "🔧工具"
         ],
         "brief": "估算每天需要摄入的卡路里数量，以维持、减重或增重",
         "state": "正常"
