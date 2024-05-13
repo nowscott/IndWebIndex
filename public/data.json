@@ -723,10 +723,9 @@
         "name": "ChatGPT",
         "web": "https://chat.openai.com/",
         "tags": [
-            "🤖AI",
-            "🔧工具"
+            "🤖AI"
         ],
-        "brief": "AI帮你解决问题(需要魔法)",
+        "brief": "OpenAi做的智能助手",
         "state": "正常"
     },
     {
@@ -1159,7 +1158,8 @@
         "name": "AppleStore",
         "web": "https://www.apple.com.cn/retail/storelist/",
         "tags": [
-            "🍎Apple"
+            "🍎Apple",
+            "🛒购物"
         ],
         "brief": "中国苹果直营店位置",
         "state": "正常"
