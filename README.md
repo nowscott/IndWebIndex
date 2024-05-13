@@ -1,4 +1,4 @@
-# Individual Web Index
+# Individual Web Index（网页索引）
 
 [![data update][data-update-image]][data-update-url]
 [![GitHub stars][stars-image]][stars-url]
@@ -8,12 +8,60 @@
 [![commit-count-permonth][commit-image]][commit-url]
 [![contributors-count][contributors-image]][contributors-url]
 
-[![web][web-image]][web-url]
-
-
-## Star History
-
 [![Star History Chart][stars-history-image]][stars-url]
+
+
+## 1.如何部署
+
+在2024年4月9日的更新之后，部署这个项目变得更加简单。您只需要复制这个[Notion页面][notion-url]作为您自己的数据库，根据需要添加网站数据，然后fork这个仓库。
+
+接下来，进入仓库设置，找到Actions下的Secrets and variables。在那里添加两个Repository secrets：ACCESS_TOKEN和DATABASE_ID。这些分别是从[我的集成][access-url]网站获得的密钥，以及您的Notion数据库的ID。
+
+请注意，在获取密钥之后，您需要将您的集成连接到您的数据库，并手动运行GitHub Actions中的update data.json。这样就完成了部署。
+
+## 2.创建的目的
+
+很久以前，互联网初期有一个叫做黄页的网站，上面索引了许多其他网站。随着时间的推移，它逐渐演变成了搜索引擎。
+
+然而，在搜索引擎中，当涉及到寻找特定网站时，结果往往缺乏准确性。因此，我仍然认为每个人都需要自己的黄页。
+
+这个个人黄页将包含一系列经常使用的网站，以及添加标签和简短描述的功能，方便搜索和浏览。
+
+最终，我决定将这个个人黄页命名为“个人网站索引”。
+
+## 3.网站迭代
+
+从我有这个想法到现在，这个网站经历了多次迭代，URL也变化了几次。当前并且是最终的网站是[nowscott.top](https://nowscott.top)。
+
+起初，数据文件是直接手动输入的，每次想要更新数据内容，我都必须访问开发者接口，对数据文件进行更改，然后上传到GitHub。这让我感到非常不友好。
+
+因此，在最新版本中，我利用Notion API将数据存储在Notion的数据库中。具体的实现细节将在下一部分解释。
+
+## 4.如何使用Notion API
+（从Notion获取数据的代码未包含在此项目中。）
+
+这个想法起源于Bilibili上一个上传者的视频，下面提供链接：
+
+[【S1E3】用Notion当数据库写一个简单的API](https://www.bilibili.com/video/BV1gF411E7pV/?share_source=copy_web&vd_source=98c7014c35363c157a4fba4929dbda77)
+
+在这个视频中，我学习到了如何使用Notion API从Notion获取数据并在网页上显示。如果你有任何问题，可以观看视频了解更多信息。
+
+总而言之，我利用一个叫Netlify的网站部署了一个服务。这个服务每次有人访问我部署的域名时都会运行，它从Notion获取数据并返回给前端。一旦前端接收到数据，就可以在网页上显示。
+
+听起来很棒，对吧？然而，这个简单的过程最多需要7到8秒的时间，这与快速加载个人网站的愿景不符。因此，我在这方面做了进一步的改进。
+
+## 5.一些优化
+
+我无法改变Notion API的访问速度，但我可以改变获取数据的方式。如果我们想要更方便地进行修改，我们可以在一个便利的位置存储一份数据副本。在访问网站时，我们可以获取这个存储的数据，有效地解决了访问速度慢的问题。
+
+当数据被修改时，上述便利的数据副本不会立即更新，因为它不能与Notion直接通信。为了解决这个问题，我利用GitHub Actions定期更新存储的数据。这确保了数据保持最新。
+
+## 6.最后的说明
+
+总之，这个项目是一个基于网络的个人网站索引，它解决了访问速度慢的问题，并确保了数据及时更新。这些优化使修改变得更加容易，并提供了更高效、无缝的用户体验。感谢您对这个项目的兴趣。
+
+如果您对这个项目有任何问题或询问，可以通过电子邮件联系我：[nowscott@qq.com](mailto:nowscott@qq.com)
+
 
 [data-update-url]:https://github.com/NowScott/web_database/actions/workflows/scraping.yml "数据更新"
 [data-update-image]:https://img.shields.io/github/actions/workflow/status/NowScott/IndWebIndex/scraping.yml?label=data%20update
@@ -31,67 +79,8 @@
 
 [web-url]:https://www.nowscott.top "中文网页"
 [web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue
-
 [stars-history-image]:https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date
 
 [notion-url]:https://nowscott.notion.site/0c3540063c0245a3947494527e83ba7a?v=8757a2fec25246fcb24574ba60542f00
 
 [access-url]:https://www.notion.so/my-integrations
-
-## Switch to Chinese
-
-[![readme-cn][readme-cn-image]][readme-cn-url]
-
-[readme-cn-url]:https://github.com/NowScott/IndWebIndex/blob/main/README_CN.md "Chinese Version"
-[readme-cn-image]:https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%89%88%E6%9C%AC-red
-
-## 1.How to deploy
-
-After the update on April 9, 2024, deploying this project has become even simpler. You only need to copy this [Notion page][notion-url] as your own database, add your website data as required, and then fork this repository.
-
-Next, go to the repository settings and find Secrets and variables under Actions. Add two Repository secrets there: ACCESS_TOKEN and DATABASE_ID. These are the key obtained from the [My Integrations][access-url] website and the id of your Notion database, respectively.
-
-Note that after obtaining the key, you need to connect your integration to your database and manually run the update data.json in GitHub Actions. This completes the deployment.
-
-## 2.Purpose of creation
-
-Long ago, there was a website in the early days of the internet called Yellow Pages, which contained an index of many other websites. Over time, it gradually evolved into search engines.
-
-However, in search engines, the results often lack accuracy when it comes to finding specific websites. Therefore, I still believe that everyone needs their own Yellow Pages.
-
-This personal Yellow Pages would include a collection of frequently used websites, along with the ability to add tags and brief descriptions for simple searching and browsing functionality.
-
-In the end, I decided to name this personal Yellow Pages as "Individual Web Index."
-
-## 3.Website iteration
-
-From the time I had this idea until now, this website has gone through many iterations, and the URL has also changed several times. The current and final website is [nowscott.top](https://nowscott.top)。
-
-In the beginning, the data file was manually entered directly, and every time I wanted to update the data content, I had to access the developer interface, make changes to the data file, and then upload it to GitHub. This made me feel very unfriendly.
-
-Therefore, in the latest version, I utilized the Notion API to store the data in Notion's database. I will explain the specific implementation details in the next section.
-
-## 4.How to use the Notion API
-(The code for fetching data from Notion is not included in this project.)
-
-This idea originated from a video by an uploader on Bilibili, and the link is provided below:
-
-[【S1E3】用Notion当数据库写一个简单的API](https://www.bilibili.com/video/BV1gF411E7pV/?share_source=copy_web&vd_source=98c7014c35363c157a4fba4929dbda77)
-
-In this video, I learned how to use the Notion API to fetch data from Notion and display it on a web page. If you have any questions, you can watch the video for more information.
-
-To summarize, I utilized a website called Netlify to deploy a service. This service runs every time someone visits the domain I deployed, retrieves data from Notion, and returns it to the frontend. Once the frontend receives the data, it can be displayed on the webpage.
-
-This sounds great, right? However, this simple process takes around 7 to 8 seconds at most, which does not align with the vision of a fast-loading personal website. Therefore, I made further improvements in this area.
-
-## 5.Some optimizations
-
-I cannot change the access speed of the Notion API, but what I can change is the way data is fetched. If we want to make modifications more convenient, we can store a copy of the data in a convenient location. When accessing the website, we can fetch this stored data, effectively resolving the issue of slow access speed.
-
-When the data is modified, the aforementioned convenient data copy will not be updated immediately because it cannot communicate directly with Notion. To address this, I leverage GitHub Actions to regularly update the stored data. This ensures that the data remains up-to-date.
-
-## 6.Final Notes
-
-In summary, this project is a web-based personal website index that addresses the issue of slow access speed and ensures timely data updates. These optimizations make modifications easier and provide a more efficient and seamless user experience. Thank you for your interest in this project.
-
-If you have any questions or inquiries regarding this project, you can contact me via email at: [nowscott@qq.com](mailto:nowscott@qq.com)
