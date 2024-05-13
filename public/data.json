@@ -417,8 +417,7 @@
         "web": "https://brew.sh/index_zh-cn",
         "tags": [
             "🍎Apple",
-            "🐱Code",
-            "💻Mac"
+            "🐱Code"
         ],
         "brief": "macOS（或 Linux）缺失的软件包的管理器",
         "state": "正常"
@@ -530,7 +529,6 @@
         "web": "https://decrypt.day/",
         "tags": [
             "🍎Apple",
-            "💻Mac",
             "🧰软件"
         ],
         "brief": "查找并下载最新解密的IPA应用程序",
