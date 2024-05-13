@@ -1,5 +1,15 @@
 [
     {
+        "name": "OpenArt",
+        "web": "https://openart.ai/home",
+        "tags": [
+            "🖼️图片",
+            "🤖AI"
+        ],
+        "brief": "AI艺术生成器",
+        "state": "正常"
+    },
+    {
         "name": "7ED",
         "web": "https://www.7ed.net/",
         "tags": [
