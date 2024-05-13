@@ -1,5 +1,15 @@
 [
     {
+        "name": "中文网字计划",
+        "web": "https://chinese-font.netlify.app/",
+        "tags": [
+            "📦资源",
+            "🐱Code"
+        ],
+        "brief": "收集免费可商用的 Web 字体文件（cdn寄了）",
+        "state": "正常"
+    },
+    {
         "name": "IT之家",
         "web": "https://www.ithome.com/",
         "tags": [
@@ -1140,7 +1150,7 @@
         "state": "正常"
     },
     {
-        "name": "世界上第一个网站",
+        "name": "FirstWeb",
         "web": "http://info.cern.ch/",
         "tags": [
             "🔹其他"
