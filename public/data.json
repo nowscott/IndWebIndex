@@ -1,5 +1,23 @@
 [
     {
+        "name": "渐变色",
+        "web": "https://uigradients.com/",
+        "tags": [
+            "🪣色彩"
+        ],
+        "brief": "提供上百种渐变色",
+        "state": "正常"
+    },
+    {
+        "name": "日本色",
+        "web": "https://nipponcolors.com/",
+        "tags": [
+            "🪣色彩"
+        ],
+        "brief": "日本传统颜色",
+        "state": "正常"
+    },
+    {
         "name": "中文网字计划",
         "web": "https://chinese-font.netlify.app/",
         "tags": [
@@ -58,7 +76,7 @@
         "state": "正常"
     },
     {
-        "name": "国外新闻聚合",
+        "name": "Buzzing",
         "web": "https://www.buzzing.cc/",
         "tags": [
             "🗞️新闻"
@@ -201,10 +219,9 @@
         "state": "正常"
     },
     {
-        "name": "开源程序书籍",
+        "name": "开源程序书",
         "web": "https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md",
         "tags": [
-            "📚书籍",
             "🐱Code",
             "🧠学习"
         ],
@@ -262,11 +279,11 @@
         "state": "正常"
     },
     {
-        "name": "LaTeX公式编辑器",
+        "name": "LaTeX公式",
         "web": " https://www.latexlive.com/",
         "tags": [
-            "🧠学习",
-            "🔧工具"
+            "🐱Code",
+            "📒笔记"
         ],
         "brief": "在线编辑LaTeX公式的工具",
         "state": "正常"
@@ -521,14 +538,13 @@
         "name": "微信读书",
         "web": "https://weread.qq.com/",
         "tags": [
-            "📚书籍",
             "🧠学习"
         ],
         "brief": "一个看书的网站",
         "state": "正常"
     },
     {
-        "name": "Word代码高亮",
+        "name": "代码高亮",
         "web": "http://word.wd1x.com/",
         "tags": [
             "🐱Code",
@@ -599,7 +615,7 @@
         "state": "正常"
     },
     {
-        "name": "数据结构可视化",
+        "name": "DS可视化",
         "web": "https://visualgo.net/",
         "tags": [
             "🐱Code",
@@ -682,12 +698,12 @@
         "state": "正常"
     },
     {
-        "name": "Win32DiskImager",
+        "name": "W32DI",
         "web": "https://win32diskimager.org/",
         "tags": [
             "🧰软件"
         ],
-        "brief": "一个将原始磁盘映像写入可移动设备的程序",
+        "brief": "Win32DiskImager一个将原始磁盘映像写入可移动设备的程序",
         "state": "正常"
     },
     {
@@ -749,7 +765,7 @@
         "state": "正常"
     },
     {
-        "name": "小红书创作服务平台",
+        "name": "小红书创作",
         "web": "https://creator.xiaohongshu.com",
         "tags": [
             "👁️‍🗨️媒体"
@@ -786,7 +802,7 @@
         "state": "正常"
     },
     {
-        "name": "星际核心：地平线",
+        "name": "horizons",
         "web": "https://yx.g8hh.com/heart-of-galaxy-horizons/",
         "tags": [
             "🕹️游戏"
@@ -825,7 +841,7 @@
         "state": "正常"
     },
     {
-        "name": "爱给素材网",
+        "name": "爱给网",
         "web": "https://www.aigei.com/",
         "tags": [
             "🎵音频",
@@ -1072,7 +1088,7 @@
         "state": "正常"
     },
     {
-        "name": "芒果id商城",
+        "name": "芒果商城",
         "web": "https://www.mgidshop.com/",
         "tags": [
             "🍎Apple",
@@ -1092,7 +1108,7 @@
         "state": "正常"
     },
     {
-        "name": "微信公众平台",
+        "name": "微信公众",
         "web": "https://mp.weixin.qq.com/",
         "tags": [
             "👁️‍🗨️媒体"
@@ -1196,7 +1212,7 @@
         "state": "正常"
     },
     {
-        "name": "钢笔工具练习",
+        "name": "钢笔工具",
         "web": "https://bezier.method.ac/",
         "tags": [
             "⛹️‍♀️娱乐"
@@ -1223,7 +1239,7 @@
         "state": "正常"
     },
     {
-        "name": "比特虫ico图标制作",
+        "name": "比特虫.ico",
         "web": "https://www.bitbug.net/",
         "tags": [
             "♻︎图标",
@@ -1272,7 +1288,7 @@
         "state": "正常"
     },
     {
-        "name": "你的密码安全吗？",
+        "name": "密码测试",
         "web": "https://www.passwordmonster.com/",
         "tags": [
             "🔧工具",
@@ -1292,7 +1308,7 @@
         "state": "正常"
     },
     {
-        "name": "Apple官网",
+        "name": "Apple.cn",
         "web": "https://www.apple.com.cn/",
         "tags": [
             "🍎Apple"
@@ -1338,7 +1354,7 @@
         "state": "正常"
     },
     {
-        "name": "Potplayer官网",
+        "name": "Potplayer",
         "web": "https://potplayer.daum.net/",
         "tags": [
             "🧰软件"
@@ -1356,7 +1372,7 @@
         "state": "正常"
     },
     {
-        "name": "世界名画高清",
+        "name": "世界名画",
         "web": "https://www.nbfox.com/",
         "tags": [
             "🖼️图片",
@@ -1497,7 +1513,7 @@
         "state": "正常"
     },
     {
-        "name": "在线剪辑视频",
+        "name": "在线剪视频",
         "web": "https://online-video-cutter.com/cn/",
         "tags": [
             "🔧工具",
@@ -1526,7 +1542,7 @@
         "state": "正常"
     },
     {
-        "name": "Markdown排版",
+        "name": "MD排版",
         "web": "https://md.guozh.net/",
         "tags": [
             "⚙️转换",
@@ -1554,11 +1570,12 @@
         "state": "正常"
     },
     {
-        "name": "Jetbrains官网",
+        "name": "Jetbrains",
         "web": "https://www.jetbrains.com/zh-cn/",
         "tags": [
             "🐱Code",
-            "🧰软件"
+            "🧰软件",
+            "🏠主页"
         ],
         "brief": "为专业人士和团队制作开发者工具",
         "state": "正常"
@@ -1592,12 +1609,13 @@
         "state": "正常"
     },
     {
-        "name": "OfficeToolPlus",
+        "name": "OTP",
         "web": "https://otp.landian.vip/zh-cn/",
         "tags": [
-            "🧰软件"
+            "🧰软件",
+            "🔧工具"
         ],
-        "brief": "office软件的工具网页",
+        "brief": "OfficeToolPlus软件的工具网页",
         "state": "正常"
     },
     {
@@ -1620,7 +1638,7 @@
         "state": "正常"
     },
     {
-        "name": "中国大学慕课",
+        "name": "慕课",
         "web": "https://www.icourse163.org/",
         "tags": [
             "🧠学习"
@@ -1659,7 +1677,7 @@
         "state": "正常"
     },
     {
-        "name": "流程图思维导图",
+        "name": "流程图导图",
         "web": "https://www.processon.com/",
         "tags": [
             "🖼️图片",
@@ -1697,7 +1715,7 @@
         "state": "正常"
     },
     {
-        "name": "Python标准库",
+        "name": "PY标准库",
         "web": "https://docs.python.org/zh-cn/3/library/",
         "tags": [
             "🐱Code",
@@ -1716,7 +1734,7 @@
         "state": "正常"
     },
     {
-        "name": "卡路里计算器",
+        "name": "cal计算器",
         "web": "https://www.calculator.net/calorie-calculator.html",
         "tags": [
             "🔧工具"
@@ -1725,7 +1743,7 @@
         "state": "正常"
     },
     {
-        "name": "人生重开模拟器",
+        "name": "重开模拟器",
         "web": "https://liferestart.syaro.io/public/index.html",
         "tags": [
             "🕹️游戏"
