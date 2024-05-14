@@ -1,5 +1,14 @@
 [
     {
+        "name": "Sudoku",
+        "web": "https://sudoku.nowscott.top/",
+        "tags": [
+            "🕹️游戏"
+        ],
+        "brief": "基于React的Sudoku",
+        "state": "正常"
+    },
+    {
         "name": "渐变色",
         "web": "https://uigradients.com/",
         "tags": [
@@ -1688,7 +1697,7 @@
     },
     {
         "name": "2048",
-        "web": "https://now2048.vercel.app/",
+        "web": "https://2048.nowscott.top",
         "tags": [
             "🕹️游戏"
         ],
