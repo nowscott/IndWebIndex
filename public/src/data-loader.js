@@ -1,27 +1,27 @@
 window.onload = function () {
     var sources, taglist = [], onlist = [], reslist = [];
-    function randomSort(arr) {//创建随机函数
+
+    function randomSort(arr) {
         for (let i = 0, l = arr.length; i < l; i++) {
-            let rc = parseInt(Math.random() * l)
-            // 让当前循环的数组元素和随机出来的数组元素交换位置
-            const empty = arr[i]
-            arr[i] = arr[rc]
-            arr[rc] = empty
+            let rc = parseInt(Math.random() * l);
+            const empty = arr[i];
+            arr[i] = arr[rc];
+            arr[rc] = empty;
         }
-        return arr
+        return arr;
     }
 
-    function unique(arr) { return Array.from(new Set(arr)) }// 数组去重方法的定义
+    function unique(arr) { return Array.from(new Set(arr)); }
 
-    function renderWebs(list) {//创建包含网站信息的列表
-        for (l in list) {
-            var a = document.createElement('a')
-            a.id = 'web'
-            a.href = list[l].web
-            a.target = '_blank'
-            a.innerHTML = list[l].name
-            a.title = list[l].brief
-            document.getElementById('webs-container').appendChild(a)
+    function renderWebs(list) {
+        for (let l in list) {
+            var a = document.createElement('a');
+            a.id = 'web';
+            a.href = list[l].web;
+            a.target = '_blank';
+            a.innerHTML = list[l].name;
+            a.title = list[l].brief;
+            document.getElementById('webs-container').appendChild(a);
         }
     }
 
@@ -38,7 +38,6 @@ window.onload = function () {
         });
     }
 
-
     function toggleTagButton(buttonId) {
         var button = document.getElementById(buttonId);
         var tagText = button.textContent;
@@ -54,7 +53,6 @@ window.onload = function () {
         updateResults(); // 更新结果和标签列表
     }
 
-
     function updateResults() {
         reslist = sources.filter(source => onlist.every(tag => source.tags.includes(tag)));
         document.getElementById('webs-container').innerHTML = reslist.length > 0 ? '' : '未找到符合条件的网页';
@@ -69,13 +67,14 @@ window.onload = function () {
                 }
             });
         });
-        // 移除已选标签，然后将其添加到数组前端
+
         onlist.forEach(tag => {
             const index = availableTags.indexOf(tag);
             if (index > -1) {
                 availableTags.splice(index, 1);
             }
         });
+
         const sortedTags = onlist.concat(availableTags.filter(tag => !onlist.includes(tag)));
         renderTags(sortedTags);
     }
@@ -103,7 +102,6 @@ window.onload = function () {
         taglist = randomSort(unique(taglist)); // 随机排序并去重标签列表
         renderTags(taglist); // 渲染标签列表
     }
-
 
     function saveToCookie(data) {
         document.cookie = "sources=" + JSON.stringify(data) + ";path=/";
@@ -134,24 +132,20 @@ window.onload = function () {
         }
     }
 
-    // 从 Cookie 中加载数据
+    // 从 Cookie 中加载数据并渲染网页
     sources = loadFromCookie();
     if (sources) {
         renderWebs(randomSort(unique(sources)));
         extractAndRenderTags(sources);
     }
 
+    // 异步进行数据爬取和更新
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
-            if (!sources) {
-                sources = data;
-                renderWebs(randomSort(unique(sources)));
-                extractAndRenderTags(sources);
-            }
             compareAndUpdateData(data);
         });
-        
+
     document.getElementById('s-btn').onclick = searchFunction;
     document.addEventListener('keydown', event => {
         if (event.keyCode === 13) {
