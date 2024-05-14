@@ -1,7 +1,26 @@
-@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-smiley-sans-oblique-regular@1.0.1/font.min.css');
-@import url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css');
-@import url('https://jhlst.nowscott.top/result.css');
-@import url('https://zqfs.nowscott.top/result.css');
+/* @font-face {
+    font-family: 'Smiley Sans Oblique';
+    src: url('https://cdn.jsdelivr.net/npm/cn-fontsource-smiley-sans-oblique-regular@1.0.1/font.min.css') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zhuque Fangsong';
+    src: url('https://jhlst.nowscott.top/result.css') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KingHwa_OldSong';
+    src: url('https://zqfs.nowscott.top/result.css') format('woff2');
+    font-display: swap;
+} */
 
 * {
     margin: 0;
