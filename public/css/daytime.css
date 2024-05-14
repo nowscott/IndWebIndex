@@ -20,10 +20,6 @@ h2 a {
     color: darkslateblue;
 }
 
-p {
-    color: purple;
-}
-
 .title-tags,
 .title-webs {
     color: darkblue;
@@ -56,4 +52,8 @@ p {
 .off {
     background-color: #eee;
     color: darkslategray;
+}
+
+.footer-text {
+    color: purple;
 }

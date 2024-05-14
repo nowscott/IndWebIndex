@@ -20,10 +20,6 @@ h2 a {
     color: #eee;
 }
 
-p {
-    color: lightpink;
-}
-
 .title-tags,
 .title-webs {
     color: #eee;
@@ -56,4 +52,7 @@ p {
 .off {
     background-color: darkslategrey;
     color: lightgrey;
+}
+.footer-text{
+    color: lightpink;
 }
