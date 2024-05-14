@@ -1,5 +1,5 @@
 window.onload = function () {
-    var sources, taglist = [], onlist = [], reslist = [], restaglist = [];
+    var sources, taglist = [], onlist = [], reslist = [];
     function randomSort(arr) {//创建随机函数
         for (let i = 0, l = arr.length; i < l; i++) {
             let rc = parseInt(Math.random() * l)
@@ -104,17 +104,58 @@ window.onload = function () {
         renderTags(taglist); // 渲染标签列表
     }
 
-    fetch("data.json") // 从服务器上获取数据
+
+    function saveToCookie(data) {
+        document.cookie = "sources=" + JSON.stringify(data) + ";path=/";
+    }
+
+    function loadFromCookie() {
+        let name = "sources=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return JSON.parse(c.substring(name.length, c.length));
+            }
+        }
+        return null;
+    }
+
+    function compareAndUpdateData(newData) {
+        if (JSON.stringify(newData) !== JSON.stringify(sources)) {
+            sources = newData;
+            saveToCookie(sources);
+            updateResults();
+            extractAndRenderTags(sources);
+        }
+    }
+
+    // 从 Cookie 中加载数据
+    sources = loadFromCookie();
+    if (sources) {
+        renderWebs(randomSort(unique(sources)));
+        extractAndRenderTags(sources);
+    }
+
+    fetch("data.json")
         .then(response => response.json())
         .then(data => {
-            sources = data; // 存储数据源
-            renderWebs(randomSort(unique(sources))); // 初始渲染网页列表
-            extractAndRenderTags(sources); // 使用封装后的函数处理和渲染标签
-            document.getElementById('s-btn').onclick = searchFunction; // 绑定搜索按钮的点击事件
-            document.addEventListener('keydown', event => {
-                if (event.keyCode === 13) {
-                    document.getElementById('s-btn').click();
-                }
-            });
+            if (!sources) {
+                sources = data;
+                renderWebs(randomSort(unique(sources)));
+                extractAndRenderTags(sources);
+            }
+            compareAndUpdateData(data);
         });
+        
+    document.getElementById('s-btn').onclick = searchFunction;
+    document.addEventListener('keydown', event => {
+        if (event.keyCode === 13) {
+            document.getElementById('s-btn').click();
+        }
+    });
 }
