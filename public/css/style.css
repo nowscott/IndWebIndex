@@ -13,7 +13,7 @@
 :root {
     --main-font-family: 'KingHwa_OldSong';
 }
-
+        
 body {
     backdrop-filter: blur(15px);
     width: 98vw;
