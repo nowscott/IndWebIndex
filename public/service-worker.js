@@ -1,4 +1,4 @@
-const CACHE_NAME = 'indwebindex-cache-v1';
+const CACHE_NAME = 'indwebindex-cache-v2';  // 更新缓存版本
 const urlsToCache = [
   '/',
   '/index.html',
@@ -40,29 +40,36 @@ self.addEventListener('fetch', event => {
   }
 
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-
-        const fetchRequest = event.request.clone();
-
-        return fetch(fetchRequest).then(response => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
+    caches.match(event.request).then(response => {
+      if (response) {
+        // 检查缓存版本是否过期
+        return caches.open(CACHE_NAME).then(cache => {
+          return fetch(event.request).then(fetchResponse => {
+            if (fetchResponse && fetchResponse.status === 200) {
+              cache.put(event.request, fetchResponse.clone());
+            }
+            return fetchResponse;
+          }).catch(() => {
+            console.error('Fetch failed, returning cached response', event.request.url);
             return response;
-          }
-
-          const responseToCache = response.clone();
-
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(fetchRequest, responseToCache);
-            });
-
-          return response;
+          });  // 如果网络请求失败，使用缓存
         });
-      })
+      } else {
+        return fetch(event.request).then(fetchResponse => {
+          if (fetchResponse && fetchResponse.status === 200) {
+            return caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, fetchResponse.clone());
+              return fetchResponse;
+            });
+          } else {
+            return fetchResponse;
+          }
+        }).catch(error => {
+          console.error('Fetch failed for:', event.request.url, error);
+          throw error;  // 处理错误并返回
+        });
+      }
+    })
   );
 });
 
