@@ -15,6 +15,10 @@
 }
 
 body {
+    user-select: none; /* 所有现代浏览器 */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
     backdrop-filter: blur(15px);
     width: 98vw;
     height: 100vh;
