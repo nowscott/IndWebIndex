@@ -34,11 +34,11 @@ function applyTheme(theme) {
 
     if (theme === 'dark') {
         dark_mode.href = "/css/dark.css";
-        dark_mode_icon.src = '/svg/sun.svg';
+        dark_mode_icon.src = 'assets/svg/sun.svg';
         dark_mode_btn.className = 'dark';
     } else {
         dark_mode.href = "/css/daytime.css";
-        dark_mode_icon.src = '/svg/moon.svg';
+        dark_mode_icon.src = 'assets/svg/moon.svg';
         dark_mode_btn.className = 'daytime';
     }
 }

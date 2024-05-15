@@ -103,7 +103,7 @@ window.onload = function () {
         renderTags(taglist); // 渲染标签列表
     }
 
-    fetch("data.json") // 从服务器上获取数据
+    fetch("/assets/data.json") // 从服务器上获取数据
     .then(response => response.json())
     .then(data => {
         sources = data; // 存储数据源

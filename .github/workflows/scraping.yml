@@ -24,7 +24,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
         run: |
-          python public/src/scrape.py
+          python scripts/scrape.py
       - name: Commit data.json
         run: |
           git diff --quiet --exit-code public/data.json || (
