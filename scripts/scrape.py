@@ -62,7 +62,7 @@ def main():
         # 过滤数据
         filtered_data = [item for item in data if item['name'] and item['state'] == '正常']
         # 保存到JSON文件
-        with open('public/data.json', 'w', encoding='utf-8') as f:
+        with open('public/assets/data.json', 'w', encoding='utf-8') as f:
             json.dump(filtered_data, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"An error occurred: {e}")
