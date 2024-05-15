@@ -103,8 +103,27 @@ window.onload = function () {
         renderTags(taglist); // 渲染标签列表
     }
 
-    function saveToCookie(data) {
-        document.cookie = "sources=" + JSON.stringify(data) + ";path=/";
+    // fetch("data.json") // 从服务器上获取数据
+    // .then(response => response.json())
+    // .then(data => {
+    //     sources = data; // 存储数据源
+    //     renderWebs(randomSort(unique(sources))); // 初始渲染网页列表
+    //     extractAndRenderTags(sources); // 使用封装后的函数处理和渲染标签
+    //     document.getElementById('s-btn').onclick = searchFunction; // 绑定搜索按钮的点击事件
+    //     document.addEventListener('keydown', event => {
+    //         if (event.keyCode === 13) {
+    //             document.getElementById('s-btn').click();
+    //         }
+    //     });
+    // });
+
+        function saveToCookie(data) {
+        try {
+            let jsonString = JSON.stringify(data);
+            document.cookie = "sources=" + encodeURIComponent(jsonString) + ";path=/";
+        } catch (e) {
+            console.error("JSON stringify error:", e);
+        }
     }
 
     function loadFromCookie() {
@@ -117,18 +136,22 @@ window.onload = function () {
                 c = c.substring(1);
             }
             if (c.indexOf(name) === 0) {
-                return JSON.parse(c.substring(name.length, c.length));
+                let jsonString = c.substring(name.length, c.length);
+                console.log("JSON String from Cookie:", jsonString); // 添加日志
+                try {
+                    return JSON.parse(jsonString);
+                } catch (e) {
+                    console.error("JSON parse error:", e);
+                }
             }
         }
         return null;
     }
 
     function compareAndUpdateData(newData) {
-        if (JSON.stringify(newData) !== JSON.stringify(sources)) {
-            sources = newData;
-            saveToCookie(sources);
-            updateResults();
-            extractAndRenderTags(sources);
+        let storedData = loadFromCookie();
+        if (JSON.stringify(newData) !== JSON.stringify(storedData)) {
+            saveToCookie(newData);
         }
     }
 
@@ -137,9 +160,19 @@ window.onload = function () {
     if (sources) {
         renderWebs(randomSort(unique(sources)));
         extractAndRenderTags(sources);
+    } else {
+        // 如果Cookie中没有数据，进行fetch请求
+        fetch("data.json")
+            .then(response => response.json())
+            .then(data => {
+                sources = data; // 存储数据源
+                saveToCookie(sources); // 保存到Cookie
+                renderWebs(randomSort(unique(sources))); // 初始渲染网页列表
+                extractAndRenderTags(sources); // 使用封装后的函数处理和渲染标签
+            });
     }
 
-    // 异步进行数据爬取和更新
+    // 异步进行数据爬取和更新，仅更新Cookie
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
