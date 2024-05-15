@@ -68,6 +68,7 @@ body {
 h1,
 h2 {
     text-align: center;
+    font-weight: normal;
     font-family: var(--main-font-family);
 }
 
