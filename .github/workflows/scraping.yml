@@ -27,7 +27,7 @@ jobs:
           python scripts/scrape.py
       - name: Commit data.json
         run: |
-          git diff --quiet --exit-code public/data.json || (
+          git diff --quiet --exit-code public/assets/data.json || (
             git config --global user.name "NowScott"
             git config --global user.email "nowscott@qq.com"
             git add public/data.json
