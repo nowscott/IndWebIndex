@@ -405,6 +405,16 @@
         "state": "正常"
     },
     {
+        "name": "SIcon",
+        "web": "https://simpleicons.org/",
+        "tags": [
+            "🐱Code",
+            "♻︎图标"
+        ],
+        "brief": "SimpleIcons包含很多种流行品牌的免费 SVG 图标库",
+        "state": "正常"
+    },
+    {
         "name": "Gmail",
         "web": "https://mail.google.com/mail/",
         "tags": [
@@ -1745,7 +1755,9 @@
         "name": "少数派",
         "web": "https://sspai.com/",
         "tags": [
-            "🕊️up主"
+            "📱数码",
+            "👁️‍🗨️媒体",
+            "🗞️新闻"
         ],
         "brief": "写文字的平台，数码科技相关",
         "state": "正常"
