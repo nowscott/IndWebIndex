@@ -30,7 +30,7 @@ jobs:
           git diff --quiet --exit-code public/assets/data.json || (
             git config --global user.name "NowScott"
             git config --global user.email "nowscott@qq.com"
-            git add public/data.json
+            git add publi/assets/data.json
             DATE=$(TZ="Asia/Shanghai" date "+%Y-%m-%d %H:%M:%S")
             git commit -m "Update data.json at $DATE"
             git push origin main
