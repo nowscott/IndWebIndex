@@ -81,6 +81,6 @@
 [web-image]:https://img.shields.io/badge/%E7%BD%91%E9%A1%B5%E9%A2%84%E8%A7%88-%E4%B8%AD%E6%96%87-blue
 [stars-history-image]:https://api.star-history.com/svg?repos=NowScott/IndWebIndex&type=Date
 
-[notion-url]:https://nowscott.notion.site/0c3540063c0245a3947494527e83ba7a?v=8757a2fec25246fcb24574ba60542f00
+[notion-url]:https://nowscott.notion.site/aef09fbce63649cba8b9269374dbb641?v=36b6f2625b8e4e5faf9f68e1284bd2bc&pvs=74
 
 [access-url]:https://www.notion.so/my-integrations
