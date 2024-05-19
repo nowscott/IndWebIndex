@@ -15,10 +15,14 @@
 }
 
 body {
-    user-select: none; /* 所有现代浏览器 */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
+    user-select: none;
+    /* 所有现代浏览器 */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
     backdrop-filter: blur(15px);
     width: 98vw;
     height: 100vh;
@@ -44,6 +48,7 @@ body {
     margin: 0 auto;
     position: relative;
     min-height: 88vh;
+    padding-bottom: 5vh;
 }
 
 h1,
@@ -123,9 +128,15 @@ a:link,
 }
 
 .footer-text {
-    text-align: center;
-    padding: 2vh 0 ;
-    font-size: x-small;
+    position: absolute;
+    font-size: xx-small;
     white-space: nowrap;
+    bottom: 2vh;
     left: 50%;
+    transform: translateX(-50%);
+    /* text-align: center; */
+    /* padding: 2vh 0 ; */
+    /* font-size: x-small; */
+    /* white-space: nowrap; */
+    /* left: 50%; */
 }
