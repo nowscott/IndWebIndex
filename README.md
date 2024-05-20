@@ -3,18 +3,17 @@
 [![GitHub stars][stars-image]][stars-url]
 [![GitHub forks][forks-image]][forks-url]
 [![license GPL-3.0][license-image]][license-url]
-
 [![commit-count-permonth][commit-image]][commit-url]
 [![contributors-count][contributors-image]][contributors-url]
 
-[![Star History Chart][stars-history-image]][stars-url]
+![网站截图](public/assets/网站图片.png)
 
 
 ## 1.如何部署
 
 在2024年5月21日的更新之后，部署这个项目变得更加简单。您只需要复制这个[Notion页面][notion-url]作为您自己的数据库，根据需要添加网站数据，然后fork这个仓库。
 
-接下来，进入Vercel部署，添加两个环境变量NOTION_TOKEN和DATABASE_ID。这些分别是从[我的集成][access-url]网站获得的密钥，以及您的Notion数据库的ID。
+接下来，进入Vercel部署，添加两个环境变量NOTION_TOKEN和DATABASE_ID。这些分别是从[我的集成][access-url]网站获得的密钥，以及您的Notion数据库的ID，当然也不要忘记给你的数据库连接集成。
 
 这样就完成了部署，可以尽情在notion数据库中添加你自己需要的网页。
 
@@ -60,6 +59,8 @@
 总之，这个项目是一个基于网络的个人网站索引，它解决了访问速度慢的问题，并确保了数据及时更新。这些优化使修改变得更加容易，并提供了更高效、无缝的用户体验。感谢您对这个项目的兴趣。
 
 如果您对这个项目有任何问题或询问，可以通过电子邮件联系我：[nowscott@qq.com](mailto:nowscott@qq.com)
+
+[![Star History Chart][stars-history-image]][stars-url]
 
 
 [stars-url]:https://github.com/NowScott/IndWebIndex/stargazers "星标"
