@@ -1,7 +1,8 @@
-@import url('https://cdn.jsdelivr.net/npm/cn-fontsource-smiley-sans-oblique-regular@1.0.1/font.min.css');
-@import url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.6.0/style.css');
-@import url('https://jhlst.nowscott.top/result.css');
-@import url('https://zqfs.nowscott.top/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/dyh/dist/SmileySans-Oblique/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/jhlst/dist/京華老宋体v1_007/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/mzxst/dist/MZPXorig/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwmanhei/dist/LXGWMarkerGothic/result.css');
 
 * {
     margin: 0;

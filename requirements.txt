@@ -1,1 +1,0 @@
-notion_client==2.2.1

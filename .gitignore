@@ -1,4 +1,99 @@
-.env
-.DS_store
-node_modules
-package-lock.json
+# Node.js 相关
+node_modules/              
+npm-debug.log*             
+yarn-debug.log*            
+yarn-error.log*            
+
+# 日志文件
+logs                       
+*.log                      
+pids                       
+*.pid                      
+*.seed                     
+*.pid.lock                 
+
+# 运行时数据
+lib-cov                    
+coverage/                  
+*.lcov                     
+
+# jscoverage/JSCover 生成的目录
+lib-cov
+
+# istanbul 使用的覆盖率目录
+coverage/
+
+# nyc 测试覆盖率输出目录
+.nyc_output/
+
+# Grunt 中间存储目录（https://gruntjs.com/creating-plugins#storing-task-files）
+.grunt/
+
+# Bower 依赖目录（https://bower.io/）
+bower_components/
+
+# 编译的二进制扩展（https://nodejs.org/api/addons.html）
+build/Release
+
+# 依赖目录
+jspm_packages/
+
+# Next.js 构建输出
+.next/
+
+# dotenv 环境变量文件
+.env.local                  
+.env.development.local      
+.env.test.local             
+.env.production.local       
+.env                        
+
+# Next.js 生成的文件
+*.next
+out/
+.next/
+out/
+build/
+dist/
+
+# macOS 特定文件
+.DS_Store                  
+.AppleDouble               
+.LSOverride                
+
+# 图标文件必须以两个回车结尾
+Icon\r\r
+
+# 缩略图
+._*                         
+
+# 可能出现在卷根目录下的文件
+.DocumentRevisions-V100     
+.fseventsd                  
+.Spotlight-V100             
+.TemporaryItems             
+.Trashes                    
+.VolumeIcon.icns            
+.com.apple.timemachine.donotpresent 
+
+# 可能在远程 AFP 共享上创建的目录
+.AppleDB                    
+.AppleDesktop               
+Network Trash Folder        
+Temporary Items             
+.apdisk                     
+
+# 编辑器和 IDE 相关
+.idea/                      
+.vscode/                    
+*.suo                       
+*.ntvs*                     
+*.njsproj                   
+*.sln                       
+*.sw?                       
+
+# TypeScript 缓存文件
+*.tsbuildinfo
+
+# 可选的 npm 缓存目录
+.npm
