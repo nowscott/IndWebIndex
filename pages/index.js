@@ -85,7 +85,7 @@ export default function Home({ initialPosts, lastFetched }) {
           </a>
         </h1>
         <h2 className="title-2">
-          <a href="https://github.com/nowscott/IndWebIndex/blob/main/README_CN.md" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/nowscott/IndWebIndex/blob/main/README.md" target="_blank" rel="noopener noreferrer">
             如何部署
           </a>
         </h2>
