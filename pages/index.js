@@ -50,7 +50,7 @@ export default function Home({ initialPosts, lastFetched }) {
   }, [searchQuery, normalPosts, hiddenPosts]);
 
   useEffect(() => {
-    updateResults(posts, onList, setFilteredPosts, setTags);
+    updateResults(normalPosts, onList, setFilteredPosts, setTags);
   }, [onList]);
 
   const handleToggleTagButton = tag => {
