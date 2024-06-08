@@ -135,6 +135,6 @@ export async function getStaticProps() {
       initialPosts: sortedPosts,
       lastFetched
     },
-    revalidate: 3600, // 每小时重新生成静态页面
+    revalidate: 1800, // 每30分钟重新生成静态页面
   };
 }
