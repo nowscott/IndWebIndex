@@ -42,9 +42,9 @@ export default function Home({ initialPosts, lastFetched }) {
   }, [normalPosts]);
 
   useEffect(() => {
-    if(searchQuery === '隐藏'){
+    if (searchQuery === '隐藏') {
       setFilteredPosts(filterPostsBySearch(hiddenPosts, searchQuery));
-    }else{
+    } else {
       setFilteredPosts(filterPostsBySearch(normalPosts, searchQuery));
     }
   }, [searchQuery, normalPosts, hiddenPosts]);
@@ -55,12 +55,6 @@ export default function Home({ initialPosts, lastFetched }) {
 
   const handleToggleTagButton = tag => {
     toggleTagButton(tag, onList, setOnList, tags, setTags);
-  };
-
-  const searchFunction = () => {
-    const keyword = searchQuery.toLowerCase();
-    const reslist = filterPostsBySearch(posts, keyword);
-    setFilteredPosts(reslist.length > 0 ? reslist : []);
   };
 
   return (
@@ -90,8 +84,7 @@ export default function Home({ initialPosts, lastFetched }) {
           </a>
         </h2>
         <div className="search-box">
-          <input className="search-in" id="s-in" type="text" placeholder="请输入关键词" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-          <button className="search-btn" id="s-btn" onClick={searchFunction}>🔍</button>
+          <input className="search-in" id="s-in" type="text" placeholder="🔍请输入关键词" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </div>
         <h2 className="title-tags">选择标签</h2>
         <div id="tags-container">

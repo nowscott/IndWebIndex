@@ -77,16 +77,10 @@ h2 {
 }
 
 .search-in {
-    width: 9rem;
+    width: 12rem;
 }
 
-.search-btn {
-    height: 34px;
-    width: 34px;
-}
-
-.search-in,
-.search-btn {
+.search-in {
     margin: 2px 1px;
     padding: 5px;
     font-size: 16px;
@@ -94,7 +88,6 @@ h2 {
     border: 2px solid #909090;
     border-radius: 10px;
     font-family: var(--main-font-family);
-
 }
 
 .title-tags,
