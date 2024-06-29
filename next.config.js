@@ -10,4 +10,12 @@ module.exports = {
     };
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/_vercel/insights/script.js',
+        destination: '/_vercel/insights/script.js',
+      },
+    ];
+  },
 };
