@@ -11,6 +11,7 @@ import {
 } from '../lib/dataLoader';
 import { initializeTheme } from '../lib/theme';
 import { initializeContextMenu } from '../lib/contextMenu';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Home({ initialPosts, lastFetched }) {
   const [posts, setPosts] = useState(initialPosts);
@@ -112,6 +113,8 @@ export default function Home({ initialPosts, lastFetched }) {
         </div>
         <p className="footer-text">Copyright © 2021 - NowScott</p>
       </div>
+      {/* 在此处添加 Vercel Analytics 组件 */}
+      <Analytics />
     </div>
   );
 }
