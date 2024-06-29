@@ -11,7 +11,6 @@ import {
 } from '../lib/dataLoader';
 import { initializeTheme } from '../lib/theme';
 import { initializeContextMenu } from '../lib/contextMenu';
-import { Analytics } from '@vercel/analytics/react';
 
 export default function Home({ initialPosts, lastFetched }) {
   const [posts, setPosts] = useState(initialPosts);
@@ -26,7 +25,6 @@ export default function Home({ initialPosts, lastFetched }) {
     initializeTheme();
     initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
-    // 使用 setPosts 更新状态
     setPosts(initialPosts);
   }, [initialPosts, lastFetched]);
 
@@ -113,8 +111,6 @@ export default function Home({ initialPosts, lastFetched }) {
         </div>
         <p className="footer-text">Copyright © 2021 - NowScott</p>
       </div>
-      {/* 在此处添加 Vercel Analytics 组件 */}
-      <Analytics />
     </div>
   );
 }
@@ -122,15 +118,13 @@ export default function Home({ initialPosts, lastFetched }) {
 export async function getStaticProps() {
   const databaseId = process.env.DATABASE_ID;
   const posts = await getDatabase(databaseId);
-  // 获取数据的时间点
   const lastFetched = new Date().toISOString();
-  // 排序和去重操作在服务器端执行，以确保一致性
   const sortedPosts = randomSort(unique(posts));
   return {
     props: {
       initialPosts: sortedPosts,
       lastFetched
     },
-    revalidate: 1800, // 每30分钟重新生成静态页面
+    revalidate: 1800,
   };
 }
