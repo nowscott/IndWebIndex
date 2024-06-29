@@ -97,3 +97,4 @@ Temporary Items
 
 # 可选的 npm 缓存目录
 .npm
+.vercel
