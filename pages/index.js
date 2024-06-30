@@ -21,11 +21,26 @@ export default function Home({ initialPosts, lastFetched }) {
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
 
+  // 新增的状态用于存储访问次数
+  const [visitCount, setVisitCount] = useState(null);
+
   useEffect(() => {
     initializeTheme();
     initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
     setPosts(initialPosts);
+
+    // 调用访问计数 API
+    fetch('/api/visit-count')
+      .then(response => response.json())
+      .then(data => {
+        console.log(`本页面已被访问 ${data.count} 次`);
+        setVisitCount(data.count);
+      })
+      .catch(error => {
+        console.error('Error fetching visit count:', error);
+      });
+
   }, [initialPosts, lastFetched]);
 
   useEffect(() => {
