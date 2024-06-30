@@ -20,9 +20,7 @@ export default function Home({ initialPosts, lastFetched }) {
   const [tags, setTags] = useState([]);
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
-
-  // 新增的状态用于存储访问次数
-  const [visitCount, setVisitCount] = useState(null);
+  const [visitCount, setVisitCount] = useState(null); // 新增的状态用于存储访问次数
 
   useEffect(() => {
     initializeTheme();
@@ -34,8 +32,12 @@ export default function Home({ initialPosts, lastFetched }) {
     fetch('/api/visit-count')
       .then(response => response.json())
       .then(data => {
-        console.log(`本页面已被访问 ${data.count} 次`);
-        setVisitCount(data.count);
+        if (data.count) {
+          console.log(`本页面已被访问 ${data.count} 次`);
+          setVisitCount(data.count);
+        } else {
+          console.log('访问计数数据不可用:', data.message);
+        }
       })
       .catch(error => {
         console.error('Error fetching visit count:', error);
