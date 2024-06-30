@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link id="darkcss" rel="stylesheet" href="/css/daytime.css" />
           <link rel="shortcut icon" href="/images/favicon.ico" />
         </Head>
         <body>

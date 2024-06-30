@@ -20,12 +20,29 @@ export default function Home({ initialPosts, lastFetched }) {
   const [tags, setTags] = useState([]);
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
+  const [visitCount, setVisitCount] = useState(null); // 新增的状态用于存储访问次数
 
   useEffect(() => {
     initializeTheme();
     initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
     setPosts(initialPosts);
+
+    // 调用访问计数 API
+    fetch('/api/visit-count')
+      .then(response => response.json())
+      .then(data => {
+        if (data.count) {
+          console.log(`本页面已被访问 ${data.count} 次`);
+          setVisitCount(data.count);
+        } else {
+          console.log('访问计数数据不可用:', data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching visit count:', error);
+      });
+
   }, [initialPosts, lastFetched]);
 
   useEffect(() => {
