@@ -42,16 +42,6 @@ jobs:
             exit 0
           fi
 
-      - name: Generate Release Notes
-        if: env.RELEASE == 'true'
-        id: generate_release_notes
-        run: |
-          # 获取上一个版本的标签
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0)
-          # 获取当前版本的提交记录
-          RELEASE_NOTES=$(git log $PREVIOUS_TAG..HEAD --pretty=format:"* %h %s" --abbrev-commit)
-          echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
-
       - name: Configure Git
         if: env.RELEASE == 'true'
         run: |
@@ -81,6 +71,3 @@ jobs:
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
           release_name: Release ${{ env.PACKAGE_VERSION }}
-          body: |
-            ### 更新日志
-            ${{ env.RELEASE_NOTES }}
