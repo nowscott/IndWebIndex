@@ -18,7 +18,9 @@ const FontMenu = () => {
 
   useEffect(() => {
     const userFontClass = getCookie('userFont');
-    if (userFontClass) {
+    const isValidFont = fontData.fonts.some(font => font.class === userFontClass);//检查cookie合法性
+
+    if (userFontClass && isValidFont) {
       document.documentElement.classList.add(userFontClass);
       setSelectedFont(userFontClass);
     } else {
