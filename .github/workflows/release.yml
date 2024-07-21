@@ -1,0 +1,86 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get current release version
+        id: get_current_release
+        run: |
+          curl -s "https://api.github.com/repos/${{ github.repository }}/releases/latest" | jq -r '.tag_name' > current_version.txt
+        continue-on-error: true
+
+      - name: Read package.json version
+        id: read_package_version
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
+
+      - name: Compare versions
+        id: compare_versions
+        run: |
+          if [ -f current_version.txt ]; then
+            CURRENT_VERSION=$(cat current_version.txt)
+          else
+            CURRENT_VERSION="v0.0.0"
+          fi
+          if [ "$CURRENT_VERSION" != "v${PACKAGE_VERSION}" ]; then
+            echo "Version has changed, proceeding with release."
+            echo "RELEASE=true" >> $GITHUB_ENV
+          else
+            echo "No version change detected."
+            echo "RELEASE=false" >> $GITHUB_ENV
+            exit 0
+          fi
+
+      - name: Generate Release Notes
+        if: env.RELEASE == 'true'
+        id: generate_release_notes
+        run: |
+          # 获取上一个版本的标签
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0)
+          # 获取当前版本的提交记录
+          RELEASE_NOTES=$(git log $PREVIOUS_TAG..HEAD --pretty=format:"* %h %s" --abbrev-commit)
+          echo "RELEASE_NOTES=$RELEASE_NOTES" >> $GITHUB_ENV
+
+      - name: Configure Git
+        if: env.RELEASE == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Add package.json and commit changes
+        if: env.RELEASE == 'true'
+        run: |
+          git add package.json
+          git commit -m "Bump version to ${{ env.PACKAGE_VERSION }}" || echo "No changes to commit"
+
+      - name: Create and push tag
+        if: env.RELEASE == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_VERSION=${{ env.PACKAGE_VERSION }}
+          git tag v$NEW_VERSION
+          git push origin main --tags
+
+      - name: Create Release
+        if: env.RELEASE == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/create-release@v1
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          release_name: Release ${{ env.PACKAGE_VERSION }}
+          body: |
+            ### 更新日志
+            ${{ env.RELEASE_NOTES }}

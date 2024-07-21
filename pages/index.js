@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { getDatabase } from '../lib/notion';
 import { useEffect, useState } from 'react';
 import {
@@ -11,6 +10,13 @@ import {
 } from '../lib/dataLoader';
 import { initializeTheme } from '../lib/theme';
 import { initializeContextMenu } from '../lib/contextMenu';
+import CustomHead from '../components/CustomHead';
+import ThemeToggleButton from '../components/ThemeToggleButton';
+import Titles from '../components/Titles';
+import SearchBox from '../components/SearchBox';
+import Tags from '../components/Tags';
+import WebList from '../components/WebList';
+import Footer from '../components/Footer';
 
 export default function Home({ initialPosts, lastFetched }) {
   const [posts, setPosts] = useState(initialPosts);
@@ -20,15 +26,13 @@ export default function Home({ initialPosts, lastFetched }) {
   const [tags, setTags] = useState([]);
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts);
-  const [visitCount, setVisitCount] = useState(null); // 新增的状态用于存储访问次数
+  const [visitCount, setVisitCount] = useState(null);
 
   useEffect(() => {
     initializeTheme();
     initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
     setPosts(initialPosts);
-
-    // 调用访问计数 API
     fetch('/api/visit-count')
       .then(response => response.json())
       .then(data => {
@@ -75,58 +79,17 @@ export default function Home({ initialPosts, lastFetched }) {
 
   return (
     <div>
-      <Head>
-        <title>网站索引</title>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="探索IndWebIndex——您的个性化中文网站索引！我们提供一个简单且高效的方法，让您可以快速访问和管理您常用的网站。无论是学习资源、购物平台还是娱乐网站，您都可以一目了然。" />
-      </Head>
+      <CustomHead />
       <div id="customContextMenu">
         <ul></ul>
       </div>
-      <button id="darkbtn" className="daytime" title="切换模式">
-        <img id="icon" src="/assets/svg/moon.svg" />
-      </button>
+      <ThemeToggleButton />
       <div className="html-container">
-        <h1 className="title-1">
-          <a href="https://github.com/NowScott/IndWebIndex" target="_blank" rel="noopener noreferrer">
-            Individual Web Index.
-          </a>
-        </h1>
-        <h2 className="title-2">
-          <a href="https://github.com/nowscott/IndWebIndex/blob/main/README.md" target="_blank" rel="noopener noreferrer">
-            如何部署
-          </a>
-        </h2>
-        <div className="search-box">
-          <input className="search-in" id="s-in" type="text" placeholder="🔍请输入关键词" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-        </div>
-        <h2 className="title-tags">选择标签</h2>
-        <div id="tags-container">
-          {tags.map(tag => (
-            <button
-              key={tag}
-              className={onList.includes(tag) ? 'tag on' : 'tag off'}
-              onClick={() => handleToggleTagButton(tag)}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-        <h2 className="title-webs">筛选网页</h2>
-        <div id="webs-container">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map(post => (
-              <a key={post.name} id="web" href={post.web} target="_blank" rel="noopener noreferrer" title={post.brief}>
-                {post.name}
-              </a>
-            ))
-          ) : (
-            <p>未找到符合条件的网页</p>
-          )}
-        </div>
-        <p className="footer-text">Copyright © 2021 - NowScott</p>
+        <Titles />
+        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
+        <WebList filteredPosts={filteredPosts} />
+        <Footer />
       </div>
     </div>
   );
