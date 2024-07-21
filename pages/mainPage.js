@@ -1,14 +1,11 @@
-// pages/mainPage.js
-import { useEffect, useState } from 'react';
-import CustomHead from '../components/CustomHead';
+import React, { useEffect, useState } from 'react';
 import ThemeToggleButton from '../components/ThemeToggleButton';
 import Titles from '../components/Titles';
 import SearchBox from '../components/SearchBox';
 import Tags from '../components/Tags';
 import WebList from '../components/WebList';
 import Footer from '../components/Footer';
-import { initializeTheme } from '../lib/theme';
-import { initializeContextMenu } from '../lib/contextMenu';
+import FontMenu from '../components/FontMenu';
 import { randomSort, unique, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
 
 const MainPage = ({ initialPosts, lastFetched }) => {
@@ -22,8 +19,6 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   const [visitCount, setVisitCount] = useState(null);
 
   useEffect(() => {
-    initializeTheme();
-    initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
     setPosts(initialPosts || []);
 
@@ -72,20 +67,17 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   };
 
   return (
-    <div>
-      <CustomHead />
-      <div id="customContextMenu">
-        <ul></ul>
-      </div>
-      <ThemeToggleButton />
-      <div className="html-container">
-        <Titles />
-        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-        <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
-        <WebList filteredPosts={filteredPosts} />
-        <Footer />
-      </div>
-    </div>
+        <div className='bg-stone-50 dark:bg-slate-800'>
+        <FontMenu />
+        <ThemeToggleButton />
+        <div className="w-[98vw] text-center mx-auto relative min-h-[88vh] pb-[5vh]">
+          <Titles />
+          <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
+          <WebList filteredPosts={filteredPosts} />
+          <Footer />
+        </div>
+        </div>
   );
 };
 

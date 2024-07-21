@@ -1,14 +1,19 @@
 // pages/_app.js
 import { Analytics } from '@vercel/analytics/react';
-import '../public/css/style.css';
-import '../public/css/context-menu.css';
+import '../styles/globals.css';
+import { FontProvider } from '../contexts/FontContext';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 function MyApp({ Component, pageProps }) {
     return (
-        <>
-            <Component {...pageProps} />
-            <Analytics />
-        </>
+        <ThemeProvider>
+            <FontProvider>
+                <>
+                    <Component {...pageProps} />
+                    <Analytics />
+                </>
+            </FontProvider>
+        </ThemeProvider>
     );
 }
 
