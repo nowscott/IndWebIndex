@@ -21,6 +21,11 @@ const FontMenu = () => {
     if (userFontClass) {
       document.documentElement.classList.add(userFontClass);
       setSelectedFont(userFontClass);
+    } else {
+      const defaultFontClass = fontData.fonts[0].class;
+      document.documentElement.classList.add(defaultFontClass);
+      setCookie('userFont', defaultFontClass, 365);
+      setSelectedFont(defaultFontClass);
     }
 
     const handleContextMenu = (event) => {
@@ -52,7 +57,7 @@ const FontMenu = () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('click', handleClick);
     };
-  }, []);
+  }, [setSelectedFont]);
 
   const changeFont = (fontClass) => {
     document.documentElement.classList.remove(...fontData.fonts.map(f => f.class)); // 移除所有字体类
