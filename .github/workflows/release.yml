@@ -70,4 +70,4 @@ jobs:
         uses: actions/create-release@v1
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
-          release_name: Release ${{ env.PACKAGE_VERSION }}
+          release_name: v${{ env.PACKAGE_VERSION }}
