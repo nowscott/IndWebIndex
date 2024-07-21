@@ -1,17 +1,27 @@
-// components/Titles.js
+//components/Titles.js
 const Titles = () => (
-    <div>
-      <h1 className="title-1">
-        <a href="https://github.com/NowScott/IndWebIndex" target="_blank" rel="noopener noreferrer">
-          Individual Web Index.
-        </a>
-      </h1>
-      <h2 className="title-2">
-        <a href="https://github.com/nowscott/IndWebIndex/blob/main/README.md" target="_blank" rel="noopener noreferrer">
-          如何部署
-        </a>
-      </h2>
+  <div>
+    <div className={`text-4xl my-3 text-center font-normal title-1`}>
+      <a
+        className="underline hover:no-underline text-orange-400 dark:text-lime-100"
+        href="https://github.com/NowScott/IndWebIndex"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Individual Web Index.
+      </a>
     </div>
-  );
-  
-  export default Titles;
+    <div className={`text-xl my-1 text-center font-normal title-2`}>
+      <a
+        className="underline hover:no-underline text-purple-700 dark:text-stone-100"
+        href="https://github.com/nowscott/IndWebIndex/blob/main/README.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        如何部署
+      </a>
+    </div>
+  </div>
+);
+
+export default Titles;

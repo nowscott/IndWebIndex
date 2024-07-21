@@ -1,0 +1,31 @@
+/* styles/globals.css */
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/dyh/dist/SmileySans-Oblique/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/jhlst/dist/京華老宋体v1_007/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/mzxst/dist/MZPXorig/result.css');
+@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwmanhei/dist/LXGWMarkerGothic/result.css');
+
+/* Tailwind CSS 指令 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  user-select: none;
+  /* 所有现代浏览器 */
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  backdrop-filter: blur(15px);
+  width: 98vw;
+  height: 100vh;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* 需要黑白时专用 */
+/* body { filter: grayscale(100%); } */
