@@ -14,7 +14,7 @@ export async function getStaticProps() {
   const sortedPosts = randomSort(unique(posts));
   return {
     props: {
-      initialPosts: sortedPosts,
+      initialPosts: sortedPosts || [],
       lastFetched
     },
     revalidate: 1800,
