@@ -9,23 +9,23 @@ import WebList from '../components/WebList';
 import Footer from '../components/Footer';
 import { initializeTheme } from '../lib/theme';
 import { initializeContextMenu } from '../lib/contextMenu';
-import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
+import { randomSort, unique, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
 
 const MainPage = ({ initialPosts, lastFetched }) => {
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState(initialPosts || []);
   const [normalPosts, setNormalPosts] = useState([]);
   const [hiddenPosts, setHiddenPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [tags, setTags] = useState([]);
   const [onList, setOnList] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts);
+  const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
   const [visitCount, setVisitCount] = useState(null);
 
   useEffect(() => {
     initializeTheme();
     initializeContextMenu();
     console.log(`数据更新时间: ${new Date(lastFetched).toLocaleString()}`);
-    setPosts(initialPosts);
+    setPosts(initialPosts || []);
 
     fetch('/api/visit-count')
       .then(response => response.json())
@@ -44,8 +44,8 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   }, [initialPosts, lastFetched]);
 
   useEffect(() => {
-    const filteredNormalPosts = initialPosts.filter(post => post.state !== '隐藏');
-    const filteredHiddenPosts = initialPosts.filter(post => post.state === '隐藏');
+    const filteredNormalPosts = (initialPosts || []).filter(post => post.state !== '隐藏');
+    const filteredHiddenPosts = (initialPosts || []).filter(post => post.state === '隐藏');
     setNormalPosts(filteredNormalPosts);
     setHiddenPosts(filteredHiddenPosts);
   }, [initialPosts]);
