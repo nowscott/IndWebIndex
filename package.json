@@ -1,6 +1,6 @@
 {
     "name": "IndWebIndex",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
