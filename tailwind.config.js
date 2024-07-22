@@ -13,6 +13,7 @@ module.exports = {
         'oldsong': ['KingHwa_OldSong', 'sans-serif'],
         'pixel': ['MuzaiPixel', 'sans-serif'],
         'marker': ['LXGW Marker Gothic', 'sans-serif'],
+        'default': ['sans-serif', 'Arial']
       },
     },
   },

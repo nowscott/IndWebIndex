@@ -10,7 +10,7 @@ const ThemeToggleButton = () => {
     <button
       title="切换模式"
       onClick={toggleTheme}
-      className="border-none bg-transparent ml-[80vw] mt-[2vh]"
+      className="border-none bg-transparent ml-[88vw] mt-[2vh]"
     >
       {isDark ? <HiOutlineSun className="text-rose-500 w-6 h-6" /> : <HiOutlineMoon className="text-blue-700 w-6 h-6" />}
     </button>
