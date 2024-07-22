@@ -67,17 +67,17 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   };
 
   return (
-        <div className='bg-stone-50 dark:bg-slate-800'>
-        <FontMenu />
-        <ThemeToggleButton />
-        <div className="w-[98vw] text-center mx-auto relative min-h-[88vh] pb-[5vh]">
-          <Titles />
-          <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-          <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
-          <WebList filteredPosts={filteredPosts} />
-          <Footer />
-        </div>
-        </div>
+    <div className='bg-stone-50 dark:bg-slate-800 backdrop-blur-[15px] m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col'>
+      <FontMenu />
+      <ThemeToggleButton />
+      <div className="flex-grow text-center mx-auto relative">
+        <Titles />
+        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
+        <WebList filteredPosts={filteredPosts} />
+      </div>
+      <Footer />
+    </div>
   );
 };
 

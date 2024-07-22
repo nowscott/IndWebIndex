@@ -19,12 +19,6 @@ body {
   /* Firefox */
   -ms-user-select: none;
   /* IE10+ */
-  backdrop-filter: blur(15px);
-  width: 98vw;
-  height: 100vh;
-  margin: 0 auto;
-  letter-spacing: 1px;
-  text-align: center;
 }
 
 /* 需要黑白时专用 */
