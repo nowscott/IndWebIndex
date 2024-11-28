@@ -27,11 +27,9 @@ const Footer = () => {
       >
         投稿网页
       </a>
-      {visitCount !== null ? (
-        <p className='mb-1'>访问量：{visitCount}</p>
-      ) : (
-        <p className='mb-1 text-gray-500'>加载中...</p>
-      )}
+      <p className='mb-1'>
+        {visitCount !== null ? `访问量：${visitCount}` : '访问量：加载中...'}
+      </p>
       <p>Copyright © 2021 - NowScott</p>
     </div>
   );
