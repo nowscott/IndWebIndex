@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// components/Footer.js
 const Footer = () => {
   const [visitCount, setVisitCount] = useState(null);
 
   useEffect(() => {
-    // 调用 API 获取访问量
     const fetchVisitCount = async () => {
       try {
         const response = await fetch('/api/visit-count');
@@ -29,8 +27,10 @@ const Footer = () => {
       >
         投稿网页
       </a>
-      {visitCount !== null && (
+      {visitCount !== null ? (
         <p className='mb-1'>访问量：{visitCount}</p>
+      ) : (
+        <p className='mb-1 text-gray-500'>加载中...</p>
       )}
       <p>Copyright © 2021 - NowScott</p>
     </div>
