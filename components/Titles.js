@@ -11,16 +11,6 @@ const Titles = () => (
         Individual Web Index.
       </a>
     </div>
-    <div className={`text-xl my-1 text-center font-normal title-2`}>
-      <a
-        className="underline hover:no-underline text-purple-700 dark:text-stone-100"
-        href="https://github.com/nowscott/IndWebIndex/blob/main/README.md"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        如何部署
-      </a>
-    </div>
   </div>
 );
 
