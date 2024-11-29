@@ -9,7 +9,7 @@ const Footer = () => {
         const response = await fetch('/api/visit-count');
         const data = await response.json();
         setVisitCount(data.count);
-        console.log('访问量：', visitCount);
+        console.log('访问量：', data.count);
       } catch (error) {
         console.error('获取访问量失败：', error);
       }
