@@ -1,16 +1,16 @@
 //components/Titles.js
-const Titles = () => (
+const Titles = ({ title = "Individual Web Index", link = "https://github.com/NowScott/IndWebIndex" }) => (
   <div>
-    <div className={`text-[2rem] my-3 text-center font-normal title-1`}>
+    <h1 className="text-[2rem] my-3 text-center font-normal title-1">
       <a
         className="underline hover:no-underline text-orange-400 dark:text-lime-100"
-        href="https://github.com/NowScott/IndWebIndex"
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Individual Web Index.
+        {title}
       </a>
-    </div>
+    </h1>
   </div>
 );
 
