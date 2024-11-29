@@ -9,6 +9,7 @@ const Footer = () => {
         const response = await fetch('/api/visit-count');
         const data = await response.json();
         setVisitCount(data.count);
+        console.log('访问量：', visitCount);
       } catch (error) {
         console.error('获取访问量失败：', error);
       }
@@ -27,9 +28,9 @@ const Footer = () => {
       >
         投稿网页
       </a>
-      <p className='mb-1'>
+      {/* <p className='mb-1'>
         {visitCount !== null ? `访问量：${visitCount}` : '访问量：加载中...'}
-      </p>
+      </p> */}
       <p>Copyright © 2021 - NowScott</p>
     </div>
   );
