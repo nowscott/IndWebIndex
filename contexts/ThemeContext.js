@@ -3,7 +3,16 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    return darkMode;
+  });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -18,9 +27,6 @@ export const ThemeProvider = ({ children }) => {
       }
     };
 
-    // 初始化主题
-    handleChange(mediaQuery);
-
     // 监听系统主题变化
     mediaQuery.addEventListener('change', handleChange);
 
@@ -29,13 +35,15 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      setIsDark(true);
-    }
+    setIsDark(prevIsDark => {
+      const newTheme = !prevIsDark;
+      if (newTheme) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      return newTheme;
+    });
   };
 
   return (
