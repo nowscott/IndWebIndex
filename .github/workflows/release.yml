@@ -40,7 +40,17 @@ jobs:
 
       - name: Push version changes
         run: |
+          # 推送到 main 分支
           git push origin main --tags
+          
+          # 获取触发 PR 的源分支名
+          SOURCE_BRANCH=${{ github.event.pull_request.head.ref }}
+          
+          # 如果源分支不是 main，则也将版本号变更推送到源分支，以保持同步
+          if [ "$SOURCE_BRANCH" != "main" ]; then
+            echo "Syncing version bump back to source branch: $SOURCE_BRANCH"
+            git push origin main:$SOURCE_BRANCH
+          fi
 
       - name: Create Release
         env:
