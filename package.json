@@ -2,12 +2,12 @@
   "name": "ind-web-index",
   "version": "2.3.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start"
   },
   "dependencies": {
-    "@notionhq/client": "5.13.0",
+    "@notionhq/client": "2.2.15",
     "lodash": "4.17.23",
     "mongodb": "7.1.0",
     "next": "16.1.6",
