@@ -10,8 +10,8 @@ const Tags = ({ tags, onList, handleToggleTagButton }) => (
             className={`
               px-3 py-1 text-[11px] sm:text-xs rounded-lg border transition-all duration-200
               ${isActive 
-                ? 'bg-slate-800 dark:bg-blue-500 text-white dark:text-white border-slate-800 dark:border-blue-400 shadow-md scale-105' 
-                : 'bg-white dark:bg-slate-600/40 text-slate-700 dark:text-slate-200 border-slate-400/80 dark:border-slate-500 hover:border-blue-500 dark:hover:border-slate-400 hover:bg-white dark:hover:bg-slate-600 shadow-sm hover:shadow-md'}
+                ? 'bg-orange-500 dark:bg-rose-600 text-white dark:text-white border-orange-500 dark:border-rose-400 shadow-md scale-105' 
+                : 'bg-sky-50/50 dark:bg-[#451a1a]/80 text-orange-600 dark:text-green-50 border-sky-200/80 dark:border-[#5a1a1a] hover:border-orange-500 dark:hover:border-rose-400 hover:bg-white dark:hover:bg-[#5a1a1a]/90 shadow hover:shadow-md'}
             `}
             onClick={() => handleToggleTagButton(tag)}
           >

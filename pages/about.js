@@ -20,7 +20,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
   }, [posts]);
 
   return (
-    <div className='bg-stone-50 dark:bg-[#0a0f1e] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
+    <div className='bg-orange-50/50 dark:bg-[#051005] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
       <Head>
         <title>关于 - IndWebIndex</title>
       </Head>
@@ -36,31 +36,31 @@ const AboutPage = ({ count, lastFetched, posts }) => {
               Individual Web Index
             </span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed italic">
+          <p className="text-base sm:text-lg text-slate-800 dark:text-slate-300 leading-relaxed italic">
             探索互联网的角落，发现那些有趣且独立的网页
           </p>
         </div>
 
         {/* 核心理念 */}
         <div className="grid sm:grid-cols-3 gap-6 mt-16 text-left">
-          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 shadow-sm hover:border-orange-400/50 transition-colors">
-            <HiOutlineSparkles className="w-8 h-8 text-orange-400 mb-4" />
-            <h3 className="text-lg font-bold mb-2 dark:text-slate-100">独立精神</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-orange-400/50 transition-colors">
+            <HiOutlineSparkles className="w-8 h-8 text-orange-500 mb-4" />
+            <h3 className="text-lg font-extrabold mb-2 text-orange-600 dark:text-green-50">独立精神</h3>
+            <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
               我们致力于发掘那些不随波逐流、充满个性和创意的独立个人网站，让互联网回归本心。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 shadow-sm hover:border-blue-400/50 transition-colors">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-blue-400/50 transition-colors">
             <HiOutlineCollection className="w-8 h-8 text-blue-500 mb-4" />
-            <h3 className="text-lg font-bold mb-2 dark:text-slate-100">精心收录</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <h3 className="text-lg font-extrabold mb-2 text-indigo-600 dark:text-green-50">精心收录</h3>
+            <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
               每一个被收录的网页都经过人工审核，确保其内容的质量和独特性，拒绝信息碎片。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 shadow-sm hover:border-rose-400/50 transition-colors">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-rose-400/50 transition-colors">
             <HiOutlineHeart className="w-8 h-8 text-rose-500 mb-4" />
-            <h3 className="text-lg font-bold mb-2 dark:text-slate-100">开源共建</h3>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <h3 className="text-lg font-extrabold mb-2 text-rose-600 dark:text-green-50">开源共建</h3>
+            <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
               IndWebIndex 是一个完全开源的项目。任何人都可以通过提交 Issue 或投稿来丰富我们的索引库。
             </p>
           </div>

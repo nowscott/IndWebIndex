@@ -9,15 +9,15 @@ const WebList = ({ filteredPosts }) => (
             className={`
               group relative flex items-center justify-center transition-all duration-300
               px-3.5 py-1.5 text-[11px] sm:text-xs rounded-full border
-              bg-white dark:bg-slate-600/30 text-slate-700 dark:text-slate-100 border-slate-400/80 dark:border-slate-500/50
-              shadow-sm hover:border-blue-500 dark:hover:border-blue-300 hover:shadow-md hover:bg-white dark:hover:bg-slate-600
-              hover:-translate-y-0.5
+              bg-sky-50/50 dark:bg-[#451a1a]/80 text-orange-600 dark:text-green-50 border-sky-200/80 dark:border-[#5a1a1a]
+              shadow hover:border-orange-500 dark:hover:border-rose-400 hover:shadow-lg hover:bg-white dark:hover:bg-[#5a1a1a]/90
+              hover:-translate-y-1
             `}
             href={post.web}
             target="_blank"
             rel="noopener noreferrer"
             title={post.brief}>
-            <span className="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-center whitespace-nowrap">
+            <span className="font-extrabold group-hover:text-orange-500 dark:group-hover:text-white transition-colors text-center whitespace-nowrap">
               {post.name}
             </span>
           </a>

@@ -36,37 +36,37 @@ const Footer = () => {
       <div className='max-w-4xl mx-auto flex flex-col items-center gap-6'>
         
         {/* 数据统计区 (新增) */}
-        <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-slate-100 dark:bg-slate-800/50 px-3 py-1 rounded-full">
-            <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-blue-500" />
-            <span>已收录 <span className="text-blue-600 dark:text-blue-400">{stats.count || 0}</span> 个网站</span>
+        <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-green-100/80">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-orange-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-orange-200 dark:border-[#5a1a1a] shadow-sm">
+            <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-orange-500 dark:text-green-400" />
+            <span>已收录 <span className="text-orange-600 dark:text-green-300 font-extrabold">{stats.count || 0}</span> 个网站</span>
           </div>
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-slate-100 dark:bg-slate-800/50 px-3 py-1 rounded-full">
-            <HiOutlineClock className="w-3.5 h-3.5 text-orange-500" />
-            <span>数据更新时间：{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span>
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-orange-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-orange-200 dark:border-[#5a1a1a] shadow-sm">
+            <HiOutlineClock className="w-3.5 h-3.5 text-orange-500 dark:text-green-400" />
+            <span>数据更新时间：<span className="text-orange-600 dark:text-green-200 font-bold">{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span></span>
           </div>
         </div>
 
         {/* 顶部链接与功能区 */}
-        <div className='flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-medium'>
+        <div className='flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-bold'>
           <a 
             href='https://nowscott.notion.site/134f941cf9b880e1b00ee5bdf55fd71d?pvs=105' 
             target='_blank' 
             rel='noopener noreferrer' 
-            className='flex items-center gap-1.5 text-purple-700 dark:text-rose-300 hover:text-purple-900 dark:hover:text-rose-100 transition-colors'
+            className='flex items-center gap-1.5 text-orange-500 dark:text-green-200 hover:text-orange-600 dark:hover:text-white transition-colors'
           >
             <HiOutlineTag className='w-4 h-4' />
             <span>投稿网页</span>
           </a>
           
-          <div className='flex items-center gap-1.5 text-slate-600 dark:text-slate-400'>
+          <div className='flex items-center gap-1.5 text-orange-500 dark:text-green-200'>
             <HiOutlineCursorClick className='w-4 h-4' />
             <span>
-              访问量：{stats.visitCount !== null ? <span className='text-purple-600 dark:text-rose-400'>{stats.visitCount}</span> : '...'}
+              访问量：{stats.visitCount !== null ? <span className='text-orange-600 dark:text-green-300 font-extrabold'>{stats.visitCount}</span> : '...'}
             </span>
           </div>
 
-          <div className='flex items-center gap-1.5 text-slate-600 dark:text-slate-400'>
+          <div className='flex items-center gap-1.5 text-slate-700 dark:text-slate-400'>
             <HiOutlineCode className='w-4 h-4' />
             <span>v{packageInfo.version}</span>
           </div>
