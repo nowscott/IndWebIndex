@@ -18,7 +18,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜漫黑/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/芫荽/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/汇文明朝体/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/mzxst/dist/MZPXorig/result.css" crossorigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/目哉像素/result.css" crossorigin="anonymous"/>
           
           <script
             dangerouslySetInnerHTML={{
