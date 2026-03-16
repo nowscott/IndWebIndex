@@ -32,7 +32,7 @@ export const ThemeProvider = ({ children }) => {
       // 同步移动端主题色
       const themeColor = document.querySelector('meta[name="theme-color"]');
       if (themeColor) {
-        themeColor.content = isSystemDark ? '#0A0F1E' : '#f9fafb';
+        themeColor.content = isSystemDark ? '#051005' : '#fffaf0';
       }
     };
 
@@ -54,7 +54,7 @@ export const ThemeProvider = ({ children }) => {
       // 同步移动端主题色
       const themeColor = document.querySelector('meta[name="theme-color"]');
       if (themeColor) {
-        themeColor.content = newTheme ? '#0A0F1E' : '#f9fafb';
+        themeColor.content = newTheme ? '#051005' : '#fffaf0';
       }
       
       return newTheme;
