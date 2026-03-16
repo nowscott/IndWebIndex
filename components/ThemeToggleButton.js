@@ -8,17 +8,21 @@ const ThemeToggleButton = () => {
 
   if (!mounted) {
     return (
-      <div className="ml-[88vw] mt-[2vh] w-6 h-6" aria-hidden="true" />
+      <div className="w-8 h-8" aria-hidden="true" />
     );
   }
 
   return (
     <button
-      title="切换模式"
+      title={isDark ? "切换到亮色模式" : "切换到暗色模式"}
       onClick={toggleTheme}
-      className="border-none bg-transparent ml-[88vw] mt-[2vh]"
+      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200 group"
     >
-      {isDark ? <HiOutlineSun className="text-rose-500 w-6 h-6" /> : <HiOutlineMoon className="text-blue-700 w-6 h-6" />}
+      {isDark ? (
+        <HiOutlineSun className="text-rose-400 w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+      ) : (
+        <HiOutlineMoon className="text-blue-600 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" />
+      )}
     </button>
   );
 };

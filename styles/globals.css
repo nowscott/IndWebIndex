@@ -49,6 +49,14 @@ body {
   /* Firefox */
   -ms-user-select: none;
   /* IE10+ */
+  
+  /* 解决滚动回弹背景色不一致问题 */
+  @apply bg-stone-50 dark:bg-[#0a0f1e];
+}
+
+/* 强制 html 也有背景色，防止橡皮筋效果露底 */
+html {
+  @apply bg-stone-50 dark:bg-[#0a0f1e];
 }
 
 /* 需要黑白时专用 */

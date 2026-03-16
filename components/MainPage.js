@@ -1,46 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import Titles from './Titles';
-import SearchBox from './SearchBox';
-import Tags from './Tags';
-import WebList from './WebList';
+import HeaderBar from './HeaderBar';
 import Footer from './Footer';
 import FontMenu from './FontMenu';
-import HeaderBar from './HeaderBar';
-import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
+import Tags from './Tags';
+import WebList from './WebList';
+import { filterPostsBySearch, updateResults } from '../lib/dataLoader';
+import { useStats } from '../contexts/StatsContext';
+import _ from 'lodash';
 
-const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
-  const [posts, setPosts] = useState(initialPosts || []);
-  const [normalPosts, setNormalPosts] = useState([]);
-  const [hiddenPosts, setHiddenPosts] = useState([]);
+const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }) => {
+  const { stats, updateStats } = useStats();
+  
+  // 优先使用全局缓存的数据，如果没有则使用初始 props
+  const posts = stats.posts || initialPosts || [];
+  const tags = initialTags || [];
+  const lastFetched = stats.lastFetched || initialLastFetched;
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [tags, setTags] = useState(initialTags || []);
   const [onList, setOnList] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
+  // 初始化全局缓存
   useEffect(() => {
-    if (initialPosts) {
-      setPosts(initialPosts);
-      const filteredNormalPosts = initialPosts.filter(post => post.state !== '隐藏');
-      const filteredHiddenPosts = initialPosts.filter(post => post.state === '隐藏');
-      setNormalPosts(filteredNormalPosts);
-      setHiddenPosts(filteredHiddenPosts);
+    if (initialPosts && initialPosts.length > 0 && !stats.posts) {
+      updateStats({ posts: initialPosts, lastFetched: initialLastFetched, count: initialPosts.length });
     }
-    if (initialTags) {
-      setTags(initialTags);
-    }
-  }, [initialPosts, initialTags]);
+  }, [initialPosts]);
 
+  // 当源数据 posts, 标签过滤 onList 或 搜索内容 searchQuery 变化时更新结果
   useEffect(() => {
-    if (searchQuery === '隐藏') {
-      setFilteredPosts(filterPostsBySearch(hiddenPosts, searchQuery));
+    // 确保有数据时才进行过滤
+    if (posts && posts.length > 0) {
+      const results = updateResults(posts, onList);
+      const finalResults = filterPostsBySearch(results, searchQuery);
+      setFilteredPosts(finalResults);
     } else {
-      setFilteredPosts(filterPostsBySearch(normalPosts, searchQuery));
+      setFilteredPosts([]);
     }
-  }, [searchQuery, normalPosts, hiddenPosts]);
-
-  useEffect(() => {
-    updateResults(normalPosts, onList, setFilteredPosts, setTags, initialTags);
-  }, [onList, normalPosts, initialTags]);
+  }, [posts, onList, searchQuery]);
 
   const handleToggleTagButton = tag => {
     const newOnList = _.xor(onList, [tag]);
@@ -48,16 +45,18 @@ const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   };
 
   return (
-    <div className='bg-stone-50 dark:bg-slate-900 backdrop-blur-[15px] m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col'>
-      <HeaderBar lastFetched={lastFetched} />
+    <div className='bg-stone-50 dark:bg-[#0a0f1e] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
+      <HeaderBar 
+        lastFetched={lastFetched} 
+        count={filteredPosts.length} 
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
       <FontMenu />
-      <div className="flex-grow text-center mx-auto relative">
-        <Titles />
-        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <main className="flex-1 pt-6">
         <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
         <WebList filteredPosts={filteredPosts} />
-      </div>
-      <Footer />
+      </main>
     </div>
   );
 };

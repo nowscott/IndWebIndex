@@ -1,45 +1,89 @@
 import React, { useState, useEffect } from 'react';
+import packageInfo from '../package.json';
+import { useStats } from '../contexts/StatsContext';
+import { HiOutlineCursorClick, HiOutlineTag, HiOutlineCode, HiOutlineGlobeAlt, HiOutlineClock } from 'react-icons/hi';
 
 const Footer = () => {
-  const [visitCount, setVisitCount] = useState(null);
+  const { stats, updateStats } = useStats();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    // 如果已经有缓存的访问量，不再重复请求
+    if (stats.visitCount !== null) return;
+
     const fetchVisitCount = async () => {
+      setLoading(true);
       try {
         const response = await fetch('/api/visit-count');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new TypeError("Oops, we haven't got JSON!");
-        }
         const data = await response.json();
-        setVisitCount(data.count);
+        updateStats({ visitCount: data.count });
       } catch (error) {
         console.error('获取访问量失败：', error);
-        setVisitCount(0);
+        updateStats({ visitCount: 0 });
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchVisitCount();
-  }, []);
+  }, [stats.visitCount]);
 
   return (
-    <div className='text-xs whitespace-nowrap text-purple-900 dark:text-rose-200 py-4'>
-      <a 
-        href='https://nowscott.notion.site/134f941cf9b880e1b00ee5bdf55fd71d?pvs=105' 
-        target='_blank' 
-        rel='noopener noreferrer' 
-        className='block mb-2 underline'
-      >
-        投稿网页
-      </a>
-      <p className='mb-1'>
-        {visitCount !== null ? `访问量：${visitCount}` : '访问量：加载中...'}
-      </p>
-      <p>Copyright © 2021 - NowScott</p>
-    </div>
+    <footer className='mt-auto py-12 px-4 border-t border-gray-200 dark:border-slate-800 transition-colors duration-300 font-inherit'>
+      <div className='max-w-4xl mx-auto flex flex-col items-center gap-6'>
+        
+        {/* 数据统计区 (新增) */}
+        <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-slate-100 dark:bg-slate-800/50 px-3 py-1 rounded-full">
+            <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-blue-500" />
+            <span>已收录 <span className="text-blue-600 dark:text-blue-400">{stats.count || 0}</span> 个网站</span>
+          </div>
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-slate-100 dark:bg-slate-800/50 px-3 py-1 rounded-full">
+            <HiOutlineClock className="w-3.5 h-3.5 text-orange-500" />
+            <span>数据更新时间：{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span>
+          </div>
+        </div>
+
+        {/* 顶部链接与功能区 */}
+        <div className='flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-medium'>
+          <a 
+            href='https://nowscott.notion.site/134f941cf9b880e1b00ee5bdf55fd71d?pvs=105' 
+            target='_blank' 
+            rel='noopener noreferrer' 
+            className='flex items-center gap-1.5 text-purple-700 dark:text-rose-300 hover:text-purple-900 dark:hover:text-rose-100 transition-colors'
+          >
+            <HiOutlineTag className='w-4 h-4' />
+            <span>投稿网页</span>
+          </a>
+          
+          <div className='flex items-center gap-1.5 text-slate-600 dark:text-slate-400'>
+            <HiOutlineCursorClick className='w-4 h-4' />
+            <span>
+              访问量：{stats.visitCount !== null ? <span className='text-purple-600 dark:text-rose-400'>{stats.visitCount}</span> : '...'}
+            </span>
+          </div>
+
+          <div className='flex items-center gap-1.5 text-slate-600 dark:text-slate-400'>
+            <HiOutlineCode className='w-4 h-4' />
+            <span>v{packageInfo.version}</span>
+          </div>
+        </div>
+
+        {/* 底部版权信息 */}
+        <div className='text-xs text-slate-400 dark:text-slate-500 text-center space-y-1'>
+          <p className='tracking-widest uppercase'>
+            Copyright © 2021 - {new Date().getFullYear()} · NowScott
+          </p>
+          <p className='opacity-80 italic'>
+            Crafted with passion for the independent web
+          </p>
+        </div>
+
+      </div>
+    </footer>
   );
 };
 
