@@ -6,7 +6,8 @@ import WebList from './WebList';
 import Footer from './Footer';
 import FontMenu from './FontMenu';
 import HeaderBar from './HeaderBar';
-import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
+import { filterPostsBySearch, updateResults } from '../lib/dataLoader';
+import _ from 'lodash';
 
 const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   const [posts, setPosts] = useState(initialPosts || []);
