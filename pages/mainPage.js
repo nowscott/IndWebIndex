@@ -8,18 +8,21 @@ import FontMenu from '../components/FontMenu';
 import HeaderBar from '../components/HeaderBar';
 import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
 
-const MainPage = ({ initialPosts, lastFetched }) => {
+const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   const [posts, setPosts] = useState(initialPosts || []);
   const [normalPosts, setNormalPosts] = useState([]);
   const [hiddenPosts, setHiddenPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(initialTags || []);
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
 
   useEffect(() => {
     setPosts(initialPosts || []);
-  }, [initialPosts]);
+    if (initialTags) {
+      setTags(initialTags);
+    }
+  }, [initialPosts, initialTags]);
 
   useEffect(() => {
     const filteredNormalPosts = (initialPosts || []).filter(post => post.state !== '隐藏');
@@ -29,9 +32,12 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   }, [initialPosts]);
 
   useEffect(() => {
-    const extractedTags = randomSort(extractTags(normalPosts));
-    setTags(extractedTags);
-  }, [normalPosts]);
+    // If no initialTags, extract from normalPosts (fallback)
+    if (!initialTags || initialTags.length === 0) {
+      const extractedTags = randomSort(extractTags(normalPosts));
+      setTags(extractedTags);
+    }
+  }, [normalPosts, initialTags]);
 
   useEffect(() => {
     if (searchQuery === '隐藏') {
@@ -42,8 +48,8 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   }, [searchQuery, normalPosts, hiddenPosts]);
 
   useEffect(() => {
-    updateResults(normalPosts, onList, setFilteredPosts, setTags);
-  }, [onList]);
+    updateResults(normalPosts, onList, setFilteredPosts, setTags, initialTags);
+  }, [onList, normalPosts, initialTags]);
 
   const handleToggleTagButton = tag => {
     toggleTagButton(tag, onList, setOnList, tags, setTags);

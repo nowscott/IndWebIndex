@@ -1,10 +1,10 @@
 // pages/index.js
 import { getDatabase } from '../lib/notion';
-import { randomSort,unique } from '../lib/dataLoader'
+import { randomSort, unique, extractTags } from '../lib/dataLoader'
 import MainPage from './mainPage';
 
-export default function Home({ initialPosts, lastFetched }) {
-  return <MainPage initialPosts={initialPosts} lastFetched={lastFetched} />;
+export default function Home({ initialPosts, initialTags, lastFetched }) {
+  return <MainPage initialPosts={initialPosts} initialTags={initialTags} lastFetched={lastFetched} />;
 }
 
 export async function getStaticProps() {
@@ -12,9 +12,13 @@ export async function getStaticProps() {
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
   const sortedPosts = randomSort(unique(posts));
+  const normalPosts = (sortedPosts || []).filter(post => post.state !== '隐藏');
+  const initialTags = randomSort(extractTags(normalPosts));
+
   return {
     props: {
       initialPosts: sortedPosts || [],
+      initialTags: initialTags || [],
       lastFetched
     },
     revalidate: 1800,
