@@ -19,30 +19,32 @@ export const ThemeProvider = ({ children }) => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     
     const handleChange = (e) => {
-      if (e.matches) {
-        document.documentElement.classList.add('dark');
-        setIsDark(true);
-      } else {
-        document.documentElement.classList.remove('dark');
-        setIsDark(false);
+      const isSystemDark = e.matches;
+      document.documentElement.classList.toggle('dark', isSystemDark);
+      setIsDark(isSystemDark);
+      
+      // 同步 Favicon
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = isSystemDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
       }
     };
 
-    // 监听系统主题变化
     mediaQuery.addEventListener('change', handleChange);
-
-    // 清理监听器
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
     setIsDark(prevIsDark => {
       const newTheme = !prevIsDark;
-      if (newTheme) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
+      document.documentElement.classList.toggle('dark', newTheme);
+      
+      // 同步 Favicon
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = newTheme ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
       }
+      
       return newTheme;
     });
   };

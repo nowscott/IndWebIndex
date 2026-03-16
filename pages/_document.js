@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang="zh-CN">
         <Head>
+          <link id="favicon" rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" />
           <link rel="shortcut icon" href="/images/favicon.ico" />
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -25,8 +26,11 @@ class MyDocument extends Document {
               __html: `
                 try {
                   // Handle Theme
-                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (isDark) {
                     document.documentElement.classList.add('dark');
+                    var favicon = document.getElementById('favicon');
+                    if (favicon) favicon.href = '/images/favicon-dark.svg';
                   }
                   
                   // Handle Font
