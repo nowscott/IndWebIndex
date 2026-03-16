@@ -1,14 +1,44 @@
 /* styles/globals.css */
-@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/dyh/dist/SmileySans-Oblique/result.css');
-@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css');
-@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/jhlst/dist/京華老宋体v1_007/result.css');
-@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/mzxst/dist/MZPXorig/result.css');
-@import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwmanhei/dist/LXGWMarkerGothic/result.css');
 
-/* Tailwind CSS 指令 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS v4 directive */
+@import "tailwindcss";
+
+/* Configuration for Tailwind v4 */
+@theme {
+  --font-smiley: "Smiley Sans Oblique", "SmileySans-Oblique", sans-serif;
+  --font-wenkai: "LXGW WenKai", "LXGWWenKai", sans-serif;
+  --font-oldsong: "KingHwa_OldSong", "KingHwa-OldSong", sans-serif;
+  --font-pixel: "MuzaiPixel", "Muzai Pixel", sans-serif;
+  --font-marker: "LXGW Marker Gothic", "LXGWMarkerGothic", sans-serif;
+  --font-iansui: "芫荽", "Iansui", sans-serif;
+  --font-mincho: "汇文明朝体", "Huiwen-Mincho", serif;
+  --font-default: sans-serif, Arial;
+}
+
+/* 
+   Enforce dark mode based on the .dark class (standard Tailwind v4 way).
+   Ignore VS Code warning "Unknown at-rule" if present.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Ensure font classes are generated and applied correctly to both html and body */
+html.font-smiley, html.font-smiley body { font-family: var(--font-smiley) !important; }
+html.font-wenkai, html.font-wenkai body { font-family: var(--font-wenkai) !important; }
+html.font-oldsong, html.font-oldsong body { font-family: var(--font-oldsong) !important; }
+html.font-pixel, html.font-pixel body { font-family: var(--font-pixel) !important; }
+html.font-marker, html.font-marker body { font-family: var(--font-marker) !important; }
+html.font-iansui, html.font-iansui body { font-family: var(--font-iansui) !important; }
+html.font-mincho, html.font-mincho body { font-family: var(--font-mincho) !important; }
+html.font-default, html.font-default body { font-family: var(--font-default) !important; }
+
+/* Font utility classes for menu preview */
+.preview-font-smiley { font-family: var(--font-smiley) !important; }
+.preview-font-wenkai { font-family: var(--font-wenkai) !important; }
+.preview-font-oldsong { font-family: var(--font-oldsong) !important; }
+.preview-font-pixel { font-family: var(--font-pixel) !important; }
+.preview-font-marker { font-family: var(--font-marker) !important; }
+.preview-font-iansui { font-family: var(--font-iansui) !important; }
+.preview-font-mincho { font-family: var(--font-mincho) !important; }
 
 body {
   user-select: none;

@@ -9,6 +9,8 @@ const fontData = {
     { name: 'KingHwa_OldSong', displayName: '京華老宋体', class: 'font-oldsong' },
     { name: 'MuzaiPixel', displayName: '目哉像素体', class: 'font-pixel' },
     { name: 'LXGW Marker Gothic', displayName: '霞鹜漫黑', class: 'font-marker' },
+    { name: '芫荽', displayName: '芫荽', class: 'font-iansui' },
+    { name: '汇文明朝体', displayName: '汇文明朝体', class: 'font-mincho' },
   ],
 };
 
@@ -21,11 +23,15 @@ const FontMenu = () => {
     const isValidFont = fontData.fonts.some(font => font.class === userFontClass);//检查cookie合法性
 
     if (userFontClass && isValidFont) {
-      document.documentElement.classList.add(userFontClass);
+      if (!document.documentElement.classList.contains(userFontClass)) {
+        document.documentElement.classList.add(userFontClass);
+      }
       setSelectedFont(userFontClass);
     } else {
       const defaultFontClass = fontData.fonts[0].class;
-      document.documentElement.classList.add(defaultFontClass);
+      if (!document.documentElement.classList.contains(defaultFontClass)) {
+        document.documentElement.classList.add(defaultFontClass);
+      }
       setCookie('userFont', defaultFontClass, 365);
       setSelectedFont(defaultFontClass);
     }
@@ -77,8 +83,7 @@ const FontMenu = () => {
         {fontData.fonts.map((font) => (
           <li
             key={font.class}
-            className={`px-2 py-2 cursor-pointer white-space: nowrap ${selectedFont === font.class ? 'shadow-md bg-gray-100 dark:bg-slate-800' : ''}`}
-            style={{ fontFamily: font.name }}
+            className={`px-2 py-2 cursor-pointer white-space: nowrap preview-${font.class} ${selectedFont === font.class ? 'shadow-md bg-gray-100 dark:bg-slate-800' : ''}`}
             onClick={() => changeFont(font.class)}
           >
             {font.displayName}

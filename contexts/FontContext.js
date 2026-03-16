@@ -1,9 +1,9 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const FontContext = createContext();
 
 export const FontProvider = ({ children }) => {
-  const [selectedFont, setSelectedFont] = useState('font-serif');
+  const [selectedFont, setSelectedFont] = useState('font-smiley'); // 默认字体，确保服务端渲染一致
 
   return (
     <FontContext.Provider value={{ selectedFont, setSelectedFont }}>

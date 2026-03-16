@@ -12,10 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -26,9 +28,9 @@ jobs:
           git config --global user.email "actions@github.com"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Bump version
         id: bump_version
@@ -53,9 +55,10 @@ jobs:
           fi
 
       - name: Create Release
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/create-release@v1
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
-          release_name: v${{ env.PACKAGE_VERSION }}
+          name: v${{ env.PACKAGE_VERSION }}
+          generate_release_notes: true

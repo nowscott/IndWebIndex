@@ -4,7 +4,13 @@ import { useTheme } from '../contexts/ThemeContext';
 import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi';
 
 const ThemeToggleButton = () => {
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark, toggleTheme, mounted } = useTheme();
+
+  if (!mounted) {
+    return (
+      <div className="ml-[88vw] mt-[2vh] w-6 h-6" aria-hidden="true" />
+    );
+  }
 
   return (
     <button
