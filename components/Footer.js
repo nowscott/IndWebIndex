@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import packageInfo from '../package.json';
 
 const Footer = () => {
   const [visitCount, setVisitCount] = useState(null);
@@ -37,6 +38,9 @@ const Footer = () => {
       </a>
       <p className='mb-1'>
         {visitCount !== null ? `访问量：${visitCount}` : '访问量：加载中...'}
+      </p>
+      <p className='mb-1'>
+        Version: v{packageInfo.version}
       </p>
       <p>Copyright © 2021 - NowScott</p>
     </div>

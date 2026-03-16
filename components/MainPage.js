@@ -50,7 +50,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
 
   return (
     <div className='bg-stone-50 dark:bg-slate-900 backdrop-blur-[15px] m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col'>
-      <HeaderBar lastFetched={lastFetched} />
+      <HeaderBar lastFetched={lastFetched} count={filteredPosts.length} />
       <FontMenu />
       <div className="flex-grow text-center mx-auto relative">
         <Titles />
