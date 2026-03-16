@@ -8,30 +8,27 @@ import FontMenu from '../components/FontMenu';
 import HeaderBar from '../components/HeaderBar';
 import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
 
-const MainPage = ({ initialPosts, lastFetched }) => {
+const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   const [posts, setPosts] = useState(initialPosts || []);
   const [normalPosts, setNormalPosts] = useState([]);
   const [hiddenPosts, setHiddenPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(initialTags || []);
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
 
   useEffect(() => {
-    setPosts(initialPosts || []);
-  }, [initialPosts]);
-
-  useEffect(() => {
-    const filteredNormalPosts = (initialPosts || []).filter(post => post.state !== '隐藏');
-    const filteredHiddenPosts = (initialPosts || []).filter(post => post.state === '隐藏');
-    setNormalPosts(filteredNormalPosts);
-    setHiddenPosts(filteredHiddenPosts);
-  }, [initialPosts]);
-
-  useEffect(() => {
-    const extractedTags = randomSort(extractTags(normalPosts));
-    setTags(extractedTags);
-  }, [normalPosts]);
+    if (initialPosts) {
+      setPosts(initialPosts);
+      const filteredNormalPosts = initialPosts.filter(post => post.state !== '隐藏');
+      const filteredHiddenPosts = initialPosts.filter(post => post.state === '隐藏');
+      setNormalPosts(filteredNormalPosts);
+      setHiddenPosts(filteredHiddenPosts);
+    }
+    if (initialTags) {
+      setTags(initialTags);
+    }
+  }, [initialPosts, initialTags]);
 
   useEffect(() => {
     if (searchQuery === '隐藏') {
@@ -42,11 +39,12 @@ const MainPage = ({ initialPosts, lastFetched }) => {
   }, [searchQuery, normalPosts, hiddenPosts]);
 
   useEffect(() => {
-    updateResults(normalPosts, onList, setFilteredPosts, setTags);
-  }, [onList]);
+    updateResults(normalPosts, onList, setFilteredPosts, setTags, initialTags);
+  }, [onList, normalPosts, initialTags]);
 
   const handleToggleTagButton = tag => {
-    toggleTagButton(tag, onList, setOnList, tags, setTags);
+    const newOnList = _.xor(onList, [tag]);
+    setOnList(newOnList);
   };
 
   return (
