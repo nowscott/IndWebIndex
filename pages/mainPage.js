@@ -18,26 +18,17 @@ const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   const [filteredPosts, setFilteredPosts] = useState(initialPosts || []);
 
   useEffect(() => {
-    setPosts(initialPosts || []);
+    if (initialPosts) {
+      setPosts(initialPosts);
+      const filteredNormalPosts = initialPosts.filter(post => post.state !== '隐藏');
+      const filteredHiddenPosts = initialPosts.filter(post => post.state === '隐藏');
+      setNormalPosts(filteredNormalPosts);
+      setHiddenPosts(filteredHiddenPosts);
+    }
     if (initialTags) {
       setTags(initialTags);
     }
   }, [initialPosts, initialTags]);
-
-  useEffect(() => {
-    const filteredNormalPosts = (initialPosts || []).filter(post => post.state !== '隐藏');
-    const filteredHiddenPosts = (initialPosts || []).filter(post => post.state === '隐藏');
-    setNormalPosts(filteredNormalPosts);
-    setHiddenPosts(filteredHiddenPosts);
-  }, [initialPosts]);
-
-  useEffect(() => {
-    // If no initialTags, extract from normalPosts (fallback)
-    if (!initialTags || initialTags.length === 0) {
-      const extractedTags = randomSort(extractTags(normalPosts));
-      setTags(extractedTags);
-    }
-  }, [normalPosts, initialTags]);
 
   useEffect(() => {
     if (searchQuery === '隐藏') {
@@ -52,7 +43,8 @@ const MainPage = ({ initialPosts, initialTags, lastFetched }) => {
   }, [onList, normalPosts, initialTags]);
 
   const handleToggleTagButton = tag => {
-    toggleTagButton(tag, onList, setOnList, tags, setTags);
+    const newOnList = _.xor(onList, [tag]);
+    setOnList(newOnList);
   };
 
   return (
