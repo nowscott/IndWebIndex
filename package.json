@@ -2,7 +2,7 @@
   "name": "ind-web-index",
   "version": "2.3.1",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next dev --webpack",
