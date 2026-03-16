@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Titles from '../components/Titles';
-import SearchBox from '../components/SearchBox';
-import Tags from '../components/Tags';
-import WebList from '../components/WebList';
-import Footer from '../components/Footer';
-import FontMenu from '../components/FontMenu';
-import HeaderBar from '../components/HeaderBar';
+import Titles from './Titles';
+import SearchBox from './SearchBox';
+import Tags from './Tags';
+import WebList from './WebList';
+import Footer from './Footer';
+import FontMenu from './FontMenu';
+import HeaderBar from './HeaderBar';
 import { randomSort, extractTags, filterPostsBySearch, toggleTagButton, updateResults } from '../lib/dataLoader';
 
 const MainPage = ({ initialPosts, initialTags, lastFetched }) => {

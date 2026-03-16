@@ -5,10 +5,8 @@
 @import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/mzxst/dist/MZPXorig/result.css');
 @import url('https://chinese-fonts-cdn.deno.dev/chinesefonts3/packages/lxgwmanhei/dist/LXGWMarkerGothic/result.css');
 
-/* Tailwind CSS 指令 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind CSS v4 directive */
+@import "tailwindcss";
 
 body {
   user-select: none;

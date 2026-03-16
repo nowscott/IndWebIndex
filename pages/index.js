@@ -1,7 +1,7 @@
 // pages/index.js
 import { getDatabase } from '../lib/notion';
 import { randomSort, unique, extractTags } from '../lib/dataLoader'
-import MainPage from './mainPage';
+import MainPage from '../components/MainPage';
 
 export default function Home({ initialPosts, initialTags, lastFetched }) {
   return <MainPage initialPosts={initialPosts} initialTags={initialTags} lastFetched={lastFetched} />;
