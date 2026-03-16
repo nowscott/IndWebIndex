@@ -14,8 +14,18 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
                 try {
+                  // Handle Theme
                   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     document.documentElement.classList.add('dark');
+                  }
+                  
+                  // Handle Font
+                  var userFont = document.cookie.split('; ').find(row => row.startsWith('userFont='));
+                  if (userFont) {
+                    var fontClass = userFont.split('=')[1];
+                    document.documentElement.classList.add(fontClass);
+                  } else {
+                    document.documentElement.classList.add('font-smiley');
                   }
                 } catch (e) {}
               `

@@ -21,11 +21,15 @@ const FontMenu = () => {
     const isValidFont = fontData.fonts.some(font => font.class === userFontClass);//检查cookie合法性
 
     if (userFontClass && isValidFont) {
-      document.documentElement.classList.add(userFontClass);
+      if (!document.documentElement.classList.contains(userFontClass)) {
+        document.documentElement.classList.add(userFontClass);
+      }
       setSelectedFont(userFontClass);
     } else {
       const defaultFontClass = fontData.fonts[0].class;
-      document.documentElement.classList.add(defaultFontClass);
+      if (!document.documentElement.classList.contains(defaultFontClass)) {
+        document.documentElement.classList.add(defaultFontClass);
+      }
       setCookie('userFont', defaultFontClass, 365);
       setSelectedFont(defaultFontClass);
     }
