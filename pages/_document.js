@@ -9,6 +9,7 @@ class MyDocument extends Document {
           <link id="favicon" rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" />
           <link rel="shortcut icon" href="/images/favicon.ico" />
           <meta charSet="UTF-8" />
+          <meta id="theme-color" name="theme-color" content="#f9fafb" /> {/* stone-50 */}
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="description" content="探索IndWebIndex——您的个性化中文网站索引！我们提供一个简单且高效的方法，让您可以快速访问和管理您常用的网站。无论是学习资源、购物平台还是娱乐网站，您都可以一目了然。" />
           
@@ -31,6 +32,8 @@ class MyDocument extends Document {
                     document.documentElement.classList.add('dark');
                     var favicon = document.getElementById('favicon');
                     if (favicon) favicon.href = '/images/favicon-dark.svg';
+                    var themeColor = document.getElementById('theme-color');
+                    if (themeColor) themeColor.content = '#0A0F1E';
                   }
                   
                   // Handle Font

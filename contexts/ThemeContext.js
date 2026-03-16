@@ -28,6 +28,12 @@ export const ThemeProvider = ({ children }) => {
       if (favicon) {
         favicon.href = isSystemDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
       }
+
+      // 同步移动端主题色
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) {
+        themeColor.content = isSystemDark ? '#0A0F1E' : '#f9fafb';
+      }
     };
 
     mediaQuery.addEventListener('change', handleChange);
@@ -43,6 +49,12 @@ export const ThemeProvider = ({ children }) => {
       const favicon = document.querySelector('link[rel="icon"]');
       if (favicon) {
         favicon.href = newTheme ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
+      }
+      
+      // 同步移动端主题色
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) {
+        themeColor.content = newTheme ? '#0A0F1E' : '#f9fafb';
       }
       
       return newTheme;
