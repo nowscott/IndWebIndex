@@ -11,14 +11,16 @@ export async function getStaticProps() {
   const databaseId = process.env.DATABASE_ID;
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
-  const sortedPosts = randomSort(unique(posts));
-  const normalPosts = (sortedPosts || []).filter(post => post.state !== '隐藏');
+  
+  // 只有在数据存在时才进行耗时操作
+  const sortedPosts = posts ? randomSort(unique(posts)) : [];
+  const normalPosts = sortedPosts.filter(post => post.state !== '隐藏');
   const initialTags = randomSort(extractTags(normalPosts));
 
   return {
     props: {
-      initialPosts: sortedPosts || [],
-      initialTags: initialTags || [],
+      initialPosts: sortedPosts,
+      initialTags: initialTags,
       lastFetched
     },
     revalidate: 1800,

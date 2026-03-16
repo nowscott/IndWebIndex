@@ -1,19 +1,78 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ThemeToggleButton from './ThemeToggleButton';
 import { useTheme } from '../contexts/ThemeContext';
+import { useStats } from '../contexts/StatsContext';
+import { HiOutlineClock, HiOutlineGlobeAlt, HiOutlineInformationCircle, HiOutlineHome, HiOutlineSearch } from 'react-icons/hi';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const HeaderBar = ({ lastFetched, count }) => {
+const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const { mounted } = useTheme();
+  const { stats, updateStats } = useStats();
+  const router = useRouter();
+  const isAboutPage = router.pathname === '/about';
+
+  // 同步 props 到全局 stats (仅在 count 有意义时同步)
+  useEffect(() => {
+    if (count !== undefined && count !== null && count > 0) {
+      updateStats({ count, lastFetched });
+    }
+  }, [count, lastFetched]);
+
+  // 优先使用全局 stats，如果没有则回退到 props
+  const displayCount = stats.count ?? count;
+  const displayTime = stats.lastFetched ?? lastFetched;
   
   return (
-    <div className="relative flex items-center py-2">
-      <span className="text-xs text-gray-500 dark:text-gray-400 mx-auto">
-        已收录 {count || 0} 个网站 | 数据更新时间：{mounted && lastFetched ? new Date(lastFetched).toLocaleString() : '加载中...'}
-      </span>
-      <div className="absolute right-4">
-        <ThemeToggleButton />
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/70 dark:bg-[#0a0f1e]/70 border-b border-gray-200 dark:border-slate-800/50 transition-all duration-300">
+      <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
+        
+        {/* 左侧占位 (保持对称) */}
+        <div className="flex-1 sm:flex-none w-10"></div>
+
+        {/* 中间检索框 (绝对居中) */}
+        {!isAboutPage && (
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[12rem] xs:max-w-xs sm:max-w-md px-4 z-20">
+            <div className="relative group w-full">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-500 transition-colors">
+                <HiOutlineSearch className="w-4 h-4" />
+              </div>
+              <input
+                className="
+                w-full pl-9 pr-4 py-1.5
+                text-xs sm:text-sm
+                text-slate-800 dark:text-slate-200
+                bg-white dark:bg-slate-800/80
+                border border-slate-300 dark:border-slate-700
+                rounded-full shadow-sm focus:shadow-md
+                focus:outline-none focus:ring-2 focus:ring-blue-500/20
+                transition-all duration-300 placeholder:text-slate-400"
+                type="text"
+                placeholder="搜索网页或标签..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* 右侧功能 */}
+        <div className="flex-1 flex items-center justify-end gap-1 sm:gap-2 z-10">
+          <Link 
+            href={isAboutPage ? "/" : "/about"} 
+            title={isAboutPage ? "返回首页" : "关于项目"}
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors"
+          >
+            {isAboutPage ? (
+              <HiOutlineHome className="w-5 h-5" />
+            ) : (
+              <HiOutlineInformationCircle className="w-5 h-5" />
+            )}
+          </Link>
+          <ThemeToggleButton />
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 

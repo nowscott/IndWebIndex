@@ -1,29 +1,34 @@
 // components/WebList.js
 const WebList = ({ filteredPosts }) => (
-  <div>
-    <div className='text-center text-base my-[1vh] text-purple-700 dark:text-stone-100'>
-      筛选网页
-    </div>
-    <div className='mx-[8vw] py-[1vh] text-center'>
+  <section className="mb-12 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto border-t border-gray-100 dark:border-slate-800/50 pt-8">
+    <div className='flex flex-wrap justify-center gap-2 items-center'>
       {filteredPosts.length > 0 ? (
         filteredPosts.map(post => (
           <a
             key={post.name}
-            className='inline-block m-1 p-[1px_5px] leading-6 rounded-md tracking-wide text-[0.9em]
-            text-blue-900 dark:text-gray-100
-             bg-lime-50 dark:bg-blue-950 border-[1.5px] border-gray-400'
+            className={`
+              group relative flex items-center justify-center transition-all duration-300
+              px-3.5 py-1.5 text-[11px] sm:text-xs rounded-full border
+              bg-white dark:bg-slate-600/30 text-slate-700 dark:text-slate-100 border-slate-400/80 dark:border-slate-500/50
+              shadow-sm hover:border-blue-500 dark:hover:border-blue-300 hover:shadow-md hover:bg-white dark:hover:bg-slate-600
+              hover:-translate-y-0.5
+            `}
             href={post.web}
             target="_blank"
             rel="noopener noreferrer"
             title={post.brief}>
-            {post.name}
+            <span className="font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-center whitespace-nowrap">
+              {post.name}
+            </span>
           </a>
         ))
       ) : (
-        <p>未找到符合条件的网页</p>
+        <div className="py-12 text-slate-400 italic text-xs text-center w-full">
+          未找到符合条件的网页
+        </div>
       )}
     </div>
-  </div>
+  </section>
 );
 
 export default WebList;

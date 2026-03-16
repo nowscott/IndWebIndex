@@ -1,16 +1,28 @@
 // components/SearchBox.js
+import { HiOutlineSearch } from 'react-icons/hi';
+
 const SearchBox = ({ searchQuery, setSearchQuery }) => (
-    <div className="text-center inline-block py-[1vh] w-[80vw]">
-      <input
-        className="
-        text-blue-900 dark:text-gray-300
-        bg-yellow-50 dark:bg-blue-950
-        w-48 m-0.5 p-1 text-center border-2 border-gray-600 rounded-lg"
-        type="text"
-        placeholder="🔍请输入关键词"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+    <div className="flex justify-center w-full px-4 mb-4">
+      <div className="relative group max-w-sm w-full">
+        <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-blue-500 transition-colors">
+          <HiOutlineSearch className="w-4 h-4" />
+        </div>
+        <input
+          className="
+          w-full pl-9 pr-4 py-1.5
+          text-sm
+          text-slate-800 dark:text-slate-200
+          bg-white dark:bg-slate-800/50
+          border border-slate-200 dark:border-slate-700
+          rounded-xl shadow-sm hover:shadow-md focus:shadow-lg
+          focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50
+          transition-all duration-300 placeholder:text-slate-400"
+          type="text"
+          placeholder="搜索网页、标签或拼音..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
     </div>
   );
   
