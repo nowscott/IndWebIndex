@@ -39,7 +39,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {/* 中间检索框 (绝对居中) */}
         {!isAboutPage && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[14rem] xs:max-w-sm sm:max-w-md px-3 z-20">
-            <div className="relative group w-full">
+            <div className="relative group w-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-within:scale-105">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-[#773d31] dark:text-zinc-100 transition-colors">
                 <HiOutlineSearch className="w-4 h-4" />
               </div>

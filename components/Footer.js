@@ -74,7 +74,7 @@ const Footer = () => {
 
         {/* 底部版权信息 */}
         <div className='text-xs text-slate-400 dark:text-slate-500 text-center space-y-1'>
-          <p className='tracking-widest uppercase'>
+          <p className='tracking-widest'>
             Copyright © 2021 - {new Date().getFullYear()} · NowScott
           </p>
           <p className='opacity-80 italic'>
