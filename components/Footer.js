@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import packageInfo from '../package.json';
 import { useStats } from '../contexts/StatsContext';
 import { HiOutlineCursorClick, HiOutlineTag, HiOutlineCode, HiOutlineGlobeAlt, HiOutlineClock } from 'react-icons/hi';
 
 const Footer = () => {
   const { stats, updateStats } = useStats();
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // 如果已经有缓存的访问量，不再重复请求
     if (stats.visitCount !== null) return;
 
     const fetchVisitCount = async () => {
-      setLoading(true);
       try {
         const response = await fetch('/api/visit-count');
         if (!response.ok) {
@@ -23,8 +21,6 @@ const Footer = () => {
       } catch (error) {
         console.error('获取访问量失败：', error);
         updateStats({ visitCount: 0 });
-      } finally {
-        setLoading(false);
       }
     };
 

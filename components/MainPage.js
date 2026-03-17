@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import HeaderBar from './HeaderBar';
-import Footer from './Footer';
 import FontMenu from './FontMenu';
 import Tags from './Tags';
 import WebList from './WebList';

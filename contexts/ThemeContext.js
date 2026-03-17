@@ -40,7 +40,7 @@ export const ThemeProvider = ({ children }) => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const toggleTheme = (event) => {
+  const toggleTheme = () => {
     const toggle = (newTheme) => {
       document.documentElement.classList.toggle('dark', newTheme);
       

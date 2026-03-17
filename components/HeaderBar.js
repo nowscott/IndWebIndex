@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import ThemeToggleButton from './ThemeToggleButton';
-import { useTheme } from '../contexts/ThemeContext';
 import { useStats } from '../contexts/StatsContext';
-import { HiOutlineClock, HiOutlineGlobeAlt, HiOutlineInformationCircle, HiOutlineHome, HiOutlineSearch } from 'react-icons/hi';
+import { HiOutlineInformationCircle, HiOutlineHome, HiOutlineSearch } from 'react-icons/hi';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
-  const { mounted } = useTheme();
-  const { stats, updateStats } = useStats();
+  const { updateStats } = useStats();
   const router = useRouter();
   const isAboutPage = router.pathname === '/about';
 
@@ -19,10 +17,6 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
     }
   }, [count, lastFetched]);
 
-  // 优先使用全局 stats，如果没有则回退到 props
-  const displayCount = stats.count ?? count;
-  const displayTime = stats.lastFetched ?? lastFetched;
-  
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/25 dark:bg-black/25 border-b border-white/45 dark:border-zinc-200/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)] transition-[background-color,border-color,box-shadow] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
