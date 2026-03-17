@@ -20,7 +20,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
   }, [posts]);
 
   return (
-    <div className='bg-[#fffbeb] dark:bg-[#000000] m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
+    <div className='app-background m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
       <Head>
         <title>关于 - IndWebIndex</title>
       </Head>

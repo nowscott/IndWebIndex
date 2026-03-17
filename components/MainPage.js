@@ -45,7 +45,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   };
 
   return (
-    <div className='bg-[#fffbeb] dark:bg-[#000000] m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
+    <div className='app-background m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
       <HeaderBar 
         lastFetched={lastFetched} 
         count={filteredPosts.length} 
