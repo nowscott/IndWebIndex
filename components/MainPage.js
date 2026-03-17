@@ -21,7 +21,9 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   // 初始化全局缓存
   useEffect(() => {
     if (initialPosts && initialPosts.length > 0 && !stats.posts) {
-      updateStats({ posts: initialPosts, lastFetched: initialLastFetched, count: initialPosts.length });
+      // 计算非隐藏网页的数量
+      const visibleCount = initialPosts.filter(p => p.state !== '隐藏').length;
+      updateStats({ posts: initialPosts, lastFetched: initialLastFetched, count: visibleCount });
     }
   }, [initialPosts]);
 
@@ -32,6 +34,11 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
     const results = updateResults(posts, onList);
     return filterPostsBySearch(results, searchQuery);
   }, [posts, onList, searchQuery]);
+
+  // 计算总的可见网页数量（排除隐藏网页），用于显示
+  const totalVisibleCount = useMemo(() => {
+    return posts.filter(p => p.state !== '隐藏').length;
+  }, [posts]);
 
   const visibleTags = useMemo(() => {
     if (!searchQuery.trim()) {
@@ -56,7 +63,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
     <div className='app-background m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
       <HeaderBar 
         lastFetched={lastFetched} 
-        count={filteredPosts.length} 
+        count={totalVisibleCount} 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
