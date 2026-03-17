@@ -63,7 +63,7 @@ html, body {
     repeating-linear-gradient(var(--paper-fiber-angle, 24deg), rgb(255 255 255 / var(--paper-fiber-alpha, 0.24)) 0 1.2px, transparent 1.2px var(--paper-fiber-gap, 11px)),
     repeating-linear-gradient(calc(var(--paper-fiber-angle, 24deg) + 83deg), rgb(120 113 108 / var(--paper-grain-alpha, 0.1)) 0 1px, transparent 1px calc(var(--paper-fiber-gap, 11px) * 1.35)),
     conic-gradient(from calc(var(--paper-fiber-angle, 24deg) * 1.2) at 22% 16%, rgb(255 255 255 / 0.35), transparent 26%, rgb(245 158 11 / 0.07) 43%, transparent 61%, rgb(254 243 199 / 0.3) 82%, transparent 100%),
-    linear-gradient(158deg, rgba(255, 251, 245, 0.95) 0%, rgba(250, 244, 234, 0.97) 42%, rgba(241, 233, 220, 0.93) 100%);
+    linear-gradient(var(--paper-gradient-angle, 158deg), rgba(255, 251, 245, var(--paper-gradient-alpha-1, 0.95)) 0%, rgba(250, 244, 234, var(--paper-gradient-alpha-2, 0.97)) 42%, rgba(241, 233, 220, var(--paper-gradient-alpha-3, 0.93)) 100%);
 }
 
 .dark .app-background {

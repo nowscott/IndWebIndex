@@ -22,6 +22,12 @@ function MyApp({ Component, pageProps }) {
         root.style.setProperty('--paper-patch-x', `${randomInt(46, 92)}%`);
         root.style.setProperty('--paper-patch-y', `${randomInt(36, 92)}%`);
         
+        // Randomize Light Mode Paper Gradient
+        root.style.setProperty('--paper-gradient-angle', `${randomInt(0, 360)}deg`);
+        root.style.setProperty('--paper-gradient-alpha-1', random(0.92, 0.98).toFixed(3));
+        root.style.setProperty('--paper-gradient-alpha-2', random(0.94, 0.99).toFixed(3));
+        root.style.setProperty('--paper-gradient-alpha-3', random(0.90, 0.96).toFixed(3));
+        
         // Dark mode background position randomization
         // Beam angle: 100-160 deg
         root.style.setProperty('--shadow-beam-angle', `${randomInt(100, 160)}deg`);
