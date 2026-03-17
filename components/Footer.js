@@ -37,11 +37,11 @@ const Footer = () => {
         
         {/* 数据统计区 (新增) */}
         <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-green-100/80">
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-orange-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-orange-200 dark:border-[#5a1a1a] shadow-sm">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-amber-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-amber-200 dark:border-[#5a1a1a] shadow-sm">
             <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-orange-500 dark:text-green-400" />
             <span>已收录 <span className="text-orange-600 dark:text-green-300 font-extrabold">{stats.count || 0}</span> 个网站</span>
           </div>
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-orange-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-orange-200 dark:border-[#5a1a1a] shadow-sm">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-amber-50/50 dark:bg-[#451a1a]/60 px-3 py-1 rounded-full border border-amber-200 dark:border-[#5a1a1a] shadow-sm">
             <HiOutlineClock className="w-3.5 h-3.5 text-orange-500 dark:text-green-400" />
             <span>数据更新时间：<span className="text-orange-600 dark:text-green-200 font-bold">{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span></span>
           </div>

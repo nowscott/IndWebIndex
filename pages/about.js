@@ -20,7 +20,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
   }, [posts]);
 
   return (
-    <div className='bg-orange-50/50 dark:bg-[#051005] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
+    <div className='bg-[#fffbeb] dark:bg-[#051005] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
       <Head>
         <title>关于 - IndWebIndex</title>
       </Head>
