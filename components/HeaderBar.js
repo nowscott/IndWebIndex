@@ -35,12 +35,12 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 className="
                 w-full pl-9 pr-4 py-1.5
                 text-xs sm:text-sm
-                text-orange-600 dark:text-zinc-100
+                text-[#773d31] dark:text-zinc-100
                 bg-[linear-gradient(160deg,rgba(243,248,255,0.92),rgba(225,238,255,0.82))] dark:bg-[linear-gradient(160deg,rgba(45,45,50,0.86),rgba(28,28,30,0.9))]
                 border border-sky-300 dark:border-zinc-500/80
                 rounded-full shadow-sm focus:shadow-md
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
-                transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-orange-300 dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
+                transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-[#a36b5f] dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
                 type="text"
                 placeholder="搜索网页、标签或拼音..."
                 value={searchQuery}
