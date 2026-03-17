@@ -11,9 +11,9 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => (
           className="
           w-full pl-9 pr-4 py-1.5
           text-sm
-          text-slate-800 dark:text-slate-200
-          bg-sky-50/50 dark:bg-slate-800/50
-          border border-sky-200 dark:border-slate-700
+          text-slate-700 dark:text-slate-200
+          bg-sky-100/70 dark:bg-slate-800/50
+          border border-sky-300 dark:border-slate-700
           rounded-xl shadow-sm hover:shadow-md focus:shadow-lg
           focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50
           transition-[background-color,border-color,color] duration-400 placeholder:text-slate-400"

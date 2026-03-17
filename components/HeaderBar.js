@@ -41,9 +41,9 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 className="
                 w-full pl-9 pr-4 py-1.5
                 text-xs sm:text-sm
-                text-orange-700 dark:text-green-50
-                bg-sky-50/50 dark:bg-[#451a1a]/80
-                border border-sky-200 dark:border-[#5a1a1a]
+                text-orange-600 dark:text-green-50
+                bg-sky-100/70 dark:bg-[#451a1a]/80
+                border border-sky-300 dark:border-[#5a1a1a]
                 rounded-full shadow-sm focus:shadow-md
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-rose-500/20
                 transition-[background-color,border-color,color] duration-400 placeholder:text-orange-300 dark:placeholder:text-rose-300/40"

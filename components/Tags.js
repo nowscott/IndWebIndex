@@ -14,7 +14,7 @@ const Tags = memo(({ tags, onList, handleToggleTagButton }) => (
               transition-[background-color,border-color,color] duration-300
               ${isActive 
                 ? 'bg-orange-500 dark:bg-rose-600 text-white dark:text-white border-orange-500 dark:border-rose-400 shadow-md scale-105' 
-                : 'bg-sky-50/50 dark:bg-[#451a1a]/80 text-orange-600 dark:text-green-50 border-sky-200/80 dark:border-[#5a1a1a] hover:border-orange-500 dark:hover:border-rose-400 hover:bg-white dark:hover:bg-[#5a1a1a]/90 shadow hover:shadow-md'}
+                : 'bg-sky-100/70 dark:bg-[#451a1a]/80 text-orange-500 dark:text-green-50 border-sky-300 dark:border-[#5a1a1a] hover:border-orange-500 dark:hover:border-rose-400 hover:bg-white dark:hover:bg-[#5a1a1a]/90 shadow hover:shadow-md'}
             `}
             onClick={() => handleToggleTagButton(tag)}
           >
