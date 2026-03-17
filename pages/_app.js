@@ -21,15 +21,54 @@ function MyApp({ Component, pageProps }) {
         root.style.setProperty('--paper-glow-y', `${randomInt(2, 24)}%`);
         root.style.setProperty('--paper-patch-x', `${randomInt(46, 92)}%`);
         root.style.setProperty('--paper-patch-y', `${randomInt(36, 92)}%`);
-        root.style.setProperty('--shadow-beam-angle', `${randomInt(104, 156)}deg`);
+        
+        // Randomize Light Mode Paper Gradient
+        root.style.setProperty('--paper-gradient-angle', `${randomInt(0, 360)}deg`);
+        root.style.setProperty('--paper-gradient-alpha-1', random(0.92, 0.98).toFixed(3));
+        root.style.setProperty('--paper-gradient-alpha-2', random(0.94, 0.99).toFixed(3));
+        root.style.setProperty('--paper-gradient-alpha-3', random(0.90, 0.96).toFixed(3));
+        
+        // Dark mode background position randomization
+        // Beam angle: 100-160 deg
+        root.style.setProperty('--shadow-beam-angle', `${randomInt(100, 160)}deg`);
         root.style.setProperty('--shadow-beam-alpha', random(0.08, 0.2).toFixed(3));
-        root.style.setProperty('--shadow-line-gap', `${randomInt(26, 56)}px`);
+        
+        // Line gap: 20-60px
+        root.style.setProperty('--shadow-line-gap', `${randomInt(20, 60)}px`);
         root.style.setProperty('--shadow-line-alpha', random(0.14, 0.3).toFixed(3));
-        root.style.setProperty('--shadow-glow-alpha', random(0.12, 0.28).toFixed(3));
-        root.style.setProperty('--shadow-glow-x', `${randomInt(6, 36)}%`);
-        root.style.setProperty('--shadow-glow-y', `${randomInt(2, 30)}%`);
-        root.style.setProperty('--shadow-patch-x', `${randomInt(52, 94)}%`);
-        root.style.setProperty('--shadow-patch-y', `${randomInt(34, 92)}%`);
+        
+        // Glow alpha: 0.1-0.3
+        root.style.setProperty('--shadow-glow-alpha', random(0.1, 0.3).toFixed(3));
+        
+        // Main Glow Position (Full Screen Random): X: 0-100%, Y: 0-100%
+        root.style.setProperty('--shadow-glow-x', `${randomInt(0, 100)}%`);
+        root.style.setProperty('--shadow-glow-y', `${randomInt(0, 100)}%`);
+        
+        // Patch Position (Full Screen Random): X: 0-100%, Y: 0-100%
+        root.style.setProperty('--shadow-patch-x', `${randomInt(0, 100)}%`);
+        root.style.setProperty('--shadow-patch-y', `${randomInt(0, 100)}%`);
+        
+        // Conic Gradient Focal Point (Randomized along top edge): X: 10-90%, Y: -10-40%
+        root.style.setProperty('--shadow-conic-x', `${randomInt(10, 90)}%`);
+        root.style.setProperty('--shadow-conic-y', `${randomInt(-10, 40)}%`);
+        
+        // Random Rainbow Colors for Conic Gradient
+        // Define a palette of 7 vivid colors with low opacity for subtle glow
+        const rainbowColors = [
+            'rgb(239 68 68 / 0.16)',   // Red
+            'rgb(249 115 22 / 0.16)',  // Orange
+            'rgb(234 179 8 / 0.16)',   // Yellow
+            'rgb(34 197 94 / 0.16)',   // Green
+            'rgb(59 130 246 / 0.16)',  // Blue
+            'rgb(99 102 241 / 0.16)',  // Indigo
+            'rgb(168 85 247 / 0.16)',  // Violet
+        ];
+        
+        // Pick 3 distinct colors randomly
+        const shuffled = rainbowColors.sort(() => 0.5 - Math.random());
+        root.style.setProperty('--shadow-rainbow-1', shuffled[0]);
+        root.style.setProperty('--shadow-rainbow-2', shuffled[1]);
+        root.style.setProperty('--shadow-rainbow-3', shuffled[2]);
     }, []);
 
     return (
