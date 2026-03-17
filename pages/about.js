@@ -43,21 +43,21 @@ const AboutPage = ({ count, lastFetched, posts }) => {
 
         {/* 核心理念 */}
         <div className="grid sm:grid-cols-3 gap-6 mt-16 text-left">
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-slate-300 dark:border-zinc-800 shadow-sm hover:border-orange-400/50 transition-[background-color,border-color]">
+          <div className="p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-orange-400/50 transition-[background-color,border-color]">
             <HiOutlineSparkles className="w-8 h-8 text-orange-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-orange-600 dark:text-zinc-100">独立精神</h3>
             <p className="text-sm text-slate-700 dark:text-zinc-400 leading-relaxed">
               我们致力于发掘那些不随波逐流、充满个性和创意的独立个人网站，让互联网回归本心。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-slate-300 dark:border-zinc-800 shadow-sm hover:border-blue-400/50 transition-[background-color,border-color]">
+          <div className="p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-blue-400/50 transition-[background-color,border-color]">
             <HiOutlineCollection className="w-8 h-8 text-blue-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-indigo-600 dark:text-zinc-100">精心收录</h3>
             <p className="text-sm text-slate-700 dark:text-zinc-400 leading-relaxed">
               每一个被收录的网页都经过人工审核，确保其内容的质量和独特性，拒绝信息碎片。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#1C1C1E] border border-slate-300 dark:border-zinc-800 shadow-sm hover:border-rose-400/50 transition-[background-color,border-color]">
+          <div className="p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-rose-400/50 transition-[background-color,border-color]">
             <HiOutlineHeart className="w-8 h-8 text-rose-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-rose-600 dark:text-zinc-100">开源共建</h3>
             <p className="text-sm text-slate-700 dark:text-zinc-400 leading-relaxed">

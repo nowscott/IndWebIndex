@@ -37,11 +37,11 @@ const Footer = () => {
         
         {/* 数据统计区 (新增) */}
         <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-zinc-400">
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-amber-50/50 dark:bg-[#1C1C1E] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(255,252,242,0.9),rgba(242,249,255,0.88))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
             <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-orange-500 dark:text-orange-500" />
             <span>已收录 <span className="text-orange-600 dark:text-zinc-200 font-extrabold">{stats.count || 0}</span> 个网站</span>
           </div>
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-amber-50/50 dark:bg-[#1C1C1E] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(255,252,242,0.9),rgba(242,249,255,0.88))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
             <HiOutlineClock className="w-3.5 h-3.5 text-orange-500 dark:text-orange-500" />
             <span>数据更新时间：<span className="text-orange-600 dark:text-zinc-200 font-bold">{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span></span>
           </div>

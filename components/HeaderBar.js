@@ -42,7 +42,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 w-full pl-9 pr-4 py-1.5
                 text-xs sm:text-sm
                 text-orange-600 dark:text-zinc-100
-                bg-sky-100/70 dark:bg-zinc-900/65
+                bg-[linear-gradient(160deg,rgba(243,248,255,0.92),rgba(225,238,255,0.82))] dark:bg-[linear-gradient(160deg,rgba(45,45,50,0.86),rgba(28,28,30,0.9))]
                 border border-sky-300 dark:border-zinc-500/80
                 rounded-full shadow-sm focus:shadow-md
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
