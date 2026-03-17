@@ -18,7 +18,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   }, [count, lastFetched]);
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/25 dark:bg-black/25 transition-[background-color,border-color,box-shadow] duration-400">
+    <header className="sticky top-0 z-40 w-full bg-black/[0.04] dark:bg-black/20 transition-[background-color,border-color,box-shadow] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
         
         {/* 左侧入口 */}
@@ -66,11 +66,6 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {/* 右侧功能 */}
         <div className="flex-1 flex items-center justify-end gap-1 sm:gap-2 z-10">
           <ThemeToggleButton />
-        </div>
-      </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0">
-        <div className="max-w-[90rem] mx-auto px-6 sm:px-8">
-          <div className="h-px rounded-full bg-white/45 dark:bg-zinc-200/15"></div>
         </div>
       </div>
     </header>
