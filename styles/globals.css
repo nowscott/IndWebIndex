@@ -78,7 +78,7 @@ html, body {
     radial-gradient(980px 640px at var(--shadow-patch-x, 82%) var(--shadow-patch-y, 70%), rgb(30 64 175 / 0.24) 0%, transparent 72%),
     linear-gradient(var(--shadow-beam-angle, 128deg), rgb(255 255 255 / var(--shadow-beam-alpha, 0.14)) 0%, rgb(255 255 255 / 0) 36%, rgb(59 130 246 / 0.24) 68%, rgb(255 255 255 / 0) 100%),
     repeating-linear-gradient(calc(var(--shadow-beam-angle, 128deg) + 90deg), rgb(63 63 70 / var(--shadow-line-alpha, 0.22)) 0 2px, transparent 2px var(--shadow-line-gap, 42px)),
-    conic-gradient(from calc(var(--shadow-beam-angle, 128deg) * 0.62) at 76% 12%, rgb(34 197 94 / 0.16), transparent 28%, rgb(59 130 246 / 0.18) 52%, transparent 74%, rgb(255 255 255 / 0.12) 92%, transparent 100%),
+    conic-gradient(from calc(var(--shadow-beam-angle, 128deg) * 0.62) at var(--shadow-conic-x, 76%) var(--shadow-conic-y, 12%), rgb(34 197 94 / 0.16), transparent 28%, rgb(59 130 246 / 0.18) 52%, transparent 74%, rgb(255 255 255 / 0.12) 92%, transparent 100%),
     linear-gradient(180deg, rgba(9, 9, 11, 0.92) 0%, rgba(0, 0, 0, 1) 100%);
 }
 

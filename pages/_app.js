@@ -21,15 +21,30 @@ function MyApp({ Component, pageProps }) {
         root.style.setProperty('--paper-glow-y', `${randomInt(2, 24)}%`);
         root.style.setProperty('--paper-patch-x', `${randomInt(46, 92)}%`);
         root.style.setProperty('--paper-patch-y', `${randomInt(36, 92)}%`);
-        root.style.setProperty('--shadow-beam-angle', `${randomInt(104, 156)}deg`);
+        
+        // Dark mode background position randomization
+        // Beam angle: 100-160 deg
+        root.style.setProperty('--shadow-beam-angle', `${randomInt(100, 160)}deg`);
         root.style.setProperty('--shadow-beam-alpha', random(0.08, 0.2).toFixed(3));
-        root.style.setProperty('--shadow-line-gap', `${randomInt(26, 56)}px`);
+        
+        // Line gap: 20-60px
+        root.style.setProperty('--shadow-line-gap', `${randomInt(20, 60)}px`);
         root.style.setProperty('--shadow-line-alpha', random(0.14, 0.3).toFixed(3));
-        root.style.setProperty('--shadow-glow-alpha', random(0.12, 0.28).toFixed(3));
-        root.style.setProperty('--shadow-glow-x', `${randomInt(6, 36)}%`);
-        root.style.setProperty('--shadow-glow-y', `${randomInt(2, 30)}%`);
-        root.style.setProperty('--shadow-patch-x', `${randomInt(52, 94)}%`);
-        root.style.setProperty('--shadow-patch-y', `${randomInt(34, 92)}%`);
+        
+        // Glow alpha: 0.1-0.3
+        root.style.setProperty('--shadow-glow-alpha', random(0.1, 0.3).toFixed(3));
+        
+        // Main Glow Position (Full Screen Random): X: 0-100%, Y: 0-100%
+        root.style.setProperty('--shadow-glow-x', `${randomInt(0, 100)}%`);
+        root.style.setProperty('--shadow-glow-y', `${randomInt(0, 100)}%`);
+        
+        // Patch Position (Full Screen Random): X: 0-100%, Y: 0-100%
+        root.style.setProperty('--shadow-patch-x', `${randomInt(0, 100)}%`);
+        root.style.setProperty('--shadow-patch-y', `${randomInt(0, 100)}%`);
+        
+        // Conic Gradient Focal Point (Randomized along top edge): X: 10-90%, Y: -10-40%
+        root.style.setProperty('--shadow-conic-x', `${randomInt(10, 90)}%`);
+        root.style.setProperty('--shadow-conic-y', `${randomInt(-10, 40)}%`);
     }, []);
 
     return (
