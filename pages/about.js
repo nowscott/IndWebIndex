@@ -36,7 +36,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
             </span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            探索互联网的角落，发现那些有趣且独立的网页
+            互联网时代的个人黄页，让寻找回归准确与高效
           </p>
         </div>
 
@@ -45,27 +45,27 @@ const AboutPage = ({ count, lastFetched, posts }) => {
           <div className="flex sm:block items-start p-4 sm:p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-sky-400/50 transition-[background-color,border-color]">
             <HiOutlineSparkles className="w-8 h-8 text-sky-500 shrink-0 mr-4 sm:mr-0 sm:mb-4" />
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-sky-600 dark:text-zinc-100">独立精神</h3>
+              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-sky-600 dark:text-zinc-100">个人黄页</h3>
               <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
-                我们致力于发掘那些不随波逐流、充满个性和创意的独立个人网站，让互联网回归本心。
+                像互联网初期的黄页一样，构建属于你自己的索引。不再迷失于搜索引擎的广告与杂讯中，只保留最精准、最常用的入口。
               </p>
             </div>
           </div>
           <div className="flex sm:block items-start p-4 sm:p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-blue-400/50 transition-[background-color,border-color]">
             <HiOutlineCollection className="w-8 h-8 text-blue-500 shrink-0 mr-4 sm:mr-0 sm:mb-4" />
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-indigo-600 dark:text-zinc-100">精心收录</h3>
+              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-indigo-600 dark:text-zinc-100">数据掌控</h3>
               <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
-                每一个被收录的网页都经过人工审核，确保其内容的质量和独特性，拒绝信息碎片。
+                利用 Notion API，将你的收藏夹变为可视化的数据库。添加标签、描述，让数据的管理与展示完全由你掌控，既是工具也是资产。
               </p>
             </div>
           </div>
           <div className="flex sm:block items-start p-4 sm:p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-cyan-400/50 transition-[background-color,border-color]">
             <HiOutlineHeart className="w-8 h-8 text-cyan-500 shrink-0 mr-4 sm:mr-0 sm:mb-4" />
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-cyan-600 dark:text-zinc-100">开源共建</h3>
+              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-cyan-600 dark:text-zinc-100">极致体验</h3>
               <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
-                IndWebIndex 是一个完全开源的项目。任何人都可以通过提交 Issue 或投稿来丰富我们的索引库。
+                现代化的设计、毫秒级的响应、平滑的交互。我们通过双层缓存和 React 状态管理，消除了 Notion API 的延迟，让每一次点击都如丝般顺滑。
               </p>
             </div>
           </div>
