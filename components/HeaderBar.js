@@ -28,7 +28,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {!isAboutPage && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[12rem] xs:max-w-xs sm:max-w-md px-4 z-20">
             <div className="relative group w-full">
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-orange-400 dark:text-zinc-400 group-focus-within:text-orange-600 dark:group-focus-within:text-zinc-100 transition-colors">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-[#773d31] dark:text-zinc-100 transition-colors">
                 <HiOutlineSearch className="w-4 h-4" />
               </div>
               <input

@@ -33,13 +33,13 @@ const Footer = () => {
         
         {/* 数据统计区 (新增) */}
         <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-zinc-400">
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(255,252,242,0.9),rgba(242,249,255,0.88))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
-            <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-orange-500 dark:text-orange-500" />
-            <span>已收录 <span className="text-orange-600 dark:text-zinc-200 font-extrabold">{stats.count || 0}</span> 个网站</span>
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(244,249,255,0.92),rgba(226,239,255,0.85))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-sky-300 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+            <HiOutlineGlobeAlt className="w-3.5 h-3.5 text-sky-500 dark:text-zinc-300" />
+            <span>已收录 <span className="text-sky-600 dark:text-zinc-200 font-extrabold">{stats.count || 0}</span> 个网站</span>
           </div>
-          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(255,252,242,0.9),rgba(242,249,255,0.88))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-amber-200 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
-            <HiOutlineClock className="w-3.5 h-3.5 text-orange-500 dark:text-orange-500" />
-            <span>数据更新时间：<span className="text-orange-600 dark:text-zinc-200 font-bold">{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span></span>
+          <div className="flex items-center gap-1.5 whitespace-nowrap bg-[linear-gradient(165deg,rgba(244,249,255,0.92),rgba(226,239,255,0.85))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] px-3 py-1 rounded-full border border-sky-300 dark:border-zinc-500/80 shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+            <HiOutlineClock className="w-3.5 h-3.5 text-sky-500 dark:text-zinc-300" />
+            <span>数据更新时间：<span className="text-sky-600 dark:text-zinc-200 font-bold">{stats.lastFetched ? new Date(stats.lastFetched).toLocaleString() : '...'}</span></span>
           </div>
         </div>
 
@@ -49,22 +49,22 @@ const Footer = () => {
             href='https://nowscott.notion.site/134f941cf9b880e1b00ee5bdf55fd71d?pvs=105' 
             target='_blank' 
             rel='noopener noreferrer' 
-            className='flex items-center gap-1.5 text-orange-500 dark:text-orange-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors'
+            className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300 hover:text-sky-600 dark:hover:text-zinc-100 transition-colors'
           >
             <HiOutlineTag className='w-4 h-4' />
             <span>投稿网页</span>
           </a>
           
-          <div className='flex items-center gap-1.5 text-orange-500 dark:text-orange-500'>
+          <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
             <HiOutlineCursorClick className='w-4 h-4' />
             <span>
-              访问量：{stats.visitCount !== null ? <span className='text-orange-600 dark:text-zinc-100 font-extrabold'>{stats.visitCount}</span> : '...'}
+              访问量：{stats.visitCount !== null ? <span className='text-sky-600 dark:text-zinc-100 font-extrabold'>{stats.visitCount}</span> : '...'}
             </span>
           </div>
 
-          <div className='flex items-center gap-1.5 text-slate-700 dark:text-slate-400'>
+          <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
             <HiOutlineCode className='w-4 h-4' />
-            <span>v{packageInfo.version}</span>
+            <span>版本：<span className='text-sky-600 dark:text-zinc-100 font-extrabold'>v{packageInfo.version}</span></span>
           </div>
         </div>
 
