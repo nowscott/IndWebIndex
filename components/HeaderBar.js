@@ -45,8 +45,8 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
               </div>
               <input
                 className="
-                w-full pl-9 pr-4 py-1.5
-                text-xs sm:text-sm
+                w-full pl-9 pr-4 py-0.5 sm:py-1.5
+                text-base sm:text-sm
                 tracking-normal
                 text-[#773d31] dark:text-zinc-100
                 bg-[linear-gradient(160deg,rgba(243,248,255,0.92),rgba(225,238,255,0.82))] dark:bg-[linear-gradient(160deg,rgba(45,45,50,0.86),rgba(28,28,30,0.9))]
@@ -55,10 +55,20 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
                 transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-[#a36b5f] placeholder:tracking-normal dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
                 type="text"
-                placeholder="搜索网页、标签或拼音..."
+                placeholder=""
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              {!searchQuery && (
+                <>
+                  <span className="sm:hidden absolute left-9 top-1/2 -translate-y-1/2 text-base text-[#a36b5f] dark:text-zinc-400 pointer-events-none transition-opacity duration-200">
+                    搜索...
+                  </span>
+                  <span className="hidden sm:block absolute left-9 top-1/2 -translate-y-1/2 text-sm text-[#a36b5f] dark:text-zinc-400 pointer-events-none transition-opacity duration-200">
+                    搜索网页、标签或拼音...
+                  </span>
+                </>
+              )}
             </div>
           </div>
         )}
