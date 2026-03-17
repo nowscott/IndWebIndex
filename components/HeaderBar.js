@@ -26,12 +26,12 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
           <Link 
             href={isAboutPage ? "/" : "/about"} 
             title={isAboutPage ? "返回首页" : "关于项目"}
-            className="p-2 rounded-full hover:bg-white/40 dark:hover:bg-white/10 text-slate-500 dark:text-slate-300 transition-colors"
+            className="group p-2 rounded-full hover:bg-white/40 dark:hover:bg-white/10 text-[#773d31] dark:text-slate-300 transition-all duration-300 hover:scale-110 active:scale-95"
           >
             {isAboutPage ? (
-              <HiOutlineHome className="w-5 h-5" />
+              <HiOutlineHome className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:text-orange-500 dark:group-hover:text-white transition-all duration-300" />
             ) : (
-              <HiOutlineInformationCircle className="w-5 h-5" />
+              <HiOutlineInformationCircle className="w-5 h-5 group-hover:rotate-12 group-hover:text-orange-500 dark:group-hover:text-white transition-all duration-300" />
             )}
           </Link>
         </div>
