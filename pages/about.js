@@ -70,7 +70,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
         <div className="mt-16">
           <Link 
             href="/"
-            className="inline-flex items-center justify-center px-8 py-2.5 rounded-full bg-slate-800 dark:bg-[#FFFFFF] text-white dark:text-black font-bold hover:opacity-90 transition-[background-color,transform,opacity] duration-300 shadow-lg active:scale-95"
+            className="inline-flex items-center justify-center px-8 py-2.5 rounded-full border border-slate-300/80 dark:border-zinc-500/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.92),rgba(236,245,255,0.88))] dark:bg-[linear-gradient(160deg,rgba(48,48,53,0.92),rgba(29,29,32,0.95))] text-slate-700 dark:text-zinc-100 font-bold hover:border-orange-400/50 dark:hover:border-zinc-300 transition-[background-color,border-color,color,transform,box-shadow] duration-300 shadow-md dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)] hover:shadow-lg active:scale-95"
           >
             开始探索
           </Link>
