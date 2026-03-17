@@ -20,7 +20,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
   }, [posts]);
 
   return (
-    <div className='bg-[#fffbeb] dark:bg-[#051005] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
+    <div className='bg-[#fffbeb] dark:bg-[#051005] m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
       <Head>
         <title>关于 - IndWebIndex</title>
       </Head>
@@ -43,21 +43,21 @@ const AboutPage = ({ count, lastFetched, posts }) => {
 
         {/* 核心理念 */}
         <div className="grid sm:grid-cols-3 gap-6 mt-16 text-left">
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-orange-400/50 transition-colors">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-orange-400/50 transition-[background-color,border-color]">
             <HiOutlineSparkles className="w-8 h-8 text-orange-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-orange-600 dark:text-green-50">独立精神</h3>
             <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
               我们致力于发掘那些不随波逐流、充满个性和创意的独立个人网站，让互联网回归本心。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-blue-400/50 transition-colors">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-blue-400/50 transition-[background-color,border-color]">
             <HiOutlineCollection className="w-8 h-8 text-blue-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-indigo-600 dark:text-green-50">精心收录</h3>
             <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
               每一个被收录的网页都经过人工审核，确保其内容的质量和独特性，拒绝信息碎片。
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-rose-400/50 transition-colors">
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#451a1a]/40 border border-slate-300 dark:border-[#5a1a1a] shadow-sm hover:border-rose-400/50 transition-[background-color,border-color]">
             <HiOutlineHeart className="w-8 h-8 text-rose-500 mb-4" />
             <h3 className="text-lg font-extrabold mb-2 text-rose-600 dark:text-green-50">开源共建</h3>
             <p className="text-sm text-slate-700 dark:text-green-100/80 leading-relaxed">
@@ -70,7 +70,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
         <div className="mt-16">
           <Link 
             href="/"
-            className="inline-flex items-center justify-center px-8 py-2.5 rounded-full bg-slate-800 dark:bg-blue-500 text-white font-bold hover:opacity-90 transition-all shadow-lg active:scale-95"
+            className="inline-flex items-center justify-center px-8 py-2.5 rounded-full bg-slate-800 dark:bg-blue-500 text-white font-bold hover:opacity-90 transition-[background-color,transform,opacity] duration-300 shadow-lg active:scale-95"
           >
             开始探索
           </Link>

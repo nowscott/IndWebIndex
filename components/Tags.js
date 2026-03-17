@@ -1,5 +1,7 @@
+import React, { memo } from 'react';
+
 // components/Tags.js
-const Tags = ({ tags, onList, handleToggleTagButton }) => (
+const Tags = memo(({ tags, onList, handleToggleTagButton }) => (
   <section className="mb-6 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto">
     <div className='flex flex-wrap justify-center gap-1.5'>
       {tags.map(tag => {
@@ -8,7 +10,8 @@ const Tags = ({ tags, onList, handleToggleTagButton }) => (
           <button
             key={tag}
             className={`
-              px-3 py-1 text-[11px] sm:text-xs rounded-lg border transition-all duration-200
+              px-3 py-1 text-[11px] sm:text-xs rounded-lg border 
+              transition-[background-color,border-color,color] duration-300
               ${isActive 
                 ? 'bg-orange-500 dark:bg-rose-600 text-white dark:text-white border-orange-500 dark:border-rose-400 shadow-md scale-105' 
                 : 'bg-sky-50/50 dark:bg-[#451a1a]/80 text-orange-600 dark:text-green-50 border-sky-200/80 dark:border-[#5a1a1a] hover:border-orange-500 dark:hover:border-rose-400 hover:bg-white dark:hover:bg-[#5a1a1a]/90 shadow hover:shadow-md'}
@@ -21,6 +24,6 @@ const Tags = ({ tags, onList, handleToggleTagButton }) => (
       })}
     </div>
   </section>
-);
+));
 
 export default Tags;

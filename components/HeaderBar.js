@@ -24,7 +24,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const displayTime = stats.lastFetched ?? lastFetched;
   
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-orange-50/70 dark:bg-[#051005]/70 border-b border-orange-100 dark:border-green-900/30 transition-all duration-300">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-orange-50/70 dark:bg-[#051005]/70 border-b border-orange-100 dark:border-green-900/30 transition-[background-color,border-color] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
         
         {/* 左侧占位 (保持对称) */}
@@ -46,7 +46,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 border border-sky-200 dark:border-[#5a1a1a]
                 rounded-full shadow-sm focus:shadow-md
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-rose-500/20
-                transition-all duration-300 placeholder:text-orange-300 dark:placeholder:text-rose-300/40"
+                transition-[background-color,border-color,color] duration-400 placeholder:text-orange-300 dark:placeholder:text-rose-300/40"
                 type="text"
                 placeholder="搜索网页或标签..."
                 value={searchQuery}

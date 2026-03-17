@@ -40,23 +40,69 @@ html.font-default, html.font-default body { font-family: var(--font-default) !im
 .preview-font-iansui { font-family: var(--font-iansui) !important; }
 .preview-font-mincho { font-family: var(--font-mincho) !important; }
 
-body {
+html, body {
   user-select: none;
-  /* 所有现代浏览器 */
   -webkit-user-select: none;
-  /* Safari */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* IE10+ */
-  
-  /* 解决滚动回弹背景色不一致问题 */
   @apply bg-[#fffbeb] dark:bg-[#051005];
 }
 
-/* 强制 html 也有背景色，防止橡皮筋效果露底 */
-html {
-  @apply bg-[#fffbeb] dark:bg-[#051005];
+/* 精准过渡：仅针对关键背景和文字，避免全局 * 过渡带来的性能负担 */
+html, body, header, main, footer, section {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 针对大量的卡片和按钮，使用更轻量的过渡 */
+a, button {
+  transition-property: background-color, border-color, color;
+  transition-duration: 300ms;
+}
+
+/* 主题切换期间，禁用元素的 CSS 过渡和昂贵的滤镜，减轻浏览器负担 */
+.switching-theme,
+.switching-theme *,
+.switching-theme *::before,
+.switching-theme *::after {
+  transition-duration: 0ms !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 当 View Transition 激活时，优化全局动画时间 */
+@supports (view-transition-name: root) {
+  ::view-transition-group(root) {
+    animation-duration: 400ms;
+  }
+}
+
+/* View Transition 质感渐变优化 */
+::view-transition-old(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+  will-change: opacity;
+}
+
+::view-transition-new(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;
+  will-change: opacity;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 确保动画过程中没有混合模式干扰 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
 }
 
 /* 需要黑白时专用 */

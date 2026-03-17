@@ -40,9 +40,8 @@ export const ThemeProvider = ({ children }) => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(prevIsDark => {
-      const newTheme = !prevIsDark;
+  const toggleTheme = (event) => {
+    const toggle = (newTheme) => {
       document.documentElement.classList.toggle('dark', newTheme);
       
       // 同步 Favicon
@@ -56,8 +55,28 @@ export const ThemeProvider = ({ children }) => {
       if (themeColor) {
         themeColor.content = newTheme ? '#051005' : '#fffbeb';
       }
-      
-      return newTheme;
+    };
+
+    if (!document.startViewTransition) {
+      setIsDark(prev => {
+        const next = !prev;
+        toggle(next);
+        return next;
+      });
+      return;
+    }
+
+    document.documentElement.classList.add('switching-theme');
+    const transition = document.startViewTransition(() => {
+      setIsDark(prev => {
+        const next = !prev;
+        toggle(next);
+        return next;
+      });
+    });
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('switching-theme');
     });
   };
 

@@ -16,7 +16,7 @@ const SearchBox = ({ searchQuery, setSearchQuery }) => (
           border border-sky-200 dark:border-slate-700
           rounded-xl shadow-sm hover:shadow-md focus:shadow-lg
           focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50
-          transition-all duration-300 placeholder:text-slate-400"
+          transition-[background-color,border-color,color] duration-400 placeholder:text-slate-400"
           type="text"
           placeholder="搜索网页、标签或拼音..."
           value={searchQuery}
