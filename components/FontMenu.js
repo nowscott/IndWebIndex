@@ -78,12 +78,12 @@ const FontMenu = () => {
   };
 
   return (
-    <div ref={contextMenuRef} className="hidden absolute z-50 bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-100 border border-gray-300 shadow-lg rounded-md p-0 w-32">
+    <div ref={contextMenuRef} className="hidden absolute z-50 bg-white/80 dark:bg-[#2C2C2E]/90 backdrop-blur-md text-slate-800 dark:text-zinc-100 border border-gray-200 dark:border-zinc-700 shadow-xl rounded-xl p-1 w-32">
       <ul className="list-none m-0 p-0">
         {fontData.fonts.map((font) => (
           <li
             key={font.class}
-            className={`px-2 py-2 cursor-pointer white-space: nowrap preview-${font.class} ${selectedFont === font.class ? 'shadow-md bg-gray-100 dark:bg-slate-800' : ''}`}
+            className={`px-3 py-2 rounded-lg cursor-pointer white-space: nowrap preview-${font.class} ${selectedFont === font.class ? 'bg-orange-100/50 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400' : 'hover:bg-gray-100 dark:hover:bg-zinc-700/50'}`}
             onClick={() => changeFont(font.class)}
           >
             {font.displayName}

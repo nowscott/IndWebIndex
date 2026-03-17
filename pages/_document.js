@@ -33,7 +33,7 @@ class MyDocument extends Document {
                     var favicon = document.getElementById('favicon');
                     if (favicon) favicon.href = '/images/favicon-dark.svg';
                     var themeColor = document.getElementById('theme-color');
-                    if (themeColor) themeColor.content = '#051005';
+                    if (themeColor) themeColor.content = '#000000';
                   }
                   
                   // Handle Font

@@ -45,7 +45,7 @@ html, body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  @apply bg-[#fffbeb] dark:bg-[#051005];
+  @apply bg-[#fffbeb] dark:bg-[#000000];
 }
 
 /* 精准过渡：仅针对关键背景和文字，避免全局 * 过渡带来的性能负担 */

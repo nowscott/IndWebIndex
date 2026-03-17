@@ -24,7 +24,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const displayTime = stats.lastFetched ?? lastFetched;
   
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-orange-50/70 dark:bg-[#051005]/70 border-b border-orange-100 dark:border-green-900/30 transition-[background-color,border-color] duration-400">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-orange-50/70 dark:bg-[#1C1C1E]/70 border-b border-orange-100 dark:border-zinc-800 transition-[background-color,border-color] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
         
         {/* 左侧占位 (保持对称) */}
@@ -34,19 +34,19 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {!isAboutPage && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[12rem] xs:max-w-xs sm:max-w-md px-4 z-20">
             <div className="relative group w-full">
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-orange-400 dark:text-green-50/60 group-focus-within:text-orange-600 dark:group-focus-within:text-green-400 transition-colors">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-orange-400 dark:text-zinc-500 group-focus-within:text-orange-600 dark:group-focus-within:text-zinc-300 transition-colors">
                 <HiOutlineSearch className="w-4 h-4" />
               </div>
               <input
                 className="
                 w-full pl-9 pr-4 py-1.5
                 text-xs sm:text-sm
-                text-orange-600 dark:text-green-50
-                bg-sky-100/70 dark:bg-[#451a1a]/80
-                border border-sky-300 dark:border-[#5a1a1a]
+                text-orange-600 dark:text-zinc-100
+                bg-sky-100/70 dark:bg-[#2C2C2E]
+                border border-sky-300 dark:border-zinc-700/50
                 rounded-full shadow-sm focus:shadow-md
-                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-rose-500/20
-                transition-[background-color,border-color,color] duration-400 placeholder:text-orange-300 dark:placeholder:text-rose-300/40"
+                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-500/20
+                transition-[background-color,border-color,color] duration-400 placeholder:text-orange-300 dark:placeholder:text-zinc-500"
                 type="text"
                 placeholder="搜索网页或标签..."
                 value={searchQuery}
