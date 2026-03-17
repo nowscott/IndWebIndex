@@ -18,40 +18,11 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   }, [count, lastFetched]);
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/25 dark:bg-black/25 border-b border-white/45 dark:border-zinc-200/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)] transition-[background-color,border-color,box-shadow] duration-400">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/25 dark:bg-black/25 transition-[background-color,border-color,box-shadow] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
         
-        {/* 左侧占位 (保持对称) */}
-        <div className="flex-1 sm:flex-none w-10"></div>
-
-        {/* 中间检索框 (绝对居中) */}
-        {!isAboutPage && (
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[12rem] xs:max-w-xs sm:max-w-md px-4 z-20">
-            <div className="relative group w-full">
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-[#773d31] dark:text-zinc-100 transition-colors">
-                <HiOutlineSearch className="w-4 h-4" />
-              </div>
-              <input
-                className="
-                w-full pl-9 pr-4 py-1.5
-                text-xs sm:text-sm
-                text-[#773d31] dark:text-zinc-100
-                bg-[linear-gradient(160deg,rgba(243,248,255,0.92),rgba(225,238,255,0.82))] dark:bg-[linear-gradient(160deg,rgba(45,45,50,0.86),rgba(28,28,30,0.9))]
-                border border-sky-300 dark:border-zinc-500/80
-                rounded-full shadow-sm focus:shadow-md
-                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
-                transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-[#a36b5f] dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
-                type="text"
-                placeholder="搜索网页、标签或拼音..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* 右侧功能 */}
-        <div className="flex-1 flex items-center justify-end gap-1 sm:gap-2 z-10">
+        {/* 左侧入口 */}
+        <div className="flex-1 sm:flex-none w-10 z-10 flex items-center">
           <Link 
             href={isAboutPage ? "/" : "/about"} 
             title={isAboutPage ? "返回首页" : "关于项目"}
@@ -63,7 +34,43 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
               <HiOutlineInformationCircle className="w-5 h-5" />
             )}
           </Link>
+        </div>
+
+        {/* 中间检索框 (绝对居中) */}
+        {!isAboutPage && (
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[14rem] xs:max-w-sm sm:max-w-md px-3 z-20">
+            <div className="relative group w-full">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-[#773d31] dark:text-zinc-100 transition-colors">
+                <HiOutlineSearch className="w-4 h-4" />
+              </div>
+              <input
+                className="
+                w-full pl-9 pr-4 py-1.5
+                text-xs sm:text-sm
+                tracking-normal
+                text-[#773d31] dark:text-zinc-100
+                bg-[linear-gradient(160deg,rgba(243,248,255,0.92),rgba(225,238,255,0.82))] dark:bg-[linear-gradient(160deg,rgba(45,45,50,0.86),rgba(28,28,30,0.9))]
+                border border-sky-300 dark:border-zinc-500/80
+                rounded-full shadow-sm focus:shadow-md
+                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
+                transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-[#a36b5f] placeholder:tracking-normal dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
+                type="text"
+                placeholder="搜索网页、标签或拼音..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
+
+        {/* 右侧功能 */}
+        <div className="flex-1 flex items-center justify-end gap-1 sm:gap-2 z-10">
           <ThemeToggleButton />
+        </div>
+      </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0">
+        <div className="max-w-[90rem] mx-auto px-6 sm:px-8">
+          <div className="h-px rounded-full bg-white/45 dark:bg-zinc-200/15"></div>
         </div>
       </div>
     </header>

@@ -2,8 +2,11 @@ import React, { memo } from 'react';
 
 // components/WebList.js
 const WebList = memo(({ filteredPosts }) => (
-  <section className="mb-12 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto border-t border-slate-400/65 dark:border-zinc-500/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] pt-8">
-    <div className='flex flex-wrap justify-center gap-2 items-center'>
+  <section className="mb-12 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto">
+    <div>
+      <div className="h-[2px] rounded-full bg-sky-300 dark:bg-zinc-500/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"></div>
+    </div>
+    <div className='mt-8 flex flex-wrap justify-center gap-2 items-center'>
       {filteredPosts.length > 0 ? (
         filteredPosts.map(post => (
           <a

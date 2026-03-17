@@ -28,8 +28,12 @@ const Footer = () => {
   }, [stats.visitCount]);
 
   return (
-    <footer className='mt-auto py-12 px-4 border-t border-gray-200 dark:border-slate-800 transition-colors duration-300 font-inherit'>
-      <div className='max-w-4xl mx-auto flex flex-col items-center gap-6'>
+    <footer className='mt-auto px-4 pb-12 transition-colors duration-300 font-inherit'>
+      <div className='max-w-[90rem] mx-auto'>
+        <div className='px-6 sm:px-8'>
+          <div className='h-[2px] rounded-full bg-sky-300 dark:bg-zinc-500/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'></div>
+        </div>
+        <div className='max-w-4xl mx-auto pt-12 flex flex-col items-center gap-6'>
         
         {/* 数据统计区 (新增) */}
         <div className="flex flex-wrap justify-center items-center gap-4 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-zinc-400">
@@ -78,6 +82,7 @@ const Footer = () => {
           </p>
         </div>
 
+        </div>
       </div>
     </footer>
   );

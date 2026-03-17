@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 // components/Tags.js
 const Tags = memo(({ tags, onList, handleToggleTagButton, emptyHint }) => (
-  <section className="mb-6 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto">
+  <section className="mb-8 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto">
     {tags.length > 0 ? (
       <div className='flex flex-wrap justify-center gap-1.5'>
         {tags.map(tag => {
