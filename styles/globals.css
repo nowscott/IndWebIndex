@@ -46,6 +46,16 @@ html, body {
 }
 
 .app-background {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-color: #faf6ef;
   background-image:
     radial-gradient(1100px 760px at var(--paper-glow-x, 14%) var(--paper-glow-y, 8%), rgb(255 255 255 / var(--paper-glow-alpha, 0.62)) 0%, transparent 64%),
@@ -57,6 +67,11 @@ html, body {
 }
 
 .dark .app-background {
+  /* Remove background from the element itself in dark mode */
+  background: transparent;
+}
+
+.dark .app-background::before {
   background-color: #000000;
   background-image:
     radial-gradient(1080px 760px at var(--shadow-glow-x, 18%) var(--shadow-glow-y, 8%), rgb(56 189 248 / var(--shadow-glow-alpha, 0.18)) 0%, transparent 64%),

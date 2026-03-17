@@ -7,7 +7,6 @@ class MyDocument extends Document {
       <Html lang="zh-CN">
         <Head>
           <link id="favicon" rel="icon" type="image/svg+xml" href="/images/favicon-light.svg" />
-          <link rel="shortcut icon" href="/images/favicon.ico" />
           <meta charSet="UTF-8" />
           <meta id="theme-color" name="theme-color" content="#faf6ef" /> {/* warm-neutral */}
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
