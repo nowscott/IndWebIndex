@@ -38,7 +38,13 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
       return tags;
     }
     const availableTags = extractTags(filteredPosts);
-    return tags.filter(tag => onList.includes(tag) || availableTags.includes(tag));
+    const tagsToShow = _.uniq([...onList, ...availableTags]);
+    
+    // 优先按照 initialTags 的顺序显示，额外的标签放在后面
+    const sortedVisibleTags = tags.filter(t => tagsToShow.includes(t));
+    const extraTags = tagsToShow.filter(t => !tags.includes(t));
+    
+    return [...sortedVisibleTags, ...extraTags];
   }, [tags, onList, searchQuery, filteredPosts]);
 
   const handleToggleTagButton = tag => {
