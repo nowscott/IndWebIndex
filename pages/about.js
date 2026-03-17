@@ -5,7 +5,6 @@ import FontMenu from '../components/FontMenu';
 import { HiOutlineSparkles, HiOutlineCollection, HiOutlineHeart } from 'react-icons/hi';
 import Head from 'next/head';
 import { getDatabase } from '../lib/notion';
-import { unique } from '../lib/dataLoader';
 import Link from 'next/link';
 import { useStats } from '../contexts/StatsContext';
 

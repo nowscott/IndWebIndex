@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import HeaderBar from './HeaderBar';
-import Footer from './Footer';
 import FontMenu from './FontMenu';
 import Tags from './Tags';
 import WebList from './WebList';
@@ -18,8 +17,6 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
 
   const [searchQuery, setSearchQuery] = useState('');
   const [onList, setOnList] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const [visibleTags, setVisibleTags] = useState(tags);
 
   // 初始化全局缓存
   useEffect(() => {
@@ -28,24 +25,21 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
     }
   }, [initialPosts]);
 
-  // 当源数据 posts, 标签过滤 onList 或 搜索内容 searchQuery 变化时更新结果
-  useEffect(() => {
-    // 确保有数据时才进行过滤
-    if (posts && posts.length > 0) {
-      const results = updateResults(posts, onList);
-      const finalResults = filterPostsBySearch(results, searchQuery);
-      const availableTags = extractTags(finalResults);
-      setFilteredPosts(finalResults);
-      setVisibleTags(
-        searchQuery.trim()
-          ? tags.filter(tag => onList.includes(tag) || availableTags.includes(tag))
-          : tags
-      );
-    } else {
-      setFilteredPosts([]);
-      setVisibleTags(searchQuery.trim() ? onList : tags);
+  const filteredPosts = useMemo(() => {
+    if (!posts || posts.length === 0) {
+      return [];
     }
-  }, [posts, onList, searchQuery, tags]);
+    const results = updateResults(posts, onList);
+    return filterPostsBySearch(results, searchQuery);
+  }, [posts, onList, searchQuery]);
+
+  const visibleTags = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return tags;
+    }
+    const availableTags = extractTags(filteredPosts);
+    return tags.filter(tag => onList.includes(tag) || availableTags.includes(tag));
+  }, [tags, onList, searchQuery, filteredPosts]);
 
   const handleToggleTagButton = tag => {
     const newOnList = _.xor(onList, [tag]);
