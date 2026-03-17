@@ -78,12 +78,12 @@ const FontMenu = () => {
   };
 
   return (
-    <div ref={contextMenuRef} className="hidden absolute z-50 bg-white/80 dark:bg-[#2C2C2E]/90 backdrop-blur-md text-slate-800 dark:text-zinc-100 border border-gray-200 dark:border-zinc-700 shadow-xl rounded-xl p-1 w-32">
+    <div ref={contextMenuRef} className="hidden absolute z-50 w-36 rounded-xl p-1.5 backdrop-blur-xl text-[#773d31] dark:text-zinc-100 bg-[linear-gradient(165deg,rgba(255,255,255,0.92),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.94),rgba(28,28,30,0.96))] border border-slate-300/90 dark:border-zinc-500/70 shadow-[0_8px_28px_rgba(71,85,105,0.18)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
       <ul className="list-none m-0 p-0">
         {fontData.fonts.map((font) => (
           <li
             key={font.class}
-            className={`px-3 py-2 rounded-lg cursor-pointer white-space: nowrap preview-${font.class} ${selectedFont === font.class ? 'bg-orange-100/50 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400' : 'hover:bg-gray-100 dark:hover:bg-zinc-700/50'}`}
+            className={`px-3 py-2 rounded-lg cursor-pointer whitespace-nowrap preview-${font.class} transition-[background-color,color,border-color] duration-200 border ${selectedFont === font.class ? 'bg-orange-100/70 dark:bg-orange-500/20 text-[#773d31] dark:text-orange-300 border-orange-300/80 dark:border-orange-400/40' : 'border-transparent hover:bg-white/80 dark:hover:bg-zinc-700/60 hover:border-slate-300/80 dark:hover:border-zinc-500/70'}`}
             onClick={() => changeFont(font.class)}
           >
             {font.displayName}
