@@ -13,11 +13,11 @@ const WebList = memo(({ filteredPosts }) => (
             key={post.name}
             className={`
               group relative flex items-center justify-center 
-              transition-[background-color,border-color,color,transform,box-shadow] duration-300
+              transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:duration-100
                px-3.5 py-1.5 text-[11px] sm:text-xs rounded-full border
                bg-[linear-gradient(165deg,rgba(244,249,255,0.94),rgba(227,240,255,0.84))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] text-[#773d31] dark:text-zinc-200 border-sky-300 dark:border-zinc-500/80
-               shadow hover:border-orange-500 dark:hover:border-zinc-300 hover:shadow-lg hover:bg-white dark:hover:bg-[#2C2C2E] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]
-               hover:-translate-y-1
+               shadow hover:border-orange-500 dark:hover:border-zinc-300 hover:shadow-xl hover:bg-white dark:hover:bg-[#2C2C2E] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]
+               hover:scale-125 hover:z-10
              `}
             href={post.web}
             target="_blank"
