@@ -14,12 +14,12 @@ class MyDocument extends Document {
           <meta name="description" content="探索IndWebIndex——您的个性化中文网站索引！我们提供一个简单且高效的方法，让您可以快速访问和管理您常用的网站。无论是学习资源、购物平台还是娱乐网站，您都可以一目了然。" />
           
           {/* External Fonts */}
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/得意黑/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/京華老宋体/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜文楷/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜漫黑/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/汇文明朝体/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/目哉像素/result.css" crossorigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/得意黑/result.css" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/京華老宋体/result.css" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜文楷/result.css" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜漫黑/result.css" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/汇文明朝体/result.css" crossOrigin="anonymous"/>
+          <link rel="stylesheet" href="https://f.0211120.xyz/font/目哉像素/result.css" crossOrigin="anonymous"/>
           
           <script
             dangerouslySetInnerHTML={{
