@@ -40,23 +40,91 @@ html.font-default, html.font-default body { font-family: var(--font-default) !im
 .preview-font-iansui { font-family: var(--font-iansui) !important; }
 .preview-font-mincho { font-family: var(--font-mincho) !important; }
 
-body {
+html, body {
   user-select: none;
-  /* 所有现代浏览器 */
   -webkit-user-select: none;
-  /* Safari */
   -moz-user-select: none;
-  /* Firefox */
   -ms-user-select: none;
-  /* IE10+ */
-  
-  /* 解决滚动回弹背景色不一致问题 */
-  @apply bg-orange-50/50 dark:bg-[#051005];
+  @apply bg-[#faf6ef] dark:bg-[#000000];
 }
 
-/* 强制 html 也有背景色，防止橡皮筋效果露底 */
-html {
-  @apply bg-orange-50/50 dark:bg-[#051005];
+.app-background {
+  background-color: #faf6ef;
+  background-image:
+    radial-gradient(1100px 760px at var(--paper-glow-x, 14%) var(--paper-glow-y, 8%), rgb(255 255 255 / var(--paper-glow-alpha, 0.62)) 0%, transparent 64%),
+    radial-gradient(840px 620px at var(--paper-patch-x, 80%) var(--paper-patch-y, 72%), rgb(217 119 6 / calc(var(--paper-warp-alpha, 0.08) * 0.72)) 0%, transparent 72%),
+    repeating-linear-gradient(var(--paper-fiber-angle, 24deg), rgb(255 255 255 / var(--paper-fiber-alpha, 0.24)) 0 1.2px, transparent 1.2px var(--paper-fiber-gap, 11px)),
+    repeating-linear-gradient(calc(var(--paper-fiber-angle, 24deg) + 83deg), rgb(120 113 108 / var(--paper-grain-alpha, 0.1)) 0 1px, transparent 1px calc(var(--paper-fiber-gap, 11px) * 1.35)),
+    conic-gradient(from calc(var(--paper-fiber-angle, 24deg) * 1.2) at 22% 16%, rgb(255 255 255 / 0.35), transparent 26%, rgb(245 158 11 / 0.07) 43%, transparent 61%, rgb(254 243 199 / 0.3) 82%, transparent 100%),
+    linear-gradient(158deg, rgba(255, 251, 245, 0.95) 0%, rgba(250, 244, 234, 0.97) 42%, rgba(241, 233, 220, 0.93) 100%);
+}
+
+.dark .app-background {
+  background-color: #000000;
+  background-image:
+    radial-gradient(1080px 760px at var(--shadow-glow-x, 18%) var(--shadow-glow-y, 8%), rgb(56 189 248 / var(--shadow-glow-alpha, 0.18)) 0%, transparent 64%),
+    radial-gradient(980px 640px at var(--shadow-patch-x, 82%) var(--shadow-patch-y, 70%), rgb(30 64 175 / 0.24) 0%, transparent 72%),
+    linear-gradient(var(--shadow-beam-angle, 128deg), rgb(255 255 255 / var(--shadow-beam-alpha, 0.14)) 0%, rgb(255 255 255 / 0) 36%, rgb(59 130 246 / 0.24) 68%, rgb(255 255 255 / 0) 100%),
+    repeating-linear-gradient(calc(var(--shadow-beam-angle, 128deg) + 90deg), rgb(63 63 70 / var(--shadow-line-alpha, 0.22)) 0 2px, transparent 2px var(--shadow-line-gap, 42px)),
+    conic-gradient(from calc(var(--shadow-beam-angle, 128deg) * 0.62) at 76% 12%, rgb(34 197 94 / 0.16), transparent 28%, rgb(59 130 246 / 0.18) 52%, transparent 74%, rgb(255 255 255 / 0.12) 92%, transparent 100%),
+    linear-gradient(180deg, rgba(9, 9, 11, 0.92) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* 精准过渡：仅针对关键背景和文字，避免全局 * 过渡带来的性能负担 */
+html, body, header, main, footer, section {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 针对大量的卡片和按钮，使用更轻量的过渡 */
+a, button {
+  transition-property: background-color, border-color, color;
+  transition-duration: 300ms;
+}
+
+/* 主题切换期间，禁用元素的 CSS 过渡和昂贵的滤镜，减轻浏览器负担 */
+.switching-theme,
+.switching-theme *,
+.switching-theme *::before,
+.switching-theme *::after {
+  transition-duration: 0ms !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 当 View Transition 激活时，优化全局动画时间 */
+@supports (view-transition-name: root) {
+  ::view-transition-group(root) {
+    animation-duration: 400ms;
+  }
+}
+
+/* View Transition 质感渐变优化 */
+::view-transition-old(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+  will-change: opacity;
+}
+
+::view-transition-new(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;
+  will-change: opacity;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 确保动画过程中没有混合模式干扰 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
 }
 
 /* 需要黑白时专用 */

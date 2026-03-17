@@ -32,7 +32,7 @@ export const ThemeProvider = ({ children }) => {
       // 同步移动端主题色
       const themeColor = document.querySelector('meta[name="theme-color"]');
       if (themeColor) {
-        themeColor.content = isSystemDark ? '#051005' : '#fffaf0';
+        themeColor.content = isSystemDark ? '#000000' : '#faf6ef';
       }
     };
 
@@ -40,9 +40,8 @@ export const ThemeProvider = ({ children }) => {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(prevIsDark => {
-      const newTheme = !prevIsDark;
+  const toggleTheme = (event) => {
+    const toggle = (newTheme) => {
       document.documentElement.classList.toggle('dark', newTheme);
       
       // 同步 Favicon
@@ -54,10 +53,30 @@ export const ThemeProvider = ({ children }) => {
       // 同步移动端主题色
       const themeColor = document.querySelector('meta[name="theme-color"]');
       if (themeColor) {
-        themeColor.content = newTheme ? '#051005' : '#fffaf0';
+        themeColor.content = newTheme ? '#000000' : '#faf6ef';
       }
-      
-      return newTheme;
+    };
+
+    if (!document.startViewTransition) {
+      setIsDark(prev => {
+        const next = !prev;
+        toggle(next);
+        return next;
+      });
+      return;
+    }
+
+    document.documentElement.classList.add('switching-theme');
+    const transition = document.startViewTransition(() => {
+      setIsDark(prev => {
+        const next = !prev;
+        toggle(next);
+        return next;
+      });
+    });
+
+    transition.finished.finally(() => {
+      document.documentElement.classList.remove('switching-theme');
     });
   };
 

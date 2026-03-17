@@ -4,7 +4,7 @@ import Footer from './Footer';
 import FontMenu from './FontMenu';
 import Tags from './Tags';
 import WebList from './WebList';
-import { filterPostsBySearch, updateResults } from '../lib/dataLoader';
+import { extractTags, filterPostsBySearch, updateResults } from '../lib/dataLoader';
 import { useStats } from '../contexts/StatsContext';
 import _ from 'lodash';
 
@@ -19,6 +19,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   const [searchQuery, setSearchQuery] = useState('');
   const [onList, setOnList] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [visibleTags, setVisibleTags] = useState(tags);
 
   // 初始化全局缓存
   useEffect(() => {
@@ -33,11 +34,18 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
     if (posts && posts.length > 0) {
       const results = updateResults(posts, onList);
       const finalResults = filterPostsBySearch(results, searchQuery);
+      const availableTags = extractTags(finalResults);
       setFilteredPosts(finalResults);
+      setVisibleTags(
+        searchQuery.trim()
+          ? tags.filter(tag => onList.includes(tag) || availableTags.includes(tag))
+          : tags
+      );
     } else {
       setFilteredPosts([]);
+      setVisibleTags(searchQuery.trim() ? onList : tags);
     }
-  }, [posts, onList, searchQuery]);
+  }, [posts, onList, searchQuery, tags]);
 
   const handleToggleTagButton = tag => {
     const newOnList = _.xor(onList, [tag]);
@@ -45,7 +53,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   };
 
   return (
-    <div className='bg-orange-50/50 dark:bg-[#051005] transition-colors duration-500 m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
+    <div className='app-background m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
       <HeaderBar 
         lastFetched={lastFetched} 
         count={filteredPosts.length} 
@@ -54,7 +62,12 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
       />
       <FontMenu />
       <main className="flex-1 pt-6">
-        <Tags tags={tags} onList={onList} handleToggleTagButton={handleToggleTagButton} />
+        <Tags
+          tags={visibleTags}
+          onList={onList}
+          handleToggleTagButton={handleToggleTagButton}
+          emptyHint={searchQuery.trim() ? '未找到符合条件的标签' : '暂无可用标签'}
+        />
         <WebList filteredPosts={filteredPosts} />
       </main>
     </div>

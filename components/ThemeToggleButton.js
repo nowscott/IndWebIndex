@@ -15,13 +15,13 @@ const ThemeToggleButton = () => {
   return (
     <button
       title={isDark ? "切换到亮色模式" : "切换到暗色模式"}
-      onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-200 group"
+      onClick={(e) => toggleTheme(e)}
+      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors duration-400 group"
     >
       {isDark ? (
-        <HiOutlineSun className="text-rose-400 w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+        <HiOutlineSun className="text-rose-400 w-5 h-5 group-hover:rotate-45 transition-transform duration-400" />
       ) : (
-        <HiOutlineMoon className="text-blue-600 w-5 h-5 group-hover:-rotate-12 transition-transform duration-300" />
+        <HiOutlineMoon className="text-blue-600 w-5 h-5 group-hover:-rotate-12 transition-transform duration-400" />
       )}
     </button>
   );
