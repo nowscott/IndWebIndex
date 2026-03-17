@@ -18,6 +18,37 @@ const FontMenu = () => {
   const contextMenuRef = useRef(null);
 
   useEffect(() => {
+    if (!document.fonts || typeof document.fonts.load !== 'function') {
+      return;
+    }
+
+    const preloadTargets = fontData.fonts.map(font => ({
+      fontFamily: font.name,
+      text: `${font.displayName}Aa123`,
+    }));
+
+    const preload = () => {
+      Promise.allSettled(
+        preloadTargets.map(target =>
+          document.fonts.load(`16px "${target.fontFamily}"`, target.text)
+        )
+      );
+    };
+
+    if (typeof window.requestIdleCallback === 'function') {
+      const idleId = window.requestIdleCallback(preload, { timeout: 1200 });
+      return () => {
+        if (typeof window.cancelIdleCallback === 'function') {
+          window.cancelIdleCallback(idleId);
+        }
+      };
+    }
+
+    const timerId = window.setTimeout(preload, 0);
+    return () => window.clearTimeout(timerId);
+  }, []);
+
+  useEffect(() => {
     const userFontClass = getCookie('userFont');
     const isValidFont = fontData.fonts.some(font => font.class === userFontClass);//检查cookie合法性
 
