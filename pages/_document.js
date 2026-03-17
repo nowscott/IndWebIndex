@@ -18,7 +18,6 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://f.0211120.xyz/font/京華老宋体/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜文楷/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜漫黑/result.css" crossorigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/芫荽/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/汇文明朝体/result.css" crossorigin="anonymous"/>
           <link rel="stylesheet" href="https://f.0211120.xyz/font/目哉像素/result.css" crossorigin="anonymous"/>
           

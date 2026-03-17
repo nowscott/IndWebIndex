@@ -9,7 +9,6 @@ const fontData = {
     { name: 'KingHwa_OldSong', displayName: '京華老宋体', class: 'font-oldsong' },
     { name: 'MuzaiPixel', displayName: '目哉像素体', class: 'font-pixel' },
     { name: 'LXGW Marker Gothic', displayName: '霞鹜漫黑', class: 'font-marker' },
-    { name: '芫荽', displayName: '芫荽', class: 'font-iansui' },
     { name: '汇文明朝体', displayName: '汇文明朝体', class: 'font-mincho' },
   ],
 };
