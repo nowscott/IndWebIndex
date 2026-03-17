@@ -24,7 +24,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const displayTime = stats.lastFetched ?? lastFetched;
   
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-orange-50/70 dark:bg-[#1C1C1E]/70 border-b border-orange-100 dark:border-zinc-800 transition-[background-color,border-color] duration-400">
+    <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/25 dark:bg-black/25 border-b border-white/45 dark:border-zinc-200/15 shadow-[0_1px_0_0_rgba(255,255,255,0.25)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)] transition-[background-color,border-color,box-shadow] duration-400">
       <div className="max-w-[90rem] mx-auto px-4 h-14 flex items-center relative">
         
         {/* 左侧占位 (保持对称) */}
@@ -34,7 +34,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {!isAboutPage && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[12rem] xs:max-w-xs sm:max-w-md px-4 z-20">
             <div className="relative group w-full">
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-orange-400 dark:text-zinc-500 group-focus-within:text-orange-600 dark:group-focus-within:text-zinc-300 transition-colors">
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-orange-400 dark:text-zinc-400 group-focus-within:text-orange-600 dark:group-focus-within:text-zinc-100 transition-colors">
                 <HiOutlineSearch className="w-4 h-4" />
               </div>
               <input
@@ -42,11 +42,11 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 w-full pl-9 pr-4 py-1.5
                 text-xs sm:text-sm
                 text-orange-600 dark:text-zinc-100
-                bg-sky-100/70 dark:bg-[#2C2C2E]
-                border border-sky-300 dark:border-zinc-700/50
+                bg-sky-100/70 dark:bg-zinc-900/65
+                border border-sky-300 dark:border-zinc-500/80
                 rounded-full shadow-sm focus:shadow-md
-                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-500/20
-                transition-[background-color,border-color,color] duration-400 placeholder:text-orange-300 dark:placeholder:text-zinc-500"
+                focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
+                transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-orange-300 dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
                 type="text"
                 placeholder="搜索网页或标签..."
                 value={searchQuery}
@@ -61,7 +61,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
           <Link 
             href={isAboutPage ? "/" : "/about"} 
             title={isAboutPage ? "返回首页" : "关于项目"}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors"
+            className="p-2 rounded-full hover:bg-white/40 dark:hover:bg-white/10 text-slate-500 dark:text-slate-300 transition-colors"
           >
             {isAboutPage ? (
               <HiOutlineHome className="w-5 h-5" />
