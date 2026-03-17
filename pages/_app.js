@@ -45,6 +45,24 @@ function MyApp({ Component, pageProps }) {
         // Conic Gradient Focal Point (Randomized along top edge): X: 10-90%, Y: -10-40%
         root.style.setProperty('--shadow-conic-x', `${randomInt(10, 90)}%`);
         root.style.setProperty('--shadow-conic-y', `${randomInt(-10, 40)}%`);
+        
+        // Random Rainbow Colors for Conic Gradient
+        // Define a palette of 7 vivid colors with low opacity for subtle glow
+        const rainbowColors = [
+            'rgb(239 68 68 / 0.16)',   // Red
+            'rgb(249 115 22 / 0.16)',  // Orange
+            'rgb(234 179 8 / 0.16)',   // Yellow
+            'rgb(34 197 94 / 0.16)',   // Green
+            'rgb(59 130 246 / 0.16)',  // Blue
+            'rgb(99 102 241 / 0.16)',  // Indigo
+            'rgb(168 85 247 / 0.16)',  // Violet
+        ];
+        
+        // Pick 3 distinct colors randomly
+        const shuffled = rainbowColors.sort(() => 0.5 - Math.random());
+        root.style.setProperty('--shadow-rainbow-1', shuffled[0]);
+        root.style.setProperty('--shadow-rainbow-2', shuffled[1]);
+        root.style.setProperty('--shadow-rainbow-3', shuffled[2]);
     }, []);
 
     return (
