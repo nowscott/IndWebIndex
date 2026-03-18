@@ -54,18 +54,18 @@ const AboutPage = ({ count, lastFetched, posts }) => {
           <div className="flex sm:block items-start p-4 sm:p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-blue-400/50 transition-[background-color,border-color]">
             <HiOutlineCollection className="w-8 h-8 text-blue-500 shrink-0 mr-4 sm:mr-0 sm:mb-4" />
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-indigo-600 dark:text-zinc-100">数据掌控</h3>
+              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-indigo-600 dark:text-zinc-100">专属定制</h3>
               <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
-                利用 Notion API，将你的收藏夹变为可视化的数据库。添加标签、描述，让数据的管理与展示完全由你掌控，既是工具也是资产。
+                告别繁杂的默认书签，将你珍视的网站转化为可视化的专属卡片。通过灵活的分类和描述，让每一次信息查找都井然有序，成为你的数字资产。
               </p>
             </div>
           </div>
           <div className="flex sm:block items-start p-4 sm:p-6 rounded-2xl bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] border border-slate-300 dark:border-zinc-700/90 shadow-sm hover:border-cyan-400/50 transition-[background-color,border-color]">
             <HiOutlineHeart className="w-8 h-8 text-cyan-500 shrink-0 mr-4 sm:mr-0 sm:mb-4" />
             <div>
-              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-cyan-600 dark:text-zinc-100">极致体验</h3>
+              <h3 className="text-base sm:text-lg font-extrabold mb-1 sm:mb-2 text-cyan-600 dark:text-zinc-100">纯粹体验</h3>
               <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
-                现代化的设计、毫秒级的响应、平滑的交互。我们通过双层缓存和 React 状态管理，消除了 Notion API 的延迟，让每一次点击都如丝般顺滑。
+                抛开一切干扰，回归浏览网页最纯粹的乐趣。简约的设计与顺滑的交互，让你在属于自己的数字世界中自由穿梭，发现每一个有价值的角落。
               </p>
             </div>
           </div>
