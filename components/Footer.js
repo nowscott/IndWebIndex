@@ -78,7 +78,7 @@ const Footer = () => {
             Copyright © 2021 - {new Date().getFullYear()} · NowScott
           </p>
           <p className='opacity-80 italic'>
-            Crafted with passion for the independent web
+            Your personal compass in the noisy internet
           </p>
         </div>
 
