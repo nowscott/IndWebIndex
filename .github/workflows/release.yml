@@ -14,6 +14,7 @@ jobs:
       contents: write
       pull-requests: read
     env:
+      # 保留它，无视 Node 20 的黄字警告，确保向下兼容
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
@@ -33,32 +34,41 @@ jobs:
         with:
           node-version: '24'
 
-      - name: 解析提交并提取文字内容
+      - name: 解析提交并提取高级层级更新日志
         id: determine_bump
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         run: |
-          # 1. 获取该 PR 中的所有 commit message
-          COMMITS=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits --jq '.[].commit.message')
+          # 1. 一次性获取 PR 的所有 commit 原始 JSON 数据
+          COMMITS_JSON=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits)
           
-          # 2. 决定版本升级策略 (Major, Minor, Patch)
+          # 2. 仅提取所有提交的第一行（标题）用于计算要升级的版本号
+          TITLES=$(echo "$COMMITS_JSON" | jq -r '.[].commit.message | split("\n")[0]')
+          
           BUMP="patch"
-          if echo "$COMMITS" | grep -qE "(^[a-zA-Z]+(\([^)]+\))?!:)|(BREAKING CHANGE)"; then
+          if echo "$TITLES" | grep -qE "(^[a-zA-Z]+(\([^)]+\))?!:)|(BREAKING CHANGE)"; then
             BUMP="major"
-          elif echo "$COMMITS" | grep -qE "^feat(\([^)]+\))?:"; then
+          elif echo "$TITLES" | grep -qE "^feat(\([^)]+\))?:"; then
             BUMP="minor"
-          elif echo "$COMMITS" | grep -qE "^(fix|perf|refactor|style)(\([^)]+\))?:"; then
+          elif echo "$TITLES" | grep -qE "^(fix|perf|refactor|style)(\([^)]+\))?:"; then
             BUMP="patch"
           fi
           echo "BUMP_TYPE=$BUMP" >> $GITHUB_ENV
           
-          # ---------------------------------------------------------
-          # 【修改点】：直接将处理好的提交文字存入环境变量 RELEASE_BODY
-          # ---------------------------------------------------------
-          # 过滤并格式化提交词，前面加个横杠变成列表
-          FORMATTED_COMMITS=$(echo "$COMMITS" | grep -v "^Merge" | grep "\S" | sed 's/^/- /')
+          # 3. ⭐️ 核心修复：使用 jq 完美处理层级关系！
+          # 逻辑解析：
+          # a. 过滤掉 merge 提交
+          # b. 将每个 message 按换行符切分
+          # c. 第一行加粗作为一级列表 (- **标题**)
+          # d. 剩下的非空行全部加两格缩进，作为二级列表 (  - 正文)
+          FORMATTED_COMMITS=$(echo "$COMMITS_JSON" | jq -r '
+            .[] | 
+            select(.commit.message | test("^merge"; "i") | not) | 
+            .commit.message | split("\n") | 
+            "- **\(.[0])**" + (.[1:] | map(select(length > 0) | "\n  - \(.)") | join(""))
+          ')
           
-          # 写入 GitHub 环境变量 (使用 EOF 支持多行文本)
+          # 4. 写入 GitHub 环境变量供最后一步使用
           echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
           echo "### 🚀 本次更新内容" >> $GITHUB_ENV
           echo "" >> $GITHUB_ENV
@@ -83,6 +93,6 @@ jobs:
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
           name: Release v${{ env.PACKAGE_VERSION }}
-          # 【核心修改】：直接读取刚刚存好的多行文字变量
+          # 直接使用我们排版好的高级层级 Markdown 文本
           body: ${{ env.RELEASE_BODY }}
           generate_release_notes: true
