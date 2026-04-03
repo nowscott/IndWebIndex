@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ThemeToggleButton from './ThemeToggleButton';
 import { useStats } from '../contexts/StatsContext';
 import { HiOutlineInformationCircle, HiOutlineHome, HiOutlineSearch } from 'react-icons/hi';
@@ -10,6 +10,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const router = useRouter();
   const isHomePage = router.pathname === '/';
   const isAboutPage = router.pathname === '/about';
+  const [isReadOnly, setIsReadOnly] = useState(true);
 
   // 同步 props 到全局 stats (仅在 count 有意义时同步)
   useEffect(() => {
@@ -55,10 +56,16 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
                 rounded-full shadow-sm focus:shadow-md
                 focus:outline-none focus:ring-orange-500/20 dark:focus:ring-zinc-200/15
                 transition-[background-color,border-color,color,box-shadow] duration-400 placeholder:text-[#a36b5f] placeholder:tracking-normal dark:placeholder:text-zinc-400 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05)] dark:focus:shadow-[0_0_0_1px_rgba(255,255,255,0.22)]"
-                type="text"
+                type="search"
                 placeholder=""
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                autoComplete="one-time-code"
+                autoCorrect="off"
+                spellCheck="false"
+                readOnly={isReadOnly}
+                onFocus={() => setIsReadOnly(false)}
+                onBlur={() => setIsReadOnly(true)}
               />
               {!searchQuery && (
                 <>
