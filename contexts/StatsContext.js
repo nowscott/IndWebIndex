@@ -26,9 +26,18 @@ export const StatsProvider = ({ children }) => {
       try {
         // 每次刷新页面（即 StatsProvider 挂载时）都发送 POST 请求以增加访问量
         const response = await fetch('/api/visit-count', { method: 'POST' });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        if (!response.ok) {
+          console.warn(`[StatsContext] Visit count API returned status: ${response.status}`);
+          updateStats({ visitCount: undefined });
+          return;
+        }
         
         const data = await response.json();
+        if (data && data.enabled === false) {
+          updateStats({ visitCount: undefined });
+          return;
+        }
         if (data && typeof data.count !== 'undefined') {
           updateStats({ visitCount: data.count });
         }
@@ -38,9 +47,13 @@ export const StatsProvider = ({ children }) => {
         try {
           const getRes = await fetch('/api/visit-count', { method: 'GET' });
           const getData = await getRes.json();
-          updateStats({ visitCount: getData.count });
+          if (getData && getData.enabled === false) {
+            updateStats({ visitCount: undefined });
+          } else {
+            updateStats({ visitCount: getData.count });
+          }
         } catch (e) {
-          updateStats({ visitCount: 0 });
+          updateStats({ visitCount: undefined });
         }
       }
     };

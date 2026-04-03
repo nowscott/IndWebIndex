@@ -13,6 +13,12 @@
 
 接下来，进入Vercel部署，添加两个环境变量NOTION_TOKEN和DATABASE_ID。这些分别是从[我的集成][access-url]网站获得的密钥，以及您的Notion数据库的ID，当然也不要忘记给你的数据库连接集成。
 
+如果您还希望开启 **全站访问量统计** 功能（可选），请在 [Turso][turso-url] 创建一个免费的 LibSQL 数据库，并添加以下两个环境变量：
+- `TURSO_DATABASE_URL`: 您的 Turso 数据库 URL
+- `TURSO_AUTH_TOKEN`: 您的 Turso 数据库 Auth Token
+
+若未配置上述 Turso 变量，该功能将自动禁用，且不会对页面显示产生任何影响。
+
 这样就完成了部署，可以尽情在notion数据库中添加你自己需要的网页。
 
 ## 2.创建的目的
@@ -83,3 +89,4 @@
 [notion-url]:https://nowscott.notion.site/aef09fbce63649cba8b9269374dbb641?v=36b6f2625b8e4e5faf9f68e1284bd2bc&pvs=74
 
 [access-url]:https://www.notion.so/my-integrations
+[turso-url]:https://turso.tech "Turso Database"
