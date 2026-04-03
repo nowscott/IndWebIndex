@@ -14,7 +14,6 @@ jobs:
       contents: write
       pull-requests: read
     env:
-      # 保留它，无视 Node 20 的黄字警告，确保向下兼容
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
@@ -34,33 +33,29 @@ jobs:
         with:
           node-version: '24'
 
-      - name: 解析提交并提取高级层级更新日志
+      - name: 解析提交并生成自定义 Release 内容
         id: determine_bump
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         run: |
-          # 1. 一次性获取 PR 的所有 commit 原始 JSON 数据
+          # 1. 核心：获取上一个版本的 Tag 名（用于生成最后的对比链接）
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          echo "PREVIOUS_TAG=$PREVIOUS_TAG" >> $GITHUB_ENV
+
+          # 2. 获取 PR 的提交数据
           COMMITS_JSON=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits)
           
-          # 2. 仅提取所有提交的第一行（标题）用于计算要升级的版本号
+          # 3. 提取标题用于判断版本号升级
           TITLES=$(echo "$COMMITS_JSON" | jq -r '.[].commit.message | split("\n")[0]')
-          
           BUMP="patch"
           if echo "$TITLES" | grep -qE "(^[a-zA-Z]+(\([^)]+\))?!:)|(BREAKING CHANGE)"; then
             BUMP="major"
           elif echo "$TITLES" | grep -qE "^feat(\([^)]+\))?:"; then
             BUMP="minor"
-          elif echo "$TITLES" | grep -qE "^(fix|perf|refactor|style)(\([^)]+\))?:"; then
-            BUMP="patch"
           fi
           echo "BUMP_TYPE=$BUMP" >> $GITHUB_ENV
           
-          # 3. ⭐️ 核心修复：使用 jq 完美处理层级关系！
-          # 逻辑解析：
-          # a. 过滤掉 merge 提交
-          # b. 将每个 message 按换行符切分
-          # c. 第一行加粗作为一级列表 (- **标题**)
-          # d. 剩下的非空行全部加两格缩进，作为二级列表 (  - 正文)
+          # 4. 格式化带层级的更新日志内容
           FORMATTED_COMMITS=$(echo "$COMMITS_JSON" | jq -r '
             .[] | 
             select(.commit.message | test("^merge"; "i") | not) | 
@@ -68,7 +63,7 @@ jobs:
             "- **\(.[0])**" + (.[1:] | map(select(length > 0) | "\n  - \(.)") | join(""))
           ')
           
-          # 4. 写入 GitHub 环境变量供最后一步使用
+          # 5. 将更新日志暂存到环境变量
           echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
           echo "### 🚀 本次更新内容" >> $GITHUB_ENV
           echo "" >> $GITHUB_ENV
@@ -93,6 +88,14 @@ jobs:
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
           name: Release v${{ env.PACKAGE_VERSION }}
-          # 直接使用我们排版好的高级层级 Markdown 文本
-          body: ${{ env.RELEASE_BODY }}
-          generate_release_notes: true
+          # ---------------------------------------------------------
+          # 【手动拼接正文 + 对比链接】
+          # ---------------------------------------------------------
+          body: |
+            ${{ env.RELEASE_BODY }}
+
+            ---
+            **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ env.PREVIOUS_TAG }}...v${{ env.PACKAGE_VERSION }}
+          
+          # 关闭官方开关，从此告别冗余的 "What's Changed" 列表
+          generate_release_notes: false
