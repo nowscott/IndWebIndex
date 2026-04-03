@@ -31,7 +31,7 @@ const AboutPage = ({ count, lastFetched, posts }) => {
         {/* 大标题 */}
         <div className="mb-10 sm:mb-12">
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-600 dark:from-zinc-100 dark:to-zinc-500">
+            <span className="inline-block px-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-600 dark:from-zinc-100 dark:to-zinc-500">
               Individual Web Index
             </span>
           </h1>

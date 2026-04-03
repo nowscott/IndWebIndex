@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const { updateStats } = useStats();
   const router = useRouter();
+  const isHomePage = router.pathname === '/';
   const isAboutPage = router.pathname === '/about';
 
   // 同步 props 到全局 stats (仅在 count 有意义时同步)
@@ -24,20 +25,20 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
         {/* 左侧入口 */}
         <div className="flex-1 sm:flex-none w-10 z-10 flex items-center">
           <Link 
-            href={isAboutPage ? "/" : "/about"} 
-            title={isAboutPage ? "返回首页" : "关于项目"}
+            href={isHomePage ? "/about" : "/"} 
+            title={isHomePage ? "关于项目" : "返回首页"}
             className="group p-2 rounded-full hover:bg-white/40 dark:hover:bg-white/10 text-[#773d31] dark:text-slate-300 transition-all duration-300 hover:scale-110 active:scale-95"
           >
-            {isAboutPage ? (
-              <HiOutlineHome className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:text-orange-500 dark:group-hover:text-white transition-all duration-300" />
-            ) : (
+            {isHomePage ? (
               <HiOutlineInformationCircle className="w-5 h-5 group-hover:rotate-12 group-hover:text-orange-500 dark:group-hover:text-white transition-all duration-300" />
+            ) : (
+              <HiOutlineHome className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:text-orange-500 dark:group-hover:text-white transition-all duration-300" />
             )}
           </Link>
         </div>
 
         {/* 中间检索框 (绝对居中) */}
-        {!isAboutPage && (
+        {isHomePage && (
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[14rem] xs:max-w-sm sm:max-w-md px-3 z-20">
             <div className="relative group w-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-within:scale-105">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-[#773d31] dark:text-zinc-100 transition-colors">
