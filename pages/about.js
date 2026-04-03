@@ -8,15 +8,8 @@ import { getDatabase } from '../lib/notion';
 import Link from 'next/link';
 import { useStats } from '../contexts/StatsContext';
 
-const AboutPage = ({ count, lastFetched, posts }) => {
-  const { stats, updateStats } = useStats();
-
-  // 初始化全局缓存，如果从关于页直接进入，也要填充数据
-  useEffect(() => {
-    if (posts && !stats.posts) {
-      updateStats({ posts, lastFetched, count });
-    }
-  }, [posts]);
+const AboutPage = ({ count, lastFetched }) => {
+  const { stats } = useStats();
 
   return (
     <div className='app-background m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
@@ -92,15 +85,15 @@ export async function getStaticProps() {
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
   
-  // 过滤掉隐藏的
+  // 关于页只需提供元数据统计，不要同步 posts 列表到全局缓存，
+  // 这样能确保跳回首页时，首页使用的是其自身半小时内稳定的随机排序数据。
   const normalPosts = (posts || []).filter(post => post.state !== '隐藏');
   const count = normalPosts.length;
 
   return {
     props: {
       count,
-      lastFetched,
-      posts: posts || []
+      lastFetched
     },
     revalidate: 1800,
   };
