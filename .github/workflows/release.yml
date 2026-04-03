@@ -8,12 +8,11 @@ on:
 
 jobs:
   release:
-    # 只有当 PR 被成功合并时才触发
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: read # 需要读取 PR 信息的权限
+      pull-requests: read
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -34,40 +33,41 @@ jobs:
         with:
           node-version: '24'
 
-      - name: 解析提交记录并决定版本升级策略
+      - name: 解析提交并提取文字内容
         id: determine_bump
         env:
-          # 使用 GitHub CLI 自带的认证
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         run: |
           # 1. 获取该 PR 中的所有 commit message
           COMMITS=$(gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/commits --jq '.[].commit.message')
           
-          echo "检测到的提交信息:"
-          echo "$COMMITS"
-          
-          # 2. 默认升级策略为 patch (小修小补)
+          # 2. 决定版本升级策略 (Major, Minor, Patch)
           BUMP="patch"
-          
-          # 3. 使用正则表达式匹配提交词 (完美支持带括号的格式)
-          # 匹配 Major (破坏性更新): 例如 "feat!: xxx", "feat(api)!: xxx", 或者包含 "BREAKING CHANGE"
           if echo "$COMMITS" | grep -qE "(^[a-zA-Z]+(\([^)]+\))?!:)|(BREAKING CHANGE)"; then
             BUMP="major"
-          # 匹配 Minor (新功能): 例如 "feat: xxx", "feat(ui): xxx"
           elif echo "$COMMITS" | grep -qE "^feat(\([^)]+\))?:"; then
             BUMP="minor"
-          # 匹配 Patch (修复/优化): 例如 "fix: xxx", "fix(bug): xxx", "perf(db): xxx"
           elif echo "$COMMITS" | grep -qE "^(fix|perf|refactor|style)(\([^)]+\))?:"; then
             BUMP="patch"
           fi
-          
-          echo "最终决定的升级类型: $BUMP"
           echo "BUMP_TYPE=$BUMP" >> $GITHUB_ENV
+          
+          # ---------------------------------------------------------
+          # 【修改点】：直接将处理好的提交文字存入环境变量 RELEASE_BODY
+          # ---------------------------------------------------------
+          # 过滤并格式化提交词，前面加个横杠变成列表
+          FORMATTED_COMMITS=$(echo "$COMMITS" | grep -v "^Merge" | grep "\S" | sed 's/^/- /')
+          
+          # 写入 GitHub 环境变量 (使用 EOF 支持多行文本)
+          echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
+          echo "### 🚀 本次更新内容" >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
+          echo "$FORMATTED_COMMITS" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: 自动升级版本号
         id: bump_version
         run: |
-          # 使用上一步计算出的版本类型 (major, minor 或 patch)
           npm version ${{ env.BUMP_TYPE }} -m "chore: bump version to %s [skip ci]"
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
           echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
@@ -75,7 +75,6 @@ jobs:
       - name: 推送变更到 main 分支
         run: |
           git push origin main --tags
-          # 移除了之前容易报错的“回推源分支”逻辑，保持个人项目主分支纯净
 
       - name: 创建 GitHub Release
         uses: softprops/action-gh-release@v2
@@ -83,5 +82,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ env.PACKAGE_VERSION }}
-          name: v${{ env.PACKAGE_VERSION }}
+          name: Release v${{ env.PACKAGE_VERSION }}
+          # 【核心修改】：直接读取刚刚存好的多行文字变量
+          body: ${{ env.RELEASE_BODY }}
           generate_release_notes: true

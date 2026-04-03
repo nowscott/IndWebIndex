@@ -2,6 +2,17 @@ import { turso } from '../../lib/turso';
 
 export default async function handler(req, res) {
     console.log(`[API] Received ${req.method} request for visit-count (Turso)`);
+    
+    // 检查 Turso 客户端是否已配置
+    if (!process.env.TURSO_DATABASE_URL && !process.env.indwebindex_TURSO_DATABASE_URL) {
+        console.error('[API] Turso database URL missing in environment');
+        return res.status(500).json({ error: 'Database configuration missing (URL)' });
+    }
+    if (!process.env.TURSO_AUTH_TOKEN && !process.env.indwebindex_TURSO_AUTH_TOKEN) {
+        console.error('[API] Turso auth token missing in environment');
+        return res.status(500).json({ error: 'Database configuration missing (Token)' });
+    }
+
     try {
         // 1. 确保表存在
         await turso.execute(`
@@ -46,6 +57,12 @@ export default async function handler(req, res) {
         return res.status(405).end(`Method ${req.method} Not Allowed`);
     } catch (error) {
         console.error('[API] Error in visit-count (Turso):', error);
-        return res.status(500).json({ count: 0, error: error.message || 'Internal Server Error' });
+        // 在生产环境提供更详细的错误原因
+        const errorDetail = error.message || String(error);
+        return res.status(500).json({ 
+            count: 0, 
+            error: 'Internal Server Error',
+            detail: process.env.NODE_ENV === 'development' ? errorDetail : undefined
+        });
     }
 }
