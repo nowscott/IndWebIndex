@@ -92,15 +92,17 @@ const Footer = () => {
             <span>投稿网页</span>
           </a>
           
-          <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
-            <HiOutlineCursorClick className='w-4 h-4' />
-            <span className="whitespace-nowrap">访问量：</span>
-            <span className='inline-flex items-center justify-start min-w-[3.8rem]'>
-              <span className='text-sky-600 dark:text-zinc-100 font-extrabold'>
-                <CountUp end={stats.visitCount} duration={1200} isPending={stats.visitCount === null} />
+          {stats.visitCount !== undefined && (
+            <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
+              <HiOutlineCursorClick className='w-4 h-4' />
+              <span className="whitespace-nowrap">访问量：</span>
+              <span className='inline-flex items-center justify-start min-w-[3.8rem]'>
+                <span className='text-sky-600 dark:text-zinc-100 font-extrabold'>
+                  <CountUp end={stats.visitCount} duration={1200} isPending={stats.visitCount === null} />
+                </span>
               </span>
-            </span>
-          </div>
+            </div>
+          )}
 
           <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
             <HiOutlineCode className='w-4 h-4' />
