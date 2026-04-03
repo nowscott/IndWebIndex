@@ -1,36 +1,51 @@
-import clientPromise from '../../lib/mongodb';
+import { turso } from '../../lib/turso';
 
 export default async function handler(req, res) {
-    if (req.method === 'GET') {
-        try {
-            const client = await clientPromise;
-            const database = client.db('indwebindex-count');
-            const collection = database.collection('visits');
+    console.log(`[API] Received ${req.method} request for visit-count (Turso)`);
+    try {
+        // 1. 确保表存在
+        await turso.execute(`
+            CREATE TABLE IF NOT EXISTS stats (
+                id TEXT PRIMARY KEY,
+                count INTEGER DEFAULT 0
+            )
+        `);
 
-            // 查找文档
-            let visit = await collection.findOne({ _id: 'visit_count' });
+        // 2. 初始化数据（如果不存在）
+        await turso.execute({
+            sql: "INSERT OR IGNORE INTO stats (id, count) VALUES (?, ?)",
+            args: ["visit_count", 0]
+        });
 
-            if (!visit) {
-                await collection.insertOne({ _id: 'visit_count', count: 1 });
-                visit = { count: 1 };
-            } else {
-                const randomIncrement = Math.floor(Math.random() * 9) + 1;
-                const result = await collection.findOneAndUpdate(
-                    { _id: 'visit_count' },
-                    { $inc: { count: randomIncrement } },
-                    { returnDocument: 'after' }
-                );
-                visit = result;
-            }
-
-            res.status(200).json({ count: visit.value ? visit.value.count : visit.count });
-        } catch (error) {
-            console.error('MongoDB visit count failed:', error.message);
-            res.status(200).json({ count: 0, error: 'Database connection failed' });
+        if (req.method === 'GET') {
+            const result = await turso.execute({
+                sql: "SELECT count FROM stats WHERE id = ?",
+                args: ["visit_count"]
+            });
+            const count = result.rows[0]?.count || 0;
+            console.log(`[API] Turso GET success, count: ${count}`);
+            return res.status(200).json({ count });
+        } 
+        
+        if (req.method === 'POST') {
+            const increment = 1;
+            console.log(`[API] Turso Incrementing visit_count by ${increment}...`);
+            
+            // 使用事务确保原子性
+            const result = await turso.execute({
+                sql: "UPDATE stats SET count = count + ? WHERE id = ? RETURNING count",
+                args: [increment, "visit_count"]
+            });
+            
+            const finalCount = result.rows[0]?.count || 0;
+            console.log(`[API] Turso POST success, new count: ${finalCount}`);
+            return res.status(200).json({ count: finalCount });
         }
-        // Note: We no longer close the client connection here because it is shared/cached.
-    } else {
-        res.setHeader('Allow', ['GET']);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+
+        res.setHeader('Allow', ['GET', 'POST']);
+        return res.status(405).end(`Method ${req.method} Not Allowed`);
+    } catch (error) {
+        console.error('[API] Error in visit-count (Turso):', error);
+        return res.status(500).json({ count: 0, error: error.message || 'Internal Server Error' });
     }
 }

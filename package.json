@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.2",
     "@notionhq/client": "2.2.15",
     "lodash": "4.17.23",
     "mongodb": "7.1.0",
