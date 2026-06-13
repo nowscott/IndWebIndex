@@ -1,8 +1,11 @@
 // pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { DEFAULT_FONT_CLASS, FONT_OPTIONS } from '../lib/fonts';
 
 class MyDocument extends Document {
   render() {
+    const fontOptions = JSON.stringify(FONT_OPTIONS);
+
     return (
       <Html lang="zh-CN">
         <Head>
@@ -11,14 +14,7 @@ class MyDocument extends Document {
           <meta id="theme-color" name="theme-color" content="#faf6ef" /> {/* warm-neutral */}
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="description" content="探索IndWebIndex——您的个性化中文网站索引！我们提供一个简单且高效的方法，让您可以快速访问和管理您常用的网站。无论是学习资源、购物平台还是娱乐网站，您都可以一目了然。" />
-          
-          {/* External Fonts */}
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/得意黑/result.css" crossOrigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/京華老宋体/result.css" crossOrigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜文楷/result.css" crossOrigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/霞鹜漫黑/result.css" crossOrigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/汇文明朝体/result.css" crossOrigin="anonymous"/>
-          <link rel="stylesheet" href="https://f.0211120.xyz/font/目哉像素/result.css" crossOrigin="anonymous"/>
+          <link rel="preconnect" href="https://f.0211120.xyz" crossOrigin="anonymous" />
           
           <script
             dangerouslySetInnerHTML={{
@@ -39,13 +35,34 @@ class MyDocument extends Document {
                   }
                   
                   // Handle Font
-                  var userFont = document.cookie.split('; ').find(row => row.startsWith('userFont='));
-                  if (userFont) {
-                    var fontClass = userFont.split('=')[1];
-                    document.documentElement.classList.add(fontClass);
-                  } else {
-                    document.documentElement.classList.add('font-smiley');
+                  var fontOptions = ${fontOptions};
+                  var userFontCookie = document.cookie
+                    .split(';')
+                    .map(function (cookie) { return cookie.trim(); })
+                    .find(function (cookie) { return cookie.split('=')[0] === 'userFont'; });
+                  var requestedFont = '${DEFAULT_FONT_CLASS}';
+                  if (userFontCookie) {
+                    try {
+                      requestedFont = decodeURIComponent(
+                        userFontCookie.slice(userFontCookie.indexOf('=') + 1)
+                      );
+                    } catch (e) {}
                   }
+                  var selectedFont = fontOptions.find(function (font) {
+                    return font.className === requestedFont;
+                  }) || fontOptions.find(function (font) {
+                    return font.className === '${DEFAULT_FONT_CLASS}';
+                  });
+
+                  document.documentElement.classList.add(selectedFont.className);
+
+                  var fontStylesheet = document.createElement('link');
+                  fontStylesheet.id = 'font-stylesheet-' + selectedFont.className;
+                  fontStylesheet.rel = 'stylesheet';
+                  fontStylesheet.href = selectedFont.stylesheet;
+                  fontStylesheet.crossOrigin = 'anonymous';
+                  fontStylesheet.onerror = function () { this.remove(); };
+                  document.head.appendChild(fontStylesheet);
                 } catch (e) {}
               `
             }}
