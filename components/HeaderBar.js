@@ -14,7 +14,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
 
   // 同步 props 到全局 stats (仅在 count 有意义时同步)
   useEffect(() => {
-    if (count !== undefined && count !== null && count > 0) {
+    if (count !== undefined && count !== null && count >= 0) {
       updateStats({ count, lastFetched });
     }
   }, [count, lastFetched]);

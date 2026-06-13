@@ -2,38 +2,56 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
+const applyTheme = isDark => {
+  document.documentElement.classList.toggle('dark', isDark);
+
+  const favicon = document.querySelector('link[rel="icon"]');
+  if (favicon) {
+    favicon.href = isDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
+  }
+
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) {
+    themeColor.content = isDark ? '#000000' : '#faf6ef';
+  }
+};
+
+const getStoredTheme = () => {
+  try {
+    const storedTheme = window.localStorage.getItem('theme');
+    return storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : null;
+  } catch {
+    return null;
+  }
+};
+
+const storeTheme = isDark => {
+  try {
+    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  } catch {
+    // Theme switching still works for the current page without persistence.
+  }
+};
+
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(darkMode);
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const storedTheme = getStoredTheme();
+    const darkMode = storedTheme ? storedTheme === 'dark' : mediaQuery.matches;
+
+    setIsDark(darkMode);
+    applyTheme(darkMode);
+    setMounted(true);
     
     const handleChange = (e) => {
-      const isSystemDark = e.matches;
-      document.documentElement.classList.toggle('dark', isSystemDark);
-      setIsDark(isSystemDark);
-      
-      // 同步 Favicon
-      const favicon = document.querySelector('link[rel="icon"]');
-      if (favicon) {
-        favicon.href = isSystemDark ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
-      }
+      if (getStoredTheme()) return;
 
-      // 同步移动端主题色
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) {
-        themeColor.content = isSystemDark ? '#000000' : '#faf6ef';
-      }
+      const isSystemDark = e.matches;
+      applyTheme(isSystemDark);
+      setIsDark(isSystemDark);
     };
 
     mediaQuery.addEventListener('change', handleChange);
@@ -42,19 +60,8 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     const toggle = (newTheme) => {
-      document.documentElement.classList.toggle('dark', newTheme);
-      
-      // 同步 Favicon
-      const favicon = document.querySelector('link[rel="icon"]');
-      if (favicon) {
-        favicon.href = newTheme ? '/images/favicon-dark.svg' : '/images/favicon-light.svg';
-      }
-      
-      // 同步移动端主题色
-      const themeColor = document.querySelector('meta[name="theme-color"]');
-      if (themeColor) {
-        themeColor.content = newTheme ? '#000000' : '#faf6ef';
-      }
+      storeTheme(newTheme);
+      applyTheme(newTheme);
     };
 
     if (!document.startViewTransition) {

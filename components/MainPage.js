@@ -8,24 +8,22 @@ import { useStats } from '../contexts/StatsContext';
 import _ from 'lodash';
 
 const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }) => {
-  const { stats, updateStats } = useStats();
-  
-  // 优先使用全局缓存的数据，如果没有则使用初始 props
-  const posts = stats.posts || initialPosts || [];
+  const { updateStats } = useStats();
+
+  // Page props are the source of truth so a newer ISR payload is never hidden
+  // behind stale client-side data from an earlier navigation.
+  const posts = initialPosts || [];
   const tags = initialTags || [];
-  const lastFetched = stats.lastFetched || initialLastFetched;
+  const lastFetched = initialLastFetched;
 
   const [searchQuery, setSearchQuery] = useState('');
   const [onList, setOnList] = useState([]);
 
-  // 初始化全局缓存
+  // Share metadata across pages without caching the bookmark payload itself.
   useEffect(() => {
-    if (initialPosts && initialPosts.length > 0 && !stats.posts) {
-      // 计算非隐藏网页的数量
-      const visibleCount = initialPosts.filter(p => p.state !== '隐藏').length;
-      updateStats({ posts: initialPosts, lastFetched: initialLastFetched, count: visibleCount });
-    }
-  }, [initialPosts]);
+    const visibleCount = posts.filter(p => p.state !== '隐藏').length;
+    updateStats({ lastFetched: initialLastFetched, count: visibleCount });
+  }, [posts, initialLastFetched]);
 
   const filteredPosts = useMemo(() => {
     if (!posts || posts.length === 0) {
