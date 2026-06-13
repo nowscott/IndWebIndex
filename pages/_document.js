@@ -25,13 +25,17 @@ class MyDocument extends Document {
               __html: `
                 try {
                   // Handle Theme
-                  var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var storedTheme = window.localStorage.getItem('theme');
+                  var isDark = storedTheme === 'dark' ||
+                    (storedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
                   if (isDark) {
                     document.documentElement.classList.add('dark');
                     var favicon = document.getElementById('favicon');
                     if (favicon) favicon.href = '/images/favicon-dark.svg';
                     var themeColor = document.getElementById('theme-color');
                     if (themeColor) themeColor.content = '#000000';
+                  } else {
+                    document.documentElement.classList.remove('dark');
                   }
                   
                   // Handle Font

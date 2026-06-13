@@ -10,7 +10,7 @@ const WebList = memo(({ filteredPosts }) => (
       {filteredPosts.length > 0 ? (
         filteredPosts.map(post => (
           <a
-            key={post.name}
+            key={post.id}
             className={`
               group relative flex items-center justify-center 
               transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:duration-100

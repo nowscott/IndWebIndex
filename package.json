@@ -7,14 +7,15 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run"
   },
   "dependencies": {
     "@libsql/client": "^0.17.2",
     "@notionhq/client": "2.2.15",
     "lodash": "^4.18.1",
     "mongodb": "7.1.0",
-    "next": "16.1.7",
+    "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "5.6.0",
@@ -23,7 +24,11 @@
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
     "autoprefixer": "10.4.27",
-    "postcss": "8.5.8",
-    "tailwindcss": "4.2.1"
+    "postcss": "8.5.15",
+    "tailwindcss": "4.2.1",
+    "vitest": "4.1.8"
+  },
+  "overrides": {
+    "postcss": "8.5.15"
   }
 }

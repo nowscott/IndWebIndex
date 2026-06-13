@@ -7,7 +7,6 @@ export const StatsProvider = ({ children }) => {
     count: null,
     lastFetched: null,
     visitCount: null,
-    posts: null // 新增：全局缓存网站列表
   });
 
   const updateStats = (newStats) => {
