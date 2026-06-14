@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ThemeToggleButton from './ThemeToggleButton';
 import { useStats } from '../contexts/StatsContext';
-import { useFont } from '../contexts/FontContext';
 import { HiOutlineInformationCircle, HiOutlineHome, HiOutlineSearch } from 'react-icons/hi';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
   const { updateStats } = useStats();
-  const { openFontMenu, closeFontMenu, menuState } = useFont();
   const router = useRouter();
   const isHomePage = router.pathname === '/';
   const isAboutPage = router.pathname === '/about';
@@ -85,31 +83,6 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
 
         {/* 右侧功能 */}
         <div className="flex-1 flex items-center justify-end gap-1 sm:gap-2 z-10">
-          <button
-            type="button"
-            title="选择字体"
-            aria-label="选择字体"
-            aria-haspopup="menu"
-            aria-expanded={menuState.isOpen}
-            onClick={event => {
-              if (menuState.isOpen) {
-                closeFontMenu();
-                return;
-              }
-
-              const rect = event.currentTarget.getBoundingClientRect();
-              openFontMenu({
-                x: rect.right,
-                y: rect.bottom + 8,
-                alignX: 'end',
-              });
-            }}
-            className="p-2 rounded-full hover:bg-white/40 dark:hover:bg-white/10 text-[#773d31] dark:text-zinc-300 transition-all duration-300 group hover:scale-110 active:scale-95"
-          >
-            <span className="block w-5 h-5 -rotate-6 text-[13px] leading-5 font-sans font-light italic tracking-[-0.08em] group-hover:text-orange-500 dark:group-hover:text-white transition-[color,transform] group-hover:-rotate-12">
-              Aa
-            </span>
-          </button>
           <ThemeToggleButton />
         </div>
       </div>

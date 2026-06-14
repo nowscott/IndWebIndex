@@ -10,6 +10,22 @@ import {
 
 const FontContext = createContext();
 const stylesheetPromises = new Map();
+let fontCacheWorkerPromise;
+
+const ensureFontCacheWorker = () => {
+  if (typeof navigator === 'undefined' || !('serviceWorker' in navigator)) {
+    return Promise.resolve(null);
+  }
+
+  if (!fontCacheWorkerPromise) {
+    fontCacheWorkerPromise = navigator.serviceWorker
+      .register('/font-cache-sw.js', { scope: '/' })
+      .then(() => navigator.serviceWorker.ready)
+      .catch(() => null);
+  }
+
+  return fontCacheWorkerPromise;
+};
 
 const getStylesheetId = fontClass => `font-stylesheet-${fontClass}`;
 
@@ -79,6 +95,8 @@ export const FontProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    ensureFontCacheWorker();
+
     const fontClass = getValidFontClass(getCookie('userFont'));
     const font = getFontOption(fontClass);
 
@@ -94,6 +112,7 @@ export const FontProvider = ({ children }) => {
 
     Promise.allSettled(
       FONT_OPTIONS.map(async font => {
+        await ensureFontCacheWorker();
         await ensureFontStylesheet(font);
         if (document.fonts?.load) {
           await document.fonts.load(`16px "${font.family}"`, `${font.displayName}Aa123`);

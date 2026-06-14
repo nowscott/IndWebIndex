@@ -1,4 +1,9 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import {
+  THEME_STORAGE_KEY,
+  getNextThemePreference,
+  resolveThemePreference,
+} from '../lib/theme';
 
 const ThemeContext = createContext();
 
@@ -18,16 +23,20 @@ const applyTheme = isDark => {
 
 const getStoredTheme = () => {
   try {
-    const storedTheme = window.localStorage.getItem('theme');
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
     return storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : null;
   } catch {
     return null;
   }
 };
 
-const storeTheme = isDark => {
+const setStoredTheme = theme => {
   try {
-    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    if (theme) {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } else {
+      window.localStorage.removeItem(THEME_STORAGE_KEY);
+    }
   } catch {
     // Theme switching still works for the current page without persistence.
   }
@@ -39,19 +48,29 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const storedTheme = getStoredTheme();
-    const darkMode = storedTheme ? storedTheme === 'dark' : mediaQuery.matches;
+    const preference = resolveThemePreference({
+      storedTheme: getStoredTheme(),
+      systemDark: mediaQuery.matches,
+    });
 
-    setIsDark(darkMode);
-    applyTheme(darkMode);
+    if (preference.shouldClearStoredTheme) {
+      setStoredTheme(null);
+    }
+    setIsDark(preference.isDark);
+    applyTheme(preference.isDark);
     setMounted(true);
     
     const handleChange = (e) => {
-      if (getStoredTheme()) return;
+      const nextPreference = resolveThemePreference({
+        storedTheme: getStoredTheme(),
+        systemDark: e.matches,
+      });
 
-      const isSystemDark = e.matches;
-      applyTheme(isSystemDark);
-      setIsDark(isSystemDark);
+      if (nextPreference.shouldClearStoredTheme) {
+        setStoredTheme(null);
+      }
+      applyTheme(nextPreference.isDark);
+      setIsDark(nextPreference.isDark);
     };
 
     mediaQuery.addEventListener('change', handleChange);
@@ -59,28 +78,23 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
-    const toggle = (newTheme) => {
-      storeTheme(newTheme);
-      applyTheme(newTheme);
+    const nextPreference = getNextThemePreference({
+      currentDark: isDark,
+      systemDark: window.matchMedia('(prefers-color-scheme: dark)').matches,
+    });
+    const applyNextTheme = () => {
+      setStoredTheme(nextPreference.storedTheme);
+      applyTheme(nextPreference.isDark);
+      setIsDark(nextPreference.isDark);
     };
 
     if (!document.startViewTransition) {
-      setIsDark(prev => {
-        const next = !prev;
-        toggle(next);
-        return next;
-      });
+      applyNextTheme();
       return;
     }
 
     document.documentElement.classList.add('switching-theme');
-    const transition = document.startViewTransition(() => {
-      setIsDark(prev => {
-        const next = !prev;
-        toggle(next);
-        return next;
-      });
-    });
+    const transition = document.startViewTransition(applyNextTheme);
 
     transition.finished.finally(() => {
       document.documentElement.classList.remove('switching-theme');

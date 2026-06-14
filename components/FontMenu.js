@@ -21,7 +21,7 @@ const FontMenu = () => {
   useEffect(() => {
     const handleContextMenu = event => {
       const interactiveTarget = event.target instanceof Element && event.target.closest(
-        'a, button, input, textarea, select, [contenteditable="true"], [role="menu"]'
+        'header, a, button, input, textarea, select, [contenteditable="true"], [role="menu"]'
       );
 
       if (interactiveTarget) return;

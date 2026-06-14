@@ -22,8 +22,14 @@ class MyDocument extends Document {
                 try {
                   // Handle Theme
                   var storedTheme = window.localStorage.getItem('theme');
+                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var systemTheme = systemDark ? 'dark' : 'light';
+                  if (storedTheme === systemTheme) {
+                    window.localStorage.removeItem('theme');
+                    storedTheme = null;
+                  }
                   var isDark = storedTheme === 'dark' ||
-                    (storedTheme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    (storedTheme !== 'light' && systemDark);
                   if (isDark) {
                     document.documentElement.classList.add('dark');
                     var favicon = document.getElementById('favicon');
