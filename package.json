@@ -1,8 +1,8 @@
 {
   "name": "ind-web-index",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev --webpack",
@@ -14,7 +14,6 @@
     "@libsql/client": "^0.17.2",
     "@notionhq/client": "2.2.15",
     "lodash": "^4.18.1",
-    "mongodb": "7.1.0",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4",
