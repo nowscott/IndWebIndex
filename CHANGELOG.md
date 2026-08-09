@@ -26,6 +26,17 @@
 - [ ] 为无数据、Notion 配置错误、访问统计未启用等状态提供更清晰的提示。
 - [ ] 考虑增加可选的浏览视图，例如最近添加、常用网站或按标签聚合浏览。
 
+## [3.3.4] - 2026-08-09
+
+### 修复
+
+- 升级 Next.js 至 16.3.0、PostCSS 至 8.5.23，并同步更新相关 `sharp` 与 `nanoid` 依赖，修复生产依赖安全审计告警。
+
+### 维护
+
+- 移除 Tailwind CSS v4 已内置支持的 `autoprefixer`。
+- 清理未使用 import 与字体菜单未调用的对齐分支，不改变现有交互。
+
 ## [3.3.3] - 2026-07-01
 
 ### 维护
@@ -172,6 +183,7 @@
 - 增加灰度模式、右键菜单、字体资源、缓存策略和 Safari 兼容修复。
 - 持续整理 README、许可证、样式和站点数据。
 
+[3.3.4]: https://github.com/nowscott/IndWebIndex/compare/v3.3.3...v3.3.4
 [3.3.3]: https://github.com/nowscott/IndWebIndex/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/nowscott/IndWebIndex/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/nowscott/IndWebIndex/compare/v3.3.0...v3.3.1
