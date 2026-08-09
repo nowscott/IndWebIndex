@@ -41,14 +41,11 @@ const FontMenu = () => {
     if (!menuState.isOpen || !menuRef.current) return;
 
     const menuRect = menuRef.current.getBoundingClientRect();
-    const requestedLeft = menuState.alignX === 'end'
-      ? menuState.x - menuRect.width
-      : menuState.x;
     const maxLeft = Math.max(VIEWPORT_PADDING, window.innerWidth - menuRect.width - VIEWPORT_PADDING);
     const maxTop = Math.max(VIEWPORT_PADDING, window.innerHeight - menuRect.height - VIEWPORT_PADDING);
 
     setPosition({
-      left: Math.min(Math.max(VIEWPORT_PADDING, requestedLeft), maxLeft),
+      left: Math.min(Math.max(VIEWPORT_PADDING, menuState.x), maxLeft),
       top: Math.min(Math.max(VIEWPORT_PADDING, menuState.y), maxTop),
     });
     selectedButtonRef.current?.focus({ preventScroll: true });

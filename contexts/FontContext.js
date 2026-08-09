@@ -90,7 +90,6 @@ export const FontProvider = ({ children }) => {
     isReady: false,
     x: 0,
     y: 0,
-    alignX: 'start',
     requestId: null,
   });
 
@@ -106,9 +105,9 @@ export const FontProvider = ({ children }) => {
     ensureFontStylesheet(font).catch(() => {});
   }, []);
 
-  const openFontMenu = useCallback(({ x, y, alignX = 'start' }) => {
+  const openFontMenu = useCallback(({ x, y }) => {
     const requestId = `${Date.now()}-${Math.random()}`;
-    setMenuState({ isOpen: true, isReady: false, x, y, alignX, requestId });
+    setMenuState({ isOpen: true, isReady: false, x, y, requestId });
 
     Promise.allSettled(
       FONT_OPTIONS.map(async font => {
