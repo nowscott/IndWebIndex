@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import packageInfo from '../package.json';
 import { useStats } from '../contexts/StatsContext';
-import { HiOutlineCursorClick, HiOutlineTag, HiOutlineCode, HiOutlineGlobeAlt, HiOutlineClock } from 'react-icons/hi';
+import { HiOutlineTag, HiOutlineCode, HiOutlineGlobeAlt, HiOutlineClock } from 'react-icons/hi';
 
 // 数字滚动组件
 const CountUp = ({ end, duration = 2000, isPending = false }) => {
@@ -92,18 +92,6 @@ const Footer = () => {
             <span>投稿网页</span>
           </a>
           
-          {stats.visitCount !== undefined && (
-            <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
-              <HiOutlineCursorClick className='w-4 h-4' />
-              <span className="whitespace-nowrap">访问量：</span>
-              <span className='inline-flex items-center justify-start min-w-[3.8rem]'>
-                <span className='text-sky-600 dark:text-zinc-100 font-extrabold'>
-                  <CountUp end={stats.visitCount} duration={1200} isPending={stats.visitCount === null} />
-                </span>
-              </span>
-            </div>
-          )}
-
           <div className='flex items-center gap-1.5 text-sky-500 dark:text-zinc-300'>
             <HiOutlineCode className='w-4 h-4' />
             <span>版本：<span className='text-sky-600 dark:text-zinc-100 font-extrabold'>v{packageInfo.version}</span></span>

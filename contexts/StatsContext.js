@@ -7,6 +7,7 @@ export const StatsProvider = ({ children }) => {
     count: null,
     lastFetched: null,
     visitCount: null,
+    visitActivity: null,
   });
 
   const updateStats = (newStats) => {
@@ -28,17 +29,17 @@ export const StatsProvider = ({ children }) => {
         
         if (!response.ok) {
           console.warn(`[StatsContext] Visit count API returned status: ${response.status}`);
-          updateStats({ visitCount: undefined });
+          updateStats({ visitCount: undefined, visitActivity: undefined });
           return;
         }
         
         const data = await response.json();
         if (data && data.enabled === false) {
-          updateStats({ visitCount: undefined });
+          updateStats({ visitCount: undefined, visitActivity: undefined });
           return;
         }
         if (data && typeof data.count !== 'undefined') {
-          updateStats({ visitCount: data.count });
+          updateStats({ visitCount: data.count, visitActivity: data.activity || [] });
         }
       } catch (error) {
         console.error('[StatsContext] Preloading visit count failed:', error);
@@ -47,12 +48,12 @@ export const StatsProvider = ({ children }) => {
           const getRes = await fetch('/api/visit-count', { method: 'GET' });
           const getData = await getRes.json();
           if (getData && getData.enabled === false) {
-            updateStats({ visitCount: undefined });
+            updateStats({ visitCount: undefined, visitActivity: undefined });
           } else {
-            updateStats({ visitCount: getData.count });
+            updateStats({ visitCount: getData.count, visitActivity: getData.activity || [] });
           }
         } catch (e) {
-          updateStats({ visitCount: undefined });
+          updateStats({ visitCount: undefined, visitActivity: undefined });
         }
       }
     };

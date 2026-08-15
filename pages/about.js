@@ -4,9 +4,12 @@ import Footer from '../components/Footer';
 import FontMenu from '../components/FontMenu';
 import { HiOutlineSparkles, HiOutlineCollection, HiOutlineHeart } from 'react-icons/hi';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { getDatabase } from '../lib/notion';
 import Link from 'next/link';
 import { useStats } from '../contexts/StatsContext';
+
+const VisitActivity = dynamic(() => import('../components/VisitActivity'), { ssr: false });
 
 const AboutPage = ({ count, lastFetched }) => {
   const { stats } = useStats();
@@ -31,6 +34,10 @@ const AboutPage = ({ count, lastFetched }) => {
           <p className="text-base sm:text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto">
             互联网时代的个人黄页，让寻找回归准确与高效
           </p>
+
+          {stats.visitCount !== undefined && (
+            <VisitActivity activity={stats.visitActivity} />
+          )}
         </div>
 
         {/* 核心理念 */}
