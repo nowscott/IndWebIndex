@@ -24,7 +24,7 @@ const VisitActivity = ({ activity }) => {
     [activity]
   );
   const calendarData = useMemo(() => {
-    const visibleActivity = showRecentOnly ? (activity || []).slice(-70) : (activity || []);
+    const visibleActivity = showRecentOnly ? (activity || []).slice(-98) : (activity || []);
     const maximum = Math.max(...visibleActivity.map(day => day.count), 1);
     return visibleActivity.map(day => ({
       date: day.date,
@@ -39,7 +39,7 @@ const VisitActivity = ({ activity }) => {
         <div>
           <h2 className="text-xl font-extrabold tracking-normal text-slate-800 dark:text-zinc-100">访问活动</h2>
           <p className="mt-1 text-xs tracking-normal text-slate-500 dark:text-zinc-400">
-            {showRecentOnly ? '近 10 周 · 历史活动为估算' : '近一年 · 历史活动为估算'}
+            {showRecentOnly ? '近 14 周 · 历史活动为估算' : '近一年 · 历史活动为估算'}
           </p>
         </div>
       </div>
