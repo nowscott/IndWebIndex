@@ -23,7 +23,7 @@ const VisitActivity = ({ activity }) => {
   }, [activity]);
 
   return (
-    <section className="mt-8 sm:mt-12 rounded-2xl border border-slate-300 dark:border-zinc-700/90 bg-[linear-gradient(165deg,rgba(255,255,255,0.94),rgba(241,248,255,0.9))] dark:bg-[linear-gradient(165deg,rgba(42,42,46,0.92),rgba(28,28,30,0.95))] px-4 py-5 sm:px-7 sm:py-6 text-left shadow-sm">
+    <section className="visit-activity mt-8 sm:mt-12 rounded-2xl px-4 py-5 sm:px-7 sm:py-6 text-left">
       <div className="mb-5">
         <div>
           <h2 className="text-xl font-extrabold tracking-normal text-slate-800 dark:text-zinc-100">访问活动</h2>
