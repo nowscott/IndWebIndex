@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ActivityCalendar } from 'react-activity-calendar';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -9,21 +9,32 @@ const getLevel = (count, maximum) => {
 
 const VisitActivity = ({ activity }) => {
   const { isDark } = useTheme();
+  const [showRecentOnly, setShowRecentOnly] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 639px)');
+    const update = () => setShowRecentOnly(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
+
   const activityByDate = useMemo(
     () => new Map((activity || []).map(day => [day.date, day])),
     [activity]
   );
   const calendarData = useMemo(() => {
-    const maximum = Math.max(...(activity || []).map(day => day.count), 1);
-    return (activity || []).map(day => ({
+    const visibleActivity = showRecentOnly ? (activity || []).slice(-90) : (activity || []);
+    const maximum = Math.max(...visibleActivity.map(day => day.count), 1);
+    return visibleActivity.map(day => ({
       date: day.date,
       count: day.count,
       level: getLevel(day.count, maximum),
     }));
-  }, [activity]);
+  }, [activity, showRecentOnly]);
 
   return (
-    <section className="visit-activity mt-8 sm:mt-12 rounded-2xl px-4 py-5 sm:px-7 sm:py-6 text-left">
+    <section className="visit-activity mt-8 sm:mt-12 pt-6 sm:pt-8 text-left">
       <div className="mb-5">
         <div>
           <h2 className="text-xl font-extrabold tracking-normal text-slate-800 dark:text-zinc-100">访问活动</h2>
@@ -31,7 +42,7 @@ const VisitActivity = ({ activity }) => {
         </div>
       </div>
 
-      <div className="w-full min-w-0 max-w-full overflow-x-auto pb-1 [-webkit-overflow-scrolling:touch]">
+      <div className="w-full min-w-0 max-w-full overflow-hidden pb-1">
         <ActivityCalendar
           data={calendarData}
           loading={!activity}
@@ -45,7 +56,7 @@ const VisitActivity = ({ activity }) => {
             weekdays: ['日', '一', '二', '三', '四', '五', '六'],
             legend: { less: '少', more: '多' },
           }}
-          showWeekdayLabels={['mon', 'wed', 'fri']}
+          showWeekdayLabels={false}
           showTotalCount={false}
           theme={{
             light: ['#e2e8f0', '#bfdbfe', '#7dd3fc', '#38bdf8', '#0284c7'],
