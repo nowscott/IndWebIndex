@@ -179,6 +179,22 @@ a, button {
   animation: about-liquid-drift 34s ease-in-out infinite alternate-reverse;
 }
 
+.home-page {
+  background: #bfd3e0;
+}
+
+.home-page::before {
+  background:
+    radial-gradient(44% 38% at 18% 18%, rgb(186 230 253 / 0.3), transparent 72%),
+    radial-gradient(36% 42% at 82% 14%, rgb(191 219 254 / 0.26), transparent 74%),
+    radial-gradient(48% 38% at 62% 80%, rgb(207 250 254 / 0.28), transparent 76%),
+    linear-gradient(145deg, #c7d9e5 0%, #b7ccda 48%, #c2d6e3 100%);
+}
+
+.home-page::after {
+  opacity: 0.3;
+}
+
 .about-page > header,
 .about-page > main,
 .about-page > footer,
@@ -195,6 +211,10 @@ a, button {
   border-bottom: 1px solid rgb(255 255 255 / 0.5);
   backdrop-filter: blur(16px) saturate(135%);
   -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.home-page > header {
+  background: rgb(193 215 229 / 0.5);
 }
 
 .about-glass-hero {
@@ -280,15 +300,15 @@ a, button {
 
 .home-page .home-glass-chip {
   border-color: rgb(255 255 255 / 0.62);
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.5), rgb(219 239 255 / 0.3));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.74), 0 8px 20px rgb(30 64 175 / 0.08);
+  background: linear-gradient(145deg, rgb(225 239 248 / 0.48), rgb(183 207 223 / 0.4));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.48), 0 8px 20px rgb(30 64 175 / 0.05);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
 
 .home-page .home-glass-chip:hover {
   border-color: rgb(125 211 252 / 0.84);
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.7), rgb(224 242 254 / 0.44));
+  background: linear-gradient(145deg, rgb(234 245 252 / 0.58), rgb(197 221 237 / 0.5));
 }
 
 .home-page .home-glass-chip-active {
@@ -304,8 +324,8 @@ a, button {
 
 .home-page header input {
   border-color: rgb(255 255 255 / 0.68);
-  background: rgb(255 255 255 / 0.42);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.76), 0 8px 18px rgb(30 64 175 / 0.08);
+  background: rgb(220 236 247 / 0.4);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.54), 0 8px 18px rgb(30 64 175 / 0.05);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
