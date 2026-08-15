@@ -236,6 +236,18 @@ a, button {
   border-top: 1px solid rgb(125 211 252 / 0.28);
 }
 
+.visit-activity-calendar .react-activity-calendar {
+  margin-inline: auto;
+}
+
+.visit-activity-calendar .react-activity-calendar__scroll-container {
+  direction: rtl;
+}
+
+.visit-activity-calendar .react-activity-calendar__calendar {
+  direction: ltr;
+}
+
 .about-value-card:hover {
   transform: translateY(-3px);
   border-color: rgb(125 211 252 / 0.82);

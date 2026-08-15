@@ -24,7 +24,7 @@ const VisitActivity = ({ activity }) => {
     [activity]
   );
   const calendarData = useMemo(() => {
-    const visibleActivity = showRecentOnly ? (activity || []).slice(-90) : (activity || []);
+    const visibleActivity = showRecentOnly ? (activity || []).slice(-70) : (activity || []);
     const maximum = Math.max(...visibleActivity.map(day => day.count), 1);
     return visibleActivity.map(day => ({
       date: day.date,
@@ -38,18 +38,20 @@ const VisitActivity = ({ activity }) => {
       <div className="mb-5">
         <div>
           <h2 className="text-xl font-extrabold tracking-normal text-slate-800 dark:text-zinc-100">访问活动</h2>
-          <p className="mt-1 text-xs tracking-normal text-slate-500 dark:text-zinc-400">近一年 · 历史活动为估算</p>
+          <p className="mt-1 text-xs tracking-normal text-slate-500 dark:text-zinc-400">
+            {showRecentOnly ? '近 10 周 · 历史活动为估算' : '近一年 · 历史活动为估算'}
+          </p>
         </div>
       </div>
 
-      <div className="w-full min-w-0 max-w-full overflow-hidden pb-1">
+      <div className="visit-activity-calendar w-full min-w-0 max-w-full overflow-hidden pb-1">
         <ActivityCalendar
           data={calendarData}
           loading={!activity}
           colorScheme={isDark ? 'dark' : 'light'}
           blockMargin={4}
           blockRadius={4}
-          blockSize={14}
+          blockSize={showRecentOnly ? 15 : 12}
           fontSize={12}
           labels={{
             months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
