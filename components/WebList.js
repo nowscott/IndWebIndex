@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 const WebList = memo(({ filteredPosts }) => (
   <section className="mb-12 px-6 sm:px-12 lg:px-24 max-w-[90rem] mx-auto">
     <div>
-      <div className="h-[2px] rounded-full bg-sky-300 dark:bg-zinc-500/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"></div>
+      <div className="home-glass-divider h-[2px] rounded-full bg-sky-300 dark:bg-zinc-500/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"></div>
     </div>
     <div className='mt-8 flex flex-wrap justify-center gap-2 items-center'>
       {filteredPosts.length > 0 ? (
@@ -12,7 +12,7 @@ const WebList = memo(({ filteredPosts }) => (
           <a
             key={post.id}
             className={`
-              group relative flex items-center justify-center 
+              home-glass-chip group relative flex items-center justify-center
               transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:duration-100
                px-3.5 py-1.5 text-[11px] sm:text-xs rounded-full border
                bg-[linear-gradient(165deg,rgba(244,249,255,0.94),rgba(227,240,255,0.84))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(28,28,30,0.95))] text-[#773d31] dark:text-zinc-200 border-sky-300 dark:border-zinc-500/80
