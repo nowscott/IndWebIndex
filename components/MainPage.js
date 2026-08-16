@@ -58,7 +58,7 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   };
 
   return (
-    <div className='app-background m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
+    <div className='home-page m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
       <HeaderBar 
         lastFetched={lastFetched} 
         count={totalVisibleCount} 
