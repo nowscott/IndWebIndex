@@ -144,8 +144,8 @@ a, button {
 .home-page {
   position: relative;
   isolation: isolate;
-  background: #f8f1e7;
-  color: #433e37;
+  background: #f6fafc;
+  color: #314457;
 }
 
 .about-page::before,
@@ -162,10 +162,10 @@ a, button {
 .about-page::before,
 .home-page::before {
   background:
-    radial-gradient(44% 38% at 18% 18%, rgb(255 250 242 / 0.76), transparent 72%),
-    radial-gradient(36% 42% at 82% 14%, rgb(253 186 116 / 0.18), transparent 74%),
-    radial-gradient(48% 38% at 62% 80%, rgb(244 114 182 / 0.08), transparent 76%),
-    linear-gradient(145deg, #fffaf2 0%, #f6ebe0 48%, #f1d8c9 100%);
+    radial-gradient(46% 40% at 16% 14%, rgb(219 240 249 / 0.64), transparent 72%),
+    radial-gradient(42% 44% at 82% 82%, rgb(255 205 164 / 0.34), transparent 74%),
+    radial-gradient(42% 32% at 74% 35%, rgb(255 244 204 / 0.3), transparent 76%),
+    linear-gradient(165deg, #f4fafc 0%, #fffdf8 50%, #ffe9d9 100%);
   animation: about-liquid-drift 26s ease-in-out infinite alternate;
 }
 
@@ -174,8 +174,8 @@ a, button {
   inset: -24vmax;
   opacity: 0.3;
   background:
-    radial-gradient(34% 32% at 74% 40%, rgb(251 146 60 / 0.15), transparent 70%),
-    radial-gradient(31% 36% at 30% 74%, rgb(244 114 182 / 0.07), transparent 72%);
+    radial-gradient(34% 30% at 66% 86%, rgb(249 146 83 / 0.18), transparent 70%),
+    radial-gradient(34% 34% at 26% 30%, rgb(125 211 252 / 0.14), transparent 72%);
   animation: about-liquid-drift 34s ease-in-out infinite alternate-reverse;
 }
 
@@ -191,14 +191,14 @@ a, button {
 
 .about-page > header,
 .home-page > header {
-  background: rgb(255 250 242 / 0.44);
-  border-bottom: 1px solid rgb(255 252 245 / 0.54);
+  background: rgb(249 253 255 / 0.48);
+  border-bottom: 1px solid rgb(255 255 255 / 0.7);
   backdrop-filter: blur(16px) saturate(135%);
   -webkit-backdrop-filter: blur(16px) saturate(135%);
 }
 
 .about-kicker {
-  color: rgb(126 93 62 / 0.86);
+  color: rgb(73 112 139 / 0.84);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -211,12 +211,12 @@ a, button {
   min-height: clamp(24rem, 44vh, 32rem);
   align-items: end;
   padding: clamp(1rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 4.75rem);
-  border-bottom: 1px solid rgb(126 93 62 / 0.24);
+  border-bottom: 1px solid rgb(103 135 155 / 0.24);
 }
 
 .about-title {
   max-width: 9ch;
-  color: #3f2a20;
+  color: #263e50;
   font-size: clamp(3.25rem, 6vw, 6.5rem);
   font-weight: 700;
   line-height: 0.96;
@@ -225,7 +225,7 @@ a, button {
 
 .about-lead {
   max-width: 30rem;
-  color: rgb(67 62 55 / 0.8);
+  color: rgb(55 76 93 / 0.8);
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   line-height: 1.9;
 }
@@ -234,8 +234,8 @@ a, button {
   max-width: 19rem;
   margin-bottom: 0.5rem;
   padding-left: 1.25rem;
-  border-left: 1px solid rgb(190 143 91 / 0.7);
-  color: rgb(88 68 53 / 0.76);
+  border-left: 1px solid rgb(242 164 105 / 0.74);
+  color: rgb(69 88 103 / 0.76);
   font-size: 0.95rem;
   line-height: 2;
 }
@@ -243,7 +243,7 @@ a, button {
 .about-activity-stage {
   margin: clamp(2.75rem, 6vw, 4.75rem) 0;
   padding: clamp(1.25rem, 3vw, 2.5rem) 0;
-  border-bottom: 1px solid rgb(126 93 62 / 0.24);
+  border-bottom: 1px solid rgb(103 135 155 / 0.24);
 }
 
 .about-activity-stage .visit-activity {
@@ -253,13 +253,13 @@ a, button {
 }
 
 .about-activity-stage .visit-activity h2 {
-  color: #3f2a20;
+  color: #263e50;
   font-size: clamp(2rem, 4vw, 3.5rem);
   letter-spacing: -0.04em;
 }
 
 .about-activity-stage .visit-activity p {
-  color: rgb(88 68 53 / 0.7);
+  color: rgb(69 88 103 / 0.7);
 }
 
 .about-principles {
@@ -271,7 +271,7 @@ a, button {
 
 .about-principles-heading h2 {
   margin-top: 1rem;
-  color: #3f2a20;
+  color: #263e50;
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 800;
   line-height: 1.1;
@@ -290,35 +290,35 @@ a, button {
   grid-template-columns: 3rem minmax(0, 1fr);
   gap: 1rem;
   padding: 1.5rem 0;
-  border-top: 1px solid rgb(126 93 62 / 0.2);
+  border-top: 1px solid rgb(103 135 155 / 0.2);
 }
 
 .about-principle:last-child {
-  border-bottom: 1px solid rgb(126 93 62 / 0.2);
+  border-bottom: 1px solid rgb(103 135 155 / 0.2);
 }
 
 .about-principle > span {
-  color: rgb(159 109 62 / 0.82);
+  color: rgb(218 127 83 / 0.88);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
 
 .about-principle h3 {
-  color: #3f2a20;
+  color: #263e50;
   font-size: 1.1rem;
   font-weight: 800;
 }
 
 .about-principle p {
   margin-top: 0.55rem;
-  color: rgb(88 68 53 / 0.76);
+  color: rgb(69 88 103 / 0.76);
   font-size: 0.92rem;
   line-height: 1.9;
 }
 
 .visit-activity {
-  border-top: 1px solid rgb(197 116 72 / 0.28);
+  border-top: 1px solid rgb(231 160 112 / 0.3);
 }
 
 .visit-activity-calendar .react-activity-calendar {
@@ -334,18 +334,18 @@ a, button {
 }
 
 .about-glass-button {
-  color: #72513a;
-  border: 1px solid rgb(255 252 245 / 0.76);
-  background: rgb(255 252 247 / 0.46);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.86), 0 10px 26px rgb(132 71 43 / 0.08);
+  color: #355a70;
+  border: 1px solid rgb(255 255 255 / 0.8);
+  background: rgb(255 255 255 / 0.5);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 10px 26px rgb(92 140 164 / 0.1);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
 
 .about-glass-button:hover {
-  color: #5f422d;
-  border-color: rgb(190 143 91 / 0.76);
-  background: rgb(255 253 249 / 0.7);
+  color: #24495f;
+  border-color: rgb(242 164 105 / 0.62);
+  background: rgb(255 255 255 / 0.74);
 }
 
 .site-footer {
@@ -359,7 +359,7 @@ a, button {
 
 .site-footer-divider {
   height: 1px;
-  background: rgb(126 93 62 / 0.24);
+  background: rgb(103 135 155 / 0.24);
 }
 
 .site-footer-content {
@@ -368,7 +368,7 @@ a, button {
   gap: 1.5rem;
   align-items: center;
   padding-top: 2rem;
-  color: rgb(88 68 53 / 0.7);
+  color: rgb(69 88 103 / 0.7);
   font-size: 0.72rem;
 }
 
@@ -393,24 +393,24 @@ a, button {
 
 .site-footer-stat svg,
 .site-footer-links svg {
-  color: rgb(159 109 62 / 0.84);
+  color: rgb(218 127 83 / 0.84);
 }
 
 .site-footer-stat strong,
 .site-footer-links strong {
-  color: #68442e;
+  color: #355a70;
   font-weight: 800;
 }
 
 .site-footer-count-pending {
-  color: rgb(159 109 62 / 0.5);
+  color: rgb(218 127 83 / 0.5);
 }
 
 .site-footer-loading {
   width: 4.5rem;
   height: 0.45rem;
   border-radius: 999px;
-  background: rgb(159 109 62 / 0.16);
+  background: rgb(103 160 186 / 0.16);
 }
 
 .site-footer-links {
@@ -424,11 +424,11 @@ a, button {
 }
 
 .site-footer-links > a:hover {
-  color: #68442e;
+  color: #355a70;
 }
 
 .site-footer-copy {
-  color: rgb(88 68 53 / 0.56);
+  color: rgb(69 88 103 / 0.56);
   line-height: 1.7;
   text-align: right;
 }
@@ -438,33 +438,33 @@ a, button {
 }
 
 .home-page .home-glass-chip {
-  border-color: rgb(255 252 245 / 0.62);
-  background: linear-gradient(145deg, rgb(255 249 241 / 0.48), rgb(242 185 151 / 0.36));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.52), 0 8px 20px rgb(132 71 43 / 0.06);
+  border-color: rgb(255 255 255 / 0.68);
+  background: linear-gradient(145deg, rgb(250 254 255 / 0.52), rgb(213 237 246 / 0.4));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.62), 0 8px 20px rgb(92 140 164 / 0.08);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
 
 .home-page .home-glass-chip:hover {
-  border-color: rgb(207 112 64 / 0.66);
-  background: linear-gradient(145deg, rgb(255 252 247 / 0.6), rgb(250 205 174 / 0.48));
+  border-color: rgb(242 164 105 / 0.62);
+  background: linear-gradient(145deg, rgb(255 255 255 / 0.66), rgb(255 221 193 / 0.48));
 }
 
 .home-page .home-glass-chip-active {
-  border-color: rgb(159 109 62 / 0.76);
-  background: linear-gradient(145deg, rgb(190 131 76 / 0.94), rgb(151 98 53 / 0.88));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28), 0 8px 18px rgb(111 78 46 / 0.2);
+  border-color: rgb(89 148 177 / 0.7);
+  background: linear-gradient(145deg, rgb(81 154 190 / 0.92), rgb(61 119 158 / 0.86));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28), 0 8px 18px rgb(64 117 149 / 0.2);
 }
 
 .home-page .home-glass-divider {
-  background: linear-gradient(90deg, transparent, rgb(211 126 73 / 0.6), transparent);
-  box-shadow: 0 0 22px rgb(211 126 73 / 0.18);
+  background: linear-gradient(90deg, transparent, rgb(238 161 104 / 0.58), transparent);
+  box-shadow: 0 0 22px rgb(238 161 104 / 0.18);
 }
 
 .home-page header input {
-  border-color: rgb(255 252 245 / 0.68);
-  background: rgb(255 252 247 / 0.4);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.58), 0 8px 18px rgb(132 71 43 / 0.06);
+  border-color: rgb(255 255 255 / 0.72);
+  background: rgb(255 255 255 / 0.46);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.64), 0 8px 18px rgb(92 140 164 / 0.08);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }

@@ -58,7 +58,7 @@ const VisitActivity = ({ activity, snapshotAt }) => {
           showColorLegend={false}
           showTotalCount={false}
           theme={{
-            light: ['#eee1d2', '#f3c89e', '#eea568', '#d9783f', '#aa4b31'],
+            light: ['#e7f0f4', '#bfe0ec', '#ffd9b8', '#f5ad82', '#df7467'],
             dark: ['#1a293b', '#254563', '#2f7399', '#38a9cb', '#a8e7ff'],
           }}
         />
