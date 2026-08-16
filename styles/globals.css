@@ -348,6 +348,95 @@ a, button {
   background: rgb(255 253 249 / 0.7);
 }
 
+.site-footer {
+  padding: 0 1.25rem 3rem;
+}
+
+.site-footer-inner {
+  width: min(100%, 72rem);
+  margin: 0 auto;
+}
+
+.site-footer-divider {
+  height: 1px;
+  background: rgb(126 93 62 / 0.24);
+}
+
+.site-footer-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 2rem;
+  color: rgb(88 68 53 / 0.7);
+  font-size: 0.72rem;
+}
+
+.site-footer-stats,
+.site-footer-links,
+.site-footer-links > a,
+.site-footer-links > span,
+.site-footer-stat {
+  display: flex;
+  align-items: center;
+}
+
+.site-footer-stats {
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.site-footer-stat {
+  gap: 0.38rem;
+  white-space: nowrap;
+}
+
+.site-footer-stat svg,
+.site-footer-links svg {
+  color: rgb(159 109 62 / 0.84);
+}
+
+.site-footer-stat strong,
+.site-footer-links strong {
+  color: #68442e;
+  font-weight: 800;
+}
+
+.site-footer-count-pending {
+  color: rgb(159 109 62 / 0.5);
+}
+
+.site-footer-loading {
+  width: 4.5rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: rgb(159 109 62 / 0.16);
+}
+
+.site-footer-links {
+  gap: 1.25rem;
+  font-weight: 700;
+}
+
+.site-footer-links > a,
+.site-footer-links > span {
+  gap: 0.4rem;
+}
+
+.site-footer-links > a:hover {
+  color: #68442e;
+}
+
+.site-footer-copy {
+  color: rgb(88 68 53 / 0.56);
+  line-height: 1.7;
+  text-align: right;
+}
+
+.site-footer-copy p:last-child {
+  font-style: italic;
+}
+
 .home-page .home-glass-chip {
   border-color: rgb(255 252 245 / 0.62);
   background: linear-gradient(145deg, rgb(255 249 241 / 0.48), rgb(242 185 151 / 0.36));
@@ -462,6 +551,37 @@ a, button {
   background: rgb(15 49 78 / 0.64);
 }
 
+.dark .site-footer-divider {
+  background: rgb(186 230 253 / 0.18);
+}
+
+.dark .site-footer-content {
+  color: rgb(203 213 225 / 0.68);
+}
+
+.dark .site-footer-stat svg,
+.dark .site-footer-links svg {
+  color: rgb(125 211 252 / 0.78);
+}
+
+.dark .site-footer-stat strong,
+.dark .site-footer-links strong,
+.dark .site-footer-links > a:hover {
+  color: rgb(224 242 254 / 0.96);
+}
+
+.dark .site-footer-count-pending {
+  color: rgb(186 230 253 / 0.48);
+}
+
+.dark .site-footer-loading {
+  background: rgb(186 230 253 / 0.16);
+}
+
+.dark .site-footer-copy {
+  color: rgb(148 163 184 / 0.68);
+}
+
 .dark .home-page .home-glass-chip {
   border-color: rgb(186 230 253 / 0.16);
   background: linear-gradient(145deg, rgb(15 35 57 / 0.54), rgb(8 25 44 / 0.38));
@@ -517,6 +637,17 @@ a, button {
   .about-principles {
     gap: 2.5rem;
     padding-bottom: 4.5rem;
+  }
+
+  .site-footer-content {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  .site-footer-copy {
+    text-align: left;
   }
 }
 
