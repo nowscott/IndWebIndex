@@ -61,8 +61,8 @@ const VisitActivity = ({ activity }) => {
           showWeekdayLabels={false}
           showTotalCount={false}
           theme={{
-            light: ['#e2e8f0', '#bfdbfe', '#7dd3fc', '#38bdf8', '#0284c7'],
-            dark: ['#27272a', '#334155', '#475569', '#3b82f6', '#7dd3fc'],
+            light: ['#eee1d2', '#f3c89e', '#eea568', '#d9783f', '#aa4b31'],
+            dark: ['#1a293b', '#254563', '#2f7399', '#38a9cb', '#a8e7ff'],
           }}
           tooltips={{
             activity: {
