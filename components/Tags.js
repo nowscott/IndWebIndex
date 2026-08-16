@@ -1,4 +1,19 @@
 import React, { memo } from 'react';
+import { Glass } from '@samasante/liquid-glass';
+
+const tagGlassOptics = {
+  strength: 0.025,
+  depth: 0.35,
+  curvature: 0.12,
+  bend: 0.45,
+  bendWidth: 0.12,
+  dispersion: 0.08,
+  frost: 4,
+  saturate: 1.06,
+  sheen: 0.22,
+  sheenWidth: 2,
+  glow: 0.06,
+};
 
 // components/Tags.js
 const Tags = memo(({ tags, onList, handleToggleTagButton, emptyHint }) => (
@@ -8,20 +23,20 @@ const Tags = memo(({ tags, onList, handleToggleTagButton, emptyHint }) => (
         {tags.map(tag => {
           const isActive = onList.includes(tag);
           return (
-            <button
+            <Glass
               key={tag}
-              className={`
-                px-3 py-1 text-[11px] sm:text-xs rounded-lg border relative
-                transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:duration-100
-                hover:scale-125 hover:z-10
-                ${isActive 
-                  ? 'home-glass-chip-active bg-orange-500 dark:bg-orange-500 text-white dark:text-white border-orange-500 dark:border-orange-500 shadow-md'
-                  : 'home-glass-chip bg-[linear-gradient(165deg,rgba(244,249,255,0.94),rgba(226,239,255,0.85))] dark:bg-[linear-gradient(165deg,rgba(43,43,47,0.9),rgba(27,27,30,0.94))] text-[#773d31] dark:text-zinc-300 border-sky-300 dark:border-zinc-500/80 hover:border-orange-500 dark:hover:border-zinc-300 hover:bg-white dark:hover:bg-[#2C2C2E] shadow hover:shadow-xl dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04)]'}
-              `}
-              onClick={() => handleToggleTagButton(tag)}
+              className={`home-liquid-tag ${isActive ? 'home-liquid-tag-active' : ''}`}
+              radius={8}
+              optics={tagGlassOptics}
             >
-              {tag}
-            </button>
+              <button
+                className="home-liquid-tag-button"
+                aria-pressed={isActive}
+                onClick={() => handleToggleTagButton(tag)}
+              >
+                {tag}
+              </button>
+            </Glass>
           );
         })}
       </div>
