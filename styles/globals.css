@@ -207,20 +207,20 @@ a, button {
 .about-manifesto {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.75fr);
-  gap: clamp(3rem, 10vw, 9rem);
-  min-height: clamp(28rem, 58vh, 42rem);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  min-height: clamp(24rem, 44vh, 32rem);
   align-items: end;
-  padding: clamp(1rem, 4vw, 3rem) 0 clamp(4.5rem, 9vw, 7rem);
+  padding: clamp(1rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 4.75rem);
   border-bottom: 1px solid rgb(126 93 62 / 0.24);
 }
 
 .about-title {
-  max-width: 11ch;
+  max-width: 9ch;
   color: #3f2a20;
-  font-size: clamp(3.25rem, 9vw, 7.75rem);
+  font-size: clamp(3.25rem, 6vw, 6.5rem);
   font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -0.075em;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
 }
 
 .about-lead {
@@ -241,8 +241,8 @@ a, button {
 }
 
 .about-activity-stage {
-  margin: clamp(4.5rem, 10vw, 8rem) 0;
-  padding: clamp(2rem, 5vw, 4rem) 0;
+  margin: clamp(2.75rem, 6vw, 4.75rem) 0;
+  padding: clamp(1.25rem, 3vw, 2.5rem) 0;
   border-bottom: 1px solid rgb(126 93 62 / 0.24);
 }
 
@@ -497,8 +497,8 @@ a, button {
 
   .about-manifesto {
     min-height: 0;
-    gap: 2.75rem;
-    padding: 1.25rem 0 4rem;
+    gap: 2.25rem;
+    padding: 1.25rem 0 3.5rem;
   }
 
   .about-title {
@@ -510,8 +510,8 @@ a, button {
   }
 
   .about-activity-stage {
-    margin: 4rem 0;
-    padding: 2.5rem 0;
+    margin: 3rem 0;
+    padding: 1.75rem 0;
   }
 
   .about-principles {
