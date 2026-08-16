@@ -19,10 +19,6 @@ const VisitActivity = ({ activity }) => {
     return () => query.removeEventListener('change', update);
   }, []);
 
-  const activityByDate = useMemo(
-    () => new Map((activity || []).map(day => [day.date, day])),
-    [activity]
-  );
   const calendarData = useMemo(() => {
     const visibleActivity = showRecentOnly ? (activity || []).slice(-98) : (activity || []);
     const maximum = Math.max(...visibleActivity.map(day => day.count), 1);
@@ -59,18 +55,11 @@ const VisitActivity = ({ activity }) => {
             legend: { less: '少', more: '多' },
           }}
           showWeekdayLabels={false}
+          showColorLegend={false}
           showTotalCount={false}
           theme={{
             light: ['#eee1d2', '#f3c89e', '#eea568', '#d9783f', '#aa4b31'],
             dark: ['#1a293b', '#254563', '#2f7399', '#38a9cb', '#a8e7ff'],
-          }}
-          tooltips={{
-            activity: {
-              text: ({ date, count }) => {
-                const day = activityByDate.get(date);
-                return `${date}：${count} 次${day?.estimated ? '（历史估算）' : '（真实浏览）'}`;
-              },
-            },
           }}
         />
       </div>
