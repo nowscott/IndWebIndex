@@ -1,19 +1,4 @@
 import React, { memo } from 'react';
-import { Glass } from '@samasante/liquid-glass';
-
-const tagGlassOptics = {
-  strength: 0.025,
-  depth: 0.35,
-  curvature: 0.12,
-  bend: 0.45,
-  bendWidth: 0.12,
-  dispersion: 0.08,
-  frost: 4,
-  saturate: 1.06,
-  sheen: 0.22,
-  sheenWidth: 2,
-  glow: 0.06,
-};
 
 // components/Tags.js
 const Tags = memo(({ tags, onList, handleToggleTagButton, emptyHint }) => (
@@ -23,20 +8,14 @@ const Tags = memo(({ tags, onList, handleToggleTagButton, emptyHint }) => (
         {tags.map(tag => {
           const isActive = onList.includes(tag);
           return (
-            <Glass
+            <button
               key={tag}
-              className={`home-liquid-tag ${isActive ? 'home-liquid-tag-active' : ''}`}
-              radius={8}
-              optics={tagGlassOptics}
+              className={`home-frosted-tag ${isActive ? 'home-frosted-tag-active' : ''}`}
+              aria-pressed={isActive}
+              onClick={() => handleToggleTagButton(tag)}
             >
-              <button
-                className="home-liquid-tag-button"
-                aria-pressed={isActive}
-                onClick={() => handleToggleTagButton(tag)}
-              >
-                {tag}
-              </button>
-            </Glass>
+              {tag}
+            </button>
           );
         })}
       </div>
