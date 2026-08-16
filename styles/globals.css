@@ -218,9 +218,9 @@ a, button {
   max-width: 9ch;
   color: #3f2a20;
   font-size: clamp(3.25rem, 6vw, 6.5rem);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: 0.01em;
 }
 
 .about-lead {

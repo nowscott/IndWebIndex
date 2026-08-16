@@ -3,12 +3,10 @@ import HeaderBar from '../components/HeaderBar';
 import Footer from '../components/Footer';
 import FontMenu from '../components/FontMenu';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
+import VisitActivity from '../components/VisitActivity';
 import { getDatabase } from '../lib/notion';
 import { getVisitActivitySnapshot } from '../lib/visitStats';
 import Link from 'next/link';
-
-const VisitActivity = dynamic(() => import('../components/VisitActivity'), { ssr: false });
 
 const principles = [
   ['01', '个人黄页', '为自己留下一个清晰、可信、随时能回来的入口。'],
