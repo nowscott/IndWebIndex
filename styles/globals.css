@@ -144,8 +144,8 @@ a, button {
 .home-page {
   position: relative;
   isolation: isolate;
-  background: #eaf5ff;
-  color: #1e3a5f;
+  background: #e6dfd4;
+  color: #433e37;
 }
 
 .about-page::before,
@@ -162,37 +162,21 @@ a, button {
 .about-page::before,
 .home-page::before {
   background:
-    radial-gradient(44% 38% at 18% 18%, rgb(186 230 253 / 0.82), transparent 72%),
-    radial-gradient(36% 42% at 82% 14%, rgb(191 219 254 / 0.78), transparent 74%),
-    radial-gradient(48% 38% at 62% 80%, rgb(207 250 254 / 0.78), transparent 76%),
-    linear-gradient(145deg, #f7fbff 0%, #e8f4ff 48%, #effaff 100%);
+    radial-gradient(44% 38% at 18% 18%, rgb(255 247 230 / 0.56), transparent 72%),
+    radial-gradient(36% 42% at 82% 14%, rgb(245 224 196 / 0.4), transparent 74%),
+    radial-gradient(48% 38% at 62% 80%, rgb(232 218 199 / 0.46), transparent 76%),
+    linear-gradient(145deg, #f0ebe2 0%, #e1d8cb 48%, #ebe2d6 100%);
   animation: about-liquid-drift 26s ease-in-out infinite alternate;
 }
 
 .about-page::after,
 .home-page::after {
   inset: -24vmax;
-  opacity: 0.54;
+  opacity: 0.38;
   background:
-    radial-gradient(34% 32% at 74% 40%, rgb(125 211 252 / 0.54), transparent 70%),
-    radial-gradient(31% 36% at 30% 74%, rgb(147 197 253 / 0.48), transparent 72%);
+    radial-gradient(34% 32% at 74% 40%, rgb(234 179 8 / 0.16), transparent 70%),
+    radial-gradient(31% 36% at 30% 74%, rgb(180 121 74 / 0.12), transparent 72%);
   animation: about-liquid-drift 34s ease-in-out infinite alternate-reverse;
-}
-
-.home-page {
-  background: #bfd3e0;
-}
-
-.home-page::before {
-  background:
-    radial-gradient(44% 38% at 18% 18%, rgb(186 230 253 / 0.3), transparent 72%),
-    radial-gradient(36% 42% at 82% 14%, rgb(191 219 254 / 0.26), transparent 74%),
-    radial-gradient(48% 38% at 62% 80%, rgb(207 250 254 / 0.28), transparent 76%),
-    linear-gradient(145deg, #c7d9e5 0%, #b7ccda 48%, #c2d6e3 100%);
-}
-
-.home-page::after {
-  opacity: 0.3;
 }
 
 .about-page > header,
@@ -207,24 +191,20 @@ a, button {
 
 .about-page > header,
 .home-page > header {
-  background: rgb(247 252 255 / 0.38);
-  border-bottom: 1px solid rgb(255 255 255 / 0.5);
+  background: rgb(243 236 225 / 0.42);
+  border-bottom: 1px solid rgb(255 252 245 / 0.54);
   backdrop-filter: blur(16px) saturate(135%);
   -webkit-backdrop-filter: blur(16px) saturate(135%);
-}
-
-.home-page > header {
-  background: rgb(193 215 229 / 0.5);
 }
 
 .about-glass-hero {
   position: relative;
   overflow: hidden;
   padding: clamp(2rem, 6vw, 4.75rem) clamp(1rem, 5vw, 3.75rem);
-  border: 1px solid rgb(255 255 255 / 0.7);
+  border: 1px solid rgb(255 252 245 / 0.7);
   border-radius: 2rem;
-  background: linear-gradient(142deg, rgb(255 255 255 / 0.56), rgb(239 248 255 / 0.32));
-  box-shadow: 0 24px 70px rgb(30 64 175 / 0.13), inset 0 1px 0 rgb(255 255 255 / 0.82);
+  background: linear-gradient(142deg, rgb(255 252 247 / 0.54), rgb(229 219 204 / 0.32));
+  box-shadow: 0 24px 70px rgb(92 70 46 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.78);
   backdrop-filter: blur(22px) saturate(140%);
   -webkit-backdrop-filter: blur(22px) saturate(140%);
 }
@@ -234,7 +214,7 @@ a, button {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(120deg, rgb(255 255 255 / 0.5), transparent 34%, rgb(125 211 252 / 0.16) 72%, transparent);
+  background: linear-gradient(120deg, rgb(255 255 255 / 0.46), transparent 34%, rgb(234 179 8 / 0.1) 72%, transparent);
 }
 
 .about-glass-content {
@@ -243,16 +223,16 @@ a, button {
 }
 
 .about-kicker {
-  color: rgb(3 105 161 / 0.86);
+  color: rgb(126 93 62 / 0.86);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.18em;
 }
 
 .about-value-card {
-  border: 1px solid rgb(255 255 255 / 0.64);
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.42), rgb(219 239 255 / 0.24));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.7), 0 12px 30px rgb(30 64 175 / 0.08);
+  border: 1px solid rgb(255 252 245 / 0.62);
+  background: linear-gradient(145deg, rgb(255 252 247 / 0.42), rgb(225 214 198 / 0.28));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.66), 0 12px 30px rgb(92 70 46 / 0.07);
   backdrop-filter: blur(16px) saturate(130%);
   -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
@@ -262,7 +242,7 @@ a, button {
 }
 
 .visit-activity {
-  border-top: 1px solid rgb(125 211 252 / 0.28);
+  border-top: 1px solid rgb(180 141 99 / 0.26);
 }
 
 .visit-activity-calendar .react-activity-calendar {
@@ -279,53 +259,53 @@ a, button {
 
 .about-value-card:hover {
   transform: translateY(-3px);
-  border-color: rgb(125 211 252 / 0.82);
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.56), rgb(219 239 255 / 0.36));
+  border-color: rgb(190 143 91 / 0.7);
+  background: linear-gradient(145deg, rgb(255 253 249 / 0.56), rgb(232 219 201 / 0.4));
 }
 
 .about-glass-button {
-  color: #075985;
-  border: 1px solid rgb(255 255 255 / 0.76);
-  background: rgb(255 255 255 / 0.46);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 10px 26px rgb(14 116 144 / 0.13);
+  color: #72513a;
+  border: 1px solid rgb(255 252 245 / 0.76);
+  background: rgb(255 252 247 / 0.46);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.86), 0 10px 26px rgb(111 78 46 / 0.11);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
 
 .about-glass-button:hover {
-  color: #0c4a6e;
-  border-color: rgb(125 211 252 / 0.92);
-  background: rgb(255 255 255 / 0.7);
+  color: #5f422d;
+  border-color: rgb(190 143 91 / 0.76);
+  background: rgb(255 253 249 / 0.7);
 }
 
 .home-page .home-glass-chip {
-  border-color: rgb(255 255 255 / 0.62);
-  background: linear-gradient(145deg, rgb(225 239 248 / 0.48), rgb(183 207 223 / 0.4));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.48), 0 8px 20px rgb(30 64 175 / 0.05);
+  border-color: rgb(255 252 245 / 0.62);
+  background: linear-gradient(145deg, rgb(255 252 247 / 0.48), rgb(225 214 198 / 0.38));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.52), 0 8px 20px rgb(92 70 46 / 0.05);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
 
 .home-page .home-glass-chip:hover {
-  border-color: rgb(125 211 252 / 0.84);
-  background: linear-gradient(145deg, rgb(234 245 252 / 0.58), rgb(197 221 237 / 0.5));
+  border-color: rgb(190 143 91 / 0.72);
+  background: linear-gradient(145deg, rgb(255 253 249 / 0.6), rgb(235 222 204 / 0.5));
 }
 
 .home-page .home-glass-chip-active {
-  border-color: rgb(14 165 233 / 0.78);
-  background: linear-gradient(145deg, rgb(14 165 233 / 0.94), rgb(59 130 246 / 0.88));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28), 0 8px 18px rgb(2 132 199 / 0.22);
+  border-color: rgb(159 109 62 / 0.76);
+  background: linear-gradient(145deg, rgb(190 131 76 / 0.94), rgb(151 98 53 / 0.88));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28), 0 8px 18px rgb(111 78 46 / 0.2);
 }
 
 .home-page .home-glass-divider {
-  background: linear-gradient(90deg, transparent, rgb(125 211 252 / 0.76), transparent);
-  box-shadow: 0 0 22px rgb(56 189 248 / 0.2);
+  background: linear-gradient(90deg, transparent, rgb(180 141 99 / 0.62), transparent);
+  box-shadow: 0 0 22px rgb(180 141 99 / 0.16);
 }
 
 .home-page header input {
-  border-color: rgb(255 255 255 / 0.68);
-  background: rgb(220 236 247 / 0.4);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.54), 0 8px 18px rgb(30 64 175 / 0.05);
+  border-color: rgb(255 252 245 / 0.68);
+  background: rgb(255 252 247 / 0.4);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.58), 0 8px 18px rgb(92 70 46 / 0.05);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
