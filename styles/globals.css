@@ -144,7 +144,7 @@ a, button {
 .home-page {
   position: relative;
   isolation: isolate;
-  background: #f0d4bd;
+  background: #f8f1e7;
   color: #433e37;
 }
 
@@ -162,20 +162,20 @@ a, button {
 .about-page::before,
 .home-page::before {
   background:
-    radial-gradient(44% 38% at 18% 18%, rgb(255 239 205 / 0.62), transparent 72%),
-    radial-gradient(36% 42% at 82% 14%, rgb(253 186 116 / 0.32), transparent 74%),
-    radial-gradient(48% 38% at 62% 80%, rgb(251 146 60 / 0.2), transparent 76%),
-    linear-gradient(145deg, #f8e4cc 0%, #efc4a8 48%, #e8a47f 100%);
+    radial-gradient(44% 38% at 18% 18%, rgb(255 250 242 / 0.76), transparent 72%),
+    radial-gradient(36% 42% at 82% 14%, rgb(253 186 116 / 0.18), transparent 74%),
+    radial-gradient(48% 38% at 62% 80%, rgb(244 114 182 / 0.08), transparent 76%),
+    linear-gradient(145deg, #fffaf2 0%, #f6ebe0 48%, #f1d8c9 100%);
   animation: about-liquid-drift 26s ease-in-out infinite alternate;
 }
 
 .about-page::after,
 .home-page::after {
   inset: -24vmax;
-  opacity: 0.46;
+  opacity: 0.3;
   background:
-    radial-gradient(34% 32% at 74% 40%, rgb(251 146 60 / 0.24), transparent 70%),
-    radial-gradient(31% 36% at 30% 74%, rgb(244 114 182 / 0.12), transparent 72%);
+    radial-gradient(34% 32% at 74% 40%, rgb(251 146 60 / 0.15), transparent 70%),
+    radial-gradient(31% 36% at 30% 74%, rgb(244 114 182 / 0.07), transparent 72%);
   animation: about-liquid-drift 34s ease-in-out infinite alternate-reverse;
 }
 
@@ -191,35 +191,10 @@ a, button {
 
 .about-page > header,
 .home-page > header {
-  background: rgb(252 231 208 / 0.44);
+  background: rgb(255 250 242 / 0.44);
   border-bottom: 1px solid rgb(255 252 245 / 0.54);
   backdrop-filter: blur(16px) saturate(135%);
   -webkit-backdrop-filter: blur(16px) saturate(135%);
-}
-
-.about-glass-hero {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(2rem, 6vw, 4.75rem) clamp(1rem, 5vw, 3.75rem);
-  border: 1px solid rgb(255 252 245 / 0.7);
-  border-radius: 2rem;
-  background: linear-gradient(142deg, rgb(255 247 237 / 0.54), rgb(244 186 150 / 0.3));
-  box-shadow: 0 24px 70px rgb(132 71 43 / 0.13), inset 0 1px 0 rgb(255 255 255 / 0.78);
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-}
-
-.about-glass-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(120deg, rgb(255 255 255 / 0.46), transparent 34%, rgb(251 146 60 / 0.14) 72%, transparent);
-}
-
-.about-glass-content {
-  position: relative;
-  z-index: 1;
 }
 
 .about-kicker {
@@ -229,16 +204,117 @@ a, button {
   letter-spacing: 0.18em;
 }
 
-.about-value-card {
-  border: 1px solid rgb(255 252 245 / 0.62);
-  background: linear-gradient(145deg, rgb(255 249 241 / 0.42), rgb(242 185 151 / 0.28));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.66), 0 12px 30px rgb(132 71 43 / 0.08);
-  backdrop-filter: blur(16px) saturate(130%);
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
+.about-manifesto {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.75fr);
+  gap: clamp(3rem, 10vw, 9rem);
+  min-height: clamp(28rem, 58vh, 42rem);
+  align-items: end;
+  padding: clamp(1rem, 4vw, 3rem) 0 clamp(4.5rem, 9vw, 7rem);
+  border-bottom: 1px solid rgb(126 93 62 / 0.24);
 }
 
-.about-value-card {
-  transition: transform 300ms ease, border-color 300ms ease, background-color 300ms ease;
+.about-title {
+  max-width: 11ch;
+  color: #3f2a20;
+  font-size: clamp(3.25rem, 9vw, 7.75rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.about-lead {
+  max-width: 30rem;
+  color: rgb(67 62 55 / 0.8);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  line-height: 1.9;
+}
+
+.about-manifesto-note {
+  max-width: 19rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid rgb(190 143 91 / 0.7);
+  color: rgb(88 68 53 / 0.76);
+  font-size: 0.95rem;
+  line-height: 2;
+}
+
+.about-activity-stage {
+  margin: clamp(4.5rem, 10vw, 8rem) 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid rgb(126 93 62 / 0.24);
+}
+
+.about-activity-stage .visit-activity {
+  margin: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.about-activity-stage .visit-activity h2 {
+  color: #3f2a20;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+
+.about-activity-stage .visit-activity p {
+  color: rgb(88 68 53 / 0.7);
+}
+
+.about-principles {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2.5rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.about-principles-heading h2 {
+  margin-top: 1rem;
+  color: #3f2a20;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.about-principles-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-principle {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgb(126 93 62 / 0.2);
+}
+
+.about-principle:last-child {
+  border-bottom: 1px solid rgb(126 93 62 / 0.2);
+}
+
+.about-principle > span {
+  color: rgb(159 109 62 / 0.82);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.about-principle h3 {
+  color: #3f2a20;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.about-principle p {
+  margin-top: 0.55rem;
+  color: rgb(88 68 53 / 0.76);
+  font-size: 0.92rem;
+  line-height: 1.9;
 }
 
 .visit-activity {
@@ -257,17 +333,11 @@ a, button {
   direction: ltr;
 }
 
-.about-value-card:hover {
-  transform: translateY(-3px);
-  border-color: rgb(207 112 64 / 0.66);
-  background: linear-gradient(145deg, rgb(255 252 247 / 0.56), rgb(248 199 165 / 0.4));
-}
-
 .about-glass-button {
   color: #72513a;
   border: 1px solid rgb(255 252 245 / 0.76);
   background: rgb(255 252 247 / 0.46);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.86), 0 10px 26px rgb(132 71 43 / 0.12);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.86), 0 10px 26px rgb(132 71 43 / 0.08);
   backdrop-filter: blur(14px) saturate(130%);
   -webkit-backdrop-filter: blur(14px) saturate(130%);
 }
@@ -339,33 +409,44 @@ a, button {
   border-bottom-color: rgb(148 163 184 / 0.16);
 }
 
-.dark .about-glass-hero {
-  border-color: rgb(186 230 253 / 0.18);
-  background: linear-gradient(142deg, rgb(15 23 42 / 0.62), rgb(12 28 47 / 0.42));
-  box-shadow: 0 26px 80px rgb(0 0 0 / 0.28), inset 0 1px 0 rgb(226 232 240 / 0.12);
-}
-
-.dark .about-glass-hero::before {
-  background: linear-gradient(120deg, rgb(226 232 240 / 0.1), transparent 34%, rgb(56 189 248 / 0.12) 72%, transparent);
-}
-
 .dark .about-kicker {
   color: rgb(186 230 253 / 0.82);
 }
 
-.dark .about-value-card {
-  border-color: rgb(186 230 253 / 0.14);
-  background: linear-gradient(145deg, rgb(15 23 42 / 0.48), rgb(8 25 44 / 0.32));
-  box-shadow: inset 0 1px 0 rgb(226 232 240 / 0.1), 0 14px 34px rgb(0 0 0 / 0.2);
+.dark .about-manifesto,
+.dark .about-activity-stage {
+  border-color: rgb(186 230 253 / 0.18);
+}
+
+.dark .about-title,
+.dark .about-activity-stage .visit-activity h2,
+.dark .about-principles-heading h2,
+.dark .about-principle h3 {
+  color: rgb(224 242 254 / 0.96);
+}
+
+.dark .about-lead,
+.dark .about-manifesto-note,
+.dark .about-activity-stage .visit-activity p,
+.dark .about-principle p {
+  color: rgb(203 213 225 / 0.8);
+}
+
+.dark .about-manifesto-note {
+  border-left-color: rgb(125 211 252 / 0.56);
+}
+
+.dark .about-principle,
+.dark .about-principle:last-child {
+  border-color: rgb(186 230 253 / 0.16);
+}
+
+.dark .about-principle > span {
+  color: rgb(125 211 252 / 0.78);
 }
 
 .dark .visit-activity {
   border-top-color: rgb(186 230 253 / 0.2);
-}
-
-.dark .about-value-card:hover {
-  border-color: rgb(125 211 252 / 0.42);
-  background: linear-gradient(145deg, rgb(15 35 57 / 0.62), rgb(8 31 53 / 0.44));
 }
 
 .dark .about-glass-button {
@@ -406,6 +487,37 @@ a, button {
   border-color: rgb(186 230 253 / 0.22);
   background: rgb(15 35 57 / 0.46);
   box-shadow: inset 0 1px 0 rgb(226 232 240 / 0.1), 0 8px 18px rgb(0 0 0 / 0.18);
+}
+
+@media (max-width: 639px) {
+  .about-manifesto,
+  .about-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .about-manifesto {
+    min-height: 0;
+    gap: 2.75rem;
+    padding: 1.25rem 0 4rem;
+  }
+
+  .about-title {
+    font-size: clamp(3.2rem, 15vw, 4.6rem);
+  }
+
+  .about-manifesto-note {
+    margin-bottom: 0;
+  }
+
+  .about-activity-stage {
+    margin: 4rem 0;
+    padding: 2.5rem 0;
+  }
+
+  .about-principles {
+    gap: 2.5rem;
+    padding-bottom: 4.5rem;
+  }
 }
 
 @keyframes about-liquid-drift {

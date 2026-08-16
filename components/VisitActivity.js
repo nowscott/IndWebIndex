@@ -7,7 +7,7 @@ const getLevel = (count, maximum) => {
   return Math.max(1, Math.ceil((count / maximum) * 4));
 };
 
-const VisitActivity = ({ activity }) => {
+const VisitActivity = ({ activity, snapshotAt }) => {
   const { isDark } = useTheme();
   const [showRecentOnly, setShowRecentOnly] = useState(false);
 
@@ -35,7 +35,7 @@ const VisitActivity = ({ activity }) => {
         <div>
           <h2 className="text-xl font-extrabold tracking-normal text-slate-800 dark:text-zinc-100">访问活动</h2>
           <p className="mt-1 text-xs tracking-normal text-slate-500 dark:text-zinc-400">
-            {showRecentOnly ? '近 14 周 · 历史活动为估算' : '近一年 · 历史活动为估算'}
+            {showRecentOnly ? '近 14 周' : '近一年'} · 历史活动为估算{snapshotAt ? ` · 快照更新于 ${snapshotAt.slice(0, 10)}` : ''}
           </p>
         </div>
       </div>
