@@ -253,7 +253,7 @@ a, button {
 }
 
 .about-activity-stage .visit-activity h2 {
-  color: #263e50;
+  color: #43677d;
   font-size: clamp(2rem, 4vw, 3.5rem);
   letter-spacing: -0.04em;
 }
@@ -271,7 +271,7 @@ a, button {
 
 .about-principles-heading h2 {
   margin-top: 1rem;
-  color: #263e50;
+  color: #43677d;
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 800;
   line-height: 1.1;
@@ -305,7 +305,7 @@ a, button {
 }
 
 .about-principle h3 {
-  color: #263e50;
+  color: #43677d;
   font-size: 1.1rem;
   font-weight: 800;
 }
