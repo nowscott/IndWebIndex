@@ -69,10 +69,10 @@ const Footer = () => {
               <HiOutlineTag className='w-4 h-4' />
               <span>投稿网页</span>
             </a>
-            <span>
+            <a href='https://github.com/nowscott/IndWebIndex' target='_blank' rel='noopener noreferrer' aria-label='在 GitHub 查看 IndWebIndex'>
               <HiOutlineCode className='w-4 h-4' />
               <span>版本 <strong>v{packageInfo.version}</strong></span>
-            </span>
+            </a>
           </div>
 
           <div className='site-footer-copy'>
