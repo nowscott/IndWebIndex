@@ -216,7 +216,7 @@ a, button {
 
 .about-title {
   max-width: 9ch;
-  color: #263e50;
+  color: #43677d;
   font-size: clamp(3.25rem, 6vw, 6.5rem);
   font-weight: 700;
   line-height: 0.96;
