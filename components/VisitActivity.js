@@ -1,11 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ActivityCalendar } from 'react-activity-calendar';
 import { useTheme } from '../contexts/ThemeContext';
-
-const getLevel = (count, maximum) => {
-  if (!count) return 0;
-  return Math.max(1, Math.ceil((count / maximum) * 4));
-};
+import { getActivityLevel, getActivityLevelMaximum } from '../lib/visitActivity';
 
 const VisitActivity = ({ activity, snapshotAt }) => {
   const { isDark } = useTheme();
@@ -21,11 +17,11 @@ const VisitActivity = ({ activity, snapshotAt }) => {
 
   const calendarData = useMemo(() => {
     const visibleActivity = showRecentOnly ? (activity || []).slice(-98) : (activity || []);
-    const maximum = Math.max(...visibleActivity.map(day => day.count), 1);
+    const maximum = getActivityLevelMaximum(visibleActivity.map(day => day.count));
     return visibleActivity.map(day => ({
       date: day.date,
       count: day.count,
-      level: getLevel(day.count, maximum),
+      level: getActivityLevel(day.count, maximum),
     }));
   }, [activity, showRecentOnly]);
 
