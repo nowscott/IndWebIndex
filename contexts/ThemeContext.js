@@ -7,6 +7,10 @@ import {
 
 const ThemeContext = createContext();
 
+const getInitialIsDark = () => (
+  typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
+);
+
 const applyTheme = isDark => {
   document.documentElement.classList.toggle('dark', isDark);
 
@@ -43,7 +47,7 @@ const setStoredTheme = theme => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(getInitialIsDark);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
