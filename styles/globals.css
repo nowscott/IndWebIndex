@@ -331,6 +331,20 @@ a, button {
   margin-inline: auto;
 }
 
+.visit-activity-calendar {
+  --visit-activity-level-0: #e7f0f4;
+  --visit-activity-level-1: #bfe0ec;
+  --visit-activity-level-2: #ffd9b8;
+  --visit-activity-level-3: #f5ad82;
+  --visit-activity-level-4: #df7467;
+  --visit-activity-stroke: rgb(0 0 0 / 0.08);
+  color: #43677d;
+}
+
+.visit-activity-calendar .react-activity-calendar rect {
+  stroke: var(--visit-activity-stroke) !important;
+}
+
 .visit-activity-calendar .react-activity-calendar__scroll-container {
   direction: rtl;
 }
@@ -575,6 +589,16 @@ a, button {
 
 .dark .visit-activity {
   border-top-color: rgb(186 230 253 / 0.2);
+}
+
+.dark .visit-activity-calendar {
+  --visit-activity-level-0: #1a293b;
+  --visit-activity-level-1: #254563;
+  --visit-activity-level-2: #2f7399;
+  --visit-activity-level-3: #38a9cb;
+  --visit-activity-level-4: #a8e7ff;
+  --visit-activity-stroke: rgb(255 255 255 / 0.04);
+  color: rgb(203 213 225 / 0.8);
 }
 
 .dark .about-glass-button {
