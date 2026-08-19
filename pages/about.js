@@ -101,6 +101,7 @@ export async function getStaticProps() {
       visitActivity: visitSnapshot?.activity || null,
       activitySnapshotAt: visitSnapshot ? new Date().toISOString() : null,
     },
+    revalidate: 1800,
   };
 }
 
