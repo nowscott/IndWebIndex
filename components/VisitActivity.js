@@ -4,7 +4,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { getActivityLevel, getActivityLevelMaximum } from '../lib/visitActivity';
 
 const VisitActivity = ({ activity, snapshotAt }) => {
-  const { isDark } = useTheme();
+  const { isDark, mounted } = useTheme();
   const [showRecentOnly, setShowRecentOnly] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,10 @@ const VisitActivity = ({ activity, snapshotAt }) => {
         </div>
       </div>
 
-      <div className="visit-activity-calendar w-full min-w-0 max-w-full overflow-hidden pb-1">
+      <div
+        className="visit-activity-calendar w-full min-w-0 max-w-full overflow-hidden pb-1"
+        style={{ visibility: mounted ? 'visible' : 'hidden' }}
+      >
         <ActivityCalendar
           data={calendarData}
           loading={!activity}
