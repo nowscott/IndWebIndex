@@ -82,8 +82,7 @@ export async function getStaticProps() {
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
   
-  // 关于页只需提供元数据统计，不要同步 posts 列表到全局缓存，
-  // 这样能确保跳回首页时，首页使用的是其自身半小时内稳定的随机排序数据。
+  // About 页复用 Notion 全局缓存，只消费可见网页数量，不向客户端传递 posts。
   const normalPosts = (posts || []).filter(post => post.state !== '隐藏');
   const count = normalPosts.length;
   let visitSnapshot = null;

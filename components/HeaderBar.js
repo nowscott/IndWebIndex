@@ -17,7 +17,7 @@ const HeaderBar = ({ lastFetched, count, searchQuery, setSearchQuery }) => {
     if (count !== undefined && count !== null && count >= 0) {
       updateStats({ count, lastFetched });
     }
-  }, [count, lastFetched]);
+  }, [count, lastFetched, updateStats]);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-black/[0.04] dark:bg-black/20 transition-[background-color,border-color,box-shadow] duration-400">

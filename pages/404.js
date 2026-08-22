@@ -1,17 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HeaderBar from '../components/HeaderBar';
 import FontMenu from '../components/FontMenu';
+import Footer from '../components/Footer';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useStats } from '../contexts/StatsContext';
 import { getDatabase } from '../lib/notion';
 
 const Custom404 = ({ count, lastFetched }) => {
-  const { stats } = useStats();
-
   return (
-    <div className='app-background m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
+    <div className='site-page m-0 min-h-screen overflow-auto tracking-widest flex flex-col font-inherit'>
       <Head>
         <title>404 - 页面未找到 | IndWebIndex</title>
       </Head>
@@ -57,6 +55,8 @@ const Custom404 = ({ count, lastFetched }) => {
           <div className="h-px w-24 sm:w-32 bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
@@ -66,8 +66,7 @@ export async function getStaticProps() {
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
   
-  // 404 页面只需提供元数据统计，不要同步 posts 列表到全局缓存，
-  // 这样能确保跳回首页时，首页使用的是其自身半小时内稳定的随机排序数据。
+  // 404 页复用 Notion 全局缓存，只消费可见网页数量，不向客户端传递 posts。
   const normalPosts = (posts || []).filter(post => post.state !== '隐藏');
   const count = normalPosts.length;
 

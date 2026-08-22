@@ -1,6 +1,6 @@
 // pages/index.js
 import { getDatabase } from '../lib/notion';
-import { randomSort, unique, extractTags } from '../lib/dataLoader'
+import { randomSort, extractTags } from '../lib/dataLoader'
 import MainPage from '../components/MainPage';
 
 export default function Home({ initialPosts, initialTags, lastFetched }) {
@@ -13,7 +13,7 @@ export async function getStaticProps() {
   const lastFetched = new Date().toISOString();
   
   // 只有在数据存在时才进行耗时操作
-  const sortedPosts = posts ? randomSort(unique(posts)) : [];
+  const sortedPosts = posts ? randomSort(posts) : [];
   const normalPosts = sortedPosts.filter(post => post.state !== '隐藏');
   const initialTags = randomSort(extractTags(normalPosts));
 

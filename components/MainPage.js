@@ -1,15 +1,16 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import HeaderBar from './HeaderBar';
 import FontMenu from './FontMenu';
 import Tags from './Tags';
 import WebList from './WebList';
-import { extractTags, filterPostsBySearch, updateResults } from '../lib/dataLoader';
-import { useStats } from '../contexts/StatsContext';
-import _ from 'lodash';
+import {
+  extractTags,
+  filterPostsBySearch,
+  preparePostsForSearch,
+  updateResults,
+} from '../lib/dataLoader';
 
 const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }) => {
-  const { updateStats } = useStats();
-
   // Page props are the source of truth so a newer ISR payload is never hidden
   // behind stale client-side data from an earlier navigation.
   const posts = initialPosts || [];
@@ -19,19 +20,15 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   const [searchQuery, setSearchQuery] = useState('');
   const [onList, setOnList] = useState([]);
 
-  // Share metadata across pages without caching the bookmark payload itself.
-  useEffect(() => {
-    const visibleCount = posts.filter(p => p.state !== '隐藏').length;
-    updateStats({ lastFetched: initialLastFetched, count: visibleCount });
-  }, [posts, initialLastFetched]);
+  const searchablePosts = useMemo(() => preparePostsForSearch(posts), [posts]);
 
   const filteredPosts = useMemo(() => {
     if (!posts || posts.length === 0) {
       return [];
     }
-    const results = updateResults(posts, onList);
+    const results = updateResults(searchablePosts, onList);
     return filterPostsBySearch(results, searchQuery);
-  }, [posts, onList, searchQuery]);
+  }, [searchablePosts, onList, searchQuery]);
 
   // 计算总的可见网页数量（排除隐藏网页），用于显示
   const totalVisibleCount = useMemo(() => {
@@ -43,19 +40,20 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
       return tags;
     }
     const availableTags = extractTags(filteredPosts);
-    const tagsToShow = _.uniq([...onList, ...availableTags]);
+    const tagsToShow = new Set([...onList, ...availableTags]);
     
     // 优先按照 initialTags 的顺序显示，额外的标签放在后面
-    const sortedVisibleTags = tags.filter(t => tagsToShow.includes(t));
-    const extraTags = tagsToShow.filter(t => !tags.includes(t));
+    const sortedVisibleTags = tags.filter(t => tagsToShow.has(t));
+    const extraTags = [...tagsToShow].filter(t => !tags.includes(t));
     
     return [...sortedVisibleTags, ...extraTags];
   }, [tags, onList, searchQuery, filteredPosts]);
 
-  const handleToggleTagButton = tag => {
-    const newOnList = _.xor(onList, [tag]);
-    setOnList(newOnList);
-  };
+  const handleToggleTagButton = tag => setOnList(current => (
+    current.includes(tag)
+      ? current.filter(item => item !== tag)
+      : [...current, tag]
+  ));
 
   return (
     <div className='home-page m-0 min-h-screen overflow-auto tracking-widest text-center flex flex-col font-inherit'>
