@@ -120,47 +120,38 @@ const FontMenu = () => {
       <div className="px-2 pb-1.5 text-[10px] font-bold text-slate-500 dark:text-zinc-400">
         选择字体
       </div>
-      {menuState.isReady ? (
-        <div className="space-y-0.5">
-          {FONT_OPTIONS.map(font => {
-            const isSelected = selectedFont === font.className;
-            const isLoading = loadingFont === font.className;
+      <div className="space-y-0.5">
+        {FONT_OPTIONS.map(font => {
+          const isSelected = selectedFont === font.className;
+          const isLoading = loadingFont === font.className;
 
-            return (
-              <button
-                key={font.className}
-                ref={isSelected ? selectedButtonRef : null}
-                type="button"
-                role="menuitemradio"
-                aria-checked={isSelected}
-                data-font-class={font.className}
-                disabled={loadingFont !== null}
-                className={`w-full px-3 py-2 rounded-lg text-left whitespace-nowrap preview-${font.className} transition-[background-color,color,border-color] duration-200 border focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70 disabled:cursor-wait ${isSelected
-                  ? 'bg-orange-100/70 dark:bg-orange-500/20 text-[#773d31] dark:text-orange-300 border-orange-300/80 dark:border-orange-400/40'
-                  : 'border-transparent hover:bg-white/80 dark:hover:bg-zinc-700/60 hover:border-slate-300/80 dark:hover:border-zinc-500/70'
-                }`}
-                onFocus={() => prepareFont(font.className)}
-                onPointerEnter={() => prepareFont(font.className)}
-                onClick={() => selectFont(font.className)}
-              >
-                <span className="flex items-center justify-between gap-2">
-                  <span>{font.displayName}</span>
-                  <span aria-hidden="true" className="w-3 text-center text-[10px] font-sans">
-                    {isLoading ? '…' : isSelected ? '✓' : ''}
-                  </span>
+          return (
+            <button
+              key={font.className}
+              ref={isSelected ? selectedButtonRef : null}
+              type="button"
+              role="menuitemradio"
+              aria-checked={isSelected}
+              data-font-class={font.className}
+              disabled={loadingFont !== null}
+              className={`w-full px-3 py-2 rounded-lg text-left whitespace-nowrap preview-${font.className} transition-[background-color,color,border-color] duration-200 border focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/70 disabled:cursor-wait ${isSelected
+                ? 'bg-orange-100/70 dark:bg-orange-500/20 text-[#773d31] dark:text-orange-300 border-orange-300/80 dark:border-orange-400/40'
+                : 'border-transparent hover:bg-white/80 dark:hover:bg-zinc-700/60 hover:border-slate-300/80 dark:hover:border-zinc-500/70'
+              }`}
+              onFocus={() => prepareFont(font.className)}
+              onPointerEnter={() => prepareFont(font.className)}
+              onClick={() => selectFont(font.className)}
+            >
+              <span className="flex items-center justify-between gap-2">
+                <span>{font.displayName}</span>
+                <span aria-hidden="true" className="w-3 text-center text-[10px] font-sans">
+                  {isLoading ? '…' : isSelected ? '✓' : ''}
                 </span>
-              </button>
-            );
-          })}
-        </div>
-      ) : (
-        <div
-          role="status"
-          className="px-3 py-4 text-center text-xs text-slate-500 dark:text-zinc-400 animate-pulse"
-        >
-          字体加载中…
-        </div>
-      )}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 const StatsContext = createContext();
 
@@ -8,15 +8,16 @@ export const StatsProvider = ({ children }) => {
     lastFetched: null,
   });
 
-  const updateStats = (newStats) => {
+  const updateStats = useCallback(newStats => {
     setStats(prev => ({
       ...prev,
       ...newStats
     }));
-  };
+  }, []);
+  const value = useMemo(() => ({ stats, updateStats }), [stats, updateStats]);
 
   return (
-    <StatsContext.Provider value={{ stats, updateStats }}>
+    <StatsContext.Provider value={value}>
       {children}
     </StatsContext.Provider>
   );

@@ -87,10 +87,8 @@ export const FontProvider = ({ children }) => {
   const [loadingFont, setLoadingFont] = useState(null);
   const [menuState, setMenuState] = useState({
     isOpen: false,
-    isReady: false,
     x: 0,
     y: 0,
-    requestId: null,
   });
 
   useEffect(() => {
@@ -106,24 +104,7 @@ export const FontProvider = ({ children }) => {
   }, []);
 
   const openFontMenu = useCallback(({ x, y }) => {
-    const requestId = `${Date.now()}-${Math.random()}`;
-    setMenuState({ isOpen: true, isReady: false, x, y, requestId });
-
-    Promise.allSettled(
-      FONT_OPTIONS.map(async font => {
-        await ensureFontCacheWorker();
-        await ensureFontStylesheet(font);
-        if (document.fonts?.load) {
-          await document.fonts.load(`16px "${font.family}"`, `${font.displayName}Aa123`);
-        }
-      })
-    ).finally(() => {
-      setMenuState(current => (
-        current.requestId === requestId
-          ? { ...current, isReady: true }
-          : current
-      ));
-    });
+    setMenuState({ isOpen: true, x, y });
   }, []);
 
   const closeFontMenu = useCallback(() => {
