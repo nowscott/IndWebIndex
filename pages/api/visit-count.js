@@ -1,4 +1,4 @@
-import { isVisitTrackingEnabled, recordPageView } from '../../lib/visitStats';
+import { recordPageView } from '../../lib/visitStats';
 
 const getRequestOrigin = req => {
   const host = req.headers['x-forwarded-host'] || req.headers.host;
@@ -17,8 +17,6 @@ export default async function handler(req, res) {
   if (!req.headers.origin || req.headers.origin !== expectedOrigin) {
     return res.status(403).end('Invalid request origin');
   }
-  if (!isVisitTrackingEnabled()) return res.status(204).end();
-
   try {
     await recordPageView();
     return res.status(204).end();

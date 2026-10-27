@@ -83,7 +83,7 @@ export async function getStaticProps() {
   const lastFetched = new Date().toISOString();
   
   // About 页复用 Notion 全局缓存，只消费可见网页数量，不向客户端传递 posts。
-  const normalPosts = (posts || []).filter(post => post.state !== '隐藏');
+  const normalPosts = posts.filter(post => post.state !== '隐藏');
   const count = normalPosts.length;
   let visitSnapshot = null;
 

@@ -12,8 +12,7 @@ export async function getStaticProps() {
   const posts = await getDatabase(databaseId);
   const lastFetched = new Date().toISOString();
   
-  // 只有在数据存在时才进行耗时操作
-  const sortedPosts = posts ? randomSort(posts) : [];
+  const sortedPosts = randomSort(posts);
   const normalPosts = sortedPosts.filter(post => post.state !== '隐藏');
   const initialTags = randomSort(extractTags(normalPosts));
 

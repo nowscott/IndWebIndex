@@ -13,8 +13,8 @@ import {
 const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }) => {
   // Page props are the source of truth so a newer ISR payload is never hidden
   // behind stale client-side data from an earlier navigation.
-  const posts = initialPosts || [];
-  const tags = initialTags || [];
+  const posts = initialPosts;
+  const tags = initialTags;
   const lastFetched = initialLastFetched;
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,9 +23,6 @@ const MainPage = ({ initialPosts, initialTags, lastFetched: initialLastFetched }
   const searchablePosts = useMemo(() => preparePostsForSearch(posts), [posts]);
 
   const filteredPosts = useMemo(() => {
-    if (!posts || posts.length === 0) {
-      return [];
-    }
     const results = updateResults(searchablePosts, onList);
     return filterPostsBySearch(results, searchQuery);
   }, [searchablePosts, onList, searchQuery]);
